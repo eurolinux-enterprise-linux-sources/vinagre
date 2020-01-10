@@ -5,7 +5,7 @@
 
 Name:		vinagre
 Version:	2.28.1
-Release:	11%{?dist}
+Release:	12%{?dist}
 Summary:	VNC client for GNOME
 
 Group:		Applications/System
@@ -59,6 +59,9 @@ Patch9: vinagre-other-tab-typing.patch
 Patch10: vinagre-different-logins.patch
 Patch11: vinagre-signedness.patch
 
+# https://bugzilla.redhat.com/show_bug.cgi?id=1333632
+Patch12: vinagre-translations2.patch
+
 %description
 Vinagre is a VNC client for the GNOME desktop.
 
@@ -94,6 +97,7 @@ to vinagre.
 %patch9 -p1 -b .other-tab-typing
 %patch10 -p1 -b .different-logins
 %patch11 -p1 -b .signedness
+%patch12 -p1 -b .translations2
 
 # for RDP support
 autoreconf -ivf
@@ -212,6 +216,10 @@ fi
 
 
 %changelog
+* Tue Jan 17 2017 Marek Kasik <mkasik@redhat.com> 2.28.1-12
+- Update translations
+- Resolves: #1333632
+
 * Wed Feb 24 2016 Marek Kasik <mkasik@redhat.com> 2.28.1-11
 - Fix signedness of argument of vinagre_utils_parse_boolean()
 - Related: #1215093
