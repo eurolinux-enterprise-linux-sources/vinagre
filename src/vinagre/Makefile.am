@@ -1,0 +1,275 @@
+SUBDIRS = view
+
+NULL = 
+
+INCLUDES = 						\
+	-DBINDIR=\"$(bindir)\"			 	\
+	-DDATADIR=\"$(datadir)\"			\
+	-DPREFIX=\""$(prefix)"\" 			\
+	-DSYSCONFDIR=\""$(sysconfdir)"\" 		\
+	-DLIBDIR=\""$(libdir)"\" 			\
+	-DVINAGRE_DATADIR=\""$(datadir)/vinagre"\"	\
+	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\"	\
+	$(VINAGRE_CFLAGS)				\
+	$(AVAHI_CFLAGS)					\
+	$(NULL)
+
+NOINST_H_FILES = \
+  bacon-message-connection.h \
+  vinagre-enums.h \
+  vinagre-object-module.h \
+  vinagre-plugin-info.h \
+  vinagre-plugin-info-priv.h \
+  vinagre-plugin-loader.h \
+  vinagre-plugin-manager.h \
+  vinagre-plugin-dialog.h \
+  vinagre-plugins-engine.h \
+  vinagre-window-private.h \
+  vinagre-spinner.h \
+  $(NULL)
+
+INST_H_FILES = \
+  vinagre-app.h \
+  vinagre-bacon.h \
+  vinagre-bookmarks-entry.h \
+  vinagre-bookmarks.h \
+  vinagre-bookmarks-migration.h \
+  vinagre-bookmarks-tree.h \
+  vinagre-bookmarks-ui.h \
+  vinagre-commands.h \
+  vinagre-connect.h \
+  vinagre-connection.h \
+  vinagre-debug.h \
+  vinagre-dirs.h \
+  vinagre-fav.h \
+  vinagre-notebook.h \
+  vinagre-plugin.h \
+  vinagre-plugin-loader.h \
+  vinagre-prefs.h \
+  vinagre-tab.h \
+  vinagre-ui.h \
+  vinagre-utils.h \
+  vinagre-window.h \
+  vinagre-dnd.h \
+  $(NULL)
+
+headerdir = $(prefix)/include/vinagre-@VINAGRE_API_VERSION@/vinagre
+header_DATA = $(INST_H_FILES)
+
+##############################
+# The main library
+##############################
+
+noinst_LTLIBRARIES = libvinagre.la
+
+libvinagre_la_SOURCES = \
+  bacon-message-connection.c  \
+  vinagre-app.c \
+  vinagre-bacon.c \
+  vinagre-bookmarks.c \
+  vinagre-bookmarks-entry.c \
+  vinagre-bookmarks-migration.c \
+  vinagre-bookmarks-tree.c \
+  vinagre-bookmarks-ui.c \
+  vinagre-commands.c \
+  vinagre-connect.c \
+  vinagre-connection.c \
+  vinagre-debug.c \
+  vinagre-dirs.c \
+  vinagre-enums.c \
+  vinagre-fav.c \
+  vinagre-notebook.c \
+  vinagre-object-module.c \
+  vinagre-plugin.c \
+  vinagre-plugin-info.c \
+  vinagre-plugin-dialog.c \
+  vinagre-plugin-loader.c \
+  vinagre-plugin-manager.c \
+  vinagre-plugins-engine.c \
+  vinagre-prefs.c \
+  vinagre-tab.c \
+  vinagre-utils.c \
+  vinagre-window.c \
+  vinagre-spinner.c \
+  $(NOINST_H_FILES) \
+  $(INST_H_FILES) \
+  $(NULL)
+
+if AVAHI
+libvinagre_la_SOURCES += vinagre-mdns.h vinagre-mdns.c
+endif
+
+libvinagre_la_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
+
+libvinagre_la_LIBADD = view/libview.la
+# VINAGRE_LIBS must be the last to ensure correct order on some platforms
+libvinagre_la_LIBADD += $(VINAGRE_LIBS)
+
+
+##############################
+# The main binary
+##############################
+
+bin_PROGRAMS = vinagre
+
+vinagre_SOURCES = \
+  vinagre-main.c
+
+vinagre_LDADD = \
+	libvinagre.la \
+	$(VINAGRE_LIBS)		\
+	$(AVAHI_LIBS)		\
+	$(GTKVNC_LIBS)		\
+	$(NULL)
+
+vinagre_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
+
+if APPLET
+
+##############################
+# Bonobo .server
+##############################
+
+serverdir =					\
+	$(libdir)/bonobo/servers
+server_in_files =				\
+	GNOME_VinagreApplet.server.in
+server_DATA =					\
+	$(server_in_files:.server.in=.server)
+
+$(server_in_files): $(server_in_files:.server.in=.server.in.in)
+	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" -e "s|\@VERSION\@|$(VERSION)|" $< > $@
+
+@INTLTOOL_SERVER_RULE@
+
+##############################
+# The applet binary
+##############################
+
+libexec_PROGRAMS = vinagre-applet
+
+vinagre_applet_CFLAGS =			\
+	$(APPLET_CFLAGS)		\
+	$(AVAHI_CFLAGS)			\
+	$(NULL)
+
+vinagre_applet_SOURCES =					\
+	vinagre-applet.c					\
+	vinagre-bookmarks.h vinagre-bookmarks.c			\
+	vinagre-bookmarks-ui.h vinagre-bookmarks-ui.c			\
+	vinagre-connection.h vinagre-connection.c		\
+	vinagre-utils.h vinagre-utils.c				\
+	vinagre-enums.h vinagre-enums.c				\
+	vinagre-bookmarks-entry.h vinagre-bookmarks-entry.c	\
+	vinagre-bookmarks-tree.h vinagre-bookmarks-tree.c	\
+	vinagre-bookmarks-migration.h vinagre-bookmarks-migration.c \
+	vinagre-plugins-engine.h vinagre-plugins-engine.c \
+	vinagre-plugin.h vinagre-plugin.c \
+	vinagre-plugin-loader.h vinagre-plugin-loader.c \
+	vinagre-plugin-manager.h vinagre-plugin-manager.c \
+	vinagre-plugin-dialog.h vinagre-plugin-dialog.c \
+	vinagre-debug.h vinagre-debug.c \
+	vinagre-plugin-info.h vinagre-plugin-info.c \
+	vinagre-window.h vinagre-window.c \
+	vinagre-commands.h vinagre-commands.c \
+	vinagre-notebook.h vinagre-notebook.c \
+	vinagre-tab.h vinagre-tab.c \
+	vinagre-prefs.h vinagre-prefs.c \
+	vinagre-app.h vinagre-app.c \
+	vinagre-object-module.h vinagre-object-module.c \
+	vinagre-dirs.h vinagre-dirs.c \
+	vinagre-fav.h vinagre-fav.c \
+	vinagre-connect.h vinagre-connect.c \
+	vinagre-spinner.h vinagre-spinner.c \
+	$(NULL)
+
+if AVAHI
+vinagre_applet_SOURCES += vinagre-mdns.h vinagre-mdns.c
+endif
+
+vinagre_applet_LDADD =			\
+	view/libview.la			\
+	$(APPLET_LIBS)			\
+	$(VINAGRE_LIBS)			\
+	$(AVAHI_LIBS)			\
+	$(NULL)
+vinagre_applet_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
+
+endif
+
+##############################
+# Autogenerated stuff
+##############################
+
+vinagre_enum_headers = \
+	$(top_srcdir)/vinagre/vinagre-connection.h \
+	$(NULL)
+
+vinagre-enums.c: @REBUILD@ $(vinagre_enum_headers)
+	glib-mkenums    --fhead "#include <glib-object.h>\n" \
+			--fhead "#include \"vinagre-enums.h\"\n\n" \
+			--fprod "\n/* enumerations from \"@filename@\" */" \
+			--fprod "\n#include \"@filename@\"\n" \
+			--vhead "static const G@Type@Value _@enum_name@_values[] = {" \
+			--vprod "  { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+			--vtail "  { 0, NULL, NULL }\n};\n\n" \
+			--vtail "GType\n@enum_name@_get_type (void)\n{\n" \
+			--vtail "  static GType type = 0;\n\n" \
+			--vtail "  if (!type)\n" \
+			--vtail "    type = g_@type@_register_static (\"@EnumName@\", _@enum_name@_values);\n\n" \
+			--vtail "  return type;\n}\n\n" \
+		$(vinagre_enum_headers) > $@
+
+vinagre-enums.h: @REBUILD@ $(vinagre_enum_headers)
+	glib-mkenums    --fhead "#ifndef __VINAGRE_ENUMS_H__\n" \
+			--fhead "#define __VINAGRE_ENUMS_H__ 1\n\n" \
+			--fhead "G_BEGIN_DECLS\n\n" \
+			--ftail "G_END_DECLS\n\n" \
+			--ftail "#endif /* __VINAGRE_ENUMS_H__ */\n" \
+			--fprod "\n/* --- @filename@ --- */" \
+			--eprod "#define VINAGRE_TYPE_@ENUMSHORT@ @enum_name@_get_type()\n" \
+			--eprod "GType @enum_name@_get_type (void);\n" \
+		$(vinagre_enum_headers) >  $@
+
+BUILT_SOURCES = \
+	vinagre-enums.c \
+	vinagre-enums.h \
+	$(NULL)
+
+##############################
+# Telepathy stuff
+##############################
+
+if TELEPATHY
+
+INCLUDES += $(TELEPATHY_CFLAGS)
+vinagre_LDADD += $(TELEPATHY_LIBS)
+libvinagre_la_SOURCES += \
+	vinagre-tubes-manager.c vinagre-tubes-manager.h		\
+	vinagre-tube-handler.c vinagre-tube-handler.h		\
+	$(NULL)
+
+dbus-interface-glue.h: tube-handler.xml
+	dbus-binding-tool --prefix=vinagre_tubes_manager --mode=glib-server $< > dbus-interface-glue.h
+
+BUILT_SOURCES += dbus-interface-glue.h
+
+endif
+
+DISTCLEANFILES =		\
+	$(BUILT_SOURCES)	\
+	$(server_in_files)	\
+	$(server_DATA)		\
+	$(NULL)
+
+EXTRA_DIST =					\
+	GNOME_VinagreApplet.server.in.in	\
+	tube-handler.xml			\
+	$(NULL)
+
+dist-hook:
+	cd $(distdir) ; rm -f $(DISTCLEANFILES)
+
+$(vinagre_OBJECTS): $(BUILT_SOURCES)
+
+-include $(top_srcdir)/git.mk
