@@ -1,0 +1,11 @@
+--- vinagre-2.28.1/vinagre/vinagre-connection.c
++++ vinagre-2.28.1/vinagre/vinagre-connection.c
+@@ -249,7 +249,7 @@ default_parse_item (VinagreConnection *c
+       else if (!xmlStrcmp(curr->name, (const xmlChar *)"port"))
+ 	vinagre_connection_set_port (conn, atoi (s_value));
+       else if (!xmlStrcmp(curr->name, (const xmlChar *)"fullscreen"))
+-	vinagre_connection_set_fullscreen (conn, vinagre_utils_parse_boolean (s_value));
++	vinagre_connection_set_fullscreen (conn, vinagre_utils_parse_boolean ((const gchar *) s_value));
+       else if (!xmlStrcmp(curr->name, BAD_CAST "width"))
+ 	vinagre_connection_set_width (conn, atoi ((const char *)s_value));
+       else if (!xmlStrcmp(curr->name, BAD_CAST "height"))

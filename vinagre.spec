@@ -5,7 +5,7 @@
 
 Name:		vinagre
 Version:	2.28.1
-Release:	7%{?dist}
+Release:	11%{?dist}
 Summary:	VNC client for GNOME
 
 Group:		Applications/System
@@ -26,6 +26,9 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	gnome-keyring-devel
 BuildRequires:	gnome-doc-utils
 BuildRequires:	gnome-panel-devel
+BuildRequires:	freerdp-devel
+BuildRequires:	libtool
+BuildRequires:	gnome-common
 %if %{with_telepathy}
 BuildRequires:	telepathy-glib-devel
 %endif
@@ -44,6 +47,17 @@ Patch1: vinagre-dir-prefix.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=588725
 Patch2: vinagre-translation.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1215093
+Patch3: vinagre-RDP-support.patch
+Patch4: vinagre-RDP-scaling.patch
+Patch5: vinagre-minimize-button.patch
+Patch6: vinagre-RDP-store-credential.patch
+Patch7: vinagre-translations.patch
+Patch8: vinagre-active-plugins.patch
+Patch9: vinagre-other-tab-typing.patch
+Patch10: vinagre-different-logins.patch
+Patch11: vinagre-signedness.patch
 
 %description
 Vinagre is a VNC client for the GNOME desktop.
@@ -71,6 +85,18 @@ to vinagre.
 %patch0 -p1 -b .history-crash
 %patch1 -p1 -b .dir-prefix
 %patch2 -p1 -b .translation
+%patch3 -p1 -b .RDP-support
+%patch4 -p1 -b .RDP-scaling
+%patch5 -p1 -b .minimize-button
+%patch6 -p1 -b .RDP-store-credential
+%patch7 -p1 -b .translations
+%patch8 -p1 -b .active-plugins
+%patch9 -p1 -b .other-tab-typing
+%patch10 -p1 -b .different-logins
+%patch11 -p1 -b .signedness
+
+# for RDP support
+autoreconf -ivf
 
 %build
 %configure --enable-avahi=yes --disable-static \
@@ -186,6 +212,28 @@ fi
 
 
 %changelog
+* Wed Feb 24 2016 Marek Kasik <mkasik@redhat.com> 2.28.1-11
+- Fix signedness of argument of vinagre_utils_parse_boolean()
+- Related: #1215093
+
+* Wed Feb 24 2016 Marek Kasik <mkasik@redhat.com> 2.28.1-10
+- Don't capture key events of other tabs
+- Allow different logins to the same host
+- Ignore active-plugins GConf key
+- Related: #1215093
+
+* Fri Dec 11 2015 Marek Kasik <mkasik@redhat.com> 2.28.1-9
+- Add a check to avoid a possible crash
+- Related: #1215093
+
+* Tue Dec  8 2015 Marek Kasik <mkasik@redhat.com> 2.28.1-8
+- Backport RDP support
+- Backport scaling of RDP sessions
+- Backport Minimize button
+- Backport storing of credential to keyring
+- Backport translations for new strings
+- Resolves: #1215093
+
 * Tue May 18 2010 Marek Kasik <mkasik@redhat.com> 2.28.1-7
 - Add requirement of desktop-file-utils
 - Resolves: #593059

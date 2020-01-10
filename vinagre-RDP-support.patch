@@ -1,0 +1,2464 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -74,6 +74,7 @@ PKG_CHECK_MODULES(VINAGRE, \
+   gthread-2.0 >= $GTHREAD_REQUIRED \
+   gnome-keyring-1 \
+   libxml-2.0 >= $XML_REQUIRED
++  x11
+ )
+ AC_SUBST(VINAGRE_CFLAGS)
+ AC_SUBST(VINAGRE_LIBS)
+@@ -102,6 +103,35 @@ if test "x$enable_ssh" = "xyes" ; then
+ fi
+ AM_CONDITIONAL(SSH, test "x$enable_ssh" = "xyes")
+ 
++# Whether to enable support for RDP.
++RDP_DEPS="freerdp x11"
++AC_ARG_ENABLE([rdp],
++  [AS_HELP_STRING([--disable-rdp],
++    [Disable Remote Desktop Protocol (RDP) support])])
++
++AS_IF([test "x$enable_rdp" != "xno"],
++      [PKG_CHECK_EXISTS([$RDP_DEPS],
++                        [have_rdp=yes
++                         PKG_CHECK_MODULES(RDP, $RDP_DEPS)
++                         PKG_CHECK_EXISTS(freerdp >= 1.1,
++                                          [AC_DEFINE([HAVE_FREERDP_1_1], [1], [FreeRDP is of version 1.1 or newer])],
++                                          [])
++                         PKG_CHECK_EXISTS(freerdp >= 1.2,
++                                          [AC_DEFINE([HAVE_FREERDP_1_2], [1], [FreeRDP is of version 1.2 or newer])],
++                                          [])],
++                        [have_rdp=no])],
++      [have_rdp=no])
++
++AS_IF([test "x$have_rdp" = "xyes"],
++      [AC_DEFINE([VINAGRE_ENABLE_RDP], [], [Build with RDP support])],
++      [RDP_DEPS=""
++       AS_IF([test "x$enable_rdp" = "xyes"],
++             [AC_MSG_ERROR([RDP support requested but required dependencies not found])])])
++
++AM_CONDITIONAL([RDP], [test "x$have_rdp" = "xyes"])
++AC_SUBST(RDP_CFLAGS)
++AC_SUBST(RDP_LIBS)
++
+ # Check for telepathy
+ AC_ARG_ENABLE(telepathy,
+               AS_HELP_STRING([--enable-telepathy=@<:@no/yes/auto@:>@],
+@@ -171,6 +201,9 @@ ACTIVE_PLUGINS="vnc"
+ if test "x$enable_ssh" = "xyes" ; then
+ ACTIVE_PLUGINS="$ACTIVE_PLUGINS,ssh"
+ fi
++if test "x$have_rdp" = "xyes" ; then
++ACTIVE_PLUGINS="$ACTIVE_PLUGINS,rdp"
++fi
+ AC_SUBST(ACTIVE_PLUGINS)
+ 
+ VINAGRE_IMPLIB="-lvinagre-${VINAGRE_API_VERSION}"
+@@ -203,6 +236,7 @@ plugin-loaders/c/Makefile
+ plugins/Makefile
+ plugins/vnc/Makefile
+ plugins/ssh/Makefile
++plugins/rdp/Makefile
+ vinagre/Makefile
+ vinagre/view/Makefile
+ ])
+@@ -222,4 +256,5 @@ Configure summary:
+ 	GNOME Panel applet..........:  ${enable_applet}
+ 	Telepathy support ..........:  ${have_telepathy}
+ 	SSH plugin .................:  ${enable_ssh}
++	RDP plugin .................:  ${have_rdp}
+ "
+--- a/data/vinagre.ui
++++ b/data/vinagre.ui
+@@ -268,29 +268,79 @@
+     </action-widgets>
+   </object>
+   <object class="GtkDialog" id="auth_required_dialog">
++    <property name="can_focus">False</property>
+     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-    <property name="border_width">5</property>
++    <property name="border_width">12</property>
+     <property name="resizable">False</property>
+     <property name="modal">True</property>
+     <property name="window_position">center-on-parent</property>
+     <property name="destroy_with_parent">True</property>
+     <property name="type_hint">dialog</property>
+-    <property name="has_separator">False</property>
+     <child internal-child="vbox">
+       <object class="GtkVBox" id="dialog-vbox2">
+         <property name="visible">True</property>
++        <property name="can_focus">False</property>
+         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-        <property name="orientation">vertical</property>
+-        <property name="spacing">2</property>
++        <child internal-child="action_area">
++          <object class="GtkButtonBox" id="dialog-action_area2">
++            <property name="visible">True</property>
++            <property name="can_focus">False</property>
++            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++            <property name="layout_style">end</property>
++            <child>
++              <object class="GtkButton" id="button3">
++                <property name="label">gtk-cancel</property>
++                <property name="visible">True</property>
++                <property name="can_focus">True</property>
++                <property name="receives_default">True</property>
++                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                <property name="use_action_appearance">False</property>
++                <property name="use_stock">True</property>
++              </object>
++              <packing>
++                <property name="expand">False</property>
++                <property name="fill">False</property>
++                <property name="position">0</property>
++              </packing>
++            </child>
++            <child>
++              <object class="GtkButton" id="ok_button">
++                <property name="label" translatable="yes" comments="This is a button label, in the authentication dialog">_Authenticate</property>
++                <property name="visible">True</property>
++                <property name="sensitive">False</property>
++                <property name="can_focus">True</property>
++                <property name="can_default">True</property>
++                <property name="has_default">True</property>
++                <property name="receives_default">True</property>
++                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                <property name="use_action_appearance">False</property>
++                <property name="use_underline">True</property>
++              </object>
++              <packing>
++                <property name="expand">False</property>
++                <property name="fill">False</property>
++                <property name="position">1</property>
++              </packing>
++            </child>
++          </object>
++          <packing>
++            <property name="expand">False</property>
++            <property name="fill">True</property>
++            <property name="pack_type">end</property>
++            <property name="position">0</property>
++          </packing>
++        </child>
+         <child>
+           <object class="GtkVBox" id="vbox1">
+             <property name="visible">True</property>
++            <property name="can_focus">False</property>
+             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+             <property name="orientation">vertical</property>
+             <property name="spacing">6</property>
+             <child>
+-              <object class="GtkLabel" id="label5">
++              <object class="GtkLabel" id="auth_required_label">
+                 <property name="visible">True</property>
++                <property name="can_focus">False</property>
+                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                 <property name="xalign">0</property>
+                 <property name="label" translatable="yes">Authentication is required</property>
+@@ -300,42 +350,57 @@
+                 </attributes>
+               </object>
+               <packing>
++                <property name="expand">True</property>
++                <property name="fill">True</property>
+                 <property name="padding">6</property>
+                 <property name="position">0</property>
+               </packing>
+             </child>
+             <child>
+-              <object class="GtkTable" id="table3">
++              <object class="GtkTable" id="grid3">
+                 <property name="visible">True</property>
++                <property name="can_focus">False</property>
+                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                <property name="n_rows">5</property>
+-                <property name="n_columns">3</property>
+-                <property name="column_spacing">5</property>
+-                <property name="row_spacing">5</property>
++                <property name="row_spacing">6</property>
++                <property name="column_spacing">6</property>
+                 <child>
+-                  <object class="GtkLabel" id="label12">
++                  <object class="GtkLabel" id="label19">
+                     <property name="visible">True</property>
+-                    <property name="label">   </property>
++                    <property name="can_focus">False</property>
++                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                    <property name="xalign">0</property>
++                    <property name="label" translatable="yes">Host:</property>
++                    <property name="use_underline">True</property>
++                    <property name="mnemonic_widget">password_entry</property>
+                   </object>
++                  <packing>
++                    <property name="left_attach">0</property>
++                    <property name="right_attach">1</property>
++                    <property name="top_attach">0</property>
++                    <property name="bottom_attach">1</property>
++                  </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkEntry" id="username_entry">
++                  <object class="GtkLabel" id="host_label">
+                     <property name="visible">True</property>
+-                    <property name="can_focus">True</property>
++                    <property name="can_focus">False</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                    <property name="max_length">254</property>
+-                    <property name="activates_default">True</property>
++                    <property name="xalign">0</property>
++                    <attributes>
++                      <attribute name="style" value="italic"/>
++                    </attributes>
+                   </object>
+                   <packing>
+-                    <property name="left_attach">2</property>
+-                    <property name="right_attach">3</property>
+-                    <property name="top_attach">1</property>
+-                    <property name="bottom_attach">2</property>
++                    <property name="left_attach">1</property>
++                    <property name="right_attach">2</property>
++                    <property name="top_attach">0</property>
++                    <property name="bottom_attach">1</property>
+                   </packing>
+                 </child>
+                 <child>
+                   <object class="GtkLabel" id="username_label">
+                     <property name="visible">True</property>
++                    <property name="can_focus">False</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                     <property name="xalign">0</property>
+                     <property name="label" translatable="yes">_Username:</property>
+@@ -343,102 +408,115 @@
+                     <property name="mnemonic_widget">username_entry</property>
+                   </object>
+                   <packing>
+-                    <property name="left_attach">1</property>
+-                    <property name="right_attach">2</property>
++                    <property name="left_attach">0</property>
++                    <property name="right_attach">1</property>
+                     <property name="top_attach">1</property>
+                     <property name="bottom_attach">2</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkCheckButton" id="save_credential_check">
+-                    <property name="label" translatable="yes">_Remember this credential</property>
++                  <object class="GtkLabel" id="password_label">
+                     <property name="visible">True</property>
+-                    <property name="can_focus">True</property>
+-                    <property name="receives_default">False</property>
++                    <property name="can_focus">False</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                    <property name="xalign">0</property>
++                    <property name="label" translatable="yes">_Password:</property>
+                     <property name="use_underline">True</property>
+-                    <property name="draw_indicator">True</property>
++                    <property name="mnemonic_widget">password_entry</property>
+                   </object>
+                   <packing>
+-                    <property name="left_attach">2</property>
+-                    <property name="right_attach">3</property>
+-                    <property name="top_attach">4</property>
+-                    <property name="bottom_attach">5</property>
++                    <property name="left_attach">0</property>
++                    <property name="right_attach">1</property>
++                    <property name="top_attach">2</property>
++                    <property name="bottom_attach">3</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkLabel" id="host_label">
++                  <object class="GtkLabel" id="domain_label">
+                     <property name="visible">True</property>
++                    <property name="can_focus">False</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                     <property name="xalign">0</property>
+-                    <attributes>
+-                      <attribute name="style" value="italic"/>
+-                    </attributes>
++                    <property name="label" translatable="yes">_Domain:</property>
++                    <property name="use_underline">True</property>
++                    <property name="mnemonic_widget">domain_entry</property>
+                   </object>
+                   <packing>
+-                    <property name="left_attach">2</property>
+-                    <property name="right_attach">3</property>
++                    <property name="left_attach">0</property>
++                    <property name="right_attach">1</property>
++                    <property name="top_attach">3</property>
++                    <property name="bottom_attach">4</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkEntry" id="password_entry">
++                  <object class="GtkCheckButton" id="save_credential_check">
++                    <property name="label" translatable="yes">_Remember this credential</property>
+                     <property name="visible">True</property>
+                     <property name="can_focus">True</property>
++                    <property name="receives_default">False</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                    <property name="max_length">8</property>
+-                    <property name="visibility">False</property>
+-                    <property name="activates_default">True</property>
++                    <property name="has_tooltip">True</property>
++                    <property name="tooltip_markup" translatable="yes">Store the login credential in GNOME Keyring</property>
++                    <property name="tooltip_text" translatable="yes">Store the login credential in GNOME Keyring</property>
++                    <property name="use_action_appearance">False</property>
++                    <property name="use_underline">True</property>
++                    <property name="xalign">0</property>
++                    <property name="draw_indicator">True</property>
+                   </object>
+                   <packing>
+-                    <property name="left_attach">2</property>
+-                    <property name="right_attach">3</property>
+-                    <property name="top_attach">2</property>
+-                    <property name="bottom_attach">3</property>
++                    <property name="left_attach">1</property>
++                    <property name="right_attach">2</property>
++                    <property name="top_attach">4</property>
++                    <property name="bottom_attach">5</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkLabel" id="password_label">
++                  <object class="GtkEntry" id="username_entry">
+                     <property name="visible">True</property>
++                    <property name="can_focus">True</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                    <property name="xalign">0</property>
+-                    <property name="label" translatable="yes">_Password:</property>
+-                    <property name="use_underline">True</property>
+-                    <property name="mnemonic_widget">password_entry</property>
++                    <property name="max_length">254</property>
++                    <property name="invisible_char">●</property>
++                    <property name="activates_default">True</property>
++                    <property name="invisible_char_set">True</property>
+                   </object>
+                   <packing>
+                     <property name="left_attach">1</property>
+                     <property name="right_attach">2</property>
+-                    <property name="top_attach">2</property>
+-                    <property name="bottom_attach">3</property>
++                    <property name="top_attach">1</property>
++                    <property name="bottom_attach">2</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkLabel" id="label19">
++                  <object class="GtkEntry" id="password_entry">
+                     <property name="visible">True</property>
++                    <property name="can_focus">True</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                    <property name="xalign">0</property>
+-                    <property name="label" translatable="yes">Host:</property>
+-                    <property name="use_underline">True</property>
+-                    <property name="mnemonic_widget">password_entry</property>
++                    <property name="visibility">False</property>
++                    <property name="invisible_char">●</property>
++                    <property name="activates_default">True</property>
++                    <property name="invisible_char_set">True</property>
+                   </object>
+                   <packing>
+                     <property name="left_attach">1</property>
+                     <property name="right_attach">2</property>
++                    <property name="top_attach">2</property>
++                    <property name="bottom_attach">3</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkLabel" id="label1">
++                  <object class="GtkEntry" id="domain_entry">
+                     <property name="visible">True</property>
+-                    <property name="xalign">0</property>
+-                    <property name="label" translatable="yes">All fields above are mandatory</property>
+-                    <attributes>
+-                      <attribute name="style" value="italic"/>
+-                      <attribute name="scale" value="0.850000"/>
+-                    </attributes>
++                    <property name="can_focus">True</property>
++                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                    <property name="max_length">254</property>
++                    <property name="invisible_char">●</property>
++                    <property name="activates_default">True</property>
++                    <property name="invisible_char_set">True</property>
+                   </object>
+                   <packing>
+                     <property name="left_attach">1</property>
+-                    <property name="right_attach">3</property>
++                    <property name="right_attach">2</property>
+                     <property name="top_attach">3</property>
+                     <property name="bottom_attach">4</property>
+                   </packing>
+@@ -446,79 +524,156 @@
+                 <child>
+                   <placeholder/>
+                 </child>
+-                <child>
+-                  <placeholder/>
+-                </child>
+-                <child>
+-                  <placeholder/>
+-                </child>
+-                <child>
+-                  <placeholder/>
+-                </child>
+-                <child>
+-                  <placeholder/>
+-                </child>
+               </object>
+               <packing>
++                <property name="expand">False</property>
++                <property name="fill">True</property>
+                 <property name="position">1</property>
+               </packing>
+             </child>
+           </object>
+           <packing>
++            <property name="expand">False</property>
++            <property name="fill">True</property>
+             <property name="position">1</property>
+           </packing>
+         </child>
++      </object>
++    </child>
++    <action-widgets>
++      <action-widget response="-6">button3</action-widget>
++      <action-widget response="-5">ok_button</action-widget>
++    </action-widgets>
++  </object>
++  <object class="GtkMessageDialog" id="certificate_dialog">
++    <property name="can_focus">False</property>
++    <property name="resizable">False</property>
++    <property name="modal">True</property>
++    <property name="destroy_with_parent">True</property>
++    <property name="type_hint">dialog</property>
++    <property name="message_type">question</property>
++    <property name="text" translatable="yes">Certificate Verification</property>
++    <property name="secondary_text" translatable="yes">The below certificate could not be verified.
++Do you trust the certificate?</property>
++    <child internal-child="vbox">
++      <object class="GtkBox" id="messagedialog-vbox">
++        <property name="can_focus">False</property>
++        <property name="orientation">vertical</property>
++        <property name="spacing">10</property>
+         <child internal-child="action_area">
+-          <object class="GtkHButtonBox" id="dialog-action_area2">
+-            <property name="visible">True</property>
+-            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++          <object class="GtkButtonBox" id="messagedialog-action_area">
++            <property name="can_focus">False</property>
+             <property name="layout_style">end</property>
++          </object>
++          <packing>
++            <property name="expand">False</property>
++            <property name="fill">True</property>
++            <property name="pack_type">end</property>
++            <property name="position">0</property>
++          </packing>
++        </child>
++        <child>
++          <object class="GtkTable" id="grid6">
++            <property name="visible">True</property>
++            <property name="can_focus">False</property>
++            <property name="row_spacing">15</property>
++            <property name="column_spacing">10</property>
+             <child>
+-              <object class="GtkButton" id="button3">
+-                <property name="label">gtk-cancel</property>
++              <object class="GtkLabel" id="label29">
+                 <property name="visible">True</property>
+-                <property name="can_focus">True</property>
+-                <property name="receives_default">True</property>
+-                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                <property name="use_stock">True</property>
++                <property name="can_focus">False</property>
++                <property name="xalign">0</property>
++                <property name="xpad">12</property>
++                <property name="label" translatable="yes" comments="Subject of the certificate.">Subject:</property>
+               </object>
+               <packing>
+-                <property name="expand">False</property>
+-                <property name="fill">False</property>
+-                <property name="position">0</property>
++                <property name="left_attach">0</property>
++                <property name="right_attach">1</property>
++                <property name="top_attach">0</property>
++                <property name="bottom_attach">1</property>
+               </packing>
+             </child>
+             <child>
+-              <object class="GtkButton" id="ok_button">
+-                <property name="label" translatable="yes" comments="This is a button label, in the authentication dialog">_Authenticate</property>
++              <object class="GtkLabel" id="label30">
+                 <property name="visible">True</property>
+-                <property name="sensitive">False</property>
+-                <property name="can_focus">True</property>
+-                <property name="can_default">True</property>
+-                <property name="has_default">True</property>
+-                <property name="receives_default">True</property>
+-                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                <property name="use_underline">True</property>
++                <property name="can_focus">False</property>
++                <property name="xalign">0</property>
++                <property name="xpad">12</property>
++                <property name="label" translatable="yes" comments="Issuer of the certificate.">Issuer:</property>
+               </object>
+               <packing>
+-                <property name="expand">False</property>
+-                <property name="fill">False</property>
+-                <property name="position">1</property>
++                <property name="left_attach">0</property>
++                <property name="right_attach">1</property>
++                <property name="top_attach">1</property>
++                <property name="bottom_attach">2</property>
++              </packing>
++            </child>
++            <child>
++              <object class="GtkLabel" id="label31">
++                <property name="visible">True</property>
++                <property name="can_focus">False</property>
++                <property name="xalign">0</property>
++                <property name="xpad">12</property>
++                <property name="label" translatable="yes" comments="Fingerprint of the certificate.">Fingerprint:</property>
++              </object>
++              <packing>
++                <property name="left_attach">0</property>
++                <property name="right_attach">1</property>
++                <property name="top_attach">2</property>
++                <property name="bottom_attach">3</property>
++              </packing>
++            </child>
++            <child>
++              <object class="GtkLabel" id="certificate_subject">
++                <property name="visible">True</property>
++                <property name="can_focus">False</property>
++                <property name="xalign">0</property>
++                <property name="label">subject</property>
++              </object>
++              <packing>
++                <property name="left_attach">1</property>
++                <property name="right_attach">2</property>
++                <property name="top_attach">0</property>
++                <property name="bottom_attach">1</property>
++              </packing>
++            </child>
++            <child>
++              <object class="GtkLabel" id="certificate_issuer">
++                <property name="visible">True</property>
++                <property name="can_focus">False</property>
++                <property name="xalign">0</property>
++                <property name="label">issuer</property>
++              </object>
++              <packing>
++                <property name="left_attach">1</property>
++                <property name="right_attach">2</property>
++                <property name="top_attach">1</property>
++                <property name="bottom_attach">2</property>
++              </packing>
++            </child>
++            <child>
++              <object class="GtkLabel" id="certificate_fingerprint">
++                <property name="visible">True</property>
++                <property name="can_focus">False</property>
++                <property name="xalign">0</property>
++                <property name="label">00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00</property>
++              </object>
++              <packing>
++                <property name="left_attach">1</property>
++                <property name="right_attach">2</property>
++                <property name="top_attach">2</property>
++                <property name="bottom_attach">3</property>
+               </packing>
+             </child>
+           </object>
+           <packing>
+             <property name="expand">False</property>
+-            <property name="pack_type">end</property>
+-            <property name="position">0</property>
++            <property name="fill">True</property>
++            <property name="position">2</property>
+           </packing>
+         </child>
+       </object>
+     </child>
+-    <action-widgets>
+-      <action-widget response="-6">button3</action-widget>
+-      <action-widget response="-5">ok_button</action-widget>
+-    </action-widgets>
+   </object>
+   <object class="GtkDialog" id="bookmarks_add_edit_conn_dialog">
+     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+--- a/plugins/Makefile.am
++++ b/plugins/Makefile.am
+@@ -1,6 +1,7 @@
+ DIST_SUBDIRS =	\
+   vnc		\
+-  ssh
++  ssh		\
++  rdp
+ 
+ SUBDIRS = 		\
+   vnc
+@@ -9,4 +10,6 @@ if SSH
+ SUBDIRS += ssh
+ endif
+ 
++SUBDIRS += rdp
++
+ -include $(top_srcdir)/git.mk
+--- /dev/null
++++ b/plugins/rdp/Makefile.am
+@@ -0,0 +1,31 @@
++# rdp plugin
++plugindir = $(VINAGRE_PLUGINS_LIBS_DIR)
++
++INCLUDES = \
++	-I$(top_srcdir) 				\
++	$(VINAGRE_CFLAGS) 					\
++	$(RDP_CFLAGS) 					\
++	$(WARN_CFLAGS)					\
++	$(DISABLE_DEPRECATED_CFLAGS)	
++
++plugin_LTLIBRARIES = librdp.la
++
++librdp_la_SOURCES = 						\
++	vinagre-rdp-plugin.h vinagre-rdp-plugin.c		\
++	vinagre-rdp-connection.h vinagre-rdp-connection.c	\
++	vinagre-rdp-tab.h vinagre-rdp-tab.c
++
++librdp_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
++librdp_la_LIBADD  = $(RDP_LIBS) $(VINAGRE_LIBS)
++
++plugin_in_files = rdp.vinagre-plugin.desktop.in
++
++rdp.vinagre-plugin: rdp.vinagre-plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
++
++plugin_DATA = $(plugin_in_files:.vinagre-plugin.desktop.in=.vinagre-plugin)
++
++EXTRA_DIST = $(plugin_in_files)
++CLEANFILES = $(plugin_DATA)
++DISTCLEANFILES = $(plugin_DATA)
++
++-include $(top_srcdir)/git.mk
+--- /dev/null
++++ b/plugins/rdp/rdp.vinagre-plugin.desktop.in
+@@ -0,0 +1,10 @@
++[Vinagre Plugin]
++Module=rdp
++IAge=1
++_Name=RDP
++_Description=RDP support
++Authors=Marek Kasik
++Copyright=Copyright © 2015 Marek Kasik
++Version=1.0
++Engine=1
++Icon=utilities-terminal
+--- /dev/null
++++ b/plugins/rdp/vinagre-rdp-connection.c
+@@ -0,0 +1,137 @@
++/*
++ * vinagre-rdp-connection.c
++ * Child class of abstract VinagreConnection, specific to RDP protocol
++ * This file is part of vinagre
++ *
++ * Copyright (C) 2010 - Jonh Wendell <wendell@bani.com.br>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program. If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include <glib/gi18n.h>
++#include "vinagre-rdp-connection.h"
++
++struct _VinagreRdpConnectionPrivate
++{
++  gint dummy;
++};
++
++#define VINAGRE_RDP_CONNECTION_PRIVATE(o)  (G_TYPE_INSTANCE_GET_PRIVATE ((o), VINAGRE_TYPE_RDP_CONNECTION, VinagreRdpConnectionPrivate))
++G_DEFINE_TYPE (VinagreRdpConnection, vinagre_rdp_connection, VINAGRE_TYPE_CONNECTION);
++
++static void
++vinagre_rdp_connection_init (VinagreRdpConnection *conn)
++{
++  conn->priv = G_TYPE_INSTANCE_GET_PRIVATE (conn, VINAGRE_TYPE_RDP_CONNECTION, VinagreRdpConnectionPrivate);
++}
++
++static void
++vinagre_rdp_connection_constructed (GObject *object)
++{
++  vinagre_connection_set_protocol (VINAGRE_CONNECTION (object), "rdp");
++}
++
++static void
++rdp_fill_writer (VinagreConnection *conn, xmlTextWriter *writer)
++{
++  VINAGRE_CONNECTION_CLASS (vinagre_rdp_connection_parent_class)->impl_fill_writer (conn, writer);
++}
++
++static void
++rdp_parse_item (VinagreConnection *conn, xmlNode *root)
++{
++  VINAGRE_CONNECTION_CLASS (vinagre_rdp_connection_parent_class)->impl_parse_item (conn, root);
++}
++
++static gchar *
++rdp_get_best_name (VinagreConnection *conn)
++{
++  gchar *name;
++
++  name = vinagre_connection_get_name (conn);
++  if (name != NULL && name[0] != '\0')
++    return g_strdup (name);
++
++  name = vinagre_connection_get_string_rep (conn, FALSE);
++  if (name != NULL && name[0] != '\0')
++    return g_strdup (name);
++
++  return NULL;
++}
++
++static void
++rdp_parse_options_widget (VinagreConnection *conn, GtkWidget *widget)
++{
++  GtkWidget *u_entry, *spin_button;
++  guint      width, height;
++
++  u_entry = g_object_get_data (G_OBJECT (widget), "username_entry");
++  if (!u_entry)
++    {
++      g_warning ("Wrong widget passed to rdp_parse_options_widget()");
++      return;
++    }
++
++  g_object_set (conn,
++		"username", gtk_entry_get_text (GTK_ENTRY (u_entry)),
++		NULL);
++
++
++  spin_button = g_object_get_data (G_OBJECT (widget), "width_spin_button");
++  if (!spin_button)
++    {
++      g_warning ("Wrong widget passed to rdp_parse_options_widget()");
++      return;
++    }
++
++  width = (guint) gtk_spin_button_get_value (GTK_SPIN_BUTTON (spin_button));
++
++  vinagre_connection_set_width (conn, width);
++
++
++  spin_button = g_object_get_data (G_OBJECT (widget), "height_spin_button");
++  if (!spin_button)
++    {
++      g_warning ("Wrong widget passed to rdp_parse_options_widget()");
++      return;
++    }
++
++  height = (guint) gtk_spin_button_get_value (GTK_SPIN_BUTTON (spin_button));
++
++  vinagre_connection_set_height (conn, height);
++}
++
++static void
++vinagre_rdp_connection_class_init (VinagreRdpConnectionClass *klass)
++{
++  GObjectClass* object_class = G_OBJECT_CLASS (klass);
++  VinagreConnectionClass* parent_class = VINAGRE_CONNECTION_CLASS (klass);
++
++  g_type_class_add_private (klass, sizeof (VinagreRdpConnectionPrivate));
++
++  object_class->constructed  = vinagre_rdp_connection_constructed;
++
++  parent_class->impl_fill_writer = rdp_fill_writer;
++  parent_class->impl_parse_item  = rdp_parse_item;
++  parent_class->impl_get_best_name = rdp_get_best_name;
++  parent_class->impl_parse_options_widget = rdp_parse_options_widget;
++}
++
++VinagreConnection *
++vinagre_rdp_connection_new (void)
++{
++  return VINAGRE_CONNECTION (g_object_new (VINAGRE_TYPE_RDP_CONNECTION, NULL));
++}
++
++/* vim: set ts=8: */
+--- /dev/null
++++ b/plugins/rdp/vinagre-rdp-connection.h
+@@ -0,0 +1,59 @@
++/*
++ * vinagre-rdp-connection.h
++ * Child class of abstract VinagreConnection, specific to RDP protocol
++ * This file is part of vinagre
++ *
++ * Copyright (C) 2010 - Jonh Wendell <wendell@bani.com.br>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program. If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef __VINAGRE_RDP_CONNECTION_H__
++#define __VINAGRE_RDP_CONNECTION_H__
++
++#include <vinagre/vinagre-connection.h>
++
++G_BEGIN_DECLS
++
++#define VINAGRE_TYPE_RDP_CONNECTION             (vinagre_rdp_connection_get_type ())
++#define VINAGRE_RDP_CONNECTION(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), VINAGRE_TYPE_RDP_CONNECTION, VinagreRdpConnection))
++#define VINAGRE_RDP_CONNECTION_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), VINAGRE_TYPE_RDP_CONNECTION, VinagreRdpConnectionClass))
++#define VINAGRE_IS_RDP_CONNECTION(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VINAGRE_TYPE_RDP_CONNECTION))
++#define VINAGRE_IS_RDP_CONNECTION_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), VINAGRE_TYPE_RDP_CONNECTION))
++#define VINAGRE_RDP_CONNECTION_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), VINAGRE_TYPE_RDP_CONNECTION, VinagreRdpConnectionClass))
++
++typedef struct _VinagreRdpConnectionClass   VinagreRdpConnectionClass;
++typedef struct _VinagreRdpConnection        VinagreRdpConnection;
++typedef struct _VinagreRdpConnectionPrivate VinagreRdpConnectionPrivate;
++
++struct _VinagreRdpConnectionClass
++{
++  VinagreConnectionClass parent_class;
++};
++
++struct _VinagreRdpConnection
++{
++  VinagreConnection parent_instance;
++  VinagreRdpConnectionPrivate *priv;
++};
++
++
++GType vinagre_rdp_connection_get_type (void) G_GNUC_CONST;
++
++VinagreConnection*  vinagre_rdp_connection_new (void);
++
++G_END_DECLS
++
++#endif /* __VINAGRE_RDP_CONNECTION_H__  */
++/* vim: set ts=8: */
+--- /dev/null
++++ b/plugins/rdp/vinagre-rdp-plugin.c
+@@ -0,0 +1,249 @@
++/*
++ * vinagre-rdp-plugin.c
++ * This file is part of vinagre
++ *
++ * Copyright (C) 2010 Jonh Wendell <wendell@bani.com.br>
++ * 
++ * vinagre-rdp-plugin.c is free software: you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License as published by the
++ * Free Software Foundation, either version 2 of the License, or
++ * (at your option) any later version.
++ * 
++ * vinagre-rdp-plugin.c is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++ * See the GNU General Public License for more details.
++ * 
++ * You should have received a copy of the GNU General Public License along
++ * with this program.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifdef HAVE_CONFIG_H
++#include <config.h>
++#endif
++
++#include <glib/gi18n-lib.h>
++#include <gmodule.h>
++
++#include <vinagre/vinagre-debug.h>
++
++#include "vinagre-rdp-plugin.h"
++#include "vinagre-rdp-connection.h"
++#include "vinagre-rdp-tab.h"
++
++#define DEFAULT_WIDTH   800
++#define DEFAULT_HEIGHT  600
++#define MIN_SIZE          1
++#define MAX_SIZE       8192
++
++#define VINAGRE_RDP_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), VINAGRE_TYPE_RDP_PLUGIN, VinagreRdpPluginPrivate))
++  
++VINAGRE_PLUGIN_REGISTER_TYPE(VinagreRdpPlugin, vinagre_rdp_plugin)
++
++static void
++impl_activate (VinagrePlugin *plugin,
++               VinagreWindow *window)
++{
++  vinagre_debug_message (DEBUG_PLUGINS, "VinagreRdpPlugin Activate");
++}
++
++static void
++impl_deactivate  (VinagrePlugin *plugin,
++                  VinagreWindow *window)
++{
++  vinagre_debug_message (DEBUG_PLUGINS, "VinagreRdpPlugin Deactivate");
++}
++
++static void
++impl_update_ui (VinagrePlugin *plugin,
++                VinagreWindow *window)
++{
++  vinagre_debug_message (DEBUG_PLUGINS, "VinagreRdpPlugin Update UI");
++}
++
++static const GOptionEntry vinagre_rdp_args[] =
++{
++  { NULL }
++};
++
++static GSList *
++impl_get_context_groups (VinagrePlugin *plugin)
++{
++  GOptionGroup *group;
++  GSList       *groups = NULL;
++
++  vinagre_debug_message (DEBUG_PLUGINS, "VinagreRdpPlugin Get Context Group");
++
++  group = g_option_group_new ("rdp",
++			      /* Translators: this is a command line option (run vinagre --help) */
++			      _("RDP Options:"),
++			      /* Translators: this is a command line option (run vinagre --help) */
++			      _("Show RDP Options"),
++			      NULL,
++			      NULL);
++  g_option_group_add_entries (group, vinagre_rdp_args);
++
++  groups = g_slist_append (groups, group);
++
++  return groups;
++}
++
++
++static const gchar *
++impl_get_protocol (VinagrePlugin *plugin)
++{
++  return "rdp";
++}
++
++static gchar **
++impl_get_public_description (VinagrePlugin *plugin)
++{
++  gchar **result = g_new (gchar *, 3);
++
++  result[0] = g_strdup (_("RDP"));
++  /* Translators: This is a description of the RDP protocol. It appears in the Connect dialog. */
++  result[1] = g_strdup (_("Access MS Windows remote desktops"));
++  result[2] = NULL;
++
++  return result;
++}
++
++static const gchar *
++impl_get_mdns_service (VinagrePlugin *plugin)
++{
++  return "_rdp._tcp";
++}
++
++static VinagreConnection *
++impl_new_connection (VinagrePlugin *plugin)
++{
++  return vinagre_rdp_connection_new ();
++}
++
++static GtkWidget *
++impl_new_tab (VinagrePlugin   *plugin,
++	      VinagreConnection *conn,
++	      VinagreWindow     *window)
++{
++  return vinagre_rdp_tab_new (conn, window);
++}
++
++static gint
++impl_get_default_port (VinagrePlugin *plugin)
++{
++  return 3389;
++}
++
++static void
++vinagre_rdp_plugin_init (VinagreRdpPlugin *plugin)
++{
++  vinagre_debug_message (DEBUG_PLUGINS, "VinagreRdpPlugin initializing");
++}
++
++static GtkWidget *
++impl_get_connect_widget (VinagrePlugin *plugin, VinagreConnection *conn)
++{
++  GtkWidget *label, *u_entry, *spin_button;
++  GtkTable  *table;
++  gchar     *str;
++
++  table = GTK_TABLE (gtk_table_new (2, 2, FALSE));
++  gtk_table_set_row_spacings (table, 6);
++
++  str = g_strdup_printf ("<b>%s</b>", _("RDP Options"));
++  label = gtk_label_new (str);
++  g_free (str);
++  gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
++  gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
++  gtk_table_attach_defaults (table, label, 0, 2, 0, 2);
++
++
++  label = gtk_label_new ("  ");
++  gtk_table_attach (table, label, 2, 3, 0, 1, GTK_SHRINK, GTK_SHRINK, 0, 0);
++
++  label = gtk_label_new ("  ");
++  gtk_table_attach (table, label, 2, 3, 1, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
++
++  label = gtk_label_new ("  ");
++  gtk_table_attach (table, label, 0, 1, 0, 1, GTK_SHRINK, GTK_SHRINK, 0, 0);
++
++
++  label = gtk_label_new_with_mnemonic (_("_Username:"));
++  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
++  gtk_table_attach_defaults (table, label, 1, 2, 2, 3);
++
++  u_entry = gtk_entry_new ();
++  /* Translators: This is the tooltip for the username field in a RDP connection */
++  gtk_widget_set_tooltip_text (u_entry, _("Optional. If blank, your username will be used. Also, it can be supplied in the Host field above, in the form username@hostname."));
++  g_object_set_data (G_OBJECT (table), "username_entry", u_entry);
++  gtk_table_attach_defaults (table, u_entry, 2, 3, 2, 3);
++  gtk_label_set_mnemonic_widget (GTK_LABEL (label), u_entry);
++  if (conn != NULL)
++    gtk_entry_set_text (GTK_ENTRY (u_entry), vinagre_connection_get_username (conn));
++  gtk_entry_set_activates_default (GTK_ENTRY (u_entry), TRUE);
++
++
++  /* Host width */
++  label = gtk_label_new_with_mnemonic (_("_Width:"));
++  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
++  gtk_table_attach_defaults (table, label, 1, 2, 3, 4);
++
++  spin_button = gtk_spin_button_new_with_range (MIN_SIZE, MAX_SIZE, 1);
++  /* Translators: This is the tooltip for the width field in a RDP connection */
++  gtk_widget_set_tooltip_text (spin_button, _("Set width of the remote desktop"));
++  gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), DEFAULT_WIDTH);
++  g_object_set_data (G_OBJECT (table), "width_spin_button", spin_button);
++  gtk_table_attach_defaults (table, spin_button, 2, 3, 3, 4);
++  gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
++  gtk_entry_set_activates_default (GTK_ENTRY (spin_button), TRUE);
++
++
++  /* Host height */
++  label = gtk_label_new_with_mnemonic (_("_Height:"));
++  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
++  gtk_table_attach_defaults (table, label, 1, 2, 4, 5);
++
++  spin_button = gtk_spin_button_new_with_range (MIN_SIZE, MAX_SIZE, 1);
++  /* Translators: This is the tooltip for the height field in a RDP connection */
++  gtk_widget_set_tooltip_text (spin_button, _("Set height of the remote desktop"));
++  gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), DEFAULT_HEIGHT);
++  g_object_set_data (G_OBJECT (table), "height_spin_button", spin_button);
++  gtk_table_attach_defaults (table, spin_button, 2, 3, 4, 5);
++  gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
++  gtk_entry_set_activates_default (GTK_ENTRY (spin_button), TRUE);
++
++
++  return GTK_WIDGET (table);
++}
++
++static void
++vinagre_rdp_plugin_finalize (GObject *object)
++{
++  vinagre_debug_message (DEBUG_PLUGINS, "VinagreRdpPlugin finalizing");
++
++  G_OBJECT_CLASS (vinagre_rdp_plugin_parent_class)->finalize (object);
++}
++
++static void
++vinagre_rdp_plugin_class_init (VinagreRdpPluginClass *klass)
++{
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++  VinagrePluginClass *plugin_class = VINAGRE_PLUGIN_CLASS (klass);
++
++  object_class->finalize   = vinagre_rdp_plugin_finalize;
++
++  plugin_class->activate   = impl_activate;
++  plugin_class->deactivate = impl_deactivate;
++  plugin_class->update_ui  = impl_update_ui;
++  plugin_class->get_protocol  = impl_get_protocol;
++  plugin_class->get_context_groups = impl_get_context_groups;
++  plugin_class->get_public_description  = impl_get_public_description;
++  plugin_class->new_connection = impl_new_connection;
++
++  plugin_class->get_mdns_service  = impl_get_mdns_service;
++  plugin_class->new_tab = impl_new_tab;
++  plugin_class->get_connect_widget = impl_get_connect_widget;
++  plugin_class->get_default_port = impl_get_default_port;
++}
++
++/* vim: set ts=8: */
+--- /dev/null
++++ b/plugins/rdp/vinagre-rdp-plugin.h
+@@ -0,0 +1,75 @@
++/*
++ * vinagre-rdp-plugin.h
++ * This file is part of vinagre
++ *
++ * Copyright (C) 2010 Jonh Wendell <wendell@bani.com.br>
++ * 
++ * vinagre-rdp-plugin.h is free software: you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License as published by the
++ * Free Software Foundation, either version 2 of the License, or
++ * (at your option) any later version.
++ * 
++ * vinagre-rdp-plugin.h is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++ * See the GNU General Public License for more details.
++ * 
++ * You should have received a copy of the GNU General Public License along
++ * with this program.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef __VINAGRE_RDP_PLUGIN_H__
++#define __VINAGRE_RDP_PLUGIN_H__
++
++#include <glib.h>
++#include <glib-object.h>
++#include <vinagre/vinagre-plugin.h>
++
++G_BEGIN_DECLS
++
++/*
++ * Type checking and casting macros
++ */
++#define VINAGRE_TYPE_RDP_PLUGIN                 (vinagre_rdp_plugin_get_type ())
++#define VINAGRE_RDP_PLUGIN(o)                   (G_TYPE_CHECK_INSTANCE_CAST ((o), VINAGRE_TYPE_RDP_PLUGIN, VinagreRdpPlugin))
++#define VINAGRE_RDP_PLUGIN_CLASS(k)             (G_TYPE_CHECK_CLASS_CAST((k), VINAGRE_TYPE_RDP_PLUGIN, VinagreRdpPluginClass))
++#define VINAGRE_IS_RDP_PLUGIN(o)                (G_TYPE_CHECK_INSTANCE_TYPE ((o), VINAGRE_TYPE_RDP_PLUGIN))
++#define VINAGRE_IS_RDP_PLUGIN_CLASS(k)          (G_TYPE_CHECK_CLASS_TYPE ((k), VINAGRE_TYPE_RDP_PLUGIN))
++#define VINAGRE_RDP_PLUGIN_GET_CLASS(o)         (G_TYPE_INSTANCE_GET_CLASS ((o), VINAGRE_TYPE_RDP_PLUGIN, VinagreRdpPluginClass))
++
++/* Private structure type */
++typedef struct _VinagreRdpPluginPrivate	VinagreRdpPluginPrivate;
++
++/*
++ * Main object structure
++ */
++typedef struct _VinagreRdpPlugin		VinagreRdpPlugin;
++
++struct _VinagreRdpPlugin
++{
++  VinagrePlugin parent_instance;
++};
++
++/*
++ * Class definition
++ */
++typedef struct _VinagreRdpPluginClass	VinagreRdpPluginClass;
++
++struct _VinagreRdpPluginClass
++{
++  VinagrePluginClass parent_class;
++};
++
++/*
++ * Public methods
++ */
++GType vinagre_rdp_plugin_get_type (void) G_GNUC_CONST;
++
++/* All the plugins must implement this function */
++G_MODULE_EXPORT GType register_vinagre_plugin (GTypeModule *module);
++
++G_END_DECLS
++
++#endif /* __VINAGRE_RDP_PLUGIN_H__ */
++
++/* vim: set ts=8: */
+--- /dev/null
++++ b/plugins/rdp/vinagre-rdp-tab.c
+@@ -0,0 +1,1030 @@
++/*
++ * vinagre-rdp-tab.c
++ * RDP Implementation for VinagreRdpTab widget
++ * This file is part of vinagre
++ *
++ * Copyright (C) 2010 - Jonh Wendell <wendell@bani.com.br>
++ * Copyright (C) 2014 - Marek Kasik <mkasik@redhat.com>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program. If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include <config.h>
++#include <errno.h>
++#include <glib/gi18n.h>
++#include <gdk/gdkkeysyms.h>
++#include <freerdp/api.h>
++#include <freerdp/types.h>
++#include <freerdp/freerdp.h>
++#include <freerdp/gdi/gdi.h>
++#if HAVE_FREERDP_1_1
++#include <freerdp/locale/keyboard.h>
++#else
++#include <freerdp/kbd/vkcodes.h>
++#include <gdk/gdkx.h>
++#endif
++
++#include <vinagre/vinagre-utils.h>
++
++#include "vinagre-rdp-tab.h"
++#include "vinagre-rdp-connection.h"
++
++#define VINAGRE_RDP_TAB_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), VINAGRE_TYPE_RDP_TAB, VinagreRdpTabPrivate))
++
++#define SELECT_TIMEOUT 50
++
++#if !HAVE_FREERDP_1_1
++typedef boolean BOOL;
++typedef uint8   UINT8;
++typedef uint16  UINT16;
++#endif
++
++struct _VinagreRdpTabPrivate
++{
++  freerdp         *freerdp_session;
++  GtkWidget       *display;
++  cairo_surface_t *surface;
++  GQueue          *events;
++
++  guint            update_id;
++  guint            button_press_handler_id;
++  guint            button_release_handler_id;
++  guint            key_press_handler_id;
++  guint            key_release_handler_id;
++  guint            motion_notify_handler_id;
++};
++
++G_DEFINE_TYPE (VinagreRdpTab, vinagre_rdp_tab, VINAGRE_TYPE_TAB)
++
++static void open_freerdp (VinagreRdpTab *rdp_tab);
++
++struct frdp_context
++{
++  rdpContext     context;
++  VinagreRdpTab *rdp_tab;
++};
++typedef struct frdp_context frdpContext;
++
++typedef enum
++{
++  FRDP_EVENT_TYPE_BUTTON = 0,
++  FRDP_EVENT_TYPE_KEY    = 1
++} frdpEventType;
++
++typedef struct _frdpEventButton frdpEventButton;
++typedef struct _frdpEventKey    frdpEventKey;
++typedef union  _frdpEvent       frdpEvent;
++
++struct _frdpEventKey
++{
++  frdpEventType type;
++  UINT16        code;
++  BOOL          extended;
++  UINT16        flags;
++};
++
++struct _frdpEventButton
++{
++  frdpEventType type;
++  UINT16        x;
++  UINT16        y;
++  UINT16        flags;
++};
++
++union _frdpEvent
++{
++  frdpEventType   type;
++  frdpEventKey    key;
++  frdpEventButton button;
++};
++
++static gchar *
++rdp_tab_get_tooltip (VinagreTab *tab)
++{
++  VinagreConnection *conn = vinagre_tab_get_conn (tab);
++
++  return  g_markup_printf_escaped (
++				  "<b>%s</b> %s\n"
++				  "<b>%s</b> %d",
++				  _("Host:"), vinagre_connection_get_host (conn),
++				  _("Port:"), vinagre_connection_get_port (conn));
++}
++
++static void
++free_frdpEvent (gpointer event,
++                G_GNUC_UNUSED gpointer user_data)
++{
++    g_free (event);
++}
++
++static void
++vinagre_rdp_tab_dispose (GObject *object)
++{
++  VinagreRdpTab        *rdp_tab = VINAGRE_RDP_TAB (object);
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (VINAGRE_TAB (rdp_tab)));
++
++  if (priv->freerdp_session)
++    {
++      gdi_free (priv->freerdp_session);
++      freerdp_disconnect (priv->freerdp_session);
++      freerdp_context_free (priv->freerdp_session);
++      freerdp_free (priv->freerdp_session);
++      priv->freerdp_session = NULL;
++    }
++
++  if (priv->events)
++    {
++      g_queue_foreach (priv->events, free_frdpEvent, NULL);
++      g_queue_free (priv->events);
++      priv->events = NULL;
++    }
++
++  if (priv->update_id > 0)
++    {
++      g_source_remove (rdp_tab->priv->update_id);
++      rdp_tab->priv->update_id = 0;
++    }
++
++  if (priv->motion_notify_handler_id > 0)
++    {
++      g_signal_handler_disconnect (priv->display, priv->motion_notify_handler_id);
++      priv->motion_notify_handler_id = 0;
++    }
++
++  if (priv->button_press_handler_id > 0)
++    {
++      g_signal_handler_disconnect (priv->display, priv->button_press_handler_id);
++      priv->button_press_handler_id = 0;
++    }
++
++  if (priv->button_release_handler_id > 0)
++    {
++      g_signal_handler_disconnect (priv->display, priv->button_release_handler_id);
++      priv->button_release_handler_id = 0;
++    }
++
++  if (priv->key_press_handler_id > 0)
++    {
++      g_signal_handler_disconnect (window, priv->key_press_handler_id);
++      priv->key_press_handler_id = 0;
++    }
++
++  if (priv->key_release_handler_id > 0)
++    {
++      g_signal_handler_disconnect (window, priv->key_release_handler_id);
++      priv->key_release_handler_id = 0;
++    }
++
++  G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->dispose (object);
++}
++
++static void
++vinagre_rdp_tab_constructed (GObject *object)
++{
++  VinagreRdpTab *rdp_tab = VINAGRE_RDP_TAB (object);
++
++  if (G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->constructed)
++    G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->constructed (object);
++
++  open_freerdp (rdp_tab);
++}
++
++static void
++vinagre_rdp_tab_class_init (VinagreRdpTabClass *klass)
++{
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++  VinagreTabClass* tab_class = VINAGRE_TAB_CLASS (klass);
++
++  object_class->constructed = vinagre_rdp_tab_constructed;
++  object_class->dispose = vinagre_rdp_tab_dispose;
++
++  tab_class->impl_get_tooltip = rdp_tab_get_tooltip;
++
++  g_type_class_add_private (object_class, sizeof (VinagreRdpTabPrivate));
++}
++
++static gboolean
++idle_close (VinagreTab *tab)
++{
++  vinagre_notebook_close_tab (vinagre_tab_get_notebook (tab), tab);
++
++  return FALSE;
++}
++
++
++static void
++frdp_process_events (freerdp *instance,
++                     GQueue  *events)
++{
++  frdpEvent *event;
++
++  while (!g_queue_is_empty (events))
++    {
++      event = g_queue_pop_head (events);
++      if (event != NULL)
++        {
++          switch (event->type)
++            {
++              case FRDP_EVENT_TYPE_KEY:
++                instance->input->KeyboardEvent (instance->input,
++                                                ((frdpEventKey *) event)->flags,
++                                                ((frdpEventKey *) event)->code);
++                break;
++              case FRDP_EVENT_TYPE_BUTTON:
++                instance->input->MouseEvent (instance->input,
++                                             ((frdpEventButton *) event)->flags,
++                                             ((frdpEventButton *) event)->x,
++                                             ((frdpEventButton *) event)->y);
++                break;
++              default:
++                break;
++            }
++
++          g_free (event);
++        }
++    }
++}
++
++static gboolean
++frdp_drawing_area_draw (GtkWidget      *area,
++                        GdkEventExpose *event,
++                        gpointer        user_data)
++{
++  VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  cairo_t              *cr;
++
++  cr = gdk_cairo_create (GDK_DRAWABLE (area->window));
++
++  if (priv->surface == NULL)
++    return FALSE;
++
++  cairo_set_source_surface (cr, priv->surface, 0, 0);
++  cairo_paint (cr);
++
++  return TRUE;
++}
++
++static void
++frdp_begin_paint (rdpContext *context)
++{
++  rdpGdi *gdi = context->gdi;
++
++  gdi->primary->hdc->hwnd->invalid->null = 1;
++  gdi->primary->hdc->hwnd->ninvalid = 0;
++}
++
++static void
++frdp_end_paint (rdpContext *context)
++{
++  VinagreRdpTab        *rdp_tab = ((frdpContext *) context)->rdp_tab;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  rdpGdi               *gdi = context->gdi;
++  gint                  x, y, w, h;
++
++  if (gdi->primary->hdc->hwnd->invalid->null)
++    return;
++
++  x = gdi->primary->hdc->hwnd->invalid->x;
++  y = gdi->primary->hdc->hwnd->invalid->y;
++  w = gdi->primary->hdc->hwnd->invalid->w;
++  h = gdi->primary->hdc->hwnd->invalid->h;
++
++  gtk_widget_queue_draw_area (priv->display, x, y, w, h);
++}
++
++static BOOL
++frdp_pre_connect (freerdp *instance)
++{
++  rdpSettings *settings = instance->settings;
++
++#if HAVE_FREERDP_1_1
++  settings->OrderSupport[NEG_DSTBLT_INDEX] = TRUE;
++  settings->OrderSupport[NEG_PATBLT_INDEX] = TRUE;
++  settings->OrderSupport[NEG_SCRBLT_INDEX] = TRUE;
++  settings->OrderSupport[NEG_OPAQUE_RECT_INDEX] = TRUE;
++  settings->OrderSupport[NEG_DRAWNINEGRID_INDEX] = FALSE;
++  settings->OrderSupport[NEG_MULTIDSTBLT_INDEX] = FALSE;
++  settings->OrderSupport[NEG_MULTIPATBLT_INDEX] = FALSE;
++  settings->OrderSupport[NEG_MULTISCRBLT_INDEX] = FALSE;
++  settings->OrderSupport[NEG_MULTIOPAQUERECT_INDEX] = TRUE;
++  settings->OrderSupport[NEG_MULTI_DRAWNINEGRID_INDEX] = FALSE;
++  settings->OrderSupport[NEG_LINETO_INDEX] = TRUE;
++  settings->OrderSupport[NEG_POLYLINE_INDEX] = TRUE;
++  settings->OrderSupport[NEG_MEMBLT_INDEX] = TRUE;
++  settings->OrderSupport[NEG_MEM3BLT_INDEX] = FALSE;
++  settings->OrderSupport[NEG_MEMBLT_V2_INDEX] = TRUE;
++  settings->OrderSupport[NEG_MEM3BLT_V2_INDEX] = FALSE;
++  settings->OrderSupport[NEG_SAVEBITMAP_INDEX] = FALSE;
++  settings->OrderSupport[NEG_GLYPH_INDEX_INDEX] = TRUE;
++  settings->OrderSupport[NEG_FAST_INDEX_INDEX] = TRUE;
++  settings->OrderSupport[NEG_FAST_GLYPH_INDEX] = FALSE;
++  settings->OrderSupport[NEG_POLYGON_SC_INDEX] = FALSE;
++  settings->OrderSupport[NEG_POLYGON_CB_INDEX] = FALSE;
++  settings->OrderSupport[NEG_ELLIPSE_SC_INDEX] = FALSE;
++  settings->OrderSupport[NEG_ELLIPSE_CB_INDEX] = FALSE;
++#else
++  settings->order_support[NEG_DSTBLT_INDEX] = true;
++  settings->order_support[NEG_PATBLT_INDEX] = true;
++  settings->order_support[NEG_SCRBLT_INDEX] = true;
++  settings->order_support[NEG_OPAQUE_RECT_INDEX] = true;
++  settings->order_support[NEG_DRAWNINEGRID_INDEX] = false;
++  settings->order_support[NEG_MULTIDSTBLT_INDEX] = false;
++  settings->order_support[NEG_MULTIPATBLT_INDEX] = false;
++  settings->order_support[NEG_MULTISCRBLT_INDEX] = false;
++  settings->order_support[NEG_MULTIOPAQUERECT_INDEX] = true;
++  settings->order_support[NEG_MULTI_DRAWNINEGRID_INDEX] = false;
++  settings->order_support[NEG_LINETO_INDEX] = true;
++  settings->order_support[NEG_POLYLINE_INDEX] = true;
++  settings->order_support[NEG_MEMBLT_INDEX] = true;
++  settings->order_support[NEG_MEM3BLT_INDEX] = false;
++  settings->order_support[NEG_MEMBLT_V2_INDEX] = true;
++  settings->order_support[NEG_MEM3BLT_V2_INDEX] = false;
++  settings->order_support[NEG_SAVEBITMAP_INDEX] = false;
++  settings->order_support[NEG_GLYPH_INDEX_INDEX] = true;
++  settings->order_support[NEG_FAST_INDEX_INDEX] = true;
++  settings->order_support[NEG_FAST_GLYPH_INDEX] = false;
++  settings->order_support[NEG_POLYGON_SC_INDEX] = false;
++  settings->order_support[NEG_POLYGON_CB_INDEX] = false;
++  settings->order_support[NEG_ELLIPSE_SC_INDEX] = false;
++  settings->order_support[NEG_ELLIPSE_CB_INDEX] = false;
++#endif
++
++  return TRUE;
++}
++
++static BOOL
++frdp_post_connect (freerdp *instance)
++{
++  VinagreRdpTab        *rdp_tab = ((frdpContext *) instance->context)->rdp_tab;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  rdpGdi               *gdi;
++  int                   stride;
++
++  gdi_init (instance,
++#if defined(FREERDP_VERSION_MAJOR) && defined(FREERDP_VERSION_MINOR) && \
++    !(FREERDP_VERSION_MAJOR > 1 || (FREERDP_VERSION_MAJOR == 1 && \
++    FREERDP_VERSION_MINOR >= 2))
++                    CLRBUF_24BPP,
++#else
++                    CLRBUF_32BPP,
++#endif
++                    NULL);
++  gdi = instance->context->gdi;
++
++  instance->update->BeginPaint = frdp_begin_paint;
++  instance->update->EndPaint = frdp_end_paint;
++
++  stride = cairo_format_stride_for_width (CAIRO_FORMAT_RGB24, gdi->width);
++  rdp_tab->priv->surface = cairo_image_surface_create_for_data ((unsigned char*) gdi->primary_buffer,
++                                                                CAIRO_FORMAT_RGB24,
++                                                                gdi->width,
++                                                                gdi->height,
++                                                                stride);
++  gtk_widget_queue_draw_area (priv->display,
++                              0, 0,
++                              gdi->width, gdi->height);
++
++  vinagre_tab_save_credentials_in_keyring (VINAGRE_TAB (rdp_tab));
++  vinagre_tab_add_recent_used (VINAGRE_TAB (rdp_tab));
++  vinagre_tab_set_state (VINAGRE_TAB (rdp_tab), VINAGRE_TAB_STATE_CONNECTED);
++
++  return TRUE;
++}
++
++static gboolean
++update (gpointer user_data)
++{
++  VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  struct timeval        timeout;
++  fd_set                rfds_set;
++  fd_set                wfds_set;
++  void                 *rfds[32];
++  void                 *wfds[32];
++  int                   i;
++  int                   fds;
++  int                   max_fds;
++  int                   rcount = 0;
++  int                   wcount = 0;
++  int                   result;
++
++  memset (rfds, 0, sizeof (rfds));
++  memset (wfds, 0, sizeof (wfds));
++
++  if (!freerdp_get_fds (priv->freerdp_session,
++                        rfds, &rcount,
++                        wfds, &wcount))
++    {
++      g_warning ("Failed to get FreeRDP file descriptor\n");
++      return FALSE;
++    }
++
++  max_fds = 0;
++  FD_ZERO (&rfds_set);
++  FD_ZERO (&wfds_set);
++
++  for (i = 0; i < rcount; i++)
++    {
++      fds = (int)(long) (rfds[i]);
++
++      if (fds > max_fds)
++        max_fds = fds;
++
++      FD_SET (fds, &rfds_set);
++    }
++
++  if (max_fds == 0)
++    return FALSE;
++
++  timeout.tv_sec = 0;
++  timeout.tv_usec = SELECT_TIMEOUT;
++
++  result = select (max_fds + 1, &rfds_set, NULL, NULL, &timeout);
++  if (result == -1)
++    {
++      /* these are not errors */
++      if (!((errno == EAGAIN) ||
++            (errno == EWOULDBLOCK) ||
++            (errno == EINPROGRESS) ||
++            (errno == EINTR))) /* signal occurred */
++      {
++        g_warning ("update: select failed\n");
++        return FALSE;
++      }
++    }
++
++  if (!freerdp_check_fds (priv->freerdp_session))
++    {
++      g_warning ("Failed to check FreeRDP file descriptor\n");
++      return FALSE;
++    }
++
++  frdp_process_events (priv->freerdp_session, priv->events);
++
++  if (freerdp_shall_disconnect (priv->freerdp_session))
++    {
++      g_idle_add ((GSourceFunc) idle_close, rdp_tab);
++      return FALSE;
++    }
++
++  return TRUE;
++}
++
++static gboolean
++frdp_key_pressed (GtkWidget   *widget,
++                  GdkEventKey *event,
++                  gpointer     user_data)
++{
++  VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  frdpEventKey         *frdp_event;
++
++  frdp_event = g_new0 (frdpEventKey, 1);
++  frdp_event->type = FRDP_EVENT_TYPE_KEY;
++  frdp_event->flags = event->type == GDK_KEY_PRESS ? KBD_FLAGS_DOWN : KBD_FLAGS_RELEASE;
++
++#if HAVE_FREERDP_1_1
++  frdp_event->code = freerdp_keyboard_get_rdp_scancode_from_x11_keycode (event->hardware_keycode);
++#else
++  frdp_event->code = freerdp_kbd_get_scancode_by_keycode (event->hardware_keycode, &frdp_event->extended);
++#endif
++
++  g_queue_push_tail (priv->events, frdp_event);
++
++  return TRUE;
++}
++
++static gboolean
++frdp_button_pressed (GtkWidget      *widget,
++                     GdkEventButton *event,
++                     gpointer        user_data)
++{
++  VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  frdpEventButton      *frdp_event;
++
++  frdp_event = g_new0 (frdpEventButton, 1);
++
++  frdp_event->type = FRDP_EVENT_TYPE_BUTTON;
++
++  switch (event->button)
++    {
++      case 1:
++        frdp_event->flags = PTR_FLAGS_BUTTON1;
++        break;
++
++      case 2:
++        frdp_event->flags = PTR_FLAGS_BUTTON3;
++        break;
++
++      case 3:
++        frdp_event->flags = PTR_FLAGS_BUTTON2;
++        break;
++    }
++
++  if (frdp_event->flags != 0)
++    {
++      frdp_event->flags |= event->type == GDK_BUTTON_PRESS ? PTR_FLAGS_DOWN : 0;
++
++      frdp_event->x = event->x < 0.0 ? 0.0 : event->x;
++      frdp_event->y = event->y < 0.0 ? 0.0 : event->y;
++
++      g_queue_push_tail (priv->events, frdp_event);
++    }
++  else
++    {
++      g_free (frdp_event);
++    }
++
++  return TRUE;
++}
++
++static gboolean
++frdp_scroll (GtkWidget      *widget,
++             GdkEventScroll *event,
++             gpointer        user_data)
++{
++  VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  frdpEventButton      *frdp_event;
++
++  frdp_event = g_new0 (frdpEventButton, 1);
++  frdp_event->type = FRDP_EVENT_TYPE_BUTTON;
++
++  frdp_event->flags = 0;
++  /* http://msdn.microsoft.com/en-us/library/cc240586.aspx (section 2.2.8.1.1.3.1.1.3) */
++  switch (event->direction)
++    {
++      case GDK_SCROLL_UP:
++        frdp_event->flags = PTR_FLAGS_WHEEL;
++        frdp_event->flags |= 0x0078;
++        break;
++
++      case GDK_SCROLL_DOWN:
++        frdp_event->flags = PTR_FLAGS_WHEEL;
++        frdp_event->flags |= PTR_FLAGS_WHEEL_NEGATIVE;
++        frdp_event->flags |= 0x0088;
++        break;
++
++      default:
++        break;
++    }
++
++  if (frdp_event->flags != 0)
++    {
++      frdp_event->x = event->x < 0.0 ? 0.0 : event->x;
++      frdp_event->y = event->y < 0.0 ? 0.0 : event->y;
++
++      g_queue_push_tail (priv->events, frdp_event);
++    }
++  else
++    {
++      g_free (frdp_event);
++    }
++
++  return TRUE;
++}
++
++static gboolean
++frdp_mouse_moved (GtkWidget      *widget,
++                  GdkEventButton *event,
++                  gpointer        user_data)
++{
++  VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  frdpEventButton      *frdp_event;
++
++  frdp_event = g_new0 (frdpEventButton, 1);
++
++  frdp_event->type = FRDP_EVENT_TYPE_BUTTON;
++  frdp_event->flags = PTR_FLAGS_MOVE;
++  frdp_event->x = event->x < 0.0 ? 0.0 : event->x;
++  frdp_event->y = event->y < 0.0 ? 0.0 : event->y;
++
++  g_queue_push_tail (priv->events, frdp_event);
++
++  return TRUE;
++}
++
++static void
++entry_text_changed_cb (GtkEntry   *entry,
++                       GtkBuilder *builder)
++{
++  const gchar *text;
++  GtkWidget   *widget;
++  gsize        username_length;
++  gsize        password_length;
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "username_entry"));
++  text = gtk_entry_get_text (GTK_ENTRY (widget));
++  username_length = strlen (text);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "password_entry"));
++  text = gtk_entry_get_text (GTK_ENTRY (widget));
++  password_length = strlen (text);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "ok_button"));
++  gtk_widget_set_sensitive (widget, password_length > 0 && username_length > 0);
++}
++
++static gboolean
++frdp_authenticate (freerdp  *instance,
++                   char    **username,
++                   char    **password,
++                   char    **domain)
++{
++  VinagreTab        *tab = VINAGRE_TAB (((frdpContext *) instance->context)->rdp_tab);
++  VinagreConnection *conn = vinagre_tab_get_conn (tab);
++  const gchar       *user_name;
++  const gchar       *domain_name;
++  GtkBuilder        *builder;
++  GtkWidget         *dialog;
++  GtkWidget         *widget;
++  GtkWidget         *username_entry;
++  GtkWidget         *password_entry;
++  GtkWidget         *domain_entry;
++  gboolean           domain_label_visible;
++  gboolean           domain_entry_visible;
++  gchar             *keyring_username = NULL;
++  gchar             *keyring_password = NULL;
++  gint               response;
++
++  vinagre_tab_find_credentials_in_keyring (tab, &keyring_username, &keyring_password);
++  if (keyring_username != NULL &&
++      keyring_password != NULL)
++    {
++      *username = g_strdup (keyring_username);
++      *password = g_strdup (keyring_password);
++
++      return TRUE;
++    }
++  else
++    {
++      builder = vinagre_utils_get_builder ();
++
++      dialog = GTK_WIDGET (gtk_builder_get_object (builder, "auth_required_dialog"));
++      gtk_window_set_modal ((GtkWindow *) dialog, TRUE);
++      gtk_window_set_transient_for ((GtkWindow *) dialog, GTK_WINDOW (vinagre_tab_get_window (tab)));
++
++      widget = GTK_WIDGET (gtk_builder_get_object (builder, "host_label"));
++      gtk_label_set_text (GTK_LABEL (widget), vinagre_connection_get_host (conn));
++
++      username_entry = GTK_WIDGET (gtk_builder_get_object (builder, "username_entry"));
++      password_entry = GTK_WIDGET (gtk_builder_get_object (builder, "password_entry"));
++      domain_entry = GTK_WIDGET (gtk_builder_get_object (builder, "domain_entry"));
++
++      if (*username != NULL && *username[0] != '\0')
++        {
++          gtk_entry_set_text (GTK_ENTRY (username_entry), *username);
++          gtk_widget_grab_focus (password_entry);
++        }
++
++      g_signal_connect (username_entry, "changed", G_CALLBACK (entry_text_changed_cb), builder);
++      g_signal_connect (password_entry, "changed", G_CALLBACK (entry_text_changed_cb), builder);
++
++
++      widget = GTK_WIDGET (gtk_builder_get_object (builder, "domain_label"));
++      domain_label_visible = gtk_widget_get_visible (widget);
++      gtk_widget_set_visible (widget, TRUE);
++
++      domain_entry_visible = gtk_widget_get_visible (domain_entry);
++      gtk_widget_set_visible (domain_entry, TRUE);
++
++
++      response = gtk_dialog_run (GTK_DIALOG (dialog));
++      gtk_widget_hide (dialog);
++
++
++      widget = GTK_WIDGET (gtk_builder_get_object (builder, "domain_label"));
++      gtk_widget_set_visible (widget, domain_label_visible);
++
++      gtk_widget_set_visible (domain_entry, domain_entry_visible);
++
++      if (response == GTK_RESPONSE_OK)
++        {
++          domain_name = gtk_entry_get_text (GTK_ENTRY (domain_entry));
++          if (g_strcmp0 (*domain, domain_name) != 0)
++            *domain = g_strdup (domain_name);
++
++          user_name = gtk_entry_get_text (GTK_ENTRY (username_entry));
++          if (g_strcmp0 (*username, user_name) != 0)
++            {
++              *username = g_strdup (user_name);
++              vinagre_connection_set_username (conn, *username);
++            }
++
++          *password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
++          vinagre_connection_set_password (conn, *password);
++
++          vinagre_tab_set_save_credentials (tab,
++                                            gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "save_credential_check"))));
++
++          return TRUE;
++        }
++      else
++        {
++          return FALSE;
++        }
++    }
++}
++
++static BOOL
++frdp_certificate_verify (freerdp *instance,
++                         char    *subject,
++                         char    *issuer,
++                         char    *fingerprint)
++{
++  VinagreTab *tab = VINAGRE_TAB (((frdpContext *) instance->context)->rdp_tab);
++  GtkBuilder *builder;
++  GtkWidget  *dialog;
++  GtkWidget  *widget;
++  gint        response;
++
++  builder = vinagre_utils_get_builder ();
++
++  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_dialog"));
++  gtk_window_set_transient_for ((GtkWindow *) dialog, GTK_WINDOW (vinagre_tab_get_window (tab)));
++  gtk_dialog_add_buttons (GTK_DIALOG (dialog), _("_Cancel"), GTK_RESPONSE_NO,
++                          _("Connect"), GTK_RESPONSE_YES, NULL);
++  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_subject"));
++  gtk_label_set_text (GTK_LABEL (widget), subject);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_issuer"));
++  gtk_label_set_text (GTK_LABEL (widget), issuer);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_fingerprint"));
++  gtk_label_set_text (GTK_LABEL (widget), fingerprint);
++
++
++  response = gtk_dialog_run (GTK_DIALOG (dialog));
++  gtk_widget_hide (dialog);
++
++
++  return response == GTK_RESPONSE_YES;
++}
++
++
++#if HAVE_FREERDP_1_1
++static BOOL
++frdp_changed_certificate_verify (freerdp *instance,
++                                 char    *subject,
++                                 char    *issuer,
++                                 char    *new_fingerprint,
++                                 char    *old_fingerprint)
++{
++  VinagreTab *tab = VINAGRE_TAB (((frdpContext *) instance->context)->rdp_tab);
++  GtkBuilder *builder;
++  GtkWidget  *dialog;
++  GtkWidget  *widget;
++  GtkWidget  *label;
++  gint        response;
++
++  builder = vinagre_utils_get_builder ();
++
++  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_changed_dialog"));
++  gtk_window_set_transient_for ((GtkWindow *) dialog, GTK_WINDOW (vinagre_tab_get_window (tab)));
++  gtk_dialog_add_buttons (GTK_DIALOG (dialog), _("_Cancel"), GTK_RESPONSE_NO,
++                          _("Connect"), GTK_RESPONSE_YES, NULL);
++  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_changed_subject"));
++  gtk_label_set_text (GTK_LABEL (widget), subject);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_changed_issuer"));
++  gtk_label_set_text (GTK_LABEL (widget), issuer);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_changed_new_fingerprint"));
++  gtk_label_set_text (GTK_LABEL (widget), new_fingerprint);
++
++  widget = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_changed_old_fingerprint"));
++  label = GTK_WIDGET (gtk_builder_get_object (builder, "certificate_changed_old_fingerprint_label"));
++  if (old_fingerprint != NULL && old_fingerprint[0] != '\0')
++    {
++      gtk_label_set_text (GTK_LABEL (widget), old_fingerprint);
++      gtk_widget_show (widget);
++      gtk_widget_show (label);
++    }
++  else
++    {
++      gtk_widget_hide (widget);
++      gtk_widget_hide (label);
++    }
++
++
++  response = gtk_dialog_run (GTK_DIALOG (dialog));
++  gtk_widget_hide (dialog);
++
++
++  return response == GTK_RESPONSE_YES;
++}
++#endif
++
++static void
++open_freerdp (VinagreRdpTab *rdp_tab)
++{
++  VinagreRdpTabPrivate *priv = rdp_tab->priv;
++  VinagreTab           *tab = VINAGRE_TAB (rdp_tab);
++  VinagreConnection    *conn = vinagre_tab_get_conn (tab);
++  rdpSettings          *settings;
++  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
++  gboolean              success = TRUE;
++  gboolean              fullscreen;
++  gchar                *hostname, *username;
++  gint                  port, width, height;
++
++  g_object_get (conn,
++                "port", &port,
++                "host", &hostname,
++                "width", &width,
++                "height", &height,
++                "fullscreen", &fullscreen,
++                "username", &username,
++                NULL);
++
++  priv->events = g_queue_new ();
++
++  /* Setup FreeRDP session */
++  priv->freerdp_session = freerdp_new ();
++  priv->freerdp_session->PreConnect = frdp_pre_connect;
++  priv->freerdp_session->PostConnect = frdp_post_connect;
++  priv->freerdp_session->Authenticate = frdp_authenticate;
++  priv->freerdp_session->VerifyCertificate = frdp_certificate_verify;
++#if HAVE_FREERDP_1_1
++  priv->freerdp_session->VerifyChangedCertificate = frdp_changed_certificate_verify;
++#endif
++
++#if HAVE_FREERDP_1_1
++  priv->freerdp_session->ContextSize = sizeof (frdpContext);
++#else
++  priv->freerdp_session->context_size = sizeof (frdpContext);
++#endif
++
++  freerdp_context_new (priv->freerdp_session);
++  ((frdpContext *) priv->freerdp_session->context)->rdp_tab = rdp_tab;
++
++  /* Set FreeRDP settings */
++  settings = priv->freerdp_session->settings;
++
++  /* Security settings */
++#if HAVE_FREERDP_1_1
++  settings->RdpSecurity = TRUE;
++  settings->TlsSecurity = TRUE;
++  settings->NlaSecurity = TRUE;
++  settings->EncryptionMethods = ENCRYPTION_METHOD_40BIT | ENCRYPTION_METHOD_128BIT | ENCRYPTION_METHOD_FIPS;
++  settings->EncryptionLevel = ENCRYPTION_LEVEL_CLIENT_COMPATIBLE;
++#else
++  settings->rdp_security = true;
++  settings->tls_security = true;
++  settings->nla_security = true;
++  settings->encryption = true;
++  settings->encryption_method = ENCRYPTION_METHOD_40BIT | ENCRYPTION_METHOD_128BIT | ENCRYPTION_METHOD_FIPS;
++  settings->encryption_level = ENCRYPTION_LEVEL_CLIENT_COMPATIBLE;
++#endif
++
++#if HAVE_FREERDP_1_2
++#include <freerdp/version.h>
++#if (FREERDP_VERSION_MAJOR == 1 && FREERDP_VERSION_MINOR >= 2 && FREERDP_VERSION_REVISION >= 1)
++  settings->UseRdpSecurityLayer = FALSE;
++#else
++  settings->DisableEncryption = FALSE;
++#endif
++#else
++#if HAVE_FREERDP_1_1
++  settings->DisableEncryption = FALSE;
++#endif
++#endif
++
++  /* Set display size */
++#if HAVE_FREERDP_1_1
++  settings->DesktopWidth = width;
++  settings->DesktopHeight = height;
++#else
++  settings->width = width;
++  settings->height = height;
++#endif
++
++  /* Set hostname */
++#if HAVE_FREERDP_1_1
++  settings->WindowTitle = g_strdup (hostname);
++  settings->ServerHostname = g_strdup (hostname);
++  settings->ServerPort = port;
++#else
++  settings->window_title = g_strdup (hostname);
++  settings->hostname = g_strdup (hostname);
++  settings->port = port;
++#endif
++
++  /* Set username */
++  username = g_strstrip (username);
++  if (username != NULL && username[0] != '\0')
++    {
++#if HAVE_FREERDP_1_1
++      settings->Username = g_strdup (username);
++#else
++      settings->username = g_strdup (username);
++#endif
++    }
++
++  /* Set keyboard layout */
++#if HAVE_FREERDP_1_1
++  freerdp_keyboard_init (KBD_US);
++#else
++  freerdp_kbd_init (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), KBD_US);
++#endif
++
++  /* Setup display for FreeRDP session */
++  priv->display = gtk_drawing_area_new ();
++  if (priv->display)
++    {
++      gtk_widget_set_size_request (priv->display, width, height);
++
++      g_signal_connect (priv->display, "expose_event",
++                        G_CALLBACK (frdp_drawing_area_draw), rdp_tab);
++
++      gtk_widget_add_events (priv->display,
++                             GDK_POINTER_MOTION_MASK |
++                             GDK_BUTTON_PRESS_MASK |
++                             GDK_BUTTON_RELEASE_MASK |
++                             GDK_SCROLL_MASK);
++
++      priv->button_press_handler_id = g_signal_connect (priv->display, "button-press-event",
++                                                        G_CALLBACK (frdp_button_pressed),
++                                                        rdp_tab);
++
++      priv->button_release_handler_id = g_signal_connect (priv->display, "button-release-event",
++                                                          G_CALLBACK (frdp_button_pressed),
++                                                          rdp_tab);
++
++      priv->button_release_handler_id = g_signal_connect (priv->display, "scroll-event",
++                                                          G_CALLBACK (frdp_scroll),
++                                                          rdp_tab);
++
++      priv->motion_notify_handler_id = g_signal_connect (priv->display, "motion-notify-event",
++                                                         G_CALLBACK (frdp_mouse_moved),
++                                                         rdp_tab);
++
++      gtk_widget_show (priv->display);
++
++      vinagre_tab_add_view (VINAGRE_TAB (rdp_tab), priv->display);
++
++      if (fullscreen)
++        gtk_window_fullscreen (window);
++    }
++
++  priv->key_press_handler_id = g_signal_connect (window, "key-press-event",
++                                                 G_CALLBACK (frdp_key_pressed),
++                                                 rdp_tab);
++
++  priv->key_release_handler_id = g_signal_connect (window, "key-release-event",
++                                                   G_CALLBACK (frdp_key_pressed),
++                                                   rdp_tab);
++
++  /* Run FreeRDP session */
++  success = freerdp_connect (priv->freerdp_session);
++
++  if (!success)
++    {
++      gtk_window_unfullscreen (window);
++      vinagre_utils_show_error (NULL,
++                                _("Error connecting to host."),
++                                window);
++      g_idle_add ((GSourceFunc) idle_close, rdp_tab);
++    }
++  else
++    {
++      priv->update_id = g_idle_add ((GSourceFunc) update, rdp_tab);
++    }
++}
++
++static void
++vinagre_rdp_tab_init (VinagreRdpTab *rdp_tab)
++{
++  rdp_tab->priv = VINAGRE_RDP_TAB_GET_PRIVATE (rdp_tab);
++}
++
++GtkWidget *
++vinagre_rdp_tab_new (VinagreConnection *conn,
++		     VinagreWindow     *window)
++{
++  return GTK_WIDGET (g_object_new (VINAGRE_TYPE_RDP_TAB,
++				   "conn", conn,
++				   "window", window,
++				   NULL));
++}
++
++/* vim: set ts=8: */
+--- /dev/null
++++ b/plugins/rdp/vinagre-rdp-tab.h
+@@ -0,0 +1,61 @@
++/*
++ * vinagre-rdp-tab.h
++ * RDP Tab
++ * This file is part of vinagre
++ *
++ * Copyright (C) 2010 - Jonh Wendell <wendell@bani.com.br>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program. If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef __VINAGRE_RDP_TAB_H__
++#define __VINAGRE_RDP_TAB_H__
++
++#include <vinagre/vinagre-tab.h>
++
++G_BEGIN_DECLS
++
++#define VINAGRE_TYPE_RDP_TAB              (vinagre_rdp_tab_get_type())
++#define VINAGRE_RDP_TAB(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj), VINAGRE_TYPE_RDP_TAB, VinagreRdpTab))
++#define VINAGRE_RDP_TAB_CONST(obj)        (G_TYPE_CHECK_INSTANCE_CAST((obj), VINAGRE_TYPE_RDP_TAB, VinagreRdpTab const))
++#define VINAGRE_RDP_TAB_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass), VINAGRE_TYPE_RDP_TAB, VinagreRdpTabClass))
++#define VINAGRE_IS_RDP_TAB(obj)           (G_TYPE_CHECK_INSTANCE_TYPE((obj), VINAGRE_TYPE_RDP_TAB))
++#define VINAGRE_IS_RDP_TAB_CLASS(klass)...(G_TYPE_CHECK_CLASS_TYPE ((klass), VINAGRE_TYPE_RDP_TAB))
++#define VINAGRE_RDP_TAB_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS((obj), VINAGRE_TYPE_RDP_TAB, VinagreRdpTabClass))
++
++typedef struct _VinagreRdpTabPrivate VinagreRdpTabPrivate;
++typedef struct _VinagreRdpTab        VinagreRdpTab;
++typedef struct _VinagreRdpTabClass   VinagreRdpTabClass;
++
++
++struct _VinagreRdpTab 
++{
++  VinagreTab tab;
++  VinagreRdpTabPrivate *priv;
++};
++
++struct _VinagreRdpTabClass 
++{
++  VinagreTabClass parent_class;
++};
++
++GType		vinagre_rdp_tab_get_type		(void) G_GNUC_CONST;
++
++GtkWidget *	vinagre_rdp_tab_new 			(VinagreConnection *conn,
++							 VinagreWindow     *window);
++
++G_END_DECLS
++
++#endif  /* __VINAGRE_RDP_TAB_H__  */
++/* vim: set ts=8: */
+--- a/vinagre/vinagre-connection.c
++++ b/vinagre/vinagre-connection.c
+@@ -29,6 +29,11 @@
+ #include "vinagre-plugin.h"
+ #include "vinagre-plugins-engine.h"
+ 
++#define DEFAULT_WIDTH   800
++#define DEFAULT_HEIGHT  600
++#define MIN_SIZE          1
++#define MAX_SIZE       8192
++
+ struct _VinagreConnectionPrivate
+ {
+   gchar *protocol;
+@@ -38,6 +43,8 @@ struct _VinagreConnectionPrivate
+   gchar *password;
+   gchar *name;
+   gboolean fullscreen;
++  guint  width;
++  guint  height;
+ };
+ 
+ enum
+@@ -50,7 +57,9 @@ enum
+   PROP_PASSWORD,
+   PROP_NAME,
+   PROP_BEST_NAME,
+-  PROP_FULLSCREEN
++  PROP_FULLSCREEN,
++  PROP_WIDTH,
++  PROP_HEIGHT
+ };
+ 
+ #define VINAGRE_CONNECTION_PRIVATE(o)  (G_TYPE_INSTANCE_GET_PRIVATE ((o), VINAGRE_TYPE_CONNECTION, VinagreConnectionPrivate))
+@@ -68,6 +77,8 @@ vinagre_connection_init (VinagreConnection *conn)
+   conn->priv->username = NULL;
+   conn->priv->name = NULL;
+   conn->priv->fullscreen = FALSE;
++  conn->priv->width = DEFAULT_WIDTH;
++  conn->priv->height = DEFAULT_HEIGHT;
+ }
+ 
+ static void
+@@ -123,6 +134,14 @@ vinagre_connection_set_property (GObject *object, guint prop_id, const GValue *v
+ 	vinagre_connection_set_name (conn, g_value_get_string (value));
+ 	break;
+ 
++      case PROP_WIDTH:
++	vinagre_connection_set_width (conn, g_value_get_uint (value));
++	break;
++
++      case PROP_HEIGHT:
++	vinagre_connection_set_height (conn, g_value_get_uint (value));
++	break;
++
+       default:
+ 	G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+ 	break;
+@@ -173,6 +192,14 @@ vinagre_connection_get_property (GObject *object, guint prop_id, GValue *value,
+ 	g_value_set_string (value, vinagre_connection_get_best_name (conn));
+ 	break;
+ 
++      case PROP_WIDTH:
++	g_value_set_uint (value, conn->priv->width);
++	break;
++
++      case PROP_HEIGHT:
++	g_value_set_uint (value, conn->priv->height);
++	break;
++
+       default:
+ 	G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+ 	break;
+@@ -188,6 +215,8 @@ default_fill_writer (VinagreConnection *conn, xmlTextWriter *writer)
+   xmlTextWriterWriteElement (writer, "host", conn->priv->host);
+   xmlTextWriterWriteFormatElement (writer, "port", "%d", conn->priv->port);
+   xmlTextWriterWriteFormatElement (writer, "fullscreen", "%d", conn->priv->fullscreen);
++  xmlTextWriterWriteFormatElement (writer, BAD_CAST "width", "%d", conn->priv->width);
++  xmlTextWriterWriteFormatElement (writer, BAD_CAST "height", "%d", conn->priv->height);
+ }
+ 
+ static void
+@@ -208,6 +237,10 @@ default_parse_item (VinagreConnection *conn, xmlNode *root)
+ 	vinagre_connection_set_port (conn, atoi (s_value));
+       else if (!xmlStrcmp(curr->name, (const xmlChar *)"fullscreen"))
+ 	vinagre_connection_set_fullscreen (conn, vinagre_utils_parse_boolean (s_value));
++      else if (!xmlStrcmp(curr->name, BAD_CAST "width"))
++	vinagre_connection_set_width (conn, atoi ((const char *)s_value));
++      else if (!xmlStrcmp(curr->name, BAD_CAST "height"))
++	vinagre_connection_set_height (conn, atoi ((const char *)s_value));
+ 
+       xmlFree (s_value);
+     }
+@@ -344,6 +377,30 @@ vinagre_connection_class_init (VinagreConnectionClass *klass)
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_BLURB));
+ 
++  g_object_class_install_property (object_class,
++                                   PROP_WIDTH,
++                                   g_param_spec_uint ("width",
++                                                      "width",
++                                                      "width of screen",
++                                                       MIN_SIZE,
++                                                       MAX_SIZE,
++                                                       DEFAULT_WIDTH,
++                                                       G_PARAM_READWRITE |
++                                                       G_PARAM_CONSTRUCT |
++                                                       G_PARAM_STATIC_STRINGS));
++
++  g_object_class_install_property (object_class,
++                                   PROP_HEIGHT,
++                                   g_param_spec_uint ("height",
++                                                      "height",
++                                                      "height of screen",
++                                                       MIN_SIZE,
++                                                       MAX_SIZE,
++                                                       DEFAULT_HEIGHT,
++                                                       G_PARAM_READWRITE |
++                                                       G_PARAM_CONSTRUCT |
++                                                       G_PARAM_STATIC_STRINGS));
++
+ }
+ 
+ void
+@@ -463,6 +520,38 @@ vinagre_connection_get_name (VinagreConnection *conn)
+   return conn->priv->name;
+ }
+ 
++void
++vinagre_connection_set_width (VinagreConnection *conn,
++			      guint width)
++{
++  g_return_if_fail (VINAGRE_IS_CONNECTION (conn));
++
++  conn->priv->width = width;
++}
++guint
++vinagre_connection_get_width (VinagreConnection *conn)
++{
++  g_return_val_if_fail (VINAGRE_IS_CONNECTION (conn), 0);
++
++  return conn->priv->width;
++}
++
++void
++vinagre_connection_set_height (VinagreConnection *conn,
++			       guint height)
++{
++  g_return_if_fail (VINAGRE_IS_CONNECTION (conn));
++
++  conn->priv->height = height;
++}
++guint
++vinagre_connection_get_height (VinagreConnection *conn)
++{
++  g_return_val_if_fail (VINAGRE_IS_CONNECTION (conn), 0);
++
++  return conn->priv->height;
++}
++
+ /**
+  * vinagre_connection_split_string:
+  * @uri: The URI to be splitted.
+--- a/vinagre/vinagre-connection.h
++++ b/vinagre/vinagre-connection.h
+@@ -88,6 +88,14 @@ gboolean	    vinagre_connection_get_fullscreen	(VinagreConnection *conn);
+ void		    vinagre_connection_set_fullscreen	(VinagreConnection *conn,
+ 							 gboolean value);
+ 
++guint		    vinagre_connection_get_width	(VinagreConnection *conn);
++void		    vinagre_connection_set_width	(VinagreConnection *conn,
++							 guint width);
++
++guint		    vinagre_connection_get_height	(VinagreConnection *conn);
++void		    vinagre_connection_set_height	(VinagreConnection *conn,
++							 guint height);
++
+ VinagreConnection*  vinagre_connection_new_from_string	(const gchar *url, gchar **error_msg, gboolean use_bookmarks);
+ VinagreConnection*  vinagre_connection_new_from_file	(const gchar *uri, gchar **error_msg, gboolean use_bookmarks);
+ 

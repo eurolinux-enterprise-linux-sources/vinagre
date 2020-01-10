@@ -1,0 +1,96 @@
+--- vinagre-2.28.1/plugins/rdp/vinagre-rdp-tab.c
++++ vinagre-2.28.1/plugins/rdp/vinagre-rdp-tab.c
+@@ -178,7 +178,6 @@ vinagre_rdp_tab_dispose (GObject *object
+ {
+   VinagreRdpTab        *rdp_tab = VINAGRE_RDP_TAB (object);
+   VinagreRdpTabPrivate *priv = rdp_tab->priv;
+-  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (VINAGRE_TAB (rdp_tab)));
+ 
+   if (priv->connected_actions)
+     {
+@@ -228,13 +227,13 @@ vinagre_rdp_tab_dispose (GObject *object
+ 
+   if (priv->key_press_handler_id > 0)
+     {
+-      g_signal_handler_disconnect (window, priv->key_press_handler_id);
++      g_signal_handler_disconnect (GTK_WIDGET (object), priv->key_press_handler_id);
+       priv->key_press_handler_id = 0;
+     }
+ 
+   if (priv->key_release_handler_id > 0)
+     {
+-      g_signal_handler_disconnect (window, priv->key_release_handler_id);
++      g_signal_handler_disconnect (GTK_WIDGET (object), priv->key_release_handler_id);
+       priv->key_release_handler_id = 0;
+     }
+ 
+@@ -240,6 +240,15 @@ vinagre_rdp_tab_dispose (GObject *object
+   G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->dispose (object);
+ }
+ 
++static gboolean
++emit_delayed_signal (GObject *object)
++{
++  g_signal_emit_by_name (object, "tab-initialized");
++  gtk_widget_grab_focus (GTK_WIDGET (object));
++
++  return FALSE;
++}
++
+ static void
+ vinagre_rdp_tab_constructed (GObject *object)
+ {
+@@ -250,6 +259,9 @@ vinagre_rdp_tab_constructed (GObject *ob
+ 
+   setup_toolbar (rdp_tab);
+   open_freerdp (rdp_tab);
++  gtk_widget_show_all (GTK_WIDGET (rdp_tab));
++
++  g_idle_add ((GSourceFunc) emit_delayed_signal, object);
+ }
+ 
+ static void
+@@ -1220,11 +1219,11 @@ init_display (VinagreRdpTab *rdp_tab)
+       vinagre_rdp_tab_set_scaling (rdp_tab, scaling);
+     }
+ 
+-  priv->key_press_handler_id = g_signal_connect (window, "key-press-event",
++  priv->key_press_handler_id = g_signal_connect (GTK_WIDGET (tab), "key-press-event",
+                                                  G_CALLBACK (frdp_key_pressed),
+                                                  rdp_tab);
+ 
+-  priv->key_release_handler_id = g_signal_connect (window, "key-release-event",
++  priv->key_release_handler_id = g_signal_connect (GTK_WIDGET (tab), "key-release-event",
+                                                    G_CALLBACK (frdp_key_pressed),
+                                                    rdp_tab);
+ }
+@@ -1276,11 +1275,21 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+ }
+ 
+ static void
++tab_realized (GtkWidget     *widget,
++              gpointer       user_data)
++{
++  gtk_widget_grab_focus (widget);
++  g_signal_handlers_disconnect_by_func (widget, tab_realized, user_data);
++}
++
++static void
+ vinagre_rdp_tab_init (VinagreRdpTab *rdp_tab)
+ {
+   rdp_tab->priv = VINAGRE_RDP_TAB_GET_PRIVATE (rdp_tab);
+ 
+   rdp_tab->priv->connected_actions = create_connected_actions (rdp_tab);
++
++  g_signal_connect (rdp_tab, "realize", G_CALLBACK (tab_realized), NULL);
+ }
+ 
+ GtkWidget *
+@@ -1290,6 +1299,7 @@ vinagre_rdp_tab_new (VinagreConnection *
+   return GTK_WIDGET (g_object_new (VINAGRE_TYPE_RDP_TAB,
+ 				   "conn", conn,
+ 				   "window", window,
++				   "can-focus", TRUE,
+ 				   NULL));
+ }
+ 

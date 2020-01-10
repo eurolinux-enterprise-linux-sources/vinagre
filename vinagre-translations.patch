@@ -1,0 +1,5356 @@
+--- a/po/POTFILES.in
++++ b/po/POTFILES.in
+@@ -15,6 +15,10 @@ plugins/vnc/vinagre-vnc-connection.c
+ plugins/vnc/vinagre-vnc-plugin.c
+ plugins/vnc/vinagre-vnc-tab.c
+ plugins/vnc/vnc.vinagre-plugin.desktop.in
++plugins/rdp/vinagre-rdp-connection.c
++plugins/rdp/vinagre-rdp-plugin.c
++plugins/rdp/vinagre-rdp-tab.c
++plugins/rdp/rdp.vinagre-plugin.desktop.in
+ vinagre/GNOME_VinagreApplet.server.in.in
+ vinagre/vinagre-app.c
+ vinagre/vinagre-applet.c
+--- a/po/ar.po
++++ b/po/ar.po
+@@ -1075,3 +1075,102 @@ msgstr "افتح %s:%d"
+ #~ "effects and try again."
+ #~ msgstr ""
+ #~ "القياس لا يعمل جيدا في النوافذ المركبة. عطل التأثيرات المرئية وحاول مجددا."
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ال_نطاق:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "احفظ اعتمادات الولوج في حلقة مفاتيح جنوم"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "التحقّق من الشهادة"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "الموضوع:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "المُصدِر:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "البصمة:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "اتصل بسطح مكتب وندوز بعيد"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "خيارات RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "ال_عرض:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "اضبط عرض سطح المكتب البعيد"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "الار_تفاع:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "اضبط ارتفاع سطح المكتب البعيد"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "اختياري"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"تعذّر التحقق من هذه الشهادة.\n"
++"هل تثق بها؟"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"اختياري. إذا ترك خاليا فسيؤخذ اسم المستخدم الحالي. كما يمكن أيضا إعطاؤه في "
++"خانة المستضيف أعلاه، على الشكل username@hostname."
++
++
++msgid "Minimize"
++msgstr "صغّر"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "اتصل"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "أ_لغِ"
++
+--- a/po/as.po
++++ b/po/as.po
+@@ -1055,3 +1055,102 @@ msgstr "%s খোলক:%d"
+ #~ msgid "Press Ctrl+Alt to release the cursor"
+ #~ msgstr "কাৰ্সাৰৰ বাবে Ctrl+Alt ব্যৱহাৰ কৰক"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ডমেইন (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "লগিন তথ্য GNOME Keyring ত সংৰক্ষণ কৰক"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "প্ৰমাণপত্ৰ সত্যাপন"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "বিষয়:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "প্ৰেৰক:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "ফিংগাৰপ্ৰিন্ট:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows দূৰৱৰ্তী ডেস্কটপসমূহ অভিগম কৰক"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP বিকল্পসমূহ"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "প্ৰস্থ (_W):"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "Set width of the remote desktop"
++msgstr "দূৰৱৰ্তী ডেস্কটপৰ প্ৰস্থ সংহতি কৰক"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "উচ্চতা (_H):"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++msgid "Set height of the remote desktop"
++msgstr "দূৰৱৰ্তী ডেস্কটপৰ উচ্চতা সংহতি কৰক"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "বৈকল্পিক"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"তলত দিয়া প্ৰমাণপত্ৰক সত্যাপন কৰিব পৰা নগল।\n"
++"আপুনি প্ৰমাণপত্ৰক ভৰষা কৰে নে?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"বৈকল্পিক। যদি ৰিক্ত, আপোনাৰ ব্যৱহাৰকাৰীনাম ব্যৱহাৰ কৰা হব। লগতে, ইয়াক উপৰোক্ত "
++"হস্ট "
++"ক্ষেত্ৰত username@hostname বিন্যাসত প্ৰদান কৰা যাব।"
++
++msgid "Minimize"
++msgstr "সৰু কৰক"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "সংযোগ কৰক"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "বাতিল কৰক (_C)"
++
+--- a/po/ast.po
++++ b/po/ast.po
+@@ -1312,3 +1312,43 @@ msgstr "Abrir %s:%d"
+ #: ../src/vinagre-window.c:797
+ msgid "Press Ctrl+Alt to release the cursor"
+ msgstr "Calca Ctrl+Alt pa lliberar el cursor"
++
++
++#: ../data/vinagre.ui.h:18
++msgid "Store the login credential in GNOME Keyring"
++msgstr ""
++"Guardar les credenciales d'aniciu de sesión nel depósitu de claves de GNOME."
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:55
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:57
++msgid "Access MS Windows remote desktops"
++msgstr "Accedi a escritorios remotos de MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:96
++msgid "RDP Options"
++msgstr "Opciones RDP"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:299
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++#: ../plugins/ssh/vinagre-ssh-plugin.c:115
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional Si se dexa en blanco, va usase'l to nome d'usuariu. Tamién se pue "
++"proporcionar nel campu «Equipu» superior, de la forma usuariu@nome_d_equipu."
++
++
++
++#: ../data/vinagre.ui.h:6
++msgid "Connect"
++msgstr "Coneutar"
++
+--- a/po/be@latin.po
++++ b/po/be@latin.po
+@@ -844,3 +844,6 @@ msgstr "Naciśni Ctrl+Alt, kab vyzvalić kursor"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Naciśni Ctrl+Alt, kab zachapić kursor"
++
++
++
+--- a/po/bg.po
++++ b/po/bg.po
+@@ -1025,3 +1025,43 @@ msgstr "С_коро отваряни връзки"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Свързване към %s:%d"
++
++
++#: ../data/vinagre.ui.h:11
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Запазване на паролите в ключодържателя на GNOME."
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:55
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:57
++msgid "Access MS Windows remote desktops"
++msgstr "Достъп до отдалечени работни места с MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:96
++msgid "RDP Options"
++msgstr "Настройки на RDP"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:299
++msgid "Optional"
++msgstr "Незадължително"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++#: ../plugins/ssh/vinagre-ssh-plugin.c:115
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Незадължително. Ако е празно, ще бъде използвано вашето потребителско име. "
++"Можете да го впишете в полето „Машина“ по-горе във формат потребител@машина."
++
++
++
++
++#: ../data/vinagre.ui.h:22
++msgid "Connect"
++msgstr "Връзка"
++
+--- a/po/bn.po
++++ b/po/bn.po
+@@ -1003,3 +1003,15 @@ msgstr "সম্প্রতি ব্যবহৃত সংযোগ (_R)"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "%1$s খুলুন:%2$d"
++
++#. Translators: This is the tooltip for the username field in a SSH connection
++#: ../plugins/ssh/vinagre-ssh-plugin.c:149
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Machine field above, in the form username@hostname."
++msgstr ""
++"ঐচ্ছিক। যদি ফাঁকা থাকে, আপনার ব্যবহারকারী নাম ব্যবহার করা হবে। এটি উপরোক্ত "
++"মেশিন ক্ষেত্রে username@hostname, এই ভাবেও সরবরাহ করা যেতে পারে।"
++
++
++
+--- a/po/bn_IN.po
++++ b/po/bn_IN.po
+@@ -1026,3 +1026,100 @@ msgstr "সম্প্রতি ব্যবহৃত সংযোগ (_R)"
+ msgid "Open %s:%d"
+ msgstr "%s খুলুন:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ডোমেন (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "GNOME Keyring এ লগিন প্রমাণপত্র রাখুন"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "শংসাপত্র যাচাইকরণ"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "বিষয়:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "জারি করেছে:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "ফিংগারপ্রিন্ট:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows রিমোট ডেস্কটপ অ্যাক্সেস করুন"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP সংক্রান্ত বিকল্প"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "প্রস্থ (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "রিমোট ডেস্কটপের প্রস্থ সেট করুন"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "উচ্চতা (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "রিমোট ডেস্কটপের উচ্চতা সেট করুন"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "বৈকল্পিক"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"নিম্নলিখিত শংসাপত্র যাচাই করা যাবে না।\n"
++"শংসাপত্র কি অাপনার বিশ্বস্ত?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"বৈকল্পিক। খালি থাকলে, অাপনার ব্যবহারকারীর নাম ব্যবহার করা হবে। তাছাড়া, "
++"username@hostname রূপে এটি উপরের হোস্ট ফিল্ডে সরবরাহ করা যেতে পারে।"
++
++
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "সংযোগ করুন"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "বাতিল করুন (_C)"
++
+--- a/po/ca.po
++++ b/po/ca.po
+@@ -1148,3 +1148,102 @@ msgstr "Obre %s:%d"
+ 
+ #~ msgid "Paste the clipboard"
+ #~ msgstr "Enganxa el porta-retalls"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domini:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Emmagatzema la credencial d'entrada a l'anell de claus del GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verificació del certificat"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Assumpte:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emissor:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Empremta:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Accediu a escriptoris remots de MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "Opcions RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "_Amplada:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "Set width of the remote desktop"
++msgstr "Defineix l'amplada de l'escriptori remot"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "Al_çada:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++msgid "Set height of the remote desktop"
++msgstr "Defineix l'alçada de l'escriptori remot"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"No s'ha pogut verificar el certificat de sota.\n"
++"Confieu en el certificat?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional. Si es deixa en blanc s'utilitzarà el vostre nom d'usuari. També es "
++"pot proporcionar en el camp superior Ordinador, de la forma "
++"usuari@nomordinador."
++
++msgid "Minimize"
++msgstr "Minimitza"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "Connecta"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++msgid "_Cancel"
++msgstr "_Cancel·la"
++
+--- a/po/ca@valencia.po
++++ b/po/ca@valencia.po
+@@ -1078,3 +1078,102 @@ msgstr "Obri %s:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to release the cursor"
+ #~ msgstr "Premeu Ctrl+Alt per a alliberar el cursor"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domini:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Emmagatzema la credencial d'entrada a l'anell de claus del GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verificació del certificat"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Assumpte:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emissor:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Empremta:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Accediu a escriptoris remots de MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "Opcions RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "_Amplada:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "Set width of the remote desktop"
++msgstr "Defineix l'amplada de l'escriptori remot"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "Al_çada:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++msgid "Set height of the remote desktop"
++msgstr "Defineix l'alçada de l'escriptori remot"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"No s'ha pogut verificar el certificat de sota.\n"
++"Confieu en el certificat?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional. Si es deixa en blanc s'utilitzarà el vostre nom d'usuari. També es "
++"pot proporcionar en el camp superior Ordinador, de la forma "
++"usuari@nomordinador."
++
++msgid "Minimize"
++msgstr "Minimitza"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "Connecta"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++msgid "_Cancel"
++msgstr "_Cancel·la"
++
+--- a/po/cs.po
++++ b/po/cs.po
+@@ -1003,3 +1003,103 @@ msgstr "_Nedávná spojení"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Otevřít %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++##: ../vinagre/plugins/rdp/vinagre-rdp-plugin.c:196
++msgid "_Domain:"
++msgstr "_Doména:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Uložit pověření do klíčenky GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Ověření certifikátu"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Subjekt:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Vydavatel:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Otisk:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Přístup na vzdálené plochy MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Možnosti RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "Šířk_a:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Nastavit šířku vzdálené plochy"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Výška:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Nastavit výšku vzdálené plochy"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Volitelné"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Následující certifikát nemůže být ověřen.\n"
++"Budete certifikátu důvěřovat?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Volitelné. Pokud necháte prázdné, použije se vaše uživatelské jméno. Také "
++"může být zadáno v políčku Hostitel výše ve tvaru uživatel@hostitel."
++
++
++msgid "Minimize"
++msgstr "Minimalizovat"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Připojit"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Zrušit"
++
+--- a/po/da.po
++++ b/po/da.po
+@@ -1090,3 +1090,102 @@ msgstr "Åbn %s:%d"
+ #~ msgstr ""
+ #~ "Skalering fungerer ikke korrekt på kompositvinduer. Deaktiver visuelle "
+ #~ "effekter og prøv igen."
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domæne:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Gem logind-akkreditiverne i GNOME-nøgleringen"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verifikation af certifikat"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Subjekt:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Udsteder:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Fingeraftryk:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Tilgå MS Windows-fjernskriveborde"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP-indstillinger"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Bredde:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Angiv bredden af fjernskrivebordet"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Højde:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Angiv højden af fjernskrivebordet"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Valgfri"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Certifikatet herunder kunne ikke verificeres.\n"
++"Stoler du på certifikatet?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Valgfri. Hvis denne ikke angives, vil dit brugernavn blive brugt. Kan "
++"desuden angives i feltet med Vært ovenfor, på formen brugernavn@værtsnavn."
++
++
++msgid "Minimize"
++msgstr "Minimér"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Tilslut"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Annullér"
++
+--- a/po/de.po
++++ b/po/de.po
+@@ -1139,3 +1139,104 @@ msgstr "%s:%d öffnen"
+ 
+ #~ msgid "Could not initialize GnomeVFS\n"
+ #~ msgstr "GnomeVFS konnte nicht gestartet werden\n"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domäne:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Anmeldeinformationen im GNOME-Schlüsselbund speichern."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Zertifikat-Überprüfung"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Betreff:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Aussteller:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Fingerabdruck:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Auf entfernte Bildschirme mit MS Windows zugreifen"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP-Optionen"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Breite:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Breite des entfernten Bildschirms festlegen"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Höhe:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Höhe des entfernten Bildschirms festlegen"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Optional"
++
++#. Translators: this is a pattern to open *.spice files in a open dialog.
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Das unten angegebene Zertifikat konnte nicht verifiziert werden.\n"
++"Vertrauen Sie dem Zertifikat?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Optional. Wenn Sie das Feld leer lassen, wird Ihr Benutzername verwendet. "
++"Die Eingabe kann auch im Rechner-Feld oberhalb erfolgen und zwar in der Form "
++"benutzername@rechnername."
++
++msgid "Minimize"
++msgstr "Minimieren"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Verbinden"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "A_bbrechen"
++
+--- a/po/el.po
++++ b/po/el.po
+@@ -1088,3 +1088,102 @@ msgstr "Σύνδεση με %s:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to release the cursor"
+ #~ msgstr "Πατήστε Ctrl+Alt για να απελευθερώσετε το δρομέα"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Τομέας:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Αποθήκευση των διαπιστευτηρίων εισόδου στην κλειδοθήκη GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Επαλήθευση πιστοποιητικού"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Θέμα:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Εκδότης:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Αποτύπωμα:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Πρόσβαση σε απομακρυσμένες επιφ. εργασίας MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "Επιλογές RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:150
++msgid "_Width:"
++msgstr "_Πλάτος:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:157
++msgid "Set width of the remote desktop"
++msgstr "Ορισμός πλάτους στην απομακρυσμένη επιφάνεια εργασίας"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:170
++msgid "_Height:"
++msgstr "Ύ_ψος:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:177
++msgid "Set height of the remote desktop"
++msgstr "Ορισμός ύψους στην απομακρυσμένη επιφάνεια εργασίας"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Προαιρετικό"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Δεν μπορεί να επαληθευτεί το παρακάτω πιστοποιητικό.\n"
++"Εμπιστεύεστε το νέο πιστοποιητικό;"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Προαιρετικά. Εάν είναι κενό, θα χρησιμοποιηθεί το όνομα χρήστη σας. Επίσης, "
++"μπορείτε να το εισάγετε στο πεδίο σύστημα πιο πάνω, στην μορφή όνομα "
++"χρήστη@όνομα κεντρικού υπολογιστή."
++
++msgid "Minimize"
++msgstr "Ελαχιστοποίηση"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:972
++#: ../plugins/rdp/vinagre-rdp-tab.c:1013
++msgid "Connect"
++msgstr "Σύνδεση"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:971 ../plugins/rdp/vinagre-rdp-tab.c:1012
++msgid "_Cancel"
++msgstr "Ακύ_ρωση"
++
+--- a/po/en_GB.po
++++ b/po/en_GB.po
+@@ -1091,3 +1091,44 @@ msgstr "Open %s:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Press Ctrl+Alt to grab the cursor"
++
++
++#: ../data/vinagre.ui.h:11
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Store the login credential in GNOME Keyring"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:55
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:57
++msgid "Access MS Windows remote desktops"
++msgstr "Access MS Windows remote desktops"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:96
++msgid "RDP Options"
++msgstr "RDP Options"
++
++#. Translators: This is the tooltip for the username field in a RDP connection
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:299
++msgid "Optional"
++msgstr "Optional"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++#: ../plugins/ssh/vinagre-ssh-plugin.c:115
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++
++msgid "Minimize"
++msgstr "Minimise"
++
++
++#: ../data/vinagre.ui.h:22
++msgid "Connect"
++msgstr "Connect"
+--- a/po/es.po
++++ b/po/es.po
+@@ -1105,3 +1105,109 @@ msgstr "Abrir %s: %d"
+ 
+ #~ msgid "Error: %s"
+ #~ msgstr "Error: %s"
++
++
++#: ../data/vinagre.ui.h:10 ../plugins/rdp/vinagre-rdp-plugin.c:149
++msgid "_Domain:"
++msgstr "_Dominio:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr ""
++"Guardar las credenciales de inicio de sesión en el depósito de claves de "
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verificación del certificado"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Asunto:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emisor:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Huella dactilar:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Acceda a escritorios remotos de MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "Opciones RDP"
++
++#. Translators: This is the tooltip for the domain field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:156
++#| msgid "Optional"
++msgid "Optional."
++msgstr "Opcional."
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:169
++msgid "_Width:"
++msgstr "A_nchura:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:176
++msgid "Set width of the remote desktop"
++msgstr "Establecer la anchura del escritorio remoto"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:189
++msgid "_Height:"
++msgstr "A_ltura:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:196
++msgid "Set height of the remote desktop"
++msgstr "Establecer la altura del escritorio remoto"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"No se pudo verificar el siguiente certificado.\n"
++"¿Confía en él?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional Si se deja vacío se usará su nombre de usuario. También se puede "
++"proporcionar en el campo «Equipo» superior, de la forma "
++"usuario@nombre_de_equipo."
++
++msgid "Minimize"
++msgstr "Minimizar"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:937
++#: ../plugins/rdp/vinagre-rdp-tab.c:978
++msgid "Connect"
++msgstr "Conectar"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:936 ../plugins/rdp/vinagre-rdp-tab.c:977
++msgid "_Cancel"
++msgstr "_Cancelar"
++
+--- a/po/et.po
++++ b/po/et.po
+@@ -778,3 +778,51 @@ msgstr "_Hiljutised ühendused"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "%s:%d avamine"
++
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Sisselogimise tõendid salvestatakse GNOME võtmerõngasse"
++
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++msgid "Access MS Windows remote desktops"
++msgstr "Ligipääs MS Windowsi kaugtöölaudadele"
++
++msgid "RDP Options"
++msgstr "RDP valikud"
++
++#. Host width
++msgid "_Width:"
++msgstr "_Laius:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++msgid "Set width of the remote desktop"
++msgstr "Kaugtöölaua laius"
++
++#. Host height
++msgid "_Height:"
++msgstr "_Kõrgus:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++msgid "Set height of the remote desktop"
++msgstr "Kaugtöölaua kõrgus"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++msgid "Optional"
++msgstr "Valikuline"
++
++#. Translators: This is the tooltip for the username field in a RDP connection
++#. Translators: This is the tooltip for the username field in a SSH connection
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Valikuline. Tühja väärtuse korral kasutatakse sinu kasutajanime. "
++"Kasutajanime on võimalik määrata ka hostinimes kujul kasutajanimi@hostinimi."
++
++
++
++msgid "Connect"
++msgstr "Ühendu"
++
+--- a/po/eu.po
++++ b/po/eu.po
+@@ -1000,3 +1000,102 @@ msgstr "_Azken konexioak"
+ msgid "Open %s:%d"
+ msgstr "Ireki %s:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domeinua:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Gorde saio-hasierako kredentziala GNOMEren gako-sortan"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Ziurtagiriaren egiaztapena"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Gaia:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Jaulkitzailea:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Hatz-marka:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Sarbidetu urruneko MS Windows mahaigainetara"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP aukerak"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Zabalera:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Ezarri urruneko mahaigainaren zabalera"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Altuera:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Ezarri urruneko mahaigainaren altuera"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Aukerakoa"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Ezin izan da azpiko ziurtagiria egiaztatu.\n"
++"Ziurtagiriaz fidatzen zara?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Aukerakoa. Hutsik uzten bada, zure erabiltzaile-izena erabiliko da. Gainera, "
++"gaineko 'Ostalaria' eremuan eman daiteke erabiltzaile-izena@ostalari-izena "
++"forman."
++
++msgid "Minimize"
++msgstr "Minimizatu"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Konektatu"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Utzi"
++
+--- a/po/fi.po
++++ b/po/fi.po
+@@ -1101,3 +1101,101 @@ msgstr "Avaa %s:%d"
+ 
+ #~ msgid "Could not initialize GnomeVFS\n"
+ #~ msgstr "GnomeVFS:ää ei voitu alustaa\n"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Toimialue:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Jaa kirjautumistiedot GNONE-avainnipusta."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Varmenteen vahvistaminen"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Aihe:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Myöntäjä:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Sormenjälki:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Käytä MS Windows -etätyöpöytiä"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "RDP-asetukset"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:150
++msgid "_Width:"
++msgstr "_Leveys:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:157
++msgid "Set width of the remote desktop"
++msgstr "Aseta etätyöpöydän leveys"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:170
++msgid "_Height:"
++msgstr "_Korkeus:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:177
++msgid "Set height of the remote desktop"
++msgstr "Aseta etätyöpöydän korkeus"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Valinnainen"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Alla olevaa varmennetta ei voitu vahvistaa.\n"
++"Luotatko varmenteeseen?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Valinnainen. Jos tyhjä, sinun käyttäjänimeäsi käytetään. Se voidaan myös "
++"antaa yllä olevaan Isäntä-kenttään muodossa käyttäjänimi@isäntänimi."
++
++msgid "Minimize"
++msgstr "Pienennä"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:972
++#: ../plugins/rdp/vinagre-rdp-tab.c:1013
++msgid "Connect"
++msgstr "Yhdistä"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:971 ../plugins/rdp/vinagre-rdp-tab.c:1012
++msgid "_Cancel"
++msgstr "_Peru"
++
+--- a/po/fr.po
++++ b/po/fr.po
+@@ -1049,3 +1049,103 @@ msgstr "Connexions _récentes"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Ouvre %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domaine :"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Enregistrer les données de connexion dans le trousseau GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verification de certificat"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Sujet :"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Émetteur :"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Empreinte :"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++# Utilisation de l'infinitif dans les infobulles du Bureau
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Accéder à des bureaux distants MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Options RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Largeur :"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Définir la largeur du bureau distant"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Hauteur :"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Définir la hauteur du bureau distant"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Optionnel"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Le certificat ci-dessous n'a pas pu être vérifié.\n"
++"Faites-vous confiance à ce certificat ?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Facultatif. Si le champ est vide, votre nom d'utilisateur sera utilisé. Peut "
++"également être fourni dans le champ Hôte ci-dessus sous la forme nom-"
++"utilisateur@nom-hote."
++
++msgid "Minimize"
++msgstr "Réduire"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Se connecter"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Annuler"
++
+--- a/po/ga.po
++++ b/po/ga.po
+@@ -980,3 +980,8 @@ msgstr ""
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Oscail %s:%d"
++
++
++msgid "Minimize"
++msgstr "Íoslaghdaigh"
++
+--- a/po/gl.po
++++ b/po/gl.po
+@@ -1040,3 +1040,102 @@ msgstr "Conexións _recentes"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Abrir %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Dominio:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Gardar as credenciais de inicio de sesión no anel de chaves de GNOME."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verificación de certificado"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Asunto:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emisor:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Impresión dixital:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Acceda a escritorios remotos de MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Opcións RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Ancho:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Estabelece o ancho do escritorio remoto"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Alto:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Estabelece o alto do escritorio remoto"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"O certificado de embaixo non puido verificarse.\n"
++"Confía no certificado?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional. Se se deixa en branco, usarase o seu nome de usuario. Tamén se "
++"pode proporcionar no campo superior «Equipo», na forma "
++"usuario@nome_de_equipo."
++
++msgid "Minimize"
++msgstr "Minimizar"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Conectar"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Cancelar"
++
+--- a/po/gu.po
++++ b/po/gu.po
+@@ -1019,3 +1019,102 @@ msgstr "તાજેતરનાં જોડાણો (_R)"
+ msgid "Open %s:%d"
+ msgstr "ખોલો %s:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ડોમેઇન (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "GNOME કીરીંગમાં પ્રવેશ શ્રેયને સંગ્રહો"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "પ્રમાણપત્ર ચકાસણી"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "વિષય:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "અદા કરનાર:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "આંગળીની છાપ:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows દૂરસ્થ ડેસ્કટોપ વાપરો"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP વિકલ્પો"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "પહોળાઈ (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "દૂરસ્થ મશીનની પહોળાઇને સુયોજિત કરો"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ઊંચાઈ (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "દૂરસ્થ મશીનની ઊંચાઇને સુયોજિત કરો"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "વૈકલ્પિક"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"નીચેનાં પ્રમાણપત્રને ચકાસી શક્યા નહિં.\n"
++"શું તમને પ્રમાણપત્ર પર વિશ્ર્વાસ છે?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"વૈકલ્પિક. જો ખાલી હોય તો, તમારું વપરાશકર્તાનામને વાપરેલ હશે, તે ઉપર યજમાન ક્ષેત્રમાં પૂરુ "
++"પાડી શકાય છે, username@hostname ફોર્મમાં."
++
++
++msgid "Minimize"
++msgstr "ન્યૂનતમ કરો"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "જોડાવો"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "રદ કરો (_C)"
++
+--- a/po/he.po
++++ b/po/he.po
+@@ -820,3 +820,102 @@ msgstr "פתח %s:%d"
+ #~ msgid "Hide bookmarks"
+ #~ msgstr "הסתר סימניות"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_מתחם:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "אחסון פרטי הכניסה במחזיק המפתחות של GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "אימות אישור"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "נושא:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "מנפיק:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "טביעת אצבע:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "גישה לשולחנות עבודה מרוחקים מסוג MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "אפשרויות RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "_רוחב:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "Set width of the remote desktop"
++msgstr "הגדרת רוחב שולחן העבודה המרוחק"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "_גובה:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++msgid "Set height of the remote desktop"
++msgstr "הגדרת גובה שולחן העבודה המרוחק"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "בלתי מחייב"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"האישור שלהלן לא ניתן לאימות.\n"
++"האם ברצונך לבטוח באישור?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"לא מחייב. אם נותר ריק, יעשה שימוש בשם המשתמש שלך. כמו כן, ניתן לספק אותו "
++"בשדה המארח שלהלן, באופן הבא: שם_משתמש@שם_המארח"
++
++
++msgid "Minimize"
++msgstr "מזעור"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "התחברות"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++msgid "_Cancel"
++msgstr "_ביטול"
++
+--- a/po/hi.po
++++ b/po/hi.po
+@@ -997,3 +997,102 @@ msgstr "हालिया कनेक्शन"
+ msgid "Open %s:%d"
+ msgstr "खोलें %s:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "डोमेन (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "गनोम कीरिंग का लॉगिन श्रेय जमा करें"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "प्रमाणपत्र जांच"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "विषय:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "जारीकर्ता:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "फ़िंगरप्रिंट:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "आरडीपी"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS विंडोज दूरस्थ डेस्कटॉप की पहुँच लें"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP विकल्प"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "चौड़ाई (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "दूरस्थ डेस्कटॉप की चौड़ाई सेट करें"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ऊँचाई (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "दूरस्थ डेस्कटॉप की ऊँचाई सेट करें"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "वैकल्पिक"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"नीचे के प्रमाणपत्र जाँचे नहीं जा सकते.\n"
++"क्या आप प्रमाणपत्र पर भरोसा करते हैं?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"वैकल्पिक. यदि खाली है, आपका उपयोक्तानाम प्रयोग किया जाएगा. साथ ही, इसे मेजबान "
++"क्षेत्र "
++"में इसे आपूर्ति किया जाएगा, username@hostname के लिए रूप में."
++
++msgid "Minimize"
++msgstr "न्यूनतम करें"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "कनेक्शन"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "रद्द करें (_C)"
++
+--- a/po/hu.po
++++ b/po/hu.po
+@@ -1014,3 +1014,102 @@ msgstr "_Legutóbbi kapcsolatok"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "%s:%d megnyitása"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Tartomány:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Hitelesítési adatok tárolása a GNOME kulcstartón"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Tanúsítvány ellenőrzés"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Tárgy:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Kibocsátó:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Ujjlenyomat:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Távoli MS Windows asztalok elérése"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP-beállítások"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Szélesség:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Távoli asztal szélességének beállítása"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Magasság:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Távoli asztal magasságának beállítása"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Elhagyható"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"A lenti tanúsítványt nem sikerült ellenőrizni.\n"
++"Megbízik a tanúsítványban?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Elhagyható. Ha üres, akkor az Ön felhasználóneve kerül használatra. "
++"Megadható a fenti Kiszolgáló mezőben is, felhasználó@gépnév formában"
++
++
++msgid "Minimize"
++msgstr "Minimalizálás"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Kapcsolódás"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Mégse"
++
+--- a/po/it.po
++++ b/po/it.po
+@@ -1095,3 +1095,102 @@ msgstr "Apri %s:%d"
+ #~ msgstr ""
+ #~ "La scala non funziona correttamente in finestre composite. Disabilitare "
+ #~ "gli effetti visivi e provare di nuovo."
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Dominio:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Salva le credenziali di accesso nel portachiavi di GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verifica del certificato"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Soggetto:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emittente:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Impronta digitale:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Accede a desktop remoti MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Opzioni RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Larghezza:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Imposta la larghezza del desktop remoto"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Altezza:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Imposta l'altezza del desktop remoto"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opzionale"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Il seguente certificato non può essere verificato.\n"
++"Considerarlo attendibile comunque?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opzionale. Se vuoto, verrà utilizzato il proprio nome utente. Può anche "
++"essere fornito nel campo «Host» sopra, nella forma <nome utente>@<nome host>."
++
++
++msgid "Minimize"
++msgstr "Minimizza"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Connetti"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "A_nnulla"
++
+--- a/po/ja.po
++++ b/po/ja.po
+@@ -1016,3 +1016,98 @@ msgstr "最近開いた接続(_R)"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "%s:%d を開きます"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ドメイン(_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "ログイン情報をGNOMEキーリングに保存"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "証明書の検証"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "サブジェクト:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "発行者:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "指紋:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows のリモートデスクトップへアクセスします"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDPのオプション"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "幅(_W):"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "リモートデスクトップの幅を設定します"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "高さ(_H):"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "リモートデスクトップの高さを設定します"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "オプション"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"以下の証明書は検証できませんでした。\n"
++"この証明書を信用しますか？"
++
++#. Fingerprint of the certificate.
++#. Translators: This is the tooltip for the username field in a SSH connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid "Optional. If blank, your username will be used. Also, it can be supplied in the Host field above, in the form username@hostname."
++msgstr "オプションです。空欄の場合、あなたのユーザー名が使用されます。この名前はホスト名の項目でも ユーザー名@ホスト名 という形で使用されます。"
++
++msgid "Minimize"
++msgstr "最小化"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "接続"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "キャンセル(_C)"
++
+--- a/po/kn.po
++++ b/po/kn.po
+@@ -998,3 +998,102 @@ msgstr "ಇತ್ತೀಚಿನ ಸಂಪರ್ಕಗಳು(_R)"
+ msgid "Open %s:%d"
+ msgstr "%s ಅನ್ನು ತೆರೆ:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ಡೊಮೇನ್(_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "GNOME ಕೀಲಿಗೊಂಚಲಿನಲ್ಲಿ ಪ್ರವೇಶದ ಗುರುತುಗಳನ್ನು ಶೇಖರಿಸುಡುತ್ತದೆ"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "ಪ್ರಮಾಣಪತ್ರದ ಪರಿಶೀಲನೆ"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "ವಿಷಯ:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "ಒದಗಿಸುವವರು:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "ಫಿಂಗರ್‌ಪ್ರಿಂಟ್:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows ದೂರಸ್ಥ ಗಣಕತೆರೆಗಳನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳಿ"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP ಆಯ್ಕೆಗಳು"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "ಅಗಲ (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "ದೂರಸ್ಥ ಗಣಕತೆರೆಯ ಅಗಲವನ್ನು ಹೊಂದಿಸಿ"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ಎತ್ತರ (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "ದೂರಸ್ಥ ಗಣಕತೆರೆಯ ಎತ್ತರವನ್ನು ಹೊಂದಿಸಿ"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "ಐಚ್ಚಿಕ"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"ಈ ಕೆಳಗಿನ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ.\n"
++"ನೀವು ಪ್ರಮಾಣಪತ್ರವನ್ನು ನಂಬುತ್ತೀರಾ?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"ಐಚ್ಛಿಕ. ಖಾಲಿ ಬಿಟ್ಟಲ್ಲಿ, ನಿಮ್ಮ ಬಳಕೆದಾರ ಹೆಸರನ್ನು ಬಳಸಲಾಗುತ್ತದೆ. ಅಲ್ಲದೆ ಇದನ್ನು "
++"username@hostname ರೂಪದಲ್ಲಿ ಮೇಲಿರುವ ಆತಿಥೇಯದ ಸ್ಥಳದಲ್ಲಿಯೂ ಸಹ  ಒದಗಿಸಬಹುದು."
++
++
++msgid "Minimize"
++msgstr "ಕುಗ್ಗಿಸು"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "ಸಂಪರ್ಕ ಜೋಡಿಸು"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "ರದ್ದುಗೊಳಿಸು (_C)"
++
+--- a/po/ko.po
++++ b/po/ko.po
+@@ -994,3 +994,102 @@ msgstr "최근 연결(_R)"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "%s:%d 열기"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "도메인(_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "그놈 키 모음에 로그인 암호 저장"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "인증서 확인"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "제목:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "발급자:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "핑거프린트:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS 원격 데스크톱 접속"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP 옵션"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "너비(_W):"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "원격 데스크톱의 너비를 지정합니다"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "높이(_H):"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "원격 데스크톱의 높이를 지정합니다"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "입력하지 않아도 됩니다"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"아래 인증서를 확인할 수 없습니다.\n"
++"그래도 인증서를 신뢰하시겠습니까?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"따로 쓰지 않으면, 자기 사용자 이름을 사용합니다. 위의 호스트 필드에서 사용자"
++"이름@호스트이름 형식으로 쓸 수도 있습니다."
++
++
++msgid "Minimize"
++msgstr "최소화"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "연결"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "취소(_C)"
++
+--- a/po/ku.po
++++ b/po/ku.po
+@@ -428,3 +428,6 @@ msgstr ""
+ msgid "Open %s:%d"
+ msgstr ""
+ 
++
++
++
+--- a/po/lt.po
++++ b/po/lt.po
+@@ -1089,3 +1089,102 @@ msgstr "Atverti %s:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Paspauskite Vald+Alt, jei norite pagriebti kursorių"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domenas:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Įrašyti įgaliojimus į GNOME raktinę"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Liudijimo tikrinimas"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Subjektas:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Išdavė:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Piršo atspaudas:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Junkitės prie nutolusių MS Windows darbastalių"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP parinktys"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Plotis:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Nustatyti nutolusio darbastalio plotį"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Aukštis:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Nustatyti nutolusio darbastalio aukštį"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Neprivaloma"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Žemiau esančio liudijimo negalima patikrinti.\n"
++"Ar pasitikite liudijimu?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Neprivaloma. Jei tuščia, bus naudojamas jūsų naudotojo vardas. Be to, jį "
++"galima nurodyti aukščiau esančiame laukelyje „Kompiuteris“ tokia forma: "
++"naudotojovardas@kompiuteriovardas."
++
++msgid "Minimize"
++msgstr "Sumažinti"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Prisijungti"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Atsisakyti"
++
+--- a/po/lv.po
++++ b/po/lv.po
+@@ -1186,3 +1186,102 @@ msgstr "Atvērt %s:%d"
+ #~ msgid "Error while removing %s from bookmarks: %s"
+ #~ msgstr "Kļūda aizvācot %s no grāmatzīmēm: %s"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domēns:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Saglabāt akreditācijas datus GNOME atslēgu saišķī."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Sertifikāta pārbaude"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Subjekts:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Izdevējs:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Ciparnospiedums:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Piekļūt MS Windows attālinātajām darbvirsmām"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP opcijas"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Platums:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Iestatīt attālinātās darbvirsmas platumu"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Augstums:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Iestatīt attālinātās darbvirsmas augstumu"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Neobligāts"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Zemāk norādīto sertifikātu nevar pārbaudīt.\n"
++"Vai jūs uzticaties sertifikātam?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Neobligāti. Ja tukšs, tiks izmantots jūsu lietotājvārds. Tas arī var tikt "
++"padots datora laukā augstāk, formā lietotājvārds@saimniekdators."
++
++
++msgid "Minimize"
++msgstr "Minimizēt"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Savienot"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "At_celt"
++
+--- a/po/mai.po
++++ b/po/mai.po
+@@ -962,3 +962,6 @@ msgstr ""
+ msgid "Open %s:%d"
+ msgstr ""
+ 
++
++
++
+--- a/po/mk.po
++++ b/po/mk.po
+@@ -628,3 +628,40 @@ msgstr "Притиснете на Ctrl+Alt за да ја ослободите 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Притиснете на Ctrl+Alt за да ја добиете стрелката"
+ 
++
++
++#: ../data/vinagre.ui.h:18
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Зачувај ги акредитивите за најава во приврзокот на GNOME"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:55
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:57
++#| msgid "Access remote desktops"
++msgid "Access MS Windows remote desktops"
++msgstr "Пристапи MS Windows оддалечени работни површини"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:96
++msgid "RDP Options"
++msgstr "Опции за RDP"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:299
++msgid "Optional"
++msgstr "Незадолжително"
++
++#. Translators: This is the tooltip for the username field in a SSH connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++#: ../plugins/ssh/vinagre-ssh-plugin.c:115
++msgid "Optional. If blank, your username will be used. Also, it can be supplied in the Host field above, in the form username@hostname."
++msgstr "Незадолжително. Ако е празно, ќе се користи Вашето корисничко име. Исто така, може да биде внесено во полето „хост“ подолу во форма корисничкоиме@именахост."
++
++
++#: ../data/vinagre.ui.h:6
++#| msgid "Connecting..."
++msgid "Connect"
++msgstr "Поврзи се"
++
+--- a/po/ml.po
++++ b/po/ml.po
+@@ -1032,3 +1032,44 @@ msgstr "_അടുത്തിടെയുള്ള ബന്ധങ്ങള്
+ msgid "Open %s:%d"
+ msgstr "%s:%d തുറക്കുക"
+ 
++
++#: ../data/vinagre.ui.h:11
++#| msgid "Error saving the credentials on the keyring."
++msgid "Store the login credential in GNOME Keyring"
++msgstr "ഗ്നോം ചാവിക്കൂട്ടത്തില്‍ ആനുകൂല്യങ്ങള്‍ സംഭരിക്കുക"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:55
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:57
++#| msgid "Access remote desktops"
++msgid "Access MS Windows remote desktops"
++msgstr "എംഎസ് വിന്‍ഡോസ് വിദൂര പണിയിടങ്ങളിലേക്കു് പ്രവേശിയ്ക്കുക"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:96
++msgid "RDP Options"
++msgstr "RDP ഐച്ഛികങ്ങള്‍"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:299
++msgid "Optional"
++msgstr "വേണമെങ്കില്‍ മാത്രം"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++#: ../plugins/ssh/vinagre-ssh-plugin.c:115
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"നിര്‍ബന്ധമല്ല. കാലിയെങ്കില്‍, നിങ്ങളുടെ ഉപയോക്തൃനാമം ഉപയോഗിയ്ക്കുന്നു. കൂടാതെ, മുകളിലുള്ള ഹോസ്റ്റ് "
++"ഫീള്‍ഡിലും നിങ്ങള്‍ക്കിതു് username@hostname ആയി നല്‍കാം."
++
++
++
++
++#: ../data/vinagre.ui.h:22
++msgid "Connect"
++msgstr "ബന്ധിപ്പിക്കു"
++
+--- a/po/mr.po
++++ b/po/mr.po
+@@ -1014,3 +1014,102 @@ msgstr "अलिकडील जुळवणी (_R)"
+ msgid "Open %s:%d"
+ msgstr "%s उघडा:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "डोमेन (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "GNOME किरींगमध्ये प्रवेश श्रेय साठवा."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "प्रमाणपत्र तपासणी"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "विषय:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "इस्युअर:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "फिंगरप्रिंट:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS विंडोज दूरस्त डेसक्टॉपकरीता प्रवेश"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP पर्याय"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "रूंदी (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "दूरस्त डोस्कटॉपची रूंदी निश्चित करा"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ऊंची (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "दूरस्त डोस्कटॉपची ऊंची निश्चित करा"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "वैकल्पिक"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"खालील प्रमाणपत्राची तपासणी अशक्य.\n"
++"प्रमाणपत्र विश्वासर्ह आहे?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"वैकल्पिक. रिकामे असल्यास, वापरकर्तानावचे वापर केला जाईल. तसेच, त्यास यजमान "
++"क्षेत्रमध्ये "
++"पुरवले जाईल,username@hostname ह्या स्वरूपात."
++
++msgid "Minimize"
++msgstr "छोटे करा"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "जोडणी करा"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "रद्द करा (_C)"
++
+--- a/po/nb.po
++++ b/po/nb.po
+@@ -997,3 +997,102 @@ msgstr "_Siste tilkoblinger"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Åpne %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domene"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Lagre autentiseringsinformasjon i GNOME-nøkkelring"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Bekreftelse av sertifikat"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Emne:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Utsteder:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Fingeravtrykk:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Få tilgang til eksterne skrivebord med MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Alternativer for RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Bredde:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Sett bredde på eksternt skrivebord"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Høyde:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Sett høyde på eksternt skrivebord"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Valgfri"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Sertifikatet kunne ikke bekreftes.\n"
++"Stoler du på sertifikatet?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Valgfri. Hvis denne er tom, brukes gjeldende brukernavn. Kan også oppgis i "
++"Vert-feltet ovenfor i formatet brukernavn@vertsnavn."
++
++
++msgid "Minimize"
++msgstr "Minimer"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Koble til"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "A_vbryt"
++
+--- a/po/nl.po
++++ b/po/nl.po
+@@ -879,3 +879,45 @@ msgstr "Druk op Ctrl+Alt om de cursor vrij te laten"
+ 
+ #~ msgid "Hide bookmarks"
+ #~ msgstr "Bladwijzers verbergen"
++
++
++#: ../data/vinagre.ui.h:18
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Login-gegevens in Gnome-sleutelbos opslaan."
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:55
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:57
++msgid "Access MS Windows remote desktops"
++msgstr "Toegang tot externe Windows-werkplekken"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:96
++msgid "RDP Options"
++msgstr "RDP-opties"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:299
++msgid "Optional"
++msgstr "Optioneel"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++#: ../plugins/ssh/vinagre-ssh-plugin.c:115
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Optioneel. Indien leeg wordt uw gebruikersnaam gebruikt. Ook kan het worden "
++"ingevoerd in het veld Host hierboven, in de vorm gebruikersnaam@machinenaam."
++
++
++msgid "Minimize"
++msgstr "Minimaliseren"
++
++
++#: ../data/vinagre.ui.h:6
++msgid "Connect"
++msgstr "Verbinden"
++
+--- a/po/nn.po
++++ b/po/nn.po
+@@ -419,3 +419,6 @@ msgstr "_Siste tilkoplingar"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Opna %s:%d"
++
++
++
+--- a/po/oc.po
++++ b/po/oc.po
+@@ -598,3 +598,101 @@ msgstr ""
+ 
+ #~ msgid "Hide bookmarks"
+ #~ msgstr "Amagar los favorits"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domeni :"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Enregistrar les donadas de connexion dins lo trousseau GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verification de certificat"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Subjècte :"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Émetteur :"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Emprencha :"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++# Utilisation de l'infinitif dins les infobulles del Burèu
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Accéder a des burèus distants MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Options RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Largor :"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Definir la largor del burèu distant"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Hauteur :"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Definir la hauteur del burèu distant"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Optionnel"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Lo certificat ci-dessous n'a pas pu èsser vérifié.\n"
++"Faites-vous confiance a ce certificat ?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Facultatif. Si lo champ es vide, votre nom d'utilizaire serà utilisé. Peut "
++"egalament èsser fourni dins lo champ Òste ci-dessus sous la forme nom-"
++"utilizaire@nom-hote."
++
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Se connecter"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Anullar"
++
+--- a/po/or.po
++++ b/po/or.po
+@@ -1021,3 +1021,100 @@ msgstr "ସାମ୍ପ୍ରତିକ ସଂଯୋଗ ଗୁଡିକ(_R)"
+ msgid "Open %s:%d"
+ msgstr "%s ଖୋଲନ୍ତୁ:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ଡମେନ (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Gnome କି-ରିଙ୍ଗରେ ଲଗଇନ ସୂଚନାକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "ପ୍ରମାଣପତ୍ର ଯାଞ୍ଚ"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "ବିଷୟ:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "ପ୍ରଦାନକାରୀ:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "ଅଙ୍ଗୁଳି ଚିହ୍ନ:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows ସୁଦୂର ଡେସ୍କଟପଗୁଡିକୁ ଅଭିଗମ କରନ୍ତୁ"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP ବିକଳ୍ପଗୁଡିକ"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "ଓସାର (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "ସୁଦୂର ଡେସ୍କଟପର ଓସାର ସେଟ କରନ୍ତୁ"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ଉଚ୍ଚତା (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "ସୁଦୂର ଡେସ୍କଟପର ଉଚ୍ଚତା ସେଟ କରନ୍ତୁ"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "ଇଚ୍ଛାଧୀନ"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"ନିମ୍ନରେ ଥିବା ପ୍ରମାଣପତ୍ରକୁ ଯାଞ୍ଚ କରାଯାଇପାରିଲା ନାହିଁ।\n"
++"ଆପଣ ସେହି ପ୍ରମାଣପତ୍ରକୁ ବିଶ୍ୱାସ କରନ୍ତି କି?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"ବୈକଳ୍ପିକ। ଯଦି ଖାଲି ଅଛି, ତେବେ ଆପଣଙ୍କର ବ୍ୟବହାରକାରୀ ନାମକୁ ବ୍ୟବହାର କରାଯିବ। ଏବଂ, "
++"ଏହାକୁ ଉପରେ "
++"ଥିବା ହୋଷ୍ଟ ସ୍ଥାନରେ ଫର୍ମ username@hostname ରେ ଦିଆଯାଇପାରିବ।"
++
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "ସଂଯୋଗ କରନ୍ତୁ"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "ବାତିଲ (_C)"
++
+--- a/po/pa.po
++++ b/po/pa.po
+@@ -1036,3 +1036,102 @@ msgstr "%s ਖੁੱਲ੍ਹੇ:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to release the cursor"
+ #~ msgstr "ਕਰਸਰ ਛੱਡਣ ਵਾਸਤੇ Ctrl+Alt ਦੱਬੋ"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "ਡੋਮੇਨ(_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "ਲਾਗਇਨ ਸਨਦ ਗਨੋਮ ਕੀਰਿੰਗ ਵਿੱਚ ਸੰਭਾਲੋ"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "ਸਰਟੀਫਿਕੇਟ ਪੜਤਾਲ"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "ਵਿਸ਼ਾ:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "ਜਾਰੀ-ਕਰਤਾ:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "ਫਿੰਗਰ-ਪਰਿੰਟ:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS ਵਿੰਡੋਜ਼ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਅਸੈੱਸ"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP ਚੋਣਾਂ"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "ਚੌੜਾਈ(_W):"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "Set width of the remote desktop"
++msgstr " ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੀ ਚੌੜਾਈ ਸੈੱਟ ਕਰੋ"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ਉਚਾਈ(_H):"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++msgid "Set height of the remote desktop"
++msgstr " ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੀ ਉਚਾਈ ਸੈੱਟ ਕਰੋ"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "ਚੋਣਵਾਂ"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"ਹੇਠ ਦਿੱਤੇ ਸਰਟੀਫਿਕੇਟ ਦੀ ਪੜਤਾਲ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।\n"
++"ਕੀ ਤੁਸੀਂ ਸਰਟੀਫਿਕੇਟ ਉੱਤੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"ਚੋਣਵਾਂ। ਜੇ ਖਾਲੀ ਰੱਖਿਆ ਤਾਂ ਤੁਹਾਡਾ ਯੂਜ਼ਰ-ਨਾਂ ਵਰਤਿਆ ਜਾਵੇਗਾ। ਨਾਲੇ, ਇਸ ਨੂੰ ਉੱਤੇ "
++"ਹੋਸਟ ਖੇਤਰ ਵਿੱਚ ਵੀ "
++"ਦਿੱਤਾ ਜਾਵੇ, username@hostname ਵਾਂਗ।"
++
++msgid "Minimize"
++msgstr "ਨਿਊਨਤਮ ਕਰੋ"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "ਕੁਨੈਕਟ ਕਰੋ"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "ਰੱਦ ਕਰੋ(_C)"
++
+--- a/po/pl.po
++++ b/po/pl.po
+@@ -1029,3 +1029,102 @@ msgstr "Otwiera %s:%d"
+ 
+ #~ msgid "No error given"
+ #~ msgstr "Brak komunikatu błędu"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domena:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Przechowuje dane logowania w bazie kluczy GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Weryfikacja certyfikatu"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Przedmiot:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Wydawca:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Odcisk palca:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Dostęp do zdalnych pulpitów systemu MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "Opcje RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "_Width:"
++msgstr "_Szerokość:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:145
++msgid "Set width of the remote desktop"
++msgstr "Ustawia szerokość zdalnego pulpitu"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:158
++msgid "_Height:"
++msgstr "_Wysokość:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:165
++msgid "Set height of the remote desktop"
++msgstr "Ustawia wysokość zdalnego pulpitu"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcjonalne"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Nie można zweryfikować poniższego certyfikatu.\n"
++"Czy jest on zaufany?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:125
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcjonalne. Jeśli zostanie pozostawione puste, to zostanie użyta nazwa "
++"bieżącego użytkownika. Nazwa użytkownika może także zostać podana w polu "
++"Komputer powyżej, w formie nazwa-użytkownika@nazwa-komputera."
++
++msgid "Minimize"
++msgstr "Zminimalizuj"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Połącz"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Anuluj"
++
+--- a/po/pt.po
++++ b/po/pt.po
+@@ -1093,3 +1093,108 @@ msgstr "Abrir %s:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Pressione Ctrl+Alt para capturar o cursor"
++
++
++#: ../data/vinagre.ui.h:10 ../plugins/rdp/vinagre-rdp-plugin.c:149
++msgid "_Domain:"
++msgstr "_Domínio:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Armazenar as credenciais de início de sessão no chaveiro GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verificação de certificado"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Assunto:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emissor:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Impressão digital:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Aceder a áreas de trabalho remotas em MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "Opções RDP"
++
++#. Translators: This is the tooltip for the domain field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:156
++#| msgid "Optional"
++msgid "Optional."
++msgstr "Opcional."
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:169
++msgid "_Width:"
++msgstr "_Largura:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:176
++msgid "Set width of the remote desktop"
++msgstr "Definir a largura do ambiente de trabalho remoto"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:189
++msgid "_Height:"
++msgstr "_Altura:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:196
++msgid "Set height of the remote desktop"
++msgstr "Definir a altura do ambiente de trabalho remoto"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"O certificado abaixo não pôde ser verificado.\n"
++"Confia no certificado?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional. Se vazio, será utilizado o seu nome de utilizador. Adicionalmente, "
++"pode ser indicado no campo Máquina acima, no formato utilizador@maquina."
++
++
++msgid "Minimize"
++msgstr "Minimizar"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:937
++#: ../plugins/rdp/vinagre-rdp-tab.c:978
++msgid "Connect"
++msgstr "Ligar"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:936 ../plugins/rdp/vinagre-rdp-tab.c:977
++msgid "_Cancel"
++msgstr "_Cancelar"
++
+--- a/po/pt_BR.po
++++ b/po/pt_BR.po
+@@ -1112,3 +1112,102 @@ msgstr "Abre %s:%d"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Pressione Crtl+Alt para capturar o cursor"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domínio:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Armazenar as credenciais de acesso no chaveiro do GNOME."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Verificação de certificado"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Sujeito:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Emissor:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Impressão digital:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Acesse áreas de trabalho remotas do MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Opções RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Largura:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Define a largura da área de trabalho remota"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Altura:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Define a altura da área de trabalho remota"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opcional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"O certificado abaixo não pôde ser verificado.\n"
++"Você confia no certificado?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opcional. Se vazio, o seu nome de usuário será usado. Também pode ser "
++"fornecido no campo Máquina acima, na forma usuário@máquina."
++
++
++msgid "Minimize"
++msgstr "Minimizar"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Conectar"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Cancelar"
++
+--- a/po/ro.po
++++ b/po/ro.po
+@@ -1014,3 +1014,97 @@ msgstr "Conexiuni _recente"
+ msgid "Open %s:%d"
+ msgstr "Deschide %s:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr ""
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Salvează credențialele de autentificare în inelul de chei GNOME. "
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr ""
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr ""
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr ""
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr ""
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Accesați desktopuri Windows la distanță"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Opțiuni RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr ""
++
++#, fuzzy
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "Conectare la un desktop la distanță"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr ""
++
++#, fuzzy
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "Conectare la un desktop la distanță"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Opțional"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Opțional. Dacă este gol, numele dumneavoastră de utilizator va fi folosit. "
++"De asemenea, poate fi introdus în câmpul de mai sus care specifică numele "
++"gazdei în forma nume_utilizator@nume_gazdă."
++
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:758
++#: ../plugins/rdp/vinagre-rdp-tab.c:799
++msgid "Connect"
++msgstr "Conectează"
++
++#, fuzzy
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "Anulează autentificarea"
++
+--- a/po/ru.po
++++ b/po/ru.po
+@@ -1009,3 +1009,102 @@ msgstr "_Недавние соединения"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Открыть %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Домен:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Сохранить данные учётной записи в GNOME Keyring"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Подтверждение сертификата"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Тема:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Эмитент:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Отпечаток:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Доступ к удалённым рабочим столам MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Параметры RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Ширина:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Установить ширину удалённого рабочего стола"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Высота:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Установить высоту удалённого рабочего стола"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Необязательно"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Не удалось проверить сертификат.\n"
++"Вы доверяете этому сертификату?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Необязательно. Если оставлено пустым, будет использовано текущее имя "
++"пользователя. Также значение можно задать в формате «пользователь@узел» в "
++"поле «Узел» выше."
++
++msgid "Minimize"
++msgstr "Свернуть"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Подключиться"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Отмена"
++
+--- a/po/si.po
++++ b/po/si.po
+@@ -422,3 +422,6 @@ msgstr "මෑත කාලීන සම්බන්ධතා (_R)"
+ msgid "Open %s:%d"
+ msgstr "%s විවෘත කරන්න :%d"
+ 
++
++
++
+--- a/po/sl.po
++++ b/po/sl.po
+@@ -1030,3 +1030,102 @@ msgstr "Odpri %s:%d"
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "Pritisnite Ctrl+Alt za sprostitev kazalnika"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domena:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Shrani poverila prijave v zbirki ključev GNOME."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Overitev potrdila"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Zadeva:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Izdajatelj:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Prstni odtis:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Dostop do oddaljenih namizij MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Možnosti RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Širina:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Širina oddaljenega namizja"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Višina:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Višina oddaljenega namizja"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Možnosti"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Potrdila spodaj ni mogoče overiti.\n"
++"Ali zaupate temu potrdilu?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Izbirno. Prazno polje določa uporabo uporabniškega imena. Podatke je mogoče "
++"vpisati tudi v zgornje polje v obliki uporabnik@ime-gostitelja."
++
++
++msgid "Minimize"
++msgstr "Skrči"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Poveži"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Prekliči"
++
+--- a/po/sq.po
++++ b/po/sq.po
+@@ -610,3 +610,6 @@ msgstr "Hap %s:%d"
+ msgid "Press Ctrl+Alt to release the cursor"
+ msgstr "Shtyp Ctrl+Alt për të lëshuar kursorin"
+ 
++
++
++
+--- a/po/sr.po
++++ b/po/sr.po
+@@ -1025,3 +1025,102 @@ msgstr "_Недавне везе"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Отвaрa %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Домен:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Сачувајте шифру пријављивања у Гномовом привеску кључева"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Провера уверења"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Наслов:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Издавач:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Отисак:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "РДП"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Приступите удаљеном МС Виндоуз рачунару"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "РДП опције"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Ширина:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Подесите ширину удаљеног рачунара"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Висина:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Подесите висину удаљеног рачунара"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Необавезно"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Уверење не може бити проверено.\n"
++"Да ли му верујете?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Необавезно. Ако је празно, биће коришћено ваше корисничко име. Такође га "
++"можете унети и изнад у поље „Рачунар“, у облику „корисничкоиме@домаћин“."
++
++
++msgid "Minimize"
++msgstr "Умањи"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Повежи се"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Откажи"
++
+--- a/po/sr@latin.po
++++ b/po/sr@latin.po
+@@ -1025,3 +1025,102 @@ msgstr "_Nedavne veze"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "Otvara %s:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domen:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Sačuvajte šifru prijavljivanja u Gnomovom privesku ključeva"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Provera uverenja"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Naslov:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Izdavač:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Otisak:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Pristupite udaljenom MS Vindouz računaru"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP opcije"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Širina:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Podesite širinu udaljenog računara"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Visina:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Podesite visinu udaljenog računara"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Neobavezno"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Uverenje ne može biti provereno.\n"
++"Da li mu verujete?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Neobavezno. Ako je prazno, biće korišćeno vaše korisničko ime. Takođe ga "
++"možete uneti i iznad u polje „Računar“, u obliku „korisničkoime@domaćin“."
++
++
++msgid "Minimize"
++msgstr "Umanji"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Poveži se"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Otkaži"
++
+--- a/po/sv.po
++++ b/po/sv.po
+@@ -1079,3 +1079,102 @@ msgstr "Öppna %s:%d"
+ #~ msgid "gtk-save"
+ #~ msgstr "Spara"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Domän:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Lagra inloggningsuppgifter i GNOME-nyckelring"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Certifikatverifiering"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Ämne:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Utfärdare:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Fingeravtryck:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Få åtkomst till fjärrskrivbord (MS Windows)"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP-alternativ"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Bredd:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Ange bredden på fjärrskrivbordet"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "Hö_jd:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Ange höjden på fjärrskrivbordet"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Valfritt"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Nedanstående certifikat kunde inte verifieras.\n"
++"Litar du på certifikatet?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Valfritt. Om detta fält är tomt så kommer ditt användarnamn att användas. "
++"Det kan även anges i fältet Värd ovan, i formatet användarnamn@värdnamn."
++
++
++msgid "Minimize"
++msgstr "Minimera"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Anslut"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Avbryt"
++
+--- a/po/ta.po
++++ b/po/ta.po
+@@ -1034,3 +1034,102 @@ msgstr "சமீபத்திய இணைப்புகள் (_R)"
+ msgid "Open %s:%d"
+ msgstr "%s ஐ திற:%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "டொமைன் (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "க்னோம் விசை வளையத்தில் உள்நுழை அறிமுக ஆவணத்தை சேமி"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "சான்றிதழ் செல்லுபடியாக்கம்"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "பொருள்:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "வழங்குநர்:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "கைரேகை:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "ஆர்டிபி (RDP)"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "எம்எஸ் விண்டோஸ்  தொலை பணிமேடைகளை அணுகுதல்"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP விருப்பங்கள்"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "அகலம் (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "தொலைநிலை பணிமேசையின் அகலத்தை அமைக்கவும்"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "உயரம் (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "தொலைநிலை பணிமேசையின் உயரத்தை அமைக்கவும்"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "விருப்பத்திற்குரிய"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"கீழுள்ள சான்றிதழைச் சரிபார்க்க முடியவில்லை\n"
++"சான்றிதழை நம்புகிறீர்களா?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"விருப்பத்தேர்வு. வெற்றாக இருப்பின் உங்கள் பயனர் பெயர் பயன்படுத்தப்படும். "
++"மேலும் அது "
++"மேற்காணும் புரவலன் புலத்தில் username@hostname. ஆக கொடுக்கப்பட முடியும். "
++
++msgid "Minimize"
++msgstr "சிறிதாக்கு"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "இணை"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "ரத்து (_C)"
++
+--- a/po/te.po
++++ b/po/te.po
+@@ -985,3 +985,102 @@ msgstr "ఇటీవలి అనుసంధానములు (_R)"
+ msgid "Open %s:%d"
+ msgstr "%s:%d తెరువుము"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "డొమైన్ (_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "కీరింగునందలి ప్రవేశము ఆనవాళ్ళను దాచుము."
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "ధృవీకరణపత్రం నిర్ధారణ"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "సంగతి:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "జారీచేసినవారు:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "వేలిముద్ర:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS విండోస్ రిమోట్ డెస్క్‌టాప్‌లను  సాంగత్యం చేయు"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP ఐచ్చికములు"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "వెడల్పు (_W):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++#| msgid "Connect to a remote desktop"
++msgid "Set width of the remote desktop"
++msgstr "రిమోట్ డెస్క్‌టాప్‌ వెడల్పు అమర్చు"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "ఎత్తు (_H):"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++#| msgid "Connect to a remote desktop"
++msgid "Set height of the remote desktop"
++msgstr "రిమోట్ డెస్కుటాప్ ఎత్తు అమర్చు"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "ఇచ్ఛాపూర్వక"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"కింది ధృవీకరణపత్రం నిర్ధారించబడలేదు.\n"
++"మీరు ధృవీకరణపత్రం నమ్ముతారా?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"ఇచ్ఛాపూర్వకం.ఖాళీగా ఉన్నచో మీ వినియోగదారునామమును ఉపయోగించుము.అలాగే, పై నున్న  "
++"హోస్ట్ ఫీల్డ్ నకు "
++"username@hostname విధముగా ప్రవేశపెట్టవచ్చును "
++
++msgid "Minimize"
++msgstr "చిన్నదిచేయు"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "అనుసంధానముగు"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "రద్దుచేయి (_C)"
++
+--- a/po/th.po
++++ b/po/th.po
+@@ -828,3 +828,102 @@ msgstr "กด Ctrl+Alt เพื่อปล่อยเคอร์เซอ
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "กด Ctrl+Alt เพื่อจับยึดเคอร์เซอร์"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "โ_ดเมน:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "บันทึกรหัสลับสำหรับเข้าระบบลงในพวงกุญแจ GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "การตรวจสอบใบรับรอง"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "ผู้รับการรับรอง:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "ผู้ออกให้:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "ลายนิ้วมือ:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "เข้าใช้พื้นโต๊ะไมโครซอฟท์วินโดวส์"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "ตัวเลือก RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "ความ_กว้าง:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "กำหนดความกว้างของพื้นโต๊ะระยะไกล"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "ความสู_ง:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "กำหนดความสูงของพื้นโต๊ะระยะไกล"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "ป้อนหรือไม่ก็ได้"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"ใบรับรองด้านล่างนี้ไม่สามารถตรวจสอบได้\n"
++"คุณเชื่อถือใบรับรองนี้หรือไม่?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"ระบุหรือไม่ก็ได้ ถ้าปล่อยว่างไว้ ก็จะใช้ชื่อผู้ใช้ของคุณ นอกจากนี้ คุณยังสามารถระบุผ่านช่อง \"โฮสต์\" "
++"ข้างต้นได้ ในรูป username@hostname"
++
++
++msgid "Minimize"
++msgstr "ย่อเก็บ"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "เชื่อมต่อ"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_ยกเลิก"
++
+--- a/po/tr.po
++++ b/po/tr.po
+@@ -996,3 +996,102 @@ msgstr "_Son bağlantılar"
+ #, c-format
+ msgid "Open %s:%d"
+ msgstr "%s'yi Aç:%d"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Etki Alanı:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Giriş bilgilerini GNOME Anahtarlığına kaydet"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Sertifika Doğrulaması"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Konu:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Veren:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Parmak izi:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "MS Windows uzak masaüstlerine erişin"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP Seçenekleri"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Genişlik:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Uzak masaüstünün genişliğini ayarlayın"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Yükseklik:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Uzak masaüstünün yüksekliğini ayarlayın"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "İsteğe bağlı"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Aşağıdaki sertifika doğrulanamadı.\n"
++"Bu sertifikaya güveniyor musunuz?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"İsteğe bağlı. Eğer boşsa, kullanıcı adınız kullanılacaktır. "
++"kullaniciadi@makineadi biçiminde, yukarıdaki Makine alanına da girilebilir."
++
++
++msgid "Minimize"
++msgstr "Simge durumuna küçült"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "Bağlan"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Vazgeç"
++
+--- a/po/uk.po
++++ b/po/uk.po
+@@ -1009,3 +1009,102 @@ msgid "Open %s:%d"
+ msgstr "Відкрити %s:%d"
+ 
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Домен:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Зберігати реєстраційні дані у в'язці GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Перевіряння сертифікатів"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Тема:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Видавець:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Відбиток:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Доступ до віддаленої стільниці MS Windows"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "Параметри RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "_Ширина:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "Вказати ширину віддаленої стільниці"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "_Висота:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "Вказати висоту віддаленої стільниці"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Необов'язково"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Сертифікат нижче неможливо перевірити.\n"
++"Завірити його?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Необов'язково. Якщо залишено порожнім, буде використано поточного  "
++"користувача. Також значення можна задати у вигляді користувач@вузол у полі "
++"«Вузол» вище."
++
++msgid "Minimize"
++msgstr "Згорнути"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "З'єднатись"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "_Скасувати"
++
+--- a/po/vi.po
++++ b/po/vi.po
+@@ -769,3 +769,100 @@ msgstr "Mở %s:%d"
+ msgid "Press Ctrl+Alt to release the cursor"
+ msgstr "Bấm tổ hợp phím Ctrl+Alt để nhả con trỏ"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "_Miền:"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "Lưu thông tin đăng nhập vào vòng khóa GNOME"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "Thẩm tra chứng nhận"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "Chủ thể:"
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "Nhà phát hành:"
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "Dấu vân tay:"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "Truy cập đến màn hình nền MS Windows từ xa"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "Tùy chọn RDP"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:150
++msgid "_Width:"
++msgstr "_Rộng:"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:157
++msgid "Set width of the remote desktop"
++msgstr "Đặt chiều rộng của màn hình nền máy chủ"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:170
++msgid "_Height:"
++msgstr "_Cao:"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:177
++msgid "Set height of the remote desktop"
++msgstr "Đặt chiều cao của màn hình nền máy chủ"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "Tùy chọn"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"Giấy chứng nhận dưới đây không thể xác minh được.\n"
++"Bạn có tin giấy chứng nhận không?"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"Tùy chọn. Nếu để trống, tài khoản của bạn sẽ được dùng. Ngoài ra, nó có thể "
++"được cung ứng trên trường máy chủ, theo dạng thức tài_khoản@máy_chủ."
++
++
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:972
++#: ../plugins/rdp/vinagre-rdp-tab.c:1013
++msgid "Connect"
++msgstr "Kết nối"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:971 ../plugins/rdp/vinagre-rdp-tab.c:1012
++msgid "_Cancel"
++msgstr "T_hôi"
++
+--- a/po/zh_CN.po
++++ b/po/zh_CN.po
+@@ -1057,3 +1057,99 @@ msgstr "打开 %s：%d"
+ msgid "Open %s:%d"
+ msgstr "打开 %s：%d"
+ 
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "域名(_N)："
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "将登录凭据存储在 GNOME 密钥环中"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "证书验证"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "标题："
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "签发者："
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "指纹："
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "访问微软 Windows 远程桌面"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:111
++msgid "RDP Options"
++msgstr "RDP 选项"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:150
++msgid "_Width:"
++msgstr "宽度(_W)："
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:157
++msgid "Set width of the remote desktop"
++msgstr "设置远程桌面的宽度"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:170
++msgid "_Height:"
++msgstr "高度(_H)："
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:177
++msgid "Set height of the remote desktop"
++msgstr "设置远程桌面的高度"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "选项"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr "以下证书不能验证通过。你是否相信此证书？"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"可选。如果为空，将使用您的用户名。也可以在上面的主机字段中以 用户名@主机名 的"
++"格式提供。"
++
++
++msgid "Minimize"
++msgstr "最小化"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:972
++#: ../plugins/rdp/vinagre-rdp-tab.c:1013
++msgid "Connect"
++msgstr "连接"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:971 ../plugins/rdp/vinagre-rdp-tab.c:1012
++msgid "_Cancel"
++msgstr "取消(_C)"
++
+--- a/po/zh_HK.po
++++ b/po/zh_HK.po
+@@ -1070,3 +1070,99 @@ msgstr "開啟 %s：%d"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "按 Ctrl+Alt 以取得游標"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "網域(_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "將登入證書儲存到 GNOME 密碼匙圈"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "證書驗證"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "主旨："
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "簽發者："
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "數碼指紋："
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "存取 MS Windows 遠端桌面"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:104
++msgid "RDP Options"
++msgstr "RDP 選項"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:131
++msgid "_Width:"
++msgstr "闊度(_W):"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:138
++msgid "Set width of the remote desktop"
++msgstr "設定這個遠端桌面的闊度"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:147
++msgid "_Height:"
++msgstr "高度(_H):"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:154
++msgid "Set height of the remote desktop"
++msgstr "設定這個遠端桌面的高度"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "選擇性的"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"下列證書無法被驗證。\n"
++"你信任這個證書嗎？"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:118
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr "選擇性的。如果保持空白，會使用你的使用者名稱。另外，也可以在上面的「主機」欄位中指定，格式為 使用者名稱@主機名稱。"
++
++msgid "Minimize"
++msgstr "最小化"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
++#: ../plugins/rdp/vinagre-rdp-tab.c:792
++msgid "Connect"
++msgstr "連線"
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
++#| msgid "Cancel Login"
++msgid "_Cancel"
++msgstr "取消(_C)"
++
+--- a/po/zh_TW.po
++++ b/po/zh_TW.po
+@@ -1085,3 +1085,102 @@ msgstr "開啟 %s：%d"
+ 
+ #~ msgid "Press Ctrl+Alt to grab the cursor"
+ #~ msgstr "按 Ctrl+Alt 以取得游標"
++
++
++#: ../data/vinagre.ui.h:10
++msgid "_Domain:"
++msgstr "網域(_D):"
++
++#: ../data/vinagre.ui.h:12
++msgid "Store the login credential in GNOME Keyring"
++msgstr "將登入憑證儲存到 GNOME 鑰匙圈"
++
++#: ../data/vinagre.ui.h:23
++msgid "Certificate Verification"
++msgstr "憑證驗證"
++
++#. Subject of the certificate.
++#: ../data/vinagre.ui.h:27
++msgid "Subject:"
++msgstr "主旨："
++
++#. Issuer of the certificate.
++#: ../data/vinagre.ui.h:29
++msgid "Issuer:"
++msgstr "簽發者："
++
++#. Fingerprint of the certificate.
++#: ../data/vinagre.ui.h:37
++msgid "Fingerprint:"
++msgstr "數位指紋："
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:61
++msgid "RDP"
++msgstr "RDP"
++
++#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:63
++msgid "Access MS Windows remote desktops"
++msgstr "存取 MS Windows 遠端桌面"
++
++#: ../plugins/rdp/vinagre-rdp-plugin.c:110
++msgid "RDP Options"
++msgstr "RDP 選項"
++
++#. Host width
++#: ../plugins/rdp/vinagre-rdp-plugin.c:137
++msgid "_Width:"
++msgstr "寬度(_W):"
++
++#. Translators: This is the tooltip for the width field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:144
++msgid "Set width of the remote desktop"
++msgstr "設定這個遠端桌面的寬度"
++
++#. Host height
++#: ../plugins/rdp/vinagre-rdp-plugin.c:153
++msgid "_Height:"
++msgstr "高度(_H):"
++
++#. Translators: This is the tooltip for the height field in a RDP connection
++#: ../plugins/rdp/vinagre-rdp-plugin.c:160
++msgid "Set height of the remote desktop"
++msgstr "設定這個遠端桌面的高度"
++
++#. Translators: This is the tooltip for the password field in a SPICE connection
++#: ../plugins/spice/vinagre-spice-plugin.c:315
++msgid "Optional"
++msgstr "選擇性的"
++
++#: ../data/vinagre.ui.h:34
++msgid ""
++"The below certificate could not be verified.\n"
++"Do you trust the certificate?"
++msgstr ""
++"下列憑證無法被驗證。\n"
++"您信任這個憑證嗎？"
++
++#. Fingerprint of the certificate.
++#: ../plugins/rdp/vinagre-rdp-plugin.c:124
++#: ../plugins/ssh/vinagre-ssh-plugin.c:117
++msgid ""
++"Optional. If blank, your username will be used. Also, it can be supplied in "
++"the Host field above, in the form username@hostname."
++msgstr ""
++"選擇性的。如果保持空白，會使用您的使用者名稱。另外，也可以在上面的「主機」欄"
++"位中指定，格式為 使用者名稱@主機名稱。"
++
++
++msgid "Minimize"
++msgstr "最小化"
++
++#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:763
++#: ../plugins/rdp/vinagre-rdp-tab.c:804
++msgid "Connect"
++msgstr "連線"
++
++
++#: ../plugins/rdp/vinagre-rdp-tab.c:762 ../plugins/rdp/vinagre-rdp-tab.c:803
++msgid "_Cancel"
++msgstr "取消(_C)"
++

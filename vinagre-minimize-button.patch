@@ -1,0 +1,57 @@
+--- a/vinagre/vinagre-tab.c
++++ b/vinagre/vinagre-tab.c
+@@ -302,6 +302,13 @@ close_button_clicked (GtkToolButton *button,
+ }
+ 
+ static void
++minimize_button_clicked (GtkToolButton *button,
++                         VinagreTab    *tab)
++{
++  vinagre_window_minimize (tab->priv->window);
++}
++
++static void
+ fullscreen_button_clicked (GtkToolButton *button,
+ 			   VinagreTab    *tab)
+ {
+@@ -327,6 +334,14 @@ setup_layout (VinagreTab *tab)
+   gtk_toolbar_insert (GTK_TOOLBAR (tab->priv->toolbar), GTK_TOOL_ITEM (button), 0);
+   g_signal_connect (button, "clicked", G_CALLBACK (close_button_clicked), tab);
+ 
++  /* Minimize window */
++  button = GTK_WIDGET (gtk_tool_button_new_from_stock (GTK_STOCK_GOTO_BOTTOM));
++  /* Translators: Pressing this button will minimize Vinagre */
++  gtk_tool_item_set_tooltip_text (GTK_TOOL_ITEM (button), _("Minimize"));
++  gtk_widget_show (button);
++  gtk_toolbar_insert (GTK_TOOLBAR (tab->priv->toolbar), GTK_TOOL_ITEM (button), 0);
++  g_signal_connect (button, "clicked", G_CALLBACK (minimize_button_clicked), tab);
++
+   /* Connection name/menu */
+   str = vinagre_connection_get_best_name (tab->priv->conn);
+   button = GTK_WIDGET (gtk_tool_button_new (NULL, str));
+--- a/vinagre/vinagre-window.c
++++ b/vinagre/vinagre-window.c
+@@ -881,6 +881,12 @@ vinagre_window_toggle_fullscreen (VinagreWindow *window)
+     gtk_window_fullscreen (GTK_WINDOW (window));
+ }
+ 
++void
++vinagre_window_minimize (VinagreWindow *window)
++{
++  gtk_window_iconify (GTK_WINDOW (window));
++}
++
+ GtkWidget *
+ vinagre_window_get_statusbar (VinagreWindow *window)
+ {
+--- a/vinagre/vinagre-window.h
++++ b/vinagre/vinagre-window.h
+@@ -86,6 +86,8 @@ gboolean	vinagre_window_is_fullscreen		(VinagreWindow         *window);
+ 
+ void		vinagre_window_toggle_fullscreen	(VinagreWindow *window);
+ 
++void		vinagre_window_minimize			(VinagreWindow *window);
++
+ void		vinagre_window_merge_tab_ui (VinagreWindow	*window);
+ 
+ GList 		*vinagre_window_get_connections		(VinagreWindow *window);
