@@ -4,7 +4,7 @@
 
 Name:           vinagre
 Version:        3.14.3
-Release:        1%{?dist}
+Release:        11%{?dist}
 Summary:        VNC client for GNOME
 
 Group:          Applications/System
@@ -16,6 +16,30 @@ Source0:        https://download.gnome.org/sources/%{name}/3.14/%{name}-%{versio
 # https://bugzilla.redhat.com/show_bug.cgi?id=1174568
 Patch0:         vinagre-3.14.3-translations.patch
 Patch1:         vinagre-3.14.3-translations-2.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1291297
+Patch2:         vinagre-3.14.3-increase-spice-passwords-limit.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1291287
+Patch3:         vinagre-3.14.3-wrong-selection-when-moving-outta-window.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1291281
+Patch4:         vinagre-3.14.3-use-cached-session-size-for-RDP.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1304230
+Patch5:         vinagre-3.14.3-ja-translations.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1291275
+Patch6:         vinagre-3.14.3-minimize-to-fullscreen-toolbar.patch
+Patch7:         vinagre-3.14.3-fix-rdp-initialization.patch
+Patch8:         vinagre-3.14.3-handle-domain-when-looking-for-credentials.patch
+Patch9:         vinagre-3.14.3-store-credentials-for-rdp.patch
+Patch10:        vinagre-3.14.3-rdp-scaling.patch
+Patch11:        vinagre-3.14.3-correct-authentication-attempts.patch
+Patch12:        vinagre-3.14.3-translations-3.patch
+# https://bugzilla.gnome.org/show_bug.cgi?id=746730
+Patch13:        vinagre-3.14.3-allow-different-logins-same-host.patch
+Patch14:        vinagre-3.14.3-focus-new-rdp-tab.patch
+Patch15:        vinagre-3.14.3-dont-capture-keyevents.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1376044
+Patch16:        vinagre-3.14.3-RDP-update.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1375720
+Patch17:        vinagre-3.14.3-connection-failure.patch
 
 %if 0%{?with_spice}
 BuildRequires:  pkgconfig(spice-client-gtk-3.0)
@@ -30,10 +54,13 @@ BuildRequires:  pkgconfig(libsecret-1)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(telepathy-glib)
 BuildRequires:  pkgconfig(vte-2.91)
+BuildRequires:  gnome-common
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
 BuildRequires:  itstool
 BuildRequires:  vala-devel
+BuildRequires:  libappstream-glib-devel
+BuildRequires:  yelp-tools
 
 # for /usr/share/dbus-1/services
 Requires: dbus
@@ -60,8 +87,25 @@ Apart from the VNC protocol, vinagre supports Spice and RDP.
 %setup -q
 %patch0 -p1 -b .translations
 %patch1 -p1 -b .translations-2
+%patch2 -p1 -b .increase-spice-passwords-limit
+%patch3 -p1 -b .wrong-selection-when-moving-outta-window
+%patch4 -p1 -b .use-cached-session-size-for-RDP
+%patch5 -p1 -b .ja-translations
+%patch6 -p1 -b .minimize-to-fullscreen-toolbar
+%patch7 -p1 -b .fix-rdp-initialization
+%patch8 -p1 -b .handle-domain-when-looking-for-credentials
+%patch9 -p1 -b .store-credentials-for-rdp
+%patch10 -p1 -b .rdp-scaling
+%patch11 -p1 -b .correct-authentication-attempts
+%patch12 -p1 -b .translations-3
+%patch13 -p1 -b .allow-different-logins-same-host
+%patch14 -p1 -b .focus-new-rdp-tab
+%patch15 -p1 -b .dont-capture-keyevents
+%patch16 -p1 -b .RDP-update
+%patch17 -p1 -b .connection-failure
 
 %build
+autoreconf -ivf
 %configure \
 %if 0%{?with_spice}
            --enable-spice \
@@ -123,6 +167,52 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %changelog
+* Mon Sep 19 2016 Marek Kasik <mkasik@redhat.com> - 3.14.3-11
+- Handle connection failures of RDP plugin
+- Resolves: #1375720
+
+* Mon Sep 19 2016 Marek Kasik <mkasik@redhat.com> - 3.14.3-10
+- Check RDP events in timeout GSource not in idle
+- Resolves: #1376044
+
+* Thu Sep 8 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-9
+- Focus on new RDP tab
+- Do not capture key events of other tabs
+- Resolves: #1291275
+
+* Tue Aug 30 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-8
+- Allow to open multiple connections with same host
+- Resolves: #1291275
+
+* Thu May 05 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-7
+- Correct authentication attempts control
+- Add missing translations
+- Resolves: #1291275
+
+* Wed Apr 27 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-6
+- Add minimize button to the fullscreen toolbar
+- Handle domain when looking for credentials
+- Store credentials for RDP
+- Fix RDP initialization with recent FreeRDP
+- Allow scalling of RDP sessions
+- Resolves: #1291275
+
+* Fri Mar 18 2016 Marek Kasik <mkasik@redhat.com> - 3.14.3-5
+- Add missing translations (patch by Parag Nemade)
+- Resolves: #1304230
+
+* Tue Mar 01 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-4
+- Use cached session size for RDP
+- Resolves: #1291281
+
+* Tue Mar 01 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-3
+- Fix selection rectangle when user leaves window
+- Resolves: #1291287
+
+* Thu Feb 25 2016 Felipe Borges <feborges@redhat.com> - 3.14.3-2
+- Change SPICE passwords limited to 60 characters
+- Resolves: #1291297
+
 * Thu Apr 30 2015 Marek Kasik <mkasik@redhat.com> - 3.14.3-1
 - Update to 3.14.3
 - Add translations update from translation team

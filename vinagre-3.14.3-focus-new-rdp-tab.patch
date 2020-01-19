@@ -1,0 +1,52 @@
+From 85c201a37211ac3251673a10ed504e789bb0db60 Mon Sep 17 00:00:00 2001
+From: Marek Kasik <mkasik@redhat.com>
+Date: Tue, 23 Feb 2016 12:02:29 +0100
+Subject: [PATCH] Give focus to new RDP tab
+
+Previously RDP tab didn't get focus once it was created
+and hence typing did not work initially.
+RDP tab is a focusable widget now and grabs focus once
+it is realized.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=752957
+---
+ plugins/rdp/vinagre-rdp-tab.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/plugins/rdp/vinagre-rdp-tab.c b/plugins/rdp/vinagre-rdp-tab.c
+index 39b18a7..0facea4 100644
+--- a/plugins/rdp/vinagre-rdp-tab.c
++++ b/plugins/rdp/vinagre-rdp-tab.c
+@@ -1221,11 +1221,21 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+ }
+ 
+ static void
++tab_realized (GtkWidget     *widget,
++              gpointer       user_data)
++{
++  gtk_widget_grab_focus (widget);
++  g_signal_handlers_disconnect_by_func (widget, tab_realized, user_data);
++}
++
++static void
+ vinagre_rdp_tab_init (VinagreRdpTab *rdp_tab)
+ {
+   rdp_tab->priv = VINAGRE_RDP_TAB_GET_PRIVATE (rdp_tab);
+ 
+   rdp_tab->priv->connected_actions = create_connected_actions (rdp_tab);
++
++  g_signal_connect (rdp_tab, "realize", G_CALLBACK (tab_realized), NULL);
+ }
+ 
+ GtkWidget *
+@@ -1235,6 +1245,7 @@ vinagre_rdp_tab_new (VinagreConnection *conn,
+   return GTK_WIDGET (g_object_new (VINAGRE_TYPE_RDP_TAB,
+ 				   "conn", conn,
+ 				   "window", window,
++				   "can-focus", TRUE,
+ 				   NULL));
+ }
+ 
+-- 
+2.5.0
+

@@ -1,0 +1,35 @@
+--- vinagre-3.14.3/plugins/rdp/vinagre-rdp-tab.c
++++ vinagre-3.14.3/plugins/rdp/vinagre-rdp-tab.c
+@@ -1171,6 +1171,8 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+   VinagreTab           *tab = VINAGRE_TAB (rdp_tab);
+   GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
+   gboolean              success = TRUE;
++  gboolean              connection_failed;
++  guint                 authentication_attempts;
+ 
+   priv->events = g_queue_new ();
+ 
+@@ -1180,17 +1182,22 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+ 
+   do
+     {
++      connection_failed = FALSE;
++      authentication_attempts = priv->authentication_attempts;
+       /* Run FreeRDP session */
+       success = freerdp_connect (priv->freerdp_session);
+       if (!success)
+         {
+           freerdp_free (priv->freerdp_session);
+           init_freerdp (rdp_tab);
++          if (authentication_attempts == priv->authentication_attempts)
++              connection_failed = TRUE;
+         }
+     }
+   while (!success &&
+          priv->authentication_attempts < 3 &&
+-         !priv->authentication_cancelled);
++         !priv->authentication_cancelled &&
++         !connection_failed);
+ 
+   if (!success)
+     {
