@@ -1,3 +1,16 @@
+--- vinagre-3.22.0/configure.ac
++++ vinagre-3.22.0/configure.ac
+@@ -67,7 +67,9 @@ AS_IF([test "x$enable_rdp" != "xno"],
+   [PKG_CHECK_EXISTS([$RDP_DEPS],
+     [have_rdp=yes
+      PKG_CHECK_EXISTS(freerdp >= 1.1,
+-       [AC_DEFINE([HAVE_FREERDP_1_1], [1], [FreeRDP is of version 1.1 or newer])], [])],
++       [AC_DEFINE([HAVE_FREERDP_1_1], [1], [FreeRDP is of version 1.1 or newer])], [])
++     PKG_CHECK_EXISTS(freerdp >= 1.2,
++       [AC_DEFINE([HAVE_FREERDP_1_2], [1], [FreeRDP is of version 1.2 or newer])], [])],
+     [have_rdp=no])],
+   [have_rdp=no])
+ 
 --- vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
 +++ vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
 @@ -72,6 +72,9 @@ struct _VinagreRdpTabPrivate

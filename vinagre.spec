@@ -4,7 +4,7 @@
 
 Name:           vinagre
 Version:        3.22.0
-Release:        12%{?dist}
+Release:        8%{?dist}
 Summary:        VNC client for GNOME
 
 Group:          Applications/System
@@ -23,21 +23,12 @@ Patch2:         vinagre-3.22.0-rdp-connection-cancel.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1435715
 Patch3:         vinagre-3.22.0-fullscreen-toolbar.patch
 
-# https://bugzilla.redhat.com/show_bug.cgi?id=1459111
-Patch4:         vinagre-3.22.0-share-clipboard.patch
-
-# https://bugzilla.redhat.com/show_bug.cgi?id=1680229
-Patch5:         vinagre-3.22.0-freerdp2.patch
-
-# https://bugzilla.redhat.com/show_bug.cgi?id=1569552
-Patch6:         vinagre-3.22.0-rdp-password-length.patch
-
 %if 0%{?with_spice}
 BuildRequires:  pkgconfig(spice-client-gtk-3.0)
 %endif
 BuildRequires:  pkgconfig(avahi-gobject)
 BuildRequires:  pkgconfig(avahi-ui-gtk3)
-BuildRequires:  pkgconfig(freerdp2)
+BuildRequires:  pkgconfig(freerdp)
 BuildRequires:  pkgconfig(gio-unix-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtk-vnc-2.0)
@@ -76,9 +67,6 @@ Apart from the VNC protocol, vinagre supports Spice and RDP.
 %patch1 -p1 -b .freerdp-versions
 %patch2 -p1 -b .rdp-connection-cancel
 %patch3 -p1 -b .fullscreen-toolbar
-%patch4 -p1 -b .share-clipboard
-%patch5 -p1 -b .freerdp2
-%patch6 -p1 -b .rdp-password-length
 
 %build
 autoreconf -ivf
@@ -129,7 +117,7 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %doc AUTHORS NEWS README
 %license COPYING
 %{_bindir}/vinagre
-%{_datadir}/metainfo/*.appdata.xml
+%{_datadir}/appdata/*.appdata.xml
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/mime/packages/vinagre-mime.xml
@@ -144,22 +132,6 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %changelog
-* Fri Mar 15 2019 Marek Kasik <mkasik@redhat.com> - 3.22.0-12
-- Apply the patch
-- Resolves: #1569552
-
-* Fri Mar 15 2019 Marek Kasik <mkasik@redhat.com> - 3.22.0-11
-- Set maximum length of RDP password to 255 characters
-- Resolves: #1569552
-
-* Mon Feb 25 2019 Marek Kasik <mkasik@redhat.com> - 3.22.0-10
-- Make vinagre build with FreeRDP 2 library
-- Resolves: #1680229
-
-* Mon Sep 25 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-9
-- Fix "Share clipboard" functionality in Spice plugin
-- Resolves: #1459111
-
 * Mon Mar 27 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-8
 - Rebuild with new spice-gtk3
 - Related: #1435715
