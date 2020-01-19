@@ -1,0 +1,118 @@
+.TH VINAGRE "1" "April 18, 2011" "User Commands"
+.SH "NAME"
+vinagre \- a remote desktop viewer for the GNOME Desktop
+.SH "SYNOPSYS"
+.PP
+\fBvinagre\fR [\fBOPTIONS\fR] [\fB\fIserver\fR]\fR[::\fIport\fR|:display\fR]
+.SH "DESCRIPTION"
+.PP
+\fBvinagre\fR is a remote desktop viewer for the GNOME desktop. It can support
+many protocols using a plugin system. Current plugins exist for VNC and SSH.
+Vinagre has many features, among others:\&.
+.PP
+- Support for multiple connections simultaneously
+.PP
+- Bookmarks and history support
+.PP
+- Avahi integration
+.PP
+- GNOME keyring integration
+.PP
+- You can connect to a VNC server by double clicking on a \&.vnc file when using nautilus\&.
+.SH "OPTIONS"
+.SS "Help Options:"
+.TP
+\-?, \fB\-\-help\fR
+Show help options
+.SS "Application Options:"
+.TP
+\fB\-F\fR, \fB\-\-file\fR=\fIfilename\fR
+Opens a .vnc file
+.TP
+\fB\-f\fR, \fB\-\-fullscreen\fR
+Open Vinagre in fullscreen mode
+.TP
+\fB\-\-geometry\fR=\fIGEOMETRY\fR
+Specify geometry of the Vinagre window in X11 format
+.TP
+\-n, \fB\-\-new\-window\fR
+Create a new toplevel window in an existing instance of Vinagre
+.TP
+\fB\-\-display\fR=\fIDISPLAY\fR
+X display to use
+.PP
+Run 'vinagre \fB\-\-help\fR' to see a full list of available command line options
+.SH "OPERANDS"
+.PP
+The following operands are supported:
+.TP
+\fB\fB\fI\fR[server\fR]\fR[::\fIport|:display\fR]\fR\fR
+Specifies the VNC server to connect to\&. The VNC server can be either a
+hostname, or an IP address. If the server is an IPv6 address, it must be
+enclosed by square brackets. The address can optionally be followed by two
+colons (::) and the VNC port number\&, or alternatively by one colon (:) and
+the display where Vinagre should run. If a port is not specified, default
+value of 5900 will be used\&.
+If the value is lower than 1024, 5900 will be added to it\&. For example, ":0"
+means "5900" and ":1" means ":5901"\&. If only a port is specified, but not
+the hostname, localhost will be assumed.
+Possible values for the display are between 0 and 1024. If a display number
+greater than 1024 is specified, it will be assumed to be a port.
+Note that you can't specify the port and the display at the same time.
+.SH "EXAMPLES"
+.PP
+\fBExample 1: Start vinagre from the command line\fR
+.PP
+.PP
+.nf
+example% \fBvinagre\fR
+.fi
+.PP
+\fBExample 2: Create a new top-level window\fR
+.PP
+.PP
+.nf
+example% \fBvinagre \-\-new-window\fR
+.fi
+.PP
+\fBExample 3: Connect to a specified VNC server and port\fR
+.PP
+.PP
+.nf
+example% \fBvinagre snoopy::5900\fR
+.fi
+.PP
+\fBExample 4: Connect to a specified IPv4 address and port\fR
+.PP
+.PP
+.nf
+example% \fBvinagre 192.168.1.35::2700
+.fi
+.PP
+\fBExample 5: Connect to a specified IPv6 address and port\fR
+.PP
+.PP
+.nf
+example% \fBvinagre [2001:0db8:0:0:0:0:1428:57ab]::2700
+.fi
+.PP
+\fBExample 6: Connect to a VNC server specified by a \&.vnc file\fR
+.PP
+.PP
+.nf
+example% \fBvinagre \-F snoopy\&.vnc\fR
+.fi
+.PP
+\fBExample 7: Connect to localhost on a specified port in fullscreen mode\fR
+.PP
+.PP
+.nf
+example% \fBvinagre -f ::5900
+.fi
+.SH "SEE ALSO"
+.PP
+Vinagre help manual
+.SH "AUTHOR"
+Vinagre was written by Jonh Wendell <wendell@bani.com.br> and David King <amigadave@amigadave.com>
+.TP
+This manual page was written by Emilio Pozuelo Monfort <pochu@ubuntu.com> and Halton Huo <halton.huo@sun.com>.

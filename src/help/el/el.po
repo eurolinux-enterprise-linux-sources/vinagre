@@ -1,0 +1,676 @@
+# Vasilis Tsivikis <vasitsiv.dev@gmail.com>, 2011.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: vinagre\n"
+"POT-Creation-Date: 2014-05-18 10:34+0000\n"
+"PO-Revision-Date: 2014-05-19 21:20+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"Language-Team: team@gnome.gr\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.4\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME, 2011, 2012, 2013, 2014\n"
+"Bασίλης Τσιβίκης <vasitsiv.dev@gmail.com>, 2011 \n"
+"Μαρία Θουκυδίδου <marablack3@gmail.com>, 2014"
+
+#. (itstool) path: info/title
+#: C/connect.page:8
+msgctxt "sort"
+msgid "1"
+msgstr "1"
+
+#. (itstool) path: credit/name
+#: C/connect.page:14 C/connect-file.page:13 C/connect-reverse.page:15
+#: C/fullscreen.page:11 C/introduction.page:13 C/keyboard-shortcuts.page:13
+#: C/scaling.page:11 C/take-screenshot.page:13 C/view-only.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/connect.page:20
+msgid "Connect to another computer on your local network."
+msgstr "Σύνδεση με έναν άλλο υπολογιστή στο τοπικό σας δίκτυο."
+
+#. (itstool) path: page/title
+#: C/connect.page:23
+msgid "Establish a connection"
+msgstr "Δημιουργία σύνδεσης"
+
+#. (itstool) path: page/p
+#: C/connect.page:25
+msgid ""
+"You can connect to other computers on your local network using <app>Remote "
+"Desktop Viewer</app>."
+msgstr ""
+"Μπορείτε να συνδεθείτε με άλλους υπολογιστές στο τοπικό σας δίκτυο "
+"χρησιμοποιώντας το <app>Vinagre</app>."
+
+#. (itstool) path: item/p
+#: C/connect.page:30
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem"
+"\">Connect</gui></guiseq>."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Απομακρυσμένος</gui> <gui style="
+"\"menuitem\">Σύνδεση</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/connect.page:34
+msgid ""
+"Choose the <gui>Protocol</gui> and the <gui>Host</gui> for the connection."
+msgstr ""
+"Επιλέξτε το <gui>Πρωτόκολλο</gui> και τον <gui>Κεντρικό υπολογιστή</gui> για "
+"τη σύνδεση."
+
+#. (itstool) path: note/p
+#: C/connect.page:37
+msgid ""
+"Some protocols allow you to see all available computers on your local "
+"network by clicking the <gui style=\"button\">Find</gui> button. This "
+"buttons will not be displayed if you do not have <app>Avahi</app> support."
+msgstr ""
+"Κάποια πρωτόκολλα επιτρέπουν να δείτε όλους τους διαθέσιμους υπολογιστές στο "
+"τοπικό σας δίκτυο πατώντας στο κουπί <gui style=\"button\">Εύρεση</gui>. "
+"Χωρίς την υποστήριξη του <app>Avahi</app>, αυτό το κουμπί δεν θα εμφανίζεται."
+
+#. (itstool) path: item/p
+#: C/connect.page:44
+msgid ""
+"Select the options which you want enabled when the connection is made. "
+"Options will vary depending on the protocol that you use."
+msgstr ""
+"Επιλέξτε τις επιλογές που θέλετε ενεργοποιημένες όταν γίνετε η σύνδεση. Οι "
+"επιλογές θα διαφέρουν ανάλογα με το πρωτόκολλο που χρησιμοποιείτε."
+
+#. (itstool) path: item/p
+#: C/connect.page:48
+msgid "Click the <gui style=\"button\">Connect</gui> button."
+msgstr "Πατήστε το κουμπί <gui style=\"button\">Σύνδεση</gui>."
+
+#. (itstool) path: item/p
+#: C/connect.page:49
+msgid ""
+"At this point, the remote desktop may need to confirm the connection. If "
+"this is the case, the viewer may remain black until the connection is "
+"confirmed."
+msgstr ""
+"Σε αυτό το σημείο, η απομακρυσμένη επιφάνεια εργασίας μπορεί να χρειαστεί να "
+"επιβεβαιώσει την σύνδεση. Αν συμβαίνει αυτό, ο θεατής μπορεί να παραμείνει "
+"με μαύρη οθόνη μέχρι να επιβεβαιωθεί η σύνδεση."
+
+#. (itstool) path: note/p
+#: C/connect.page:53
+msgid ""
+"Some computers may require a secure connection: an authentication dialog "
+"will be displayed, asking for the credentials. The type of credentials "
+"depend on the remote host; it may be a password and a username. If you "
+"select <gui>Remember this credential</gui>, <app>Remote Desktop Viewer</app> "
+"will store the information using <app>GNOME Keyring</app>."
+msgstr ""
+"Μερικοί υπολογιστές μπορεί να απαιτούν μια ασφαλή σύνδεση: ένας διάλογος "
+"πιστοποίησης θα εμφανισθεί, ζητώντας τα διαπιστευτήρια. Ο τύπος τους "
+"εξαρτάται από τον απομακρυσμένο κεντρικό υπολογιστή· μπορεί να είναι ένας "
+"κωδικός και ένα όνομα χρήστη. Αν επιλέξετε <gui>Υπενθύμιση κωδικού "
+"πρόσβασης</gui>, το <app>Vinagre</app> θα αποθηκεύσει τις πληροφορίες "
+"χρησιμοποιώντας την <app>κλειδοθήκη GNOME</app>."
+
+#. (itstool) path: page/p
+#: C/connect.page:63
+msgid ""
+"If the connection has been used previously, you can also access it through "
+"<guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem\">Recent "
+"Connections</gui></guiseq>."
+msgstr ""
+"Αν η σύνδεση χρησιμοποιήθηκε προηγουμένως, μπορείτε επίσης να την "
+"προσπελάσετε μέσα από <guiseq><gui style=\"menu\">Απομακρυσμένη</gui> <gui "
+"style=\"menuitem\">Πρόσφατες συνδέσεις</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/connect.page:67
+msgid ""
+"To close a connection, choose <guiseq><gui style=\"menu\">Remote</gui> <gui "
+"style=\"menuitem\">Close</gui></guiseq> or click the <gui style=\"button"
+"\">Close</gui> button."
+msgstr ""
+"Για να κλείσετε μια σύνδεση, επιλέξτε <guiseq><gui style=\"menu"
+"\">Απομακρυσμένη</gui> <gui style=\"menuitem\">Κλείσιμο</gui></guiseq> ή "
+"πατήστε το κουμπί <gui style=\"button\">Κλείσιμο</gui>."
+
+#. (itstool) path: info/title
+#: C/connect-file.page:8
+msgctxt "sort"
+msgid "2"
+msgstr "2"
+
+#. (itstool) path: license/p
+#: C/connect-file.page:18 C/fullscreen.page:16 C/scaling.page:16
+#: C/view-only.page:16
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#. (itstool) path: info/desc
+#: C/connect-file.page:21
+msgid "Use a remote connection file to connect to a remote machine."
+msgstr ""
+"Χρησιμοποιείστε ένα αρχείο απομακρυσμένης σύνδεσης για να συνδεθείτε με ένα "
+"απομεμακρυσμένο μηχάνημα."
+
+#. (itstool) path: page/title
+#: C/connect-file.page:24
+msgid "Connect using a <file>.vnc</file> file"
+msgstr "Σύνδεση με χρήση αρχείου <file>.vnc</file>"
+
+#. (itstool) path: page/p
+#: C/connect-file.page:26
+msgid ""
+"Some hosts distribute <em>remote connection files</em>, that generally end "
+"with the suffix <file>.vnc</file>, instead of using a host address and port."
+msgstr ""
+"Μερικοί κεντρικοί υπολογιστές διανέμουν <em>αρχεία απομακρυσμένης σύνδεσης</"
+"em>, τα οποία γενικά έχουν κατάληξη <file>.vnc</file>, αντί να χρησιμοποιούν "
+"μια διεύθυνση κεντρικού υπολογιστή και θύρα."
+
+#. (itstool) path: item/p
+#: C/connect-file.page:32
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem"
+"\">Open</gui></guiseq>."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Απομακρυσμένος</gui> <gui style="
+"\"menuitem\">Άνοιγμα</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/connect-file.page:36
+msgid "Select the file you want to open."
+msgstr "Επιλέξτε το αρχείο που θέλετε να ανοίξετε."
+
+#. (itstool) path: item/p
+#: C/connect-file.page:39
+msgid "Click the <gui style=\"button\">Open</gui> button."
+msgstr "Πατήστε το κουμπί <gui style=\"button\">Άνοιγμα</gui>."
+
+#. (itstool) path: note/p
+#: C/connect-file.page:44
+msgid "You can also open a remote connection file from <app>Files</app>."
+msgstr ""
+"Μπορείτε επίσης να ανοίξετε ένα απομακρυσμένο αρχείο σύνδεσης από τα "
+"<app>Αρχεία</app>."
+
+#. (itstool) path: info/title
+#: C/connect-reverse.page:9
+msgctxt "sort"
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: info/desc
+#: C/connect-reverse.page:21
+msgid ""
+"Connect to computers not on your local network: bypassing firewall "
+"restrictions on remote host."
+msgstr ""
+"Σύνδεση με υπολογιστές που δεν βρίσκονται στο τοπικό δίκτυο: παρακάμπτοντας "
+"περιορισμούς του τοίχους προστασίας στο απομακρυσμένο σύστημα."
+
+#. (itstool) path: page/title
+#: C/connect-reverse.page:25
+msgid "<gui>Reverse Connections…</gui>"
+msgstr "<gui>Ανάστροφες συνδέσεις…</gui>"
+
+#. (itstool) path: page/p
+#: C/connect-reverse.page:27
+msgid ""
+"A reverse connection is usually used to bypass firewall restrictions on open "
+"ports. A firewall usually blocks open ports, but does not block outgoing "
+"traffic. In a normal forward connection, a client connects to an open port "
+"on the server. However, in the case of a reverse connection, the client "
+"opens a port for the server to connect to."
+msgstr ""
+"Μια αντίστροφη σύνδεση χρησιμοποιείται συνήθως για να παρακάμψει "
+"περιορισμούς του τοίχους προστασίας σε ανοιχτές θύρες. Ένα τοίχος προστασίας "
+"συνήθως φράσσει ανοιχτές θύρες, αλλά όχι εξερχόμενη κίνηση. Σε μια κανονική "
+"μπροστινή σύνδεση, ένας πελάτης συνδέεται σε μια ανοιχτή θύρα του "
+"διακομιστή. Όμως στην περίπτωση της αντίστροφης σύνδεσης, ο πελάτης ανοίγει "
+"μια θύρα όπου συνδέεται ο διακομιστής."
+
+#. (itstool) path: section/title
+#: C/connect-reverse.page:34
+msgid "Enabling reverse connections"
+msgstr "Ενεργοποίηση ανάστροφων συνδέσεων"
+
+#. (itstool) path: item/p
+#: C/connect-reverse.page:38
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem"
+"\">Reverse Connections…</gui></guiseq>."
+msgstr ""
+"Ανοίξτε <guiseq><gui style=\"menu\">Απομεμακρυσμένη</gui> <gui style="
+"\"menuitem\">αντίστροφες συνδέσεις…</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/connect-reverse.page:42
+msgid "Check <gui>Enable Reverse Connections</gui>."
+msgstr "Επιλέξτε <gui>Ενεργοποίηση αντίστροφων συνδέσεων</gui>."
+
+#. (itstool) path: section/title
+#: C/connect-reverse.page:49
+msgid "Access a computer behind a firewall"
+msgstr "Πρόσβαση ενός υπολογιστή πίσω από τοίχος προστασίας"
+
+#. (itstool) path: section/p
+#: C/connect-reverse.page:51
+msgid ""
+"The remote machine needs to connect to your machine using your <em>IP "
+"address</em> and port number, which can be found in the <gui>Reverse "
+"Connections…</gui> dialog, under <gui>Connectivity</gui>."
+msgstr ""
+"Ο απομακρυσμένος υπολογιστής πρέπει να συνδεθεί στο μηχάνημα σας "
+"χρησιμοποιώντας τη <em>διεύθυνση σας IP</em> και τον αριθμό θύρας, τα οποία "
+"βρίσκονται στον διάλογο <gui>Αντίστροφες συνδέσεις…</gui>, κάτω από την "
+"<gui>Συνδεσιμότητα</gui>."
+
+#. (itstool) path: note/p
+#: C/connect-reverse.page:56
+msgid ""
+"Currently, <app>Vino</app>, the GNOME VNC server, does not support reverse "
+"connections which are also known as \"listen mode\". Some other "
+"applications, such as <app>UltraVNC</app>, <app>RealVNC</app> and "
+"<app>TightVNC</app>, do have support for reverse connections."
+msgstr ""
+"Αυτή τη στιγμή, το <app>Vino</app>, ο διακομιστής VNC του GNOME, δεν "
+"υποστηρίζει αντίστροφες συνδέσεις, γνωστές επίσης και ως \"κατάσταση ακρόασης"
+"\". Κάποιες άλλες εφαρμογές, όπως το <app>UltraVNC</app>, <app>RealVNC</app> "
+"και <app>TightVNC</app>, έχουν υποστήριξη για αντίστροφες συνδέσεις."
+
+#. (itstool) path: section/p
+#: C/connect-reverse.page:62
+msgid ""
+"Once the remote computer connects to your machine, <app>Remote Desktop "
+"Viewer</app> will establish the reverse connection."
+msgstr ""
+"Μόλις συνδεθεί ο απομακρυσμένος υπολογιστής στο μηχάνημα σας, το "
+"<app>Vinagre</app> θα δημιουργήσει την ανάστροφη σύνδεση."
+
+#. (itstool) path: section/p
+#: C/connect-reverse.page:65
+msgid ""
+"When connecting to a machine which is not on your local network, you will "
+"need to provide your externally visible IP address and port number to the "
+"remote server."
+msgstr ""
+"Όταν συνδέεστε σε ένα μηχάνημα που δεν βρίσκεται στο τοπικό σας δίκτυο, θα "
+"χρειαστεί να παρέχετε την εξωτερικά ορατή διεύθυνση IP σας και τον αριθμό "
+"πόρτας στον απομακρυσμένο διακομιστή."
+
+#. (itstool) path: info/desc
+#: C/fullscreen.page:19
+msgid "View the remote desktop in fullscreen mode."
+msgstr ""
+"Προβολή της απομακρυσμένης επιφάνειας εργασίας σε λειτουργία πλήρους οθόνης."
+
+#. (itstool) path: page/title
+#: C/fullscreen.page:22
+msgid "Fullscreen mode"
+msgstr "Λειτουργία πλήρους οθόνης"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:24
+msgid ""
+"Fullscreen mode can be useful if viewing a desktop which is the same size or "
+"larger than yours."
+msgstr ""
+"Η λειτουργία πλήρους οθόνης μπορεί να είναι χρήσιμη αν προβάλετε μια "
+"επιφάνεια εργασίας που είναι του ίδιου μεγέθους ή μεγαλύτερη από την δική "
+"σας."
+
+#. (itstool) path: item/p
+#: C/fullscreen.page:29
+msgid ""
+"Choose <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq>, or press the corresponding toolbar button, to "
+"view the display area in fullscreen mode."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Προβολή</gui> <gui style=\"menuitem"
+"\">Πλήρης οθόνη</gui></guiseq>, ή πατήστε το αντίστοιχο κουμπί "
+"εργαλειοθήκης, για να προβάλετε τη περιοχή προβολής σε λειτουργία πλήρους "
+"οθόνης."
+
+#. (itstool) path: note/p
+#: C/fullscreen.page:37
+msgid ""
+"While in fullscreen mode, move the mouse to the top-center of the screen to "
+"display a hidden toolbar, which has <gui style=\"button\">Leave Fullscreen</"
+"gui>, <gui style=\"button\">Disconnect</gui> and other buttons."
+msgstr ""
+"Ενώ είστε σε λειτουργία πλήρους οθόνης, μετακινήστε το ποντίκι στο επάνω-"
+"κέντρο της οθόνης για να εμφανίσετε μια κρυμμένη εργαλειοθήκη, η οποία έχει "
+"ένα κουμπί <gui style=\"button\">Έξοδος πλήρους οθόνης</gui>, <gui style="
+"\"button\">Αποσύνδεση</gui> και άλλα κουμπιά."
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Remote Desktop Viewer help"
+msgstr "Βοήθεια του πρόγραμματος Προβολής απομακρυσμένης επιφάνειας εργασίας"
+
+#. (itstool) path: info/desc
+#: C/index.page:12
+msgid "Learn how to connect remotely to other desktops."
+msgstr "Μάθετε πως να συνδέεσθε απομακρυσμένα με άλλες επιφάνειες εργασίας."
+
+#. (itstool) path: page/title
+#: C/index.page:15
+msgid "<_:media-1/> Remote Desktop Viewer"
+msgstr "<_:media-1/> Πρόγραμμα προβολής απομακρυσμένης επιφάνειας εργασίας"
+
+#. (itstool) path: section/title
+#: C/index.page:21
+msgid "Connecting to other computers using VNC"
+msgstr "Σύνδεση σε άλλους υπολογιστές χρησιμοποιώντας VNC"
+
+#. (itstool) path: section/title
+#: C/index.page:25
+msgid "Features and options"
+msgstr "Χαρακτηριστικά και επιλογές"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:38
+msgctxt "_"
+msgid ""
+"external ref='figures/vinagre-connected.png' "
+"md5='abef2af863dbd4659703bcc09bb89d1a'"
+msgstr ""
+"external ref='figures/vinagre-connected.png' "
+"md5='abef2af863dbd4659703bcc09bb89d1a'"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:19
+msgid "Introduction to <app>Remote Desktop Viewer</app>."
+msgstr ""
+"Εισαγωγή στο πρόγραμμα προβολής απομακρυσμένης επιφάνειας εργασίας "
+"<app>Vinagre</app>."
+
+#. (itstool) path: page/title
+#: C/introduction.page:22
+msgid "Introduction"
+msgstr "Εισαγωγή"
+
+#. (itstool) path: page/p
+#: C/introduction.page:24
+msgid ""
+"<app>Remote Desktop Viewer</app> is a remote desktop viewer application for "
+"GNOME for accessing other machines using Virtual Network Computing (VNC) and "
+"other protocols. It can be used to control and interact with another "
+"computer or to just view the desktop."
+msgstr ""
+"Το <app>Vinagre</app> είναι μια εφαρμογή προβολής απομακρυσμένης επιφάνειας "
+"εργασίας για το GNOME η οποία προσπελάζει άλλα μηχανήματα, χρησιμοποιώντας "
+"εικονικό υπολογιστικό δίκτυο (VNC) και άλλα πρωτόκολλα. Μπορεί να "
+"χρησιμοποιηθεί για έλεγχο και αλληλεπίδραση με έναν άλλο υπολογιστή ή, απλά, "
+"για προβολή της επιφάνειας εργασίας."
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid "<app>Remote Desktop Viewer</app> provides the following features:"
+msgstr "Το <app>Vinagre</app> παρέχει τα εξής χαρακτηριστικά:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:31
+msgid "connect to several machines at the same time"
+msgstr "ταυτόχρονη σύνδεση σε πολλά μηχανήματα"
+
+#. (itstool) path: item/p
+#: C/introduction.page:32
+msgid "store recent connections and bookmark them"
+msgstr "αποθήκευση πρόσφατων συνδέσεων και επισήμανση τους"
+
+#. (itstool) path: item/p
+#: C/introduction.page:33
+msgid "browse the local network for other machines"
+msgstr "περιήγηση στο τοπικό δίκτυο για άλλα μηχανήματα"
+
+#. (itstool) path: figure/title
+#: C/introduction.page:37
+msgid "Remote Desktop Viewer in action"
+msgstr "Το Vinagre εν δράσει"
+
+#. (itstool) path: media/p
+#: C/introduction.page:39
+msgid ""
+"Remote Desktop Viewer running in GNOME 3, connected to a machine running "
+"GNOME 2"
+msgstr ""
+"Το Vinagre τρέχει σε GNOME 3, συνδεδεμένο με ένα μηχάνημα που τρέχει σε "
+"GNOME 2"
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Share Alike 3.0 Unported"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Αυτό το έργο κυκλοφορεί υπό άδεια <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/keyboard-shortcuts.page:19
+msgid "Disable the sending of keyboard shortcuts to the remote machine."
+msgstr ""
+"Απενεργοποιήστε την αποστολή των συντομεύσεων πληκτρολογίου στο "
+"απομακρυσμένο μηχάνημα."
+
+#. (itstool) path: page/title
+#: C/keyboard-shortcuts.page:23
+msgid "Keyboard shortcuts"
+msgstr "Συντομεύσεις πληκτρολογίου"
+
+#. (itstool) path: page/p
+#: C/keyboard-shortcuts.page:25
+msgid ""
+"You can enable or disable keyboard shortcuts by selecting <guiseq><gui style="
+"\"menu\">View</gui> <gui style=\"menuitem\">Keyboard shortcuts</gui></"
+"guiseq>."
+msgstr ""
+"Μπορείτε να ενεργοποιήσετε ή να απενεργοποιήσετε συντομεύσεις πληκτρολογίου "
+"επιλέγοντας <guiseq><gui style=\"menu\">Προβολή</gui> <gui style=\"menuitem"
+"\">Συντομεύσεις πληκτρολογίου</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/keyboard-shortcuts.page:29
+msgid ""
+"Enabling this option allows the use of keyboard shortcuts (like "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq>), menu accelerators (such as "
+"<keyseq><key>Alt</key><key>M</key></keyseq>) and mnemonics, with <app>Remote "
+"Desktop Viewer</app>. This means that <app>Remote Desktop Viewer</app> will "
+"catch those key combinations instead of sending them to the remote machine. "
+"This option is disabled by default because most of the time, you will be "
+"interacting with the computer to which you are connected."
+msgstr ""
+"Η ενεργοποίηση αυτής της επιλογής επιτρέπει τη χρήση συντομεύσεων "
+"πληκτρολογίου (όπως <keyseq><key>Ctrl</key><key>Ν</key></keyseq>), "
+"επιταχυντές μενού (όπως <keyseq><key>Alt</key><key>M</key></keyseq>) και "
+"μνημονικά , με το <app>Vinagre</app>. Αυτό σημαίνει ότι το <app>Vinagre</"
+"app> θα καταλάβει αυτούς τους συνδυασμούς πλήκτρων, αντί να τους στείλει στο "
+"απομακρυσμένο μηχάνημα. Αυτή η επιλογή είναι απενεργοποιημένη από "
+"προεπιλογή, διότι τις περισσότερες φορές, θα αλληλεπιδράτε με τον υπολογιστή "
+"στον οποίο έχετε συνδεθεί."
+
+#. (itstool) path: note/p
+#: C/keyboard-shortcuts.page:38
+msgid ""
+"When the <gui>Keyboard shortcuts</gui> option is disabled, "
+"<keyseq><key>Ctrl</key><key>Alt</key><key>Delete</key></keyseq> is the only "
+"key combination which will not be sent to the remote desktop. Choose "
+"<guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem\">Send Ctrl-"
+"Alt-Delete</gui></guiseq>, or use the corresponding toolbar button, to send "
+"this key combination."
+msgstr ""
+"Όταν η επιλογή <gui>Συντομεύσεις πληκτρολογίου</gui> είναι ανενεργή, το "
+"<keyseq><key>Ctrl</key><key>Alt</key><key>Delete</key></keyseq> είναι ο "
+"μόνος συνδυασμός πλήκτρων που δεν θα σταλεί στην απομακρυσμένη επιφάνεια "
+"εργασίας. Επιλέξτε <guiseq><gui style=\"menu\">Απομακρυσμένο</gui> <gui "
+"style=\"menuitem\">Αποστολή Ctrl-Alt-Delete</gui></guiseq>, ή χρησιμοποιήστε "
+"το αντίστοιχο κουμπί εργαλειοθήκης, για να στείλετε αυτόν τον συνδυασμό "
+"πλήκτρων."
+
+#. (itstool) path: info/desc
+#: C/scaling.page:19
+msgid "Scale the remote desktop to fit the display area."
+msgstr ""
+"Κλιμάκωση της απομακρυσμένης επιφάνειας εργασίας ώστε να χωράει στην οθόνη."
+
+#. (itstool) path: page/title
+#: C/scaling.page:22
+msgid "Scale the remote desktop"
+msgstr "Κλιμάκωση της απομακρυσμένης επιφάνειας εργασίας"
+
+#. (itstool) path: page/p
+#: C/scaling.page:24
+msgid ""
+"Some protocols have an option to scale the remote desktop to fit your "
+"display area."
+msgstr ""
+"Κάποια πρωτόκολλα έχουν μία επιλογή για να κλιμακώνουν την απομακρυσμένη "
+"επιφάνεια εργασίας ώστε να χωράει στην οθόνη σας."
+
+#. (itstool) path: item/p
+#: C/scaling.page:29
+msgid ""
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Scaling</gui></guiseq>, or click the <gui>Scaling</gui> toolbar button."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Προβολή</gui> <gui style=\"menuitem"
+"\">Κλιμάκωση</gui></guiseq>, ή πατήστε το κουμπί <gui>Κλιμάκωση</gui> της "
+"εργαλειοθήκης."
+
+#. (itstool) path: item/p
+#: C/scaling.page:34
+msgid ""
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem\">Keep "
+"Aspect Ratio</gui></guiseq> if you want to constrain the aspect ratio of the "
+"remote desktop inside the display area, or deselect the option to stretch "
+"the remote desktop to fill the available space."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Προβολή</gui> <gui style=\"menuitem"
+"\">Διατήρηση αναλογίας πλευρών</gui></guiseq> αν θέλετε να περιορίσετε την "
+"αναλογία πλευρών της απομακρυσμένης επιφάνειας εργασίας μέσα στην οθόνη, ή "
+"αποεπιλέξτε την επιλογή για να τεντώσετε την απομακρυσμένη επιφάνεια "
+"εργασίας ώστε να γεμίζει την διαθέσιμη περιοχή."
+
+#. (itstool) path: note/p
+#: C/scaling.page:40
+msgid ""
+"This option can be toggled only if <gui>Scaling</gui> has already been "
+"enabled."
+msgstr ""
+"Η επιλογή αυτή μπορεί να αλλαχθεί μόνο αν η <gui>Κλιμάκωση</gui> έχει ήδη "
+"ενεργοποιηθεί."
+
+#. (itstool) path: info/desc
+#: C/take-screenshot.page:19
+msgid "Take a screenshot of a remote desktop."
+msgstr "Λήψη στιγμιότυπου μιας απομακρυσμένης επιφάνειας εργασίας."
+
+#. (itstool) path: page/title
+#: C/take-screenshot.page:22
+msgid "Take a screenshot"
+msgstr "Λήψη στιγμιότυπου οθόνης"
+
+#. (itstool) path: page/p
+#: C/take-screenshot.page:24
+msgid ""
+"You can take screenshots of only the desktop that you are connected to by "
+"using the tool provided by <app>Remote Desktop Viewer</app>."
+msgstr ""
+"Μπορείτε να πάρετε στιγμιότυπα οθόνης μόνο από την επιφάνεια εργασίας με την "
+"οποία έχετε συνδεθεί, χρησιμοποιώντας το εργαλείο που παρέχεται από το "
+"<app>Vinagre</app>."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:29
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem\">Take "
+"screenshot</gui></guiseq>, or click the <gui>Take Screenshot</gui> button in "
+"the toolbar."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Απομεμακρυσμένο</gui> <gui style="
+"\"menuitem\">Λήψη στιγμιότυπου</gui></guiseq>, ή πατήστε το κουμπί <gui>Λήψη "
+"στιγμιότυπου</gui> στην εργαλειοθήκη."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:34
+msgid ""
+"In the <gui>Name</gui> field, enter the filename that you want the "
+"screenshot to be saved under."
+msgstr ""
+"Στο πεδίο <gui>Όνομα</gui>, εισάγετε το όνομα αρχείου με το οποίο θέλετε να "
+"αποθηκεύσετε το στιγμιότυπο."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:38
+msgid ""
+"From the <gui>Save in folder</gui> drop down list, select the folder that "
+"you want the screenshot to be saved in. You can also click <gui>Browse for "
+"other folder</gui> to select one which is not in the drop down list."
+msgstr ""
+"Από την πτυσσόμενη λίστα <gui>Αποθήκευση σε φάκελο</gui>, επιλέξτε τον "
+"φάκελο στον οποίο θέλετε να αποθηκευτεί το στιγμιότυπο. Μπορείτε επίσης να "
+"πατήσετε στην <gui>Περιήγηση για άλλον φάκελο</gui> για να επιλέξετε έναν "
+"που δεν βρίσκεται στην πτυσσόμενη λίστα."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:44
+msgid "Click <gui style=\"button\">Save</gui> to save the screenshot."
+msgstr ""
+"Πατήστε <gui style=\"button\">Αποθήκευση</gui> για να αποθηκεύσετε το "
+"στιγμιότυπο οθόνης."
+
+#. (itstool) path: info/desc
+#: C/view-only.page:19
+msgid "Disable interaction with the remote desktop."
+msgstr "Απενεργοποίηση αλληλεπίδρασης με την απομακρυσμένη επιφάνεια εργασίας."
+
+#. (itstool) path: page/title
+#: C/view-only.page:22
+msgid "View-only mode"
+msgstr "Λειτουργία μόνο προβολής"
+
+#. (itstool) path: page/p
+#: C/view-only.page:24
+msgid ""
+"Some protocols allow you to enable a <gui>View Only</gui> mode. This mode "
+"allows you to disable all interaction with the remote."
+msgstr ""
+"Κάποια πρωτόκολλα επιτρέπουν να ενεργοποιήσετε την λειτουργία <gui>Μόνο "
+"προβολή</gui>. Αυτή η λειτουργία επιτρέπει να απενεργοποιήσετε κάθε "
+"αλληλεπίδραση με τον απομακρυσμένο υπολογιστή."
+
+#. (itstool) path: page/p
+#: C/view-only.page:26
+msgid ""
+"Choose <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem\">View "
+"Only</gui></guiseq> or click the corresponding toolbar button to enable this "
+"mode."
+msgstr ""
+"Επιλέξτε <guiseq><gui style=\"menu\">Προβολή</gui> <gui style=\"menuitem"
+"\">Μόνο προβολή</gui></guiseq> ή πατήστε το αντίστοιχο κουμπί εργαλειοθήκης "
+"για να ενεργοποιήσετε τη λειτουργία αυτή."
+
+#~ msgid "Vinagre Help"
+#~ msgstr "Τεκμηρίωση του Vinagre"
+
+#~ msgid "Using Vinagre's options and features"
+#~ msgstr "Χρησιμοποιώντας τις επιλογές και τα χαρακτηριστικά του Vinagre"

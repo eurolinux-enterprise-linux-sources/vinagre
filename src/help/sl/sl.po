@@ -1,0 +1,1019 @@
+# Slovenian translations for vinagre help.
+# Copyright (C) 2009 vinagre COPYRIGHT HOLDER
+# This file is distributed under the same license as the vinagre package.
+#
+# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2011 - 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vinagre help master\n"
+"POT-Creation-Date: 2012-01-08 07:17+0000\n"
+"PO-Revision-Date: 2012-01-13 19:54+0100\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: C/index.page:5(page/title)
+msgid "Vinagre Help"
+msgstr "Pomoč za program Vinagre"
+
+#: C/index.page:8(section/title)
+msgid "Connecting to other computers using VNC"
+msgstr "Povezava z drugimi računalniki z VNC"
+
+#: C/index.page:12(section/title)
+msgid "Using Vinagre's options and features"
+msgstr "Uporaba možnosti in zmožnosti Vinagre"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Andrej Žnidaršič <andrej.znidarsic@gmail.com>"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/connect.page:28(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-connect-dialog.png' md5='de8a00cf5315e5aa9678620054cf1e8b'"
+msgstr "external ref='figures/vinagre-connect-dialog.png' md5='de8a00cf5315e5aa9678620054cf1e8b'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/connect.page:61(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-auth-needed.png' md5='498cf1ea1941e4821f9e5eafbe4b55ed'"
+msgstr "external ref='figures/vinagre-auth-needed.png' md5='498cf1ea1941e4821f9e5eafbe4b55ed'"
+
+#: C/connect.page:7(info/title)
+msgctxt "sort"
+msgid "1"
+msgstr "1"
+
+#: C/connect.page:8(info/desc)
+msgid "Establish a connection to another computer on your local network."
+msgstr "Vzpostavitev povezave z drugim računalnikom na krajevnem omrežju."
+
+#: C/connect.page:10(credit/name)
+#: C/connect-file.page:11(credit/name)
+#: C/fullscreen.page:9(credit/name)
+#: C/introduction.page:9(credit/name)
+#: C/keyboard-shortcuts.page:11(credit/name)
+#: C/reverse-connections.page:12(credit/name)
+#: C/scaling.page:9(credit/name)
+#: C/take-screenshot.page:9(credit/name)
+#: C/view-only.page:9(credit/name)
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#: C/connect.page:14(license/p)
+#: C/connect-file.page:15(license/p)
+#: C/fullscreen.page:13(license/p)
+#: C/introduction.page:13(license/p)
+#: C/keyboard-shortcuts.page:15(license/p)
+#: C/reverse-connections.page:16(license/p)
+#: C/scaling.page:13(license/p)
+#: C/take-screenshot.page:13(license/p)
+#: C/view-only.page:13(license/p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons - deljenje pod enakimi pogoji 3.0"
+
+#: C/connect.page:18(page/title)
+msgid "Establish a connection"
+msgstr "Vzpostavite povezavo"
+
+#: C/connect.page:20(page/p)
+msgid "You can connect to other computers on your local network using <app>Vinagre</app>."
+msgstr "Z <app>Vinagre</app> se lahko povežete z drugimi računalniki na svojem krajevnem omrežju."
+
+#: C/connect.page:25(item/p)
+msgid "Choose <guiseq><gui>Remote</gui><gui>Connect</gui></guiseq>."
+msgstr "Izberite <guiseq><gui>Oddaljeno</gui><gui>Poveži se</gui></guiseq>."
+
+#: C/connect.page:27(figure/title)
+msgid "Connect dialog"
+msgstr "Pogovorno okno povezave"
+
+#: C/connect.page:32(item/p)
+msgid "Choose the <gui>Protocol</gui> and the <gui>Host</gui> for the connection."
+msgstr "Izberite <gui>Protokol</gui> in <gui>Gostitelja</gui> za povezavo."
+
+#: C/connect.page:35(note/p)
+msgid "Some protocols allow you to see all available computers on your local network by clicking the <gui>Find</gui> button. Without <app>Avahi</app> support, this button will not be displayed."
+msgstr "Nekateri protokoli omogočajo ogled vseh razpoložljivih računalnikov na krajevnem omrežju s klikom na gumb <gui>Najdi</gui>. Brez podpore <app>Avahi</app> ta gumb ne bo prikazan."
+
+#: C/connect.page:41(item/p)
+msgid "Select the options which you want enabled when the connection is made. Options will vary depending on the protocol you use."
+msgstr "Izberite možnosti, ki jih želite omogočiti, ko je povezava vzpostavljena. Možnosti bodo odvisne od protokola, ki ga uporablajte."
+
+#: C/connect.page:45(item/p)
+msgid "Click the <gui>Connect</gui> button."
+msgstr "Kliknite na gumb <gui>Povezava</gui>."
+
+#: C/connect.page:47(note/p)
+msgid "At this point, the remote desktop may need to confirm the connection. If this is the case, the viewer may remain black until the connection is confirmed."
+msgstr "Oddaljeno namizje morda moralo potrditi povezavo. V tem primeru bo pregledovalnik morda ostal črn, dokler ne bo povezava potrjena."
+
+#: C/connect.page:52(note/p)
+msgid "Some computers may require a secure connection: an authentication dialog will be displayed, asking for the credentials. The type of credentials depend on the remote host, it may be a password and a username. If you select <gui>Remember this credential</gui>, <app>Vinagre</app> will store the information using <app>GNOME Keyring</app>."
+msgstr "Nekateri računalniki bodo morda zahtevali varno povezavo. V tem primeru bo prikazano pogovorno okno overitve, ki vas bo vprašalo za poverila. Vrsta poveril je odvisna od strežnika. To so lahko uporabniško ime in geslo. V primeru da izberete <gui>Zapomni si to poverilo</gui>, bo <app>Vinagre</app> shranil podatke s programom <app>Upravljalnik ključev GNOME</app>."
+
+#: C/connect.page:60(figure/title)
+msgid "Authentication dialog"
+msgstr "Pogovorno okno overitve"
+
+#: C/connect.page:66(page/p)
+msgid "If the connection has been used previously, you can also access it through <guiseq><gui>Remote</gui><gui>Recent Connections</gui></guiseq>."
+msgstr "V primeru da ste povezavo že uporabili v preteklosti, lahko do nje dostopate preko <guiseq><gui>Oddaljeno</gui><gui>Nedavne povezave</gui></guiseq>."
+
+#: C/connect.page:69(page/p)
+msgid "To close a connection, choose <guiseq><gui>Remote</gui> <gui>Close</gui></guiseq> or click the <gui>Close</gui> button."
+msgstr "Za zaprtje povezave izberite <guiseq><gui>Oddaljeno</gui><gui>Zapri</gui></guiseq> ali kliknite na gumb <gui>Zapri</gui>."
+
+#: C/connect-file.page:8(info/title)
+msgctxt "sort"
+msgid "2"
+msgstr "2"
+
+#: C/connect-file.page:9(info/desc)
+msgid "Use a remote connection file to connect to a remote machine."
+msgstr "Uporaba datoteke oddaljene povezave za povezavo z oddaljenim računalnikom."
+
+#: C/connect-file.page:19(page/title)
+msgid "Connect with a .vnc file"
+msgstr "Povezava z datoteko .vnc"
+
+#: C/connect-file.page:21(page/p)
+msgid "Some hosts distribute remote connection files (generally ending with suffix <file>.vnc</file>) instead of using a host address and port."
+msgstr "Nekateri gostitelji namesto uporabe naslova in vrat gostitelja uporabljajo povezave oddaljenih datotek (v splošnem se končajo s pripono <file>.vnc</file>)."
+
+#: C/connect-file.page:26(item/p)
+msgid "Choose <guiseq><gui>Remote</gui> <gui>Open</gui></guiseq>."
+msgstr "Izberite <guiseq><gui>Oddaljeno</gui><gui>Odpri</gui></guiseq>."
+
+#: C/connect-file.page:29(item/p)
+msgid "Select the file you want to open."
+msgstr "Izberite datoteko, ki jo želite odpreti."
+
+#: C/connect-file.page:32(item/p)
+msgid "Click the <gui>Open</gui> button."
+msgstr "Kliknite na gumb <gui>Odpri</gui>."
+
+#: C/connect-file.page:37(note/p)
+msgid "You can also double-click on a remote connection file in <app>Nautilus</app> to open it with <app>Vinagre</app>."
+msgstr "Za odprtje v datoteke oddaljene povezave v oknu <application>Vinagre</application> jo lahko tudi dvokliknite v upravljalniku datotek <app>Nautilus</app> . "
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/fullscreen.page:38(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-fullscreen.png' md5='47259d69f3a106a69b4de230b04250e6'"
+msgstr "external ref='figures/vinagre-fullscreen.png' md5='47259d69f3a106a69b4de230b04250e6'"
+
+#: C/fullscreen.page:7(info/desc)
+msgid "View the remote desktop in fullscreen mode."
+msgstr "Oglejte si oddaljeno namizje v celozaslonskem načinu."
+
+#: C/fullscreen.page:17(page/title)
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+#: C/fullscreen.page:19(page/p)
+msgid "Fullscreen mode can be useful if viewing a desktop which is the same size or larger than yours."
+msgstr "Celozaslonski način je lahko uporaben, če si ogledujete namizje, ki je enake velikosti ali večje kot vaše."
+
+#: C/fullscreen.page:24(item/p)
+msgid "Choose <guiseq><gui>View</gui><gui>Fullscreen</gui></guiseq>, or press the corresponding toolbar button, to view the display area in fullscreen mode."
+msgstr "Za ogled prikazanega področja v celozaslonskem načinu izberite <guiseq><gui>Pogled</gui><gui>Celozaslonski način</gui></guiseq> ali pritisnite ustrezen gumb na orodni vrstici."
+
+#: C/fullscreen.page:31(note/p)
+msgid "While in fullscreen mode, move the mouse to the top-center of the screen to display a hidden toolbar, which has a <gui>Leave Fullscreen</gui> button, <gui>Disconnect</gui> and other options."
+msgstr "Medtem ko ste v celozaslonskem načinu premaknite miško na sredino vrha zaslona. To bo prikazalo skrito orodno vrstico, ki vsebuje gumb <gui>Zapusti celozaslonski način</gui>, <gui>Prekini povezavo</gui> in druge možnosti."
+
+#: C/fullscreen.page:37(figure/title)
+msgid "Fullscreen mode with overlay toolbar"
+msgstr "Celozaslonski način s prekrivno orodno vrstico"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:36(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-connected.png' md5='abef2af863dbd4659703bcc09bb89d1a'"
+msgstr "external ref='figures/vinagre-connected.png' md5='abef2af863dbd4659703bcc09bb89d1a'"
+
+#: C/introduction.page:7(info/desc)
+msgid "Introduction to the <app>Vinagre</app> remote desktop viewer."
+msgstr "Uvod v <app>Vinagre</app>, pregledovalnik oddaljenih namizij."
+
+#: C/introduction.page:17(page/title)
+msgid "Introduction"
+msgstr "Uvod"
+
+#: C/introduction.page:19(page/p)
+msgid "<app>Vinagre</app> is a remote desktop viewer application for the GNOME desktop which uses Virtual Network Computing (VNC), and other protocols, to remotely control another computer."
+msgstr "Program <app>Vinagre</app> je pregledovalnik oddaljenih namizij za namizje GNOME, ki za oddaljen nadzor drugega računalnika uporablja sistem navideznega omrežnega računalništva (VNC) in druge protokole."
+
+#: C/introduction.page:23(page/p)
+msgid "<app>Vinagre</app> can be used to control another computer and interact with its desktop."
+msgstr "<app>Vinagre</app> lahko uporabite za nadzor drugega računalnika in za delo z njegovim namizjem."
+
+#: C/introduction.page:26(page/p)
+msgid "<app>Vinagre</app> provides the following features:"
+msgstr "<app>Vinagre</app> zagotavlja naslednje zmožnosti:"
+
+#: C/introduction.page:28(item/p)
+msgid "connect to several machines at the same time"
+msgstr "povezava z več računalniki sočasno"
+
+#: C/introduction.page:29(item/p)
+msgid "store recent connections and allows them to be bookmarked"
+msgstr "shranjevanje nedavnih povezav in ustvarjanje zaznamkov"
+
+#: C/introduction.page:31(item/p)
+msgid "browse local network for machines"
+msgstr "brskanje med računalniki krajevnega omrežja"
+
+#: C/introduction.page:35(figure/title)
+msgid "Vinagre in action"
+msgstr "Vinagre v akciji"
+
+#: C/keyboard-shortcuts.page:9(info/desc)
+msgid "Disable the sending of keyboard shortcuts to the remote machine."
+msgstr "Onemogočitev pošiljanje tipkovnih bližnjic oddaljenem računalniku."
+
+#: C/keyboard-shortcuts.page:19(page/title)
+msgid "Keyboard shortcuts"
+msgstr "Tipkovne bližnice"
+
+#: C/keyboard-shortcuts.page:21(page/p)
+msgid "You can enable or disable keyboard shortcuts by clicking <guiseq><gui>View</gui><gui>Keyboard shortcuts</gui></guiseq>."
+msgstr "Tipkovne bližnjice lahko omogočite ali onemogočite s klikom na <guiseq><gui>Pogled</gui><gui>Tipkovne bližnjice</gui></guiseq>."
+
+#: C/keyboard-shortcuts.page:24(page/p)
+msgid "Enabling this option allows the use of keyboard shortcuts (like <keyseq><key>Ctrl</key><key>D</key></keyseq>), menu accelerators and mnemonics (such as <keyseq><key>Alt</key><key>M</key></keyseq>), with <app>Vinagre</app>. This means that <app>Vinagre</app> will catch those key combinations instead of sending them to the remote machine. This option is disabled by default because most of the time, you will be interacting with the computer which you have connected to."
+msgstr "Izbrana možnost omogoči uporabo tipkovnih bližnjic (kot je <keyseq><key>Ctrl</key><key>D</key></keyseq>), pospeševalnikv menijev in črkovnih bližnjic (kot je <keyseq><key>Alt</key><key>M</key></keyseq>) v <app>Vinagre</app>. To pomeni, da bo <app>Vinagre</app> ujel te kombinacije tipk namesto njihovega pošiljanja na oddaljen računalnik. Ker boste večino časa delali na oddaljenem računalniku, je ta možnost privzeto onemogočena."
+
+#: C/keyboard-shortcuts.page:33(note/p)
+msgid "When the <gui>Keyboard shortcuts</gui> option is disabled, <keyseq><key>Ctrl</key><key>Alt</key> <key>Delete</key></keyseq> is the only key combination which will not be sent to the remote desktop. Choose <guiseq><gui>Remote</gui><gui>Send Ctrl-Alt-Delete</gui></guiseq>, or use the corresponding toolbar button, to send this key combination."
+msgstr "Ko je možnost <gui>Tipkovne bližnjice</gui> onemogočena, je <keyseq><key>Ctrl</key><key>Alt</key><key>Delete</key></keyseq> edina tipkovna bližnjica, ki ne bo poslana na oddaljeno namizje. Za pošiljanje te kombinacije tipk uporabite <guiseq><gui>Oddaljeno</gui><gui>Pošlji Ctrl-Alt-Delete</gui></guiseq>."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/reverse-connections.page:43(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-reverse-connections.png' md5='6271ec7b3c197e9599bd0f453aad2d0b'"
+msgstr "external ref='figures/vinagre-reverse-connections.png' md5='6271ec7b3c197e9599bd0f453aad2d0b'"
+
+#: C/reverse-connections.page:8(info/title)
+msgctxt "sort"
+msgid "3"
+msgstr "3"
+
+#: C/reverse-connections.page:9(info/desc)
+msgid "Connect to computers not on your local network: bypassing firewall restrictions on remote host."
+msgstr "Povezava z računalniki, ki niso na vašem krajevnem omrežju: obhod omejitev požarnega zidu na oddaljenem gostitelju."
+
+#: C/reverse-connections.page:20(page/title)
+msgid "Reverse Connections…"
+msgstr "Nasprotne povezave ..."
+
+#: C/reverse-connections.page:22(page/p)
+msgid "A reverse connection is usually used to bypass firewall restrictions on open ports. A firewall usually blocks open ports, but does not block outgoing traffic. In a normal forward connection, a client connects to a server through the server's open port, but in the case of a reverse connection, the client opens the port that the server connects to."
+msgstr "Obratna povezava se običajno uporablja za obhod omejitev požarnega zidu na odprtih vratih. Požarni zid običajno blokira odprta vrata, odhodnega prometa pa ne blokira. Pri običajni povezavi naprej se odjemalec poveže s strežnikom preko odprtih vrat strežnika. V primeru obratne povezave, odjemalec odpre vrata na katere se poveže strežnik."
+
+#: C/reverse-connections.page:29(section/title)
+msgid "Enabling reverse connections"
+msgstr "Omogočanje nasprotnih povezav"
+
+#: C/reverse-connections.page:33(item/p)
+msgid "Open <guiseq><gui>Remote</gui><gui>Reverse Connections...</gui> </guiseq>."
+msgstr "Odprite <guiseq><gui>Oddaljeno</gui><gui>Obratne povezave ...</gui></guiseq>."
+
+#: C/reverse-connections.page:37(item/p)
+msgid "Select <gui>Enable Reverse Connections</gui>."
+msgstr "Izberite <gui>Omogoči obratne povezave</gui>."
+
+#: C/reverse-connections.page:42(figure/title)
+msgid "Reverse Connections dialog"
+msgstr "Pogovorno okno nasprotnih povezav"
+
+#: C/reverse-connections.page:49(section/title)
+msgid "Access a computer behind a firewall"
+msgstr "Dostop do računalnikov za požarnim zidom"
+
+#: C/reverse-connections.page:51(section/p)
+msgid "The remote computer needs to connect to your machine using your IP address and port number, which are in the <gui>Reverse Connections...</gui> dialog, under <gui>Connectivity</gui>."
+msgstr "Oddaljeni računalnik se mora z vašim računalnikom povezati z naslovom IP in številko vrat, ki sta v pogovornem oknu <gui>Obratne povezave ...</gui> pod <gui>Povezljivost</gui>."
+
+#: C/reverse-connections.page:56(note/p)
+msgid "Currently, <app>Vino</app>, the GNOME VNC server, does not support reverse connections (also known as \"listen mode\"). Some other applications, such as <app>UltraVNC</app>, <app>RealVNC</app> and <app>TightVNC</app>, do have support for reverse connections."
+msgstr "Trenutno, <app>Vino</app>, GNOME strežnik VNC, ne podpira obratnih povezav (znane tudi kot \"način poslušanja\"). Nekateri drugi programi kot <app>UltraVNC</app>, <app>RealVNC</app> in <app>TightVNC</app> obratne povezave podpirajo."
+
+#: C/reverse-connections.page:62(section/p)
+msgid "Once the remote computer connects to your machine, <app>Vinagre</app> will establish the reverse connection."
+msgstr "Ko se oddaljeni računalnik poveže z vašim računalnikom, bo <app>Vinagre</app> vzpostavil obratno povezavo."
+
+#: C/reverse-connections.page:66(note/p)
+msgid "When connecting to a machine which is not on your local network, you will need to provide your externally visible IP address and port number to the remote server."
+msgstr "Za povezovanje z računalnikom, ki ni na vašem krajevnem omrežju, boste potrebovali zunanje viden naslov IP in številko vrat do oddaljenega strežnika."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scaling.page:41(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-no-scaling.png' md5='8ffbdb394e1437cd050ec28b3aa73380'"
+msgstr "external ref='figures/vinagre-no-scaling.png' md5='8ffbdb394e1437cd050ec28b3aa73380'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scaling.page:46(media)
+msgctxt "_"
+msgid "external ref='figures/vinagre-scaling.png' md5='d307923fd473871d8d4c8fc81d716256'"
+msgstr "external ref='figures/vinagre-scaling.png' md5='d307923fd473871d8d4c8fc81d716256'"
+
+#: C/scaling.page:7(info/desc)
+msgid "Scale the remote desktop to fit the display area."
+msgstr "Raztegne oddaljeno namizje tako, da se prilega področju zaslona."
+
+#: C/scaling.page:17(page/title)
+msgid "Scale the remote desktop"
+msgstr "Raztegnitev oddaljenega namizja"
+
+#: C/scaling.page:19(page/p)
+msgid "Some protocols have an option to scale the remote desktop to fit your display area."
+msgstr "Nekateri protokoli imajo možnost raztegovanja oddaljenega namizja tako, da se prilega področju zaslona."
+
+#: C/scaling.page:24(item/p)
+msgid "Choose <guiseq><gui>View</gui><gui>Scaling</gui></guiseq>, or click the <gui>Scaling</gui> toolbar button."
+msgstr "Izberite <guiseq><gui>Pogled</gui><gui>Raztegovanje</gui></guiseq> ali kliknite na gumb orodne vrstice <gui>Raztegovanje</gui>."
+
+#: C/scaling.page:28(item/p)
+msgid "Select <guiseq><gui>View</gui><gui>Keep Aspect Ratio</gui></guiseq> if you want to constrain the aspect ratio of the remote desktop inside the display area, or deselect the option to stretch the remote desktop to fill the available space."
+msgstr "Izberite <guiseq><gui>Pogled</gui><gui>Obdrži razmerje velikosti</gui></guiseq>, če želite omejiti razmerje velikosti oddaljenega namizja znotraj območja prikaza ali odstranite izbiro možnosti za raztegovanje oddaljenega namizja, da bo zapolnilo razpoložljiv prostor."
+
+#: C/scaling.page:33(note/p)
+msgid "This option can be toggled only if <gui>Scaling</gui> has already been enabled."
+msgstr "To možnost lahko preklopite le, če je bilo <gui>Raztegovanje</gui> že omogočeno."
+
+#: C/scaling.page:40(figure/title)
+msgid "Unscaled desktop"
+msgstr "Neraztegnjeno namizje"
+
+#: C/scaling.page:45(figure/title)
+msgid "Scaled desktop"
+msgstr "Raztegnjeno namizje"
+
+#: C/take-screenshot.page:7(info/desc)
+msgid "Take a screenshot of a remote desktop."
+msgstr "Zajem zaslonske slike oddaljenega namizja"
+
+#: C/take-screenshot.page:17(page/title)
+msgid "Take a screenshot"
+msgstr "Zajem zaslonske slike"
+
+#: C/take-screenshot.page:19(page/p)
+msgid "You can take screenshots of only the desktop you have connected to by using the tool provided by <app>Vinagre</app>."
+msgstr "Zajamete lahko le zaslonske slike namizja s katerim ste se povezali z orodjem, ki ga zagotavlja <app>Vinagre</app>."
+
+#: C/take-screenshot.page:24(item/p)
+msgid "Choose <guiseq><gui>Remote</gui><gui>Take screenshot</gui></guiseq>, or click the <gui>Take Screenshot</gui> button in the toolbar."
+msgstr "Izberite <guiseq><gui>Oddaljeno</gui><gui>Zajemi zaslonsko sliko</gui></guiseq> ali kliknite na gumb <gui>Zajemni zaslonsko sliko</gui> v orodni vrstici."
+
+#: C/take-screenshot.page:28(item/p)
+msgid "In the <gui>Name</gui> field, enter the name you want the screenshot to be saved under."
+msgstr "V polje <gui>Ime</gui> vnesite ime pod katerim želite shraniti zaslonsko sliko."
+
+#: C/take-screenshot.page:32(item/p)
+msgid "From the <gui>Save in folder</gui> drop down list, select the folder you want the screenshot to be saved in. You can also click <gui>Browse for other folder</gui> to select one which is not in the drop down list."
+msgstr "S spustnega seznama <gui>Shrani v mapi</gui> izberite mapo v kateri želite shraniti zaslonsko sliko. Kliknite lahko tudi na <gui>Brskaj za druge mape</gui> za izbiro mape, ki ni na spustnem seznamu."
+
+#: C/take-screenshot.page:37(item/p)
+msgid "Click <gui>Save</gui> to save the screenshot."
+msgstr "Kliknite <gui>Shrani</gui> shranjevanje zaslonske slike."
+
+#: C/view-only.page:7(info/desc)
+msgid "Disable interaction with the remote desktop."
+msgstr "Onemogočitev sporazumevanja z oddaljenim namizjem."
+
+#: C/view-only.page:17(page/title)
+msgid "View only mode"
+msgstr "Način ogleda"
+
+#: C/view-only.page:19(page/p)
+msgid "Some protocols allow you to enable a <gui>View Only</gui> mode. This mode allows you to block all interaction with the remote."
+msgstr "Nekateri protokoli vam omogočajo način <gui>Le ogleda</gui>. Ta način vam omogoča blokiranje vsega sporazumevanja z oddaljenim računalnikom."
+
+#: C/view-only.page:21(page/p)
+msgid "Choose <guiseq><gui>View</gui><gui>View Only</gui></guiseq> or click the corresponding toolbar button to enable this mode."
+msgstr "Za izbero načina le ogleda <guiseq><gui>Pogled</gui><gui>Le ogled</gui></guiseq> ali kliknite na ustrezen gumb orodne vrstice."
+
+#~ msgid "kittykat3756@googlemail.com"
+#~ msgstr "kittykat3756@googlemail.com"
+
+#~ msgid ""
+#~ "Click the <gui>Connect</gui> button. At this point, the host to will need "
+#~ "to confirm that they want the connection established."
+#~ msgstr ""
+#~ "Kliknite na gumb <gui>Poveži se</gui>. Gostitelj bo moral potrditi, da si "
+#~ "želi vzpostaviti povezavo. "
+
+#~ msgid "Preferences"
+#~ msgstr "Možnosti"
+
+#, fuzzy
+#~ msgid ""
+#~ "To configure <app>Vinagre</app>, choose <guiseq><gui>Edit</"
+#~ "gui><gui>Preferences</gui></guiseq>. The <gui>Preferences</gui> dialog "
+#~ "contains the following items:"
+#~ msgstr ""
+#~ "Za nastavitev <application>Vinagre</application> izberite "
+#~ "<menuchoice><guimenu>Uredi</guimenu><guimenuitem>Možnosti</guimenuitem></"
+#~ "menuchoice>. Pogovorno okno <guilabel>Možnosti</guilabel> vsebuje "
+#~ "naslednje predmete:"
+
+#~ msgid "Always show tabs"
+#~ msgstr "Vedno pokaži zavihke"
+
+#, fuzzy
+#~ msgid ""
+#~ "Select this option to make the display area tabs always visible, even "
+#~ "when only one connection is active."
+#~ msgstr ""
+#~ "To možnost izberite, da bodo zavihki vedno vidni, tudi ko je dejavna le "
+#~ "ena povezava."
+
+#, fuzzy
+#~ msgid "Opening and using a remote connection file."
+#~ msgstr "Odpiranje datoteke oddaljene povezave"
+
+#~ msgid ""
+#~ "@@image: 'figures/vinagre-bookmarks-side-panel.png'; "
+#~ "md5=c657cdff0da28c73ac936227e490bb2e"
+#~ msgstr ""
+#~ "@@image: 'figures/vinagre-bookmarks-side-panel.png'; "
+#~ "md5=c657cdff0da28c73ac936227e490bb2e"
+
+#~ msgid ""
+#~ "@@image: 'figures/vinagre-editing-bookmarks.png'; "
+#~ "md5=ac5097a12572cfce0561f0ca19bb1edb"
+#~ msgstr ""
+#~ "@@image: 'figures/vinagre-editing-bookmarks.png'; "
+#~ "md5=ac5097a12572cfce0561f0ca19bb1edb"
+
+#~ msgid "<application>Vinagre</application> Manual"
+#~ msgstr "Priročnik <application>Vinagre</application>"
+
+#~ msgid "2007, 2008, 2009"
+#~ msgstr "2007, 2008, 2009"
+
+#~ msgid "Jonh Wendell (wendell@bani.com.br)"
+#~ msgstr "Jonh Wendell (wendell@bani.com.br)"
+
+#~ msgid "Jonh Wendell"
+#~ msgstr "Jonh Wendell"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl"
+#~ "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+#~ msgstr ""
+#~ "Dano je dovoljenje za kopiranje, distribuiranje in/ali spreminjanje tega "
+#~ "dokumenta pod pogoji GNU Free Documentation License (GFDL) različice 1.1 "
+#~ "ali katerekoli kasnejše različice, ki jo je objavila Free Software "
+#~ "Foundation brez stalnih odsekov, besedila naslovnice in zadnje strani. "
+#~ "Kopijo GFDL lahko najdete na tej <ulink type=\"help\" url=\"ghelp:fdl"
+#~ "\">povezavi</ulink> ali v COPYING-DOCS distribuiranim s tem priročnikom."
+
+#~ msgid ""
+#~ "This manual is part of a collection of GNOME manuals distributed under "
+#~ "the GFDL. If you want to distribute this manual separately from the "
+#~ "collection, you can do so by adding a copy of the license to the manual, "
+#~ "as described in section 6 of the license."
+#~ msgstr ""
+#~ "Ta priročnik je del zbirke priročnikov GNOME distribuiranih pod GFDL. V "
+#~ "primeru da želite ta priročnik distribuirati ločeno od zbirke, lahko to "
+#~ "storite z dodajanjem kopije licence priročnika, kot je opisano v odseku 6 "
+#~ "licence."
+
+#~ msgid ""
+#~ "Many of the names used by companies to distinguish their products and "
+#~ "services are claimed as trademarks. Where those names appear in any GNOME "
+#~ "documentation, and the members of the GNOME Documentation Project are "
+#~ "made aware of those trademarks, then the names are in capital letters or "
+#~ "initial capital letters."
+#~ msgstr ""
+#~ "Veliko imen podjetja uporabljajo za ločevanje njihovih produktov in "
+#~ "storitev, zato si jih lastijo kot blagovne znamke. Kjer se ta mena "
+#~ "pojavijo v katerikoli dokumentaciji GNOME in člani dokumentacijskega "
+#~ "projekta GNOME vedo za njih, so imena v velikih črkah ali pa se začnejo z "
+#~ "velikimi črkami."
+
+#~ msgid ""
+#~ "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#~ "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#~ "UNDERSTANDING THAT: <placeholder-1/>"
+#~ msgstr ""
+#~ "DOKUMENT IN SPREMENJENE RAZLIČICE DOKUMENTA SO ZAGOTOVLJENE POD POGOJI "
+#~ "GNU FREE DOCUMENTATION LICENCE Z NADALJNJIM RAZUMEVANJE DA: "
+#~ "<placeholder-1/>"
+
+#~ msgid "Vinicius"
+#~ msgstr "Vinicius"
+
+#~ msgid "Depizzol"
+#~ msgstr "Depizzol"
+
+#~ msgid "vdepizzol@gmail.com"
+#~ msgstr "vdepizzol@gmail.com"
+
+#~ msgid "Jonh"
+#~ msgstr "Jonh"
+
+#~ msgid "Wendell"
+#~ msgstr "Wendell"
+
+#~ msgid "wendell@bani.com.br"
+#~ msgstr "wendell@bani.com.br"
+
+#~ msgid "0.3"
+#~ msgstr "0.3"
+
+#~ msgid "2009-08-23"
+#~ msgstr "23.08.2009"
+
+#~ msgid "Jonh Wendell <email>wendell@bani.com.br</email>"
+#~ msgstr "Jonh Wendell <email>wendell@bani.com.br</email>"
+
+#~ msgid "0.2"
+#~ msgstr "0.2"
+
+#~ msgid "2008-01-15"
+#~ msgstr "15.01.2008"
+
+#~ msgid "Vinicius Depizzol <email>vdepizzol@gmail.com</email>"
+#~ msgstr "Vinicius Depizzol <email>vdepizzol@gmail.com</email>"
+
+#~ msgid "0.1"
+#~ msgstr "0.1"
+
+#~ msgid "2007-12-16"
+#~ msgstr "16.12.2007"
+
+#~ msgid "Jaap A. Haitsma <email>jaap@haitsma.org</email>"
+#~ msgstr "Jaap A. Haitsma <email>jaap@haitsma.org</email>"
+
+#~ msgid "Jaap A. Haitsma"
+#~ msgstr "Jaap A. Haitsma"
+
+#~ msgid "Feedback"
+#~ msgstr "Odziv"
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding the Vinagre application or "
+#~ "this manual, please file a bug at <ulink url=\"http://bugzilla.gnome.org/"
+#~ "enter_bug.cgi?product=vinagre\" type=\"http\">GNOME bugzilla page</ulink>."
+#~ msgstr ""
+#~ "Za poročanje hrošča ali predlog glede programa Vinagre ali tega "
+#~ "priročnika izpolnite hrošč na <ulink url=\"http://bugzilla.gnome.org/"
+#~ "enter_bug.cgi?product=vinagre\" type=\"http\">strani bugzilla GNOME</"
+#~ "ulink>."
+
+#~ msgid "Manual"
+#~ msgstr "Priročnik"
+
+#~ msgid "vinagre"
+#~ msgstr "vinagre"
+
+#~ msgid ""
+#~ "Provide a GNOME Panel applet to quickly access your bookmarked machines."
+#~ msgstr ""
+#~ "Zagotavlja aplet pulta GNOME za hiter dostop do računalnikov, ki so v "
+#~ "zaznamkih."
+
+#~ msgid "Extensible through its plugin structure."
+#~ msgstr "Razširljiv s strukturo vstavkov."
+
+#~ msgid "Getting Started"
+#~ msgstr "Kako začeti"
+
+#~ msgid "Starting Vinagre"
+#~ msgstr "Začenjanje Vinagre"
+
+#~ msgid ""
+#~ "You can start <application>Vinagre</application> in the following ways:"
+#~ msgstr ""
+#~ "<application>Vinagre</application> lahko zaženete na naslednje načine:"
+
+#~ msgid "<guimenu>Applications</guimenu> menu"
+#~ msgstr "Meni <guimenu>Programi</guimenu>"
+
+#~ msgid ""
+#~ "Choose <menuchoice><guisubmenu>Internet</guisubmenu><guimenuitem>Remote "
+#~ "Desktop Viewer</guimenuitem></menuchoice>."
+#~ msgstr ""
+#~ "Izberite <menuchoice><guisubmenu>Internet</"
+#~ "guisubmenu><guimenuitem>Pregledovalnik oddaljenih namizij</guimenuitem></"
+#~ "menuchoice>."
+
+#~ msgid "Command line"
+#~ msgstr "Ukazna vrstica"
+
+#~ msgid "Execute the following command: <command>vinagre</command>"
+#~ msgstr "Izvedite naslednji ukaz: <command>vinagre</command>"
+
+#~ msgid "Starting Vinagre from a command line"
+#~ msgstr "Začenjanje programa Vinagre iz ukazne vrstice"
+
+#~ msgid ""
+#~ "You can run <application>Vinagre</application> from a command line and "
+#~ "connect to a single machine or multiple machines. To connect to a machine "
+#~ "from a command line, type the following command, then press "
+#~ "<keycap>Return</keycap>:"
+#~ msgstr ""
+#~ "<application>Vinagre</application> lahko poženete iz ukazne vrstice in se "
+#~ "povežete z enim ali več računalniki. Za povezavo z računalnikom iz ukazne "
+#~ "vrstice vnesite naslednji ukaz in nato pritisnite <keycap>Vnosno tipko</"
+#~ "keycap>:"
+
+#~ msgid "hostname_or_ip_address"
+#~ msgstr "ime_gostitelja_ali_ip_naslov"
+
+#~ msgid "vinagre <placeholder-1/>"
+#~ msgstr "<placeholder-1/> vinagre"
+
+#~ msgid ""
+#~ "For more information on how to run <application>Vinagre</application> "
+#~ "from a command line, see the unix manual page for Vinagre, <ulink url="
+#~ "\"man:vinagre\" type=\"man\"><citerefentry><refentrytitle>Vinagre</"
+#~ "refentrytitle><manvolnum>1</manvolnum></citerefentry></ulink>."
+#~ msgstr ""
+#~ "Za več podrobnosti o poganjanju <application>Vinagre</application> iz "
+#~ "ukazne vrstice si oglejte stran priročnika unix za Vinagre, <ulink url="
+#~ "\"man:vinagre\" type=\"man\"><citerefentry><refentrytitle>Vinagre</"
+#~ "refentrytitle><manvolnum>1</manvolnum></citerefentry></ulink>."
+
+#~ msgid "The Vinagre Window"
+#~ msgstr "Okno Vinagre"
+
+#~ msgid "Shows vinagre main window."
+#~ msgstr "Prikaže glavno okno vinagre."
+
+#~ msgid ""
+#~ "The <application>Vinagre</application> window contains the following "
+#~ "elements:"
+#~ msgstr ""
+#~ "Okno programa <application>Vinagre</application> vsebuje naslednje "
+#~ "predmete:"
+
+#~ msgid "Menubar"
+#~ msgstr "Menijska vrstica"
+
+#~ msgid ""
+#~ "The menus on the menubar contain all of the commands you need to work "
+#~ "with remote connections in <application>Vinagre</application>."
+#~ msgstr ""
+#~ "Meniji v menijski vrstici vsebujejo vse ukaze, ki jih potrebujete za delo "
+#~ "z oddaljenimi povezavami v <application>Vinagre</application>. "
+
+#~ msgid "Toolbar"
+#~ msgstr "Orodna vrstica"
+
+#~ msgid ""
+#~ "The toolbar contains a subset of the most used commands that you can "
+#~ "access from the menubar."
+#~ msgstr ""
+#~ "Orodna vrstica vsebuje najbolj pogosto uporabljane ukaze do katerih lahko "
+#~ "dostopate iz menijske vrstice."
+
+#~ msgid "Display Area"
+#~ msgstr "Področje zaslona"
+
+#~ msgid ""
+#~ "The display area contains a list of tabs with the connected machines and "
+#~ "its remote desktops."
+#~ msgstr ""
+#~ "Področje zaslona vsebuje seznam zavihkov s povezanimi računalniki in "
+#~ "njihovimi oddaljenimi namizji."
+
+#~ msgid "Statusbar"
+#~ msgstr "Vrstica stanja"
+
+#~ msgid ""
+#~ "The statusbar displays information about current <application>Vinagre</"
+#~ "application> activity and contextual information about the menu items."
+#~ msgstr ""
+#~ "Vrstica stanja prikazuje podrobnosti o trenutni dejavnosti programa "
+#~ "<application>Vinagre</application> in vsebinske podrobnosti o predmetih "
+#~ "menija."
+
+#~ msgid "Side Pane"
+#~ msgstr "Stranski pladenj"
+
+#~ msgid ""
+#~ "The side pane contains a list of bookmarked connections and (if "
+#~ "available) a list of auto-discovered network machines."
+#~ msgstr ""
+#~ "Stranski pladenj vsebuje seznam povezav, ki so v zaznamkih in (če je na "
+#~ "voljo) seznam samodejno odkritih računalnikov na omrežju."
+
+#~ msgid "Some notes about Vinagre"
+#~ msgstr "Nekaj zapiskov o Vinagre"
+
+#~ msgid ""
+#~ "As a tool to access other machines, Vinagre behaves slightly different "
+#~ "than other <systemitem>GNOME</systemitem> applications in its default "
+#~ "installation."
+#~ msgstr ""
+#~ "Vinagre se v privzeti namestitvi obnaša rahlo drugače kot večina drugi "
+#~ "programi <systemitem>GNOME</systemitem>."
+
+#~ msgid ""
+#~ "Vinagre comes with menu accelerators and keyboard shortcuts disabled by "
+#~ "default. This avoids keys being intercepted by Vinagre when you wanted to "
+#~ "send those keys to the remote machine."
+#~ msgstr ""
+#~ "V Vinagre so pospešilniki menijev in tipkovne bližnjice privzeto "
+#~ "onemogočeni. To omogoča izogibanje prestrezanju tipk z Vinagre, ko želite "
+#~ "te tipke poslati na oddaljen računalnik."
+
+#~ msgid ""
+#~ "For instance, the keyboard shortcut to close a tab is <guilabel>Ctrl+W</"
+#~ "guilabel>, but that key combination will be sent to the remote machine by "
+#~ "default."
+#~ msgstr ""
+#~ "<guilabel>Ctrl+W</guilabel> je na primer tipkovna bližnjica za zaprtje "
+#~ "zavihka, vendar bo ta kombinacija tipk privzeto poslana na oddaljen "
+#~ "računalnik."
+
+#~ msgid ""
+#~ "If you want to change this behavior, go to Vinagre preferences in "
+#~ "<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</"
+#~ "guimenuitem></menuchoice>."
+#~ msgstr ""
+#~ "Če želite to obnašanje spremeniti pojdite v možnosti Vinagre v "
+#~ "<menuchoice><guimenu>Uredi</guimenu><guimenuitem>Možnosti</guimenuitem></"
+#~ "menuchoice>."
+
+#~ msgid "Using Vinagre"
+#~ msgstr "Uporaba Vinagre"
+
+#~ msgid "Informing a host address"
+#~ msgstr "Obveščanje naslova gostitelja"
+
+#~ msgid ""
+#~ "To connect with a remote machine, choose "
+#~ "<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>N</keycap></"
+#~ "keycombo></shortcut><guimenu>Machine</guimenu><guimenuitem>Connect</"
+#~ "guimenuitem></menuchoice>. The <guilabel>Connection Dialog</guilabel> is "
+#~ "displayed. Inform the <guilabel>Protocol</guilabel> and the "
+#~ "<guilabel>Host</guilabel> of the connection and click the "
+#~ "<guibutton>Connect</guibutton> button. You will see a bunch of options "
+#~ "depending on what protocol you have selected."
+#~ msgstr ""
+#~ "Za povezavo z oddaljenim računalnikom izberite "
+#~ "<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>N</keycap></"
+#~ "keycombo></shortcut><guimenu>Računalnik</guimenu><guimenuitem>Poveži se</"
+#~ "guimenuitem></menuchoice>."
+
+#~ msgid "Shows the connect dialog."
+#~ msgstr "Pokaže pogovorno okno povezave"
+
+#~ msgid ""
+#~ "You can also use the <guibutton>Find</guibutton> button to browse "
+#~ "available machines on local network."
+#~ msgstr ""
+#~ "Za brskanje po razpoložljivih računalnikih na krajevnem omrežju lahko "
+#~ "uporabite gumb <guibutton>Iskanje</guibutton>."
+
+#~ msgid ""
+#~ "The availabity of the <guibutton>Find</guibutton> button depends on the "
+#~ "protocol you have selected. Vinagre relies on <application>Avahi</"
+#~ "application> service to browse for machines in your local network. Also, "
+#~ "notice that Vinagre can be compiled without <application>Avahi</"
+#~ "application> support. In this case, this button will not be available."
+#~ msgstr ""
+#~ "Razpoložljivost gumba <guibutton>Najdi</guibutton> je odvisna od "
+#~ "izbranega protokola. Vinagre se za brskanje po napravah na vašem "
+#~ "krajevnem omrežju zanaša na storitev <application>Avahi</application>. "
+#~ "Vinagre lahko kodno prevedete brez podpore <application>Avahi</"
+#~ "application>. V tem primeru ta gumb ne bo na voljo."
+
+#~ msgid "Shows the authentication dialog."
+#~ msgstr "Pokaže pogovorno okno overitve."
+
+#~ msgid ""
+#~ "Some hosts distribute remote connection files (generally ending with "
+#~ "suffix \".vnc\") instead of inform Host address and Port. To open a "
+#~ "remote connection file, choose "
+#~ "<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>O</keycap></"
+#~ "keycombo></shortcut><guimenu>Machine</guimenu><guimenuitem>Open</"
+#~ "guimenuitem></menuchoice>. The <guilabel>Select File</guilabel> dialog is "
+#~ "displayed. Select the file you want to open, then click on the "
+#~ "<guibutton>Open</guibutton> button."
+#~ msgstr ""
+#~ "Nekateri gostitelji namesto naslovov gostiteljev in vrat distribuirajo "
+#~ "datoteke oddaljenih povezav (v splošnem se končajo z \".vnc\"). Za "
+#~ "odprtje datoteke oddaljene povezave izberite "
+#~ "<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>O</keycap></"
+#~ "keycombo></shortcut><guimenu>Računalnik</guimenu><guimenuitem>Odpri</"
+#~ "guimenuitem></menuchoice>. Prikazalo se bo pogovorno okno <guilabel>Izbor "
+#~ "datoteke</guilabel>. Izberite datotek, ko jo želite odpreti in nato "
+#~ "kliknite na gumb <guibutton>Odpri</guibutton>."
+
+#~ msgid "Using Bookmarks"
+#~ msgstr "Uporaba zaznamkov"
+
+#~ msgid ""
+#~ "You can access your mostly used connections through bookmarks. See the "
+#~ "<link linkend=\"bookmarks\">Bookmarks chapter</link>."
+#~ msgstr ""
+#~ "Do svojih najpogosteje uporabljenih povezav lahko dostopate z zaznamki. "
+#~ "Oglejte si <link linkend=\"bookmarks\">poglavje Zaznamki</link>."
+
+#~ msgid ""
+#~ "To zoom the Display Area to full screen mode, choose "
+#~ "<menuchoice><shortcut><keycap>F11</keycap></shortcut><guimenu>View</"
+#~ "guimenu><guimenuitem>Full Screen</guimenuitem></menuchoice> or the "
+#~ "corresponding tool bar button."
+#~ msgstr ""
+#~ "Za približanje Področja zaslona na celozaslonski način izberite "
+#~ "<menuchoice><shortcut><keycap>F11</keycap></shortcut><guimenu>Pogled</"
+#~ "guimenu><guimenuitem>Celozaslonski način</guimenuitem></menuchoice> ali "
+#~ "ustrezen gumb v orodni vrstici."
+
+#~ msgid ""
+#~ "To take screenshot of the current remote desktop, choose "
+#~ "<menuchoice><guimenu>Machine</guimenu><guimenu>Take Screenshot</guimenu></"
+#~ "menuchoice> or press the relative button in the toolbar. The "
+#~ "<guilabel>Save Screenshot</guilabel> dialog is displayed, click the "
+#~ "<guibutton>Save</guibutton> button to save the screenshot."
+#~ msgstr ""
+#~ "Za zajem zaslonske slike trenutnega oddaljenega namizja izberite  "
+#~ "<menuchoice><guimenu>Računalnik</guimenu><guimenu>Zajemi zaslonsko sliko</"
+#~ "guimenu></menuchoice> ali pritisnite na ustrezen gumb v orodni vrstici. "
+#~ "Prikazano je pogovorno okno <guilabel>Shranjevanje zaslonske slike</"
+#~ "guilabel>. Za shranjevanje zaslonske slike kliknite na gumb "
+#~ "<guibutton>Shrani</guibutton>."
+
+#~ msgid ""
+#~ "Bookmarks are a resource to keep around machines you access frequently. "
+#~ "They are visible at side panel or in the <guimenu>Bookmarks</guimenu> "
+#~ "menu."
+#~ msgstr ""
+#~ "Zaznamki omogočajo hiter dostop do računalnikov do katerih pogosto "
+#~ "dostopate. Vidni so v stranskem pladnju ali v meniju <guimenu>Zaznamki</"
+#~ "guimenu>."
+
+#~ msgid "Bookmarks at side panel"
+#~ msgstr "Zaznamki v stranskem pladnju"
+
+#~ msgid "Shows bookmarks at side panel."
+#~ msgstr "Pokaži zaznamke v stranskem pladnju."
+
+#~ msgid ""
+#~ "As you move the mouse around the entries, a tooltip will show you the "
+#~ "hostname of the connection. To connect to a machine, just double click on "
+#~ "a entry."
+#~ msgstr ""
+#~ "Ko se premikate okoli vnosov, se bo pokazal orodni namig, ki vam bo "
+#~ "pokazal ime gostitelja povezave. Za povezavo z računalnikom dvokliknite "
+#~ "na vnos."
+
+#~ msgid "To Create a New Bookmark"
+#~ msgstr "Za ustvarjanje novega zaznamka"
+
+#~ msgid ""
+#~ "To bookmark the currently viewed connection, choose "
+#~ "<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>D</keycap></"
+#~ "keycombo></shortcut><guimenu>Bookmarks</guimenu><guimenuitem>Add to "
+#~ "Bookmarks</guimenuitem></menuchoice>. The <guilabel>Saving to Bookmarks</"
+#~ "guilabel> dialog is displayed. Inform the name of the connection and "
+#~ "optionally other data, such as the folder and click <guibutton>Save</"
+#~ "guibutton>."
+#~ msgstr ""
+#~ "Za ustvarjanje zaznamka trenutno gledane povezave izberite "
+#~ "<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>D</keycap></"
+#~ "keycombo></shortcut><guimenu>Zaznamki</guimenu><guimenuitem>Dodaj k "
+#~ "zaznamkom</guimenuitem></menuchoice>. Prikazano bo pogovorno okno "
+#~ "<guilabel>Shranjevanje k zaznamkom</guilabel>. Navedite ime povezave in "
+#~ "izbirno druge podatke kot je na primer mapa in kliknite "
+#~ "<guibutton>Shrani</guibutton>."
+
+#~ msgid "Saving a bookmark"
+#~ msgstr "Shranjevanje zaznamkov"
+
+#~ msgid "Shows the Saving to Bookmarks dialog."
+#~ msgstr "Pokaže shranjevanje v pogovorno okno zaznamkov."
+
+#~ msgid ""
+#~ "You can use folders to organize your bookmarks. To create a folder, right "
+#~ "click in the side panel and choose the option <guimenu>New Folder</"
+#~ "guimenu> in the context menu, or go to menu "
+#~ "<menuchoice><guimenu>Bookmarks</guimenu><guimenu>New Folder</guimenu></"
+#~ "menuchoice>."
+#~ msgstr ""
+#~ "Za organizacijo svojih zaznamkov lahko uporabite mape. Za ustvarjanje "
+#~ "mape desno kliknite v stranskem pladnju in v vsebinskem meniju izberite "
+#~ "možnost <guimenu>Nova mapa</guimenu> ali pa pojdite v meni "
+#~ "<menuchoice><guimenu>Zaznamki</guimenu><guimenu>Nova mapa</guimenu></"
+#~ "menuchoice>."
+
+#~ msgid "To Edit a Bookmark's Properties"
+#~ msgstr "Za urejanje lastnosti zaznamka"
+
+#~ msgid ""
+#~ "To edit a bookmark's properties, such as it's name and host, choose "
+#~ "<guimenuitem>Edit bookmark</guimenuitem> from the context menu of the "
+#~ "bookmark in the Side Pane. The same dialog as shown above will be "
+#~ "displayed."
+#~ msgstr ""
+#~ "Za urejanje lastnosti zaznamka kot sta njegovo ime in gostitelj v "
+#~ "vsebinskem meniju v stranskem pladnju izberite <guimenuitem>Uredi "
+#~ "zaznamek</guimenuitem>. Prikazano bo enako pogovorno okno kot je zgoraj."
+
+#~ msgid "Editing a bookmark"
+#~ msgstr "Urejanje zaznamkov"
+
+#~ msgid "Context menu option to edit a bookmark"
+#~ msgstr "Možnost vsebinskega menija za urejanje zaznamka"
+
+#~ msgid "You can also edit a folder."
+#~ msgstr "Uredite lahko tudi mapo."
+
+#~ msgid "To Remove a Bookmark"
+#~ msgstr "Za odstranitev zaznamka"
+
+#~ msgid ""
+#~ "To remove a bookmark, choose <guilabel>Remove from bookmarks</guilabel> "
+#~ "from the context menu of the bookmark in the Side Pane."
+#~ msgstr ""
+#~ "Za odstranitev zaznamka v vsebinskem meniju zaznamka v stranskem pladnju "
+#~ "izberite <guilabel>Odstrani iz zaznamkov</guilabel>."
+
+#~ msgid ""
+#~ "You can also remove a folder. Notice that removing a folder will remove "
+#~ "all its entries. A confirmation dialog will be shown."
+#~ msgstr ""
+#~ "Mapo lahko tudi odstranite. Odstranitev mape bo odstranila tudi vse njene "
+#~ "vnose. Prikazano bo pogovorno okno za potrditev."
+
+#~ msgid "About"
+#~ msgstr "O programu"
+
+#~ msgid ""
+#~ "Vinagre was written by Jonh Wendell <email>wendell@bani.com.br</email>. "
+#~ "To find more information about Vinagre, please visit the <ulink url="
+#~ "\"http://projects.gnome.org/vinagre/\" type=\"http"
+#~ "\"><application>Vinagre</application> web page</ulink>."
+#~ msgstr ""
+#~ "Program Vinagre je napisal Jonh Wendell <email>wendell@bani.com.br</"
+#~ "email>. Za več podrobnosti o Vinagre obiščite <ulink url=\"http://"
+#~ "projects.gnome.org/vinagre/\" type=\"http\">spletišče "
+#~ "<application>Vinagre</application></ulink>. "
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding this application you can "
+#~ "file a bug in our <ulink url=\"http://bugzilla.gnome.org/browse.cgi?"
+#~ "product=vinagre\" type=\"http\"> bug tracker</ulink>."
+#~ msgstr ""
+#~ "Za poročilo o hrošču ali predlog o tem programu, uporabite <ulink url="
+#~ "\"http://bugzilla.gnome.org/browse.cgi?product=cheese\" type=\"http\"> "
+#~ "sledilnik hroščev</ulink>."
+
+#~ msgid ""
+#~ "This program is distributed under the terms of the GNU General Public "
+#~ "license as published by the Free Software Foundation; either version 2 of "
+#~ "the License, or (at your option) any later version. A copy of this "
+#~ "license can be found at the <ulink url=\"http://www.gnu.org/licenses/gpl."
+#~ "html\" type=\"http\">GNU site</ulink>, or in the file COPYING included "
+#~ "with the source code of this program."
+#~ msgstr ""
+#~ "Ta program je distribuiran pod pogoji GNU General Public license kot jo "
+#~ "je objavila Free Software Foundation; ali različico 2 licence ali (na "
+#~ "vašo željo) katerekoli kasnejše različice. Kopijo te licence je mogoče "
+#~ "najti na  <ulink url=\"http://www.gnu.org/licenses/gpl.html\" type=\"http"
+#~ "\">spletišču GNU</ulink>, ali v datoteki COPYING, ki je vključena v "
+#~ "izvorno kodo tega programa."

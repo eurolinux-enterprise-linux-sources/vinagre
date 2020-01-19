@@ -1,0 +1,1572 @@
+# translation of vinagre.master.te.po to Telugu
+# Copyright (C) 2011 Swecha Telugu Localisation Team <localization@swecha.net>.
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+# Hari Krishna <hari@swecha.net>, 2011.
+# Krishnababu Krothapalli <kkrothap@redhat.com>, 2011, 2012, 2014.
+# Sasi Bhushan Boddepalli <sasi@swecha.net>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: vinagre.master.te\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vinagre&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-09-22 23:09+0000\n"
+"PO-Revision-Date: 2014-09-23 17:59+0530\n"
+"Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+"\n"
+"\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:1
+msgid "Whether we should leave other clients connected"
+msgstr "అనుసంధానమైవున్న యితర కక్షిదారులను మనము విడువవలెనా"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:2
+msgid ""
+"When connecting to a host, the client can say to the server to leave other "
+"clients connected or to drop the existent connections. Set the value to true "
+"to share the desktop with the other clients."
+msgstr ""
+"హోస్టుకు అనుసంధానమగుచున్నప్పుడు, కక్షిదారి సేవికకు యితర అనుసంధానమైవున్న "
+"కక్షిదారులను వదిలివేయమని "
+"లేదా వున్న అనుసంధానములను వదిలివేయమని చెప్పగలదు. డెస్క్‌టాప్‌ను యితర "
+"కక్షిదారులతో పంచుకొనుటకు "
+"విలువను సత్యమునకు అమర్చుము."
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:3
+msgid ""
+"Whether we should show tabs even when there is only one active connection"
+msgstr "ఒక క్రియాశీల అనుసంధానము వున్నాకూడా మనము టాబ్లను చూపాలా"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:4
+msgid ""
+"Set to \"true\" to always show the tabs. Set to \"false\" to only show the "
+"tabs when there is more than one active connection."
+msgstr ""
+"టాబ్లను యెల్లప్పుడు చూపుటకు \"true\"కు అమర్చండి. ఒకటి కన్నా యెక్కువ క్రియాశీల "
+"విండోలు "
+"వున్నప్పుడు మాత్రమే టాబ్లను చూపుటకు \"false\"కు అమర్చండి."
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:5
+msgid "Whether we should show the menu accelerators (shortcut keys)"
+msgstr "మెనూ యాగ్జెలరేటర్లను చూపాలా (లఘువులు)"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:6
+msgid ""
+"Set to \"false\" to disable menu shortcuts. Set to \"true\" to enable them. "
+"Note that if they are enabled, those keys will be intercepted by the menu "
+"and will not be sent to the remote host."
+msgstr ""
+"మెనూ లఘవులను అచేతనము చేయుటకు \"false\"కు అమర్చుము. చేతనము చేయుటకు \"true\"కు "
+"అమర్చుము. అవి చేతనము చేయబడితే, ఆ కీలు మెనూ చేత ఖండించబడతాయి మరియు రిమోట్ "
+"హోస్టునకు పంపబడవని "
+"గమనించండి."
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:7
+msgid "Maximum number of history items in connect dialog"
+msgstr "అనుసంధానము డైలాగునందు చరిత్ర అంశములయొక్క గరిష్ట సంఖ్య"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:8
+msgid "Specifies the maximum number of items in the host dropdown entry."
+msgstr "హోస్టు డ్రాప్‌డౌన్ ప్రవేశమునందు అంశముల గరిష్ట సంఖ్యను తెలుపుతుంది."
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:9
+msgid "Whether we should start the program listening for reverse connections"
+msgstr "ప్రత్యస్థ అనుసంధానములను వినుటకు ప్రోగ్రామును మనము మెదలుపెట్టవలెనా"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:10
+msgid ""
+"Set to \"true\" to always start the program listening for reverse "
+"connections."
+msgstr ""
+"ప్రత్యర్ధ అనుసంధాలలో  ప్రతీసారీ  ప్రోగ్రామువినుట ప్రారంభించునపుడు \"true\" కి "
+"అమర్చు "
+
+#: ../data/vinagre.appdata.xml.in.h:1
+msgid "Vinagre shows remote Windows, Mac OS X and Linux desktops."
+msgstr "వినాగ్రే రిమోట్ Windows, Mac OS X మరియు Linux డెస్క్‌టాప్‌లను చూపును."
+
+#: ../data/vinagre.appdata.xml.in.h:2
+msgid ""
+"It uses the VNC, RDP and SPICE protocols, and can even be used to connect to "
+"SSH servers."
+msgstr ""
+"ఇది VNC, RDP మరియు SPICE ప్రొటోకాల్స్ ఉపయోగించును, మరియు SSH సేవికలు "
+"అనుసంధానించుటకు కూడా ఉపయోగించవచ్చు."
+
+#: ../data/vinagre.desktop.in.in.h:1 ../data/vinagre-file.desktop.in.in.h:1
+#: ../vinagre/vinagre-main.c:182
+msgid "Remote Desktop Viewer"
+msgstr "రిమోట్ రంగస్థల దర్శని"
+
+#: ../data/vinagre.desktop.in.in.h:2 ../data/vinagre-file.desktop.in.in.h:2
+msgid "Access remote desktops"
+msgstr "రిమోట్ డెస్క్‌టాప్‌లను యాక్సిస్ చేయుము"
+
+#: ../data/vinagre.desktop.in.in.h:3
+msgid "VNC;RDP;SSH;"
+msgstr "VNC;RDP;SSH;"
+
+#: ../data/vinagre.ui.h:1
+msgid "Vinagre is a remote desktop viewer for the GNOME desktop"
+msgstr "వినాగ్రే  అనునది  గ్నోమ్  డెస్కుటాప్‌నకు రిమోట్ డెస్కుటాప్ దర్శని"
+
+#. Add your name here to appear as a translator in the about dialog
+#: ../data/vinagre.ui.h:3
+msgid "translator-credits"
+msgstr "KrishnaBabu K <kkrothap@redhat.com> 2008."
+
+#. This is a button label, in the authentication dialog
+#: ../data/vinagre.ui.h:5
+msgid "_Authenticate"
+msgstr "దృవీకరించు(_A)"
+
+#: ../data/vinagre.ui.h:6
+msgid "Authentication is required"
+msgstr "ధృవీకరణము అవసరమైంది"
+
+#: ../data/vinagre.ui.h:7 ../plugins/rdp/vinagre-rdp-tab.c:120
+#: ../plugins/ssh/vinagre-ssh-tab.c:49 ../plugins/vnc/vinagre-vnc-tab.c:149
+#: ../plugins/spice/vinagre-spice-tab.c:139
+msgid "Host:"
+msgstr "హొస్ట్:"
+
+#: ../data/vinagre.ui.h:8 ../plugins/rdp/vinagre-rdp-plugin.c:111
+#: ../plugins/ssh/vinagre-ssh-plugin.c:112
+msgid "_Username:"
+msgstr "వినియోగదారు నామము (_U):"
+
+#: ../data/vinagre.ui.h:9 ../plugins/spice/vinagre-spice-plugin.c:310
+msgid "_Password:"
+msgstr "సంకేతపదం(_P):"
+
+#: ../data/vinagre.ui.h:10
+msgid "_Domain:"
+msgstr "డొమైన్ (_D):"
+
+#: ../data/vinagre.ui.h:11
+msgid "_Remember this credential"
+msgstr "ఈ ఆనవాళ్ళను గుర్తుంచుకొనుము (_R)"
+
+#: ../data/vinagre.ui.h:12
+msgid "Store the login credential in GNOME Keyring"
+msgstr "కీరింగునందలి ప్రవేశము ఆనవాళ్ళను దాచుము."
+
+#: ../data/vinagre.ui.h:13
+msgid "Bookmarks"
+msgstr "పుస్తకచిహ్నాలు"
+
+#: ../data/vinagre.ui.h:14
+msgid "Connection"
+msgstr "అనుసంధానము"
+
+#. Translators: This is the name of a bookmark. It appears in the add/edit bookmark dialog.
+#: ../data/vinagre.ui.h:16
+msgid "_Name:"
+msgstr "నామము(_N):"
+
+#: ../data/vinagre.ui.h:17
+msgid "_Host:"
+msgstr "హోస్ట్ (_H):"
+
+#: ../data/vinagre.ui.h:18
+msgid "Options"
+msgstr "ఐచ్చికములు"
+
+#: ../data/vinagre.ui.h:19
+msgid "_Full screen"
+msgstr "పూర్తి తెర (_F)"
+
+#: ../data/vinagre.ui.h:20
+msgid "Folder"
+msgstr "ఫోల్డర్"
+
+#: ../data/vinagre.ui.h:21
+msgid "Bookmark Folder"
+msgstr "ఇష్టాంశ సంచయం "
+
+#: ../data/vinagre.ui.h:22
+msgid "Parent Folder"
+msgstr "మాత్రుక ఫోల్డర్"
+
+#: ../data/vinagre.ui.h:23
+msgid "Certificate Verification"
+msgstr "ధృవీకరణపత్రం నిర్ధారణ"
+
+#: ../data/vinagre.ui.h:24
+msgid ""
+"The remote host has changed its certificate.\n"
+"Do you trust the new certificate?"
+msgstr ""
+"రిమోట్ అతిధేయ దాని ధృవీకరణపత్రం మార్చెను.\n"
+"మీరు కొత్త ధృవీకరణపత్రం నమ్ముతారా?"
+
+#. Subject of the certificate.
+#: ../data/vinagre.ui.h:27
+msgid "Subject:"
+msgstr "సంగతి:"
+
+#. Issuer of the certificate.
+#: ../data/vinagre.ui.h:29
+msgid "Issuer:"
+msgstr "జారీచేసినవారు:"
+
+#. Fingerprint of the new certificate.
+#: ../data/vinagre.ui.h:31
+msgid "New fingerprint:"
+msgstr "కొత్త వేలిముద్ర:"
+
+#. Fingerprint of the old certificate.
+#: ../data/vinagre.ui.h:33
+msgid "Old fingerprint:"
+msgstr "పాత వేలిముద్ర:"
+
+#: ../data/vinagre.ui.h:34
+msgid ""
+"The below certificate could not be verified.\n"
+"Do you trust the certificate?"
+msgstr ""
+"కింది ధృవీకరణపత్రం నిర్ధారించబడలేదు.\n"
+"మీరు ధృవీకరణపత్రం నమ్ముతారా?"
+
+#. Fingerprint of the certificate.
+#: ../data/vinagre.ui.h:37
+msgid "Fingerprint:"
+msgstr "వేలిముద్ర:"
+
+#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
+#: ../plugins/rdp/vinagre-rdp-tab.c:792
+msgid "Connect"
+msgstr "అనుసంధానముగు"
+
+#: ../data/vinagre.ui.h:39
+msgid "Choose a remote desktop to connect to"
+msgstr "అనుసంధానమగుటకు రిమోట్ డెస్కుటాప్‌ను యెంచుకొనుము"
+
+#: ../data/vinagre.ui.h:40
+msgid "_Protocol:"
+msgstr "నిభందన (_P):"
+
+#: ../data/vinagre.ui.h:41
+msgid "Select a remote desktop protocol for this connection"
+msgstr "ఈ అనుసంధానమునకు రిమోట్పు రంగస్థల ప్రోటోకాల్ ను ఎంచుకొను"
+
+#: ../data/vinagre.ui.h:42
+msgid "Search for remote hosts on the network"
+msgstr "నెట్వర్క్ యందు రిమోట్పు ఆతిధ్యములను వెతుకు"
+
+#: ../data/vinagre.ui.h:43
+msgid "Connection options"
+msgstr "అనుసంధానము ఐచ్చికములు"
+
+#: ../data/vinagre.ui.h:44
+msgid "_Fullscreen"
+msgstr "పూర్తి  తెర (_F)"
+
+#: ../data/vinagre.ui.h:45
+msgid "Enable fullscreen mode for this connection"
+msgstr "ఈ అనుసంధానమునకు పూర్తి తెర మోడ్ ను క్రియాశీలీకరించు"
+
+#: ../data/vinagre.ui.h:46
+msgid "Reverse Connections"
+msgstr "ప్రత్యస్థ అనుసంధానములు "
+
+#: ../data/vinagre.ui.h:47
+msgid ""
+"By activating reverse connections you can access remote desktops that are "
+"behind a firewall. The remote side is supposed to initiate the connection "
+"with you. For further information, read the help."
+msgstr ""
+"ప్రత్యర్ధ అనుసంబంధములను చేతనముచేయుటచే,ఫయర్ వాల్ వెనుక నున్న రిమోట్పు "
+"డెస్క్‌టాప్‌లను మీరు "
+"అందుకొనవచ్చును.మీతొ పాటే రిమోట్ము అనుసంధానమును మొదలుపెట్టవలెనుఇంకా "
+"సమాచారమునకు, సహాయకమును "
+"చదువుము"
+
+#: ../data/vinagre.ui.h:48
+msgid "_Enable Reverse Connections"
+msgstr "ప్రత్యర్ధ  అనుసంధానములను క్రియాశీలీకరించు(_R)"
+
+#. Translators: this is the reverse connection mode. "Always enabled" means it will be enabled by default in the program startup. You can see this string in the dialog Remote->Reverse connections.
+#: ../data/vinagre.ui.h:50
+msgid "_Always Enabled"
+msgstr "ఎప్పటికీ చేతనపరచిన(_A)"
+
+#: ../data/vinagre.ui.h:51
+msgid "This desktop is reachable through the following IP address(es):"
+msgstr "క్రింద ఉన్న IP చిరునామా(లు)తోటి డెస్క్‌టాప్‌ను అందుకొనవచ్చు"
+
+#: ../data/vinagre.ui.h:52
+msgid "Connectivity"
+msgstr "అనుసంధానముగుట"
+
+#: ../data/vinagre-mime.xml.in.h:1
+msgid "Remote Desktop (VNC) file"
+msgstr "రిమోట్ డెస్క్‌టాప్‌ (VNC) ఫైలు"
+
+#: ../data/vinagre-mime.xml.in.h:2
+msgid "Remote Desktop Connection"
+msgstr "రిమోట్ డెస్క్‌టాప్‌ అనుసంధానము"
+
+#: ../plugins/rdp/vinagre-rdp-plugin.c:61
+msgid "RDP"
+msgstr "RDP"
+
+#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
+#: ../plugins/rdp/vinagre-rdp-plugin.c:63
+msgid "Access MS Windows remote desktops"
+msgstr "MS విండోస్ రిమోట్ డెస్క్‌టాప్‌లను  సాంగత్యం చేయు"
+
+#: ../plugins/rdp/vinagre-rdp-plugin.c:104
+msgid "RDP Options"
+msgstr "RDP ఐచ్చికములు"
+
+#. Translators: This is the tooltip for the username field in a RDP connection
+#. Translators: This is the tooltip for the username field in a SSH connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:118
+#: ../plugins/ssh/vinagre-ssh-plugin.c:117
+msgid ""
+"Optional. If blank, your username will be used. Also, it can be supplied in "
+"the Host field above, in the form username@hostname."
+msgstr ""
+"ఇచ్ఛాపూర్వకం.ఖాళీగా ఉన్నచో మీ వినియోగదారునామమును ఉపయోగించుము.అలాగే, పై నున్న  "
+"హోస్ట్ ఫీల్డ్ నకు "
+"username@hostname విధముగా ప్రవేశపెట్టవచ్చును "
+
+#. Host width
+#: ../plugins/rdp/vinagre-rdp-plugin.c:131
+msgid "_Width:"
+msgstr "వెడల్పు (_W):"
+
+#. Translators: This is the tooltip for the width field in a RDP connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:138
+#| msgid "Connect to a remote desktop"
+msgid "Set width of the remote desktop"
+msgstr "రిమోట్ డెస్క్‌టాప్‌ వెడల్పు అమర్చు"
+
+#. Host height
+#: ../plugins/rdp/vinagre-rdp-plugin.c:147
+msgid "_Height:"
+msgstr "ఎత్తు (_H):"
+
+#. Translators: This is the tooltip for the height field in a RDP connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:154
+#| msgid "Connect to a remote desktop"
+msgid "Set height of the remote desktop"
+msgstr "రిమోట్ డెస్కుటాప్ ఎత్తు అమర్చు"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:121 ../plugins/ssh/vinagre-ssh-tab.c:50
+#: ../plugins/vnc/vinagre-vnc-tab.c:150
+#: ../plugins/spice/vinagre-spice-tab.c:140
+msgid "Port:"
+msgstr "పోర్టు:"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
+#| msgid "Cancel Login"
+msgid "_Cancel"
+msgstr "రద్దుచేయి (_C)"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:982 ../plugins/vnc/vinagre-vnc-tab.c:317
+#: ../plugins/spice/vinagre-spice-tab.c:264
+msgid "Error connecting to host."
+msgstr "హోస్టుకు అనుసంధానమగుటలో దోషము"
+
+#: ../plugins/ssh/vinagre-ssh-plugin.c:61
+msgid "SSH"
+msgstr "SSH"
+
+#. Translators: This is a description of the SSH protocol. It appears at Connect dialog.
+#: ../plugins/ssh/vinagre-ssh-plugin.c:63
+msgid "Access Unix/Linux terminals"
+msgstr "Unix/Linux టెర్మినల్సును యాక్సిస్ చేయుము"
+
+#: ../plugins/ssh/vinagre-ssh-plugin.c:103
+msgid "SSH Options"
+msgstr "SSH ఐచ్చికములు"
+
+#. Translators: 'shared' here is a VNC protocol specific flag. You can translate it, but I think it's better to let it untranslated
+#: ../plugins/vnc/vinagre-vnc-connection.c:317
+#: ../plugins/vnc/vinagre-vnc-plugin.c:201
+#, c-format
+msgid ""
+"Bad value for 'shared' flag: %d. It is supposed to be 0 or 1. Ignoring it."
+msgstr ""
+"'shared' ఫ్లాగ్ కొరకు చెడ్డ విలువ: %d. ఇది 0 లేక 1 కావాలి. దీనిని వదిలివేయండి."
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../plugins/vnc/vinagre-vnc-plugin.c:52
+msgid "Enable scaled mode"
+msgstr "స్కేలు రీతిని చేతనముచేయి"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../plugins/vnc/vinagre-vnc-plugin.c:65
+msgid "VNC Options:"
+msgstr "VNC ఐచ్చికాలు:"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../plugins/vnc/vinagre-vnc-plugin.c:67
+msgid "Show VNC Options"
+msgstr "VNC ఐచ్చికాలు చూపుము"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:89
+msgid "VNC"
+msgstr "VNC"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:90
+msgid "Access Unix/Linux, Windows and other remote desktops."
+msgstr "Unix/Linux, Windows మరియు యితరడెస్క్‌టాప్‌లను యాక్సిస్ చేయుము."
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:147
+#: ../plugins/spice/vinagre-spice-plugin.c:101
+msgid "Could not parse the file."
+msgstr "ఫైలును పార్శ్ చేయలేక పోయింది"
+
+#. Translators: Do not translate "Connection". It's the name of a group in the .vnc (.ini like) file.
+#: ../plugins/vnc/vinagre-vnc-plugin.c:155
+msgid "The file is not a VNC one: Missing the group \"Connection\"."
+msgstr "ఇది VNC దస్త్రము   కాదు: సమూహ \"అనుసంధానము\" తప్పినది."
+
+#. Translators: Do not translate "Host". It's the name of a key in the .vnc (.ini like) file.
+#: ../plugins/vnc/vinagre-vnc-plugin.c:162
+msgid "The file is not a VNC one: Missing the key \"Host\"."
+msgstr "ఇది VNC దస్త్రము    కాదు: \"హోస్టు\" మీట  తప్పిపోయింది."
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:268
+msgid "VNC Options"
+msgstr "VNC ఐచ్చికాలు"
+
+#. View only check button
+#. View only check button - not fully ready on spice-gtk side
+#: ../plugins/vnc/vinagre-vnc-plugin.c:276
+#: ../plugins/vnc/vinagre-vnc-tab.c:630
+#: ../plugins/spice/vinagre-spice-plugin.c:237
+#: ../plugins/spice/vinagre-spice-tab.c:507
+msgid "_View only"
+msgstr "దర్శనము మాత్రమే (_V)"
+
+#. Scaling check button
+#: ../plugins/vnc/vinagre-vnc-plugin.c:285
+#: ../plugins/spice/vinagre-spice-plugin.c:261
+msgid "_Scaling"
+msgstr "స్కేలింగ్(_S)"
+
+#. Keep ratio check button
+#: ../plugins/vnc/vinagre-vnc-plugin.c:299
+msgid "_Keep aspect ratio"
+msgstr "దృశ్య నిష్పత్తిని ఉంచుము(_K)"
+
+#. JPEG Compression check button
+#: ../plugins/vnc/vinagre-vnc-plugin.c:309
+msgid "_Use JPEG Compression"
+msgstr "JPEG కుదింపును ఉపయోగించు (_U)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:310
+msgid "This might not work on all VNC servers"
+msgstr "అన్నీ VNC సర్వర్ల పైన ఇది పనిచేయకపొవచ్చును"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:320
+msgid "Color _Depth:"
+msgstr "రంగు లోతు(_D)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:325
+msgid "Use Server Settings"
+msgstr "సర్వరు అమరికలను ఉపయోగించు"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:326
+msgid "True Color (24 bits)"
+msgstr "ట్రూ రంగు (24 bits)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:327
+msgid "High Color (16 bits)"
+msgstr "ఉన్నత రంగు (16 bits)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:328
+msgid "Low Color (8 bits)"
+msgstr "తక్కువ రంగు (8 bits)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:329
+msgid "Ultra Low Color (3 bits)"
+msgstr "చాల తక్కువ రంగు(3 bits)"
+
+#. Translators: the whole sentence will be: Use Host <hostname> as a SSH tunnel
+#. Translators: the whole sentence will be: Use host <hostname> as a SSH tunnel
+#: ../plugins/vnc/vinagre-vnc-plugin.c:343
+#: ../plugins/spice/vinagre-spice-plugin.c:272
+msgid "Use h_ost"
+msgstr "హోస్ట్ ని ఉపయోగించు(_o)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:352
+#: ../plugins/spice/vinagre-spice-plugin.c:281
+msgid "hostname or user@hostname"
+msgstr "అతిధినామము లేదా user@hostname"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:353
+#: ../plugins/spice/vinagre-spice-plugin.c:282
+msgid "Supply an alternative port using colon"
+msgstr "మరియొక పోర్ట్ ను ఇవ్వండి కోలన్ సహాయంతో"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:354
+#: ../plugins/spice/vinagre-spice-plugin.c:283
+msgid "For instance: joe@example.com:5022"
+msgstr "ప్రతిరూపంశం కొరకు: joe@example.com:5022"
+
+#. Translators: the whole sentence will be: Use host <hostname> as a SSH tunnel
+#: ../plugins/vnc/vinagre-vnc-plugin.c:360
+#: ../plugins/spice/vinagre-spice-plugin.c:289
+msgid "as a SSH tunnel"
+msgstr "SSH టున్నెల్ లాగా"
+
+#. Translators: this is a pattern to open *.vnc files in a open dialog.
+#: ../plugins/vnc/vinagre-vnc-plugin.c:395
+msgid "VNC Files"
+msgstr "VNC ఫైళ్ళు"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:148
+msgid "Desktop Name:"
+msgstr "డెస్క్‌టాప్‌ నామము:"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:151
+msgid "Dimensions:"
+msgstr "కొలతలు:"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:306
+#: ../plugins/spice/vinagre-spice-tab.c:252
+msgid "Error creating the SSH tunnel"
+msgstr "SSh టన్నెల్ ను సృష్టించడంలో దోషం "
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:307 ../plugins/vnc/vinagre-vnc-tab.c:318
+#: ../plugins/spice/vinagre-spice-tab.c:253
+#: ../plugins/spice/vinagre-spice-tab.c:265
+msgid "Unknown reason"
+msgstr "తెలియని కారణము"
+
+#. Translators: %s is a host name or IP address; %u is a code error (number).
+#: ../plugins/vnc/vinagre-vnc-tab.c:362
+#, c-format
+msgid "Authentication method for host %s is unsupported. (%u)"
+msgstr "%s హోస్టు చేయుటకు ధృవీకరణ పద్దతి సహకరించడంలేదు. (%u)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:366
+msgid "Authentication unsupported"
+msgstr "దృవీకరణము మద్దతీయనిది"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:529 ../plugins/vnc/vinagre-vnc-tab.c:546
+msgid "Authentication error"
+msgstr "దృవీకరణ దోషము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:530
+msgid "A username is required in order to access this remote desktop."
+msgstr "ఈ రిమోట్ డెస్క్‌టాప్‌ను యాక్సిస్ చేయుటకు వినియోగదారినామము అవసరము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:547
+msgid "A password is required in order to access this remote desktop."
+msgstr "ఈ రిమోట్ డెస్క్‌టాప్‌ను యాక్సిస్ చేయుటకు వొక సంకేతపదము అవసరము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:601
+#: ../plugins/spice/vinagre-spice-tab.c:466
+msgid "S_caling"
+msgstr "స్కేలింగ్ (_c)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:602
+#: ../plugins/spice/vinagre-spice-tab.c:467
+#| msgid "Fits the remote screen into the current window size"
+msgid "Fit the remote screen into the current window size"
+msgstr "రిమోట్ స్క్రీన్‌ను ప్రస్తుత విండో పరిమాణమునకు అమర్చుము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:615
+msgid "_Keep Aspect Ratio"
+msgstr "దృశ్య నిష్పత్తిని ఉంచుము(_K)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:616
+#| msgid "Keeps the screen aspect ratio when using scaling"
+msgid "Keep the screen aspect ratio when using scaling"
+msgstr "స్కేలింగ్ ను ఉపయోగించునపుడు స్క్రీన్ యొక్క ఏస్పెక్ట్ రేషియో ఉంచును"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:631
+#: ../plugins/spice/vinagre-spice-tab.c:508
+#| msgid "Does not send mouse and keyboard events"
+msgid "Do not send mouse and keyboard events"
+msgstr "మౌస్ మరియు కీబోర్డు ఘటనలను పంపవద్దు"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:644
+msgid "_Original size"
+msgstr "వాస్తవ పరిమాణము (_O)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:645
+#| msgid "Adjusts the window to the remote desktop's size"
+msgid "Adjust the window to the size of the remote desktop"
+msgstr "విండోను రిమోట్ డెస్క్‌టాప్‌ యొక్క పరిమాణముకు సర్దుబాటు చేయుము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:658
+msgid "_Refresh Screen"
+msgstr "స్క్రీన్ ను పునర్వికాసించు(_R)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:659
+msgid "Requests an update of the screen"
+msgstr "స్క్రీన్ తాజాపరుచుటకు అభ్యర్ధించుము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:681
+#: ../plugins/spice/vinagre-spice-tab.c:531
+msgid "_Send Ctrl-Alt-Del"
+msgstr "Ctrl-Alt-Del పంపుము(_S)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:682 ../plugins/vnc/vinagre-vnc-tab.c:756
+#: ../plugins/spice/vinagre-spice-tab.c:532
+#: ../plugins/spice/vinagre-spice-tab.c:605
+#| msgid "Sends Ctrl+Alt+Del to the remote desktop"
+msgid "Send Ctrl+Alt+Del to the remote desktop"
+msgstr "రిమోట్ డెస్క్‌టాప్‌నకు  Ctrl+Alt+Del పంపు"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:735 ../plugins/vnc/vinagre-vnc-tab.c:736
+#: ../plugins/spice/vinagre-spice-tab.c:584
+#: ../plugins/spice/vinagre-spice-tab.c:585
+msgid "Scaling"
+msgstr "కొలబద్దచేయుట"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:745 ../plugins/vnc/vinagre-vnc-tab.c:746
+#: ../plugins/spice/vinagre-spice-tab.c:594
+#: ../plugins/spice/vinagre-spice-tab.c:595
+msgid "Read only"
+msgstr "చదువుట మాత్రమే"
+
+#. Send Ctrl-alt-del
+#: ../plugins/vnc/vinagre-vnc-tab.c:754
+#: ../plugins/spice/vinagre-spice-tab.c:603
+msgid "Send Ctrl-Alt-Del"
+msgstr "Ctrl-Alt-Del పంపుము"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:919
+msgid ""
+"Scaling is not supported on this installation.\n"
+"\n"
+"Read the README file (shipped with Vinagre) in order to know how to enable "
+"this feature."
+msgstr ""
+"ఈ సంస్థాపనపై స్కేలింగ్ మద్దతీయబడదు.\n"
+"\n"
+"ఈ సౌలభ్యాన్ని యెలా చేతనము చేయవలెనో తెలుసుకొనుటకు (వినాగ్రే ఫైలుతో వచ్చిన) "
+"README ఫైలును చదువుము."
+
+#: ../plugins/vnc/vinagre-vnc-tunnel.c:97
+#: ../plugins/spice/vinagre-spice-tunnel.c:103
+#, c-format
+msgid "Unable to find a free TCP port"
+msgstr "TCP పోర్ట్ కనుగొనుట కుదరలేదు"
+
+#. Translators: Do not translate "connection". It's the name of a group in the .spice (.ini like) file.
+#: ../plugins/spice/vinagre-spice-plugin.c:108
+msgid "The file is not a Spice one: Missing the group \"connection\"."
+msgstr "ఫైలు స్పైస్ ది కాదు: సమూహ \"అనుసంధానము\" తప్పిపోయింది."
+
+#. Translators: Do not translate "host". It's the name of a key in the .spice (.ini like) file.
+#: ../plugins/spice/vinagre-spice-plugin.c:115
+msgid "The file is not a Spice one: Missing the key \"host\"."
+msgstr "ఫైలు స్పైస్ ది కాదు: కీ \"హోస్టు\" తప్పిపోయింది."
+
+#: ../plugins/spice/vinagre-spice-plugin.c:174
+msgid "SPICE"
+msgstr "స్పైస్"
+
+#. Translators: This is a description of the SPICE protocol. It appears at Connect dialog.
+#: ../plugins/spice/vinagre-spice-plugin.c:176
+msgid "Access Spice desktop server"
+msgstr "స్పైస్ రిమోట్ డెస్క్‌టాప్‌లను యాక్సిస్ చేయుము"
+
+#: ../plugins/spice/vinagre-spice-plugin.c:224
+msgid "SPICE Options"
+msgstr "స్పైస్ ఐచ్చికాలు"
+
+#. Resize guest check button
+#: ../plugins/spice/vinagre-spice-plugin.c:245
+#: ../plugins/spice/vinagre-spice-tab.c:480
+msgid "_Resize guest"
+msgstr "గెస్ట్ ని పునపరిమానించు(_R)"
+
+#. Clipboard sharing check button
+#: ../plugins/spice/vinagre-spice-plugin.c:253
+#: ../plugins/spice/vinagre-spice-tab.c:493
+msgid "_Share clipboard"
+msgstr "క్లిప్ బోర్డును పంచు (_S)"
+
+#. Translators: This is the tooltip for the password field in a SPICE connection
+#: ../plugins/spice/vinagre-spice-plugin.c:315
+msgid "Optional"
+msgstr "ఇచ్ఛాపూర్వక"
+
+#. Translators: this is a pattern to open *.spice files in a open dialog.
+#: ../plugins/spice/vinagre-spice-plugin.c:336
+msgid "Spice Files"
+msgstr "స్పైస్ ఫైళ్ళు"
+
+#: ../plugins/spice/vinagre-spice-tab.c:481
+msgid "Resize the screen guest to best fit"
+msgstr "మంచిగాతెర ఆతిధ్యమును  సర్దునకు మరల పరిమాణము చేయు  "
+
+#: ../plugins/spice/vinagre-spice-tab.c:494
+msgid "Automatically share clipboard between client and guest"
+msgstr "స్వతస్సిద్ధంగా క్లిప్ బోర్డును క్లైంట్ మరియు అతిధి మధ్యలో పంచు "
+
+#: ../vinagre/vinagre-bookmarks.c:366
+#, c-format
+msgid "Error while initializing bookmarks: %s"
+msgstr "పుస్తకచిహ్నాలును సిద్దము చేయుచున్నప్పుడు దోషము: %s"
+
+#: ../vinagre/vinagre-bookmarks.c:366 ../vinagre/vinagre-bookmarks.c:492
+#: ../vinagre/vinagre-bookmarks-migration.c:135
+#: ../vinagre/vinagre-cache-prefs.c:57 ../vinagre/vinagre-commands.c:163
+#: ../vinagre/vinagre-connect.c:510 ../vinagre/vinagre-options.c:85
+#: ../vinagre/vinagre-options.c:103 ../vinagre/vinagre-window.c:260
+#: ../vinagre/vinagre-window.c:798
+msgid "Unknown error"
+msgstr "తెలియని దోషము"
+
+#: ../vinagre/vinagre-bookmarks.c:373
+msgid "Error while initializing bookmarks: The file seems to be empty"
+msgstr ""
+"పుస్తకచిహ్నాలును సిద్దము చేయుచున్నప్పుడు దోషము: ఫైలు ఖాళీగా వున్నట్లువుంది"
+
+#: ../vinagre/vinagre-bookmarks.c:380
+msgid ""
+"Error while initializing bookmarks: The file is not a vinagre bookmarks file"
+msgstr ""
+"పుస్తకచిహ్నాలును సిద్దపరుస్తున్నప్పుడు దోషము: ఫైలు వినాగ్రే పుస్తకచిహ్నాల "
+"ఫైలు కాదు"
+
+#: ../vinagre/vinagre-bookmarks.c:453 ../vinagre/vinagre-bookmarks.c:460
+msgid "Error while saving bookmarks: Failed to create the XML structure"
+msgstr ""
+"పుస్తకచిహ్నాలను దాయుచున్నప్పుడు దోషము: XML నిర్మాణమును సృష్టించుటకు విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks.c:467 ../vinagre/vinagre-bookmarks.c:474
+msgid "Error while saving bookmarks: Failed to initialize the XML structure"
+msgstr ""
+"పుస్తకచిహ్నాలను దాయుచున్నప్పుడు విఫలమైంది: XML నిర్మాణము సిద్దపరచుటలో "
+"విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks.c:483
+msgid "Error while saving bookmarks: Failed to finalize the XML structure"
+msgstr ""
+"పుస్తకచిహ్నాలను దాయుచున్నప్పుడు విఫలమైంది: XML నిర్మాణము ఖరారు చేయుటలో "
+"విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks.c:492
+#, c-format
+msgid "Error while saving bookmarks: %s"
+msgstr "పుస్తకచిహ్నాలను దాయుచున్నప్పుడు దోషము: %s"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:95
+#: ../vinagre/vinagre-bookmarks-migration.c:102
+msgid "Error while migrating bookmarks: Failed to create the XML structure"
+msgstr ""
+"పుస్తకచిహ్నాలను వలసపంపుటలో దోషము: XML నిర్మాణమును సృష్టించుటకు విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:109
+#: ../vinagre/vinagre-bookmarks-migration.c:116
+msgid "Error while migrating bookmarks: Failed to initialize the XML structure"
+msgstr ""
+"పుస్తకచిహ్నాలను వలసపంపుటలో దోషము: XML నిర్మాణమును సిద్దముచేయుటలో విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:125
+msgid "Error while migrating bookmarks: Failed to finalize the XML structure"
+msgstr ""
+"పుస్తకచిహ్నాలను వలసపంపుటలో దోషము: XML నిర్మాణమును ఖరారు చేయుటలో విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:135
+#: ../vinagre/vinagre-bookmarks-migration.c:216
+#, c-format
+msgid "Error while migrating bookmarks: %s"
+msgstr "పుస్తకచిహ్నాలను వలసపంపుటలో దోషము: %s"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:164
+msgid "Error while migrating bookmarks: VNC plugin is not activated"
+msgstr ""
+"బుక్‌మార్కులను మైగ్రేట చేస్తున్నప్పుడు దోషము: VNC ప్లగిన్ క్రియాశీల పరచబడలేదు"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:216
+msgid "Failed to create the directory"
+msgstr "డైరెక్టరీను సృష్టించుటకు విఫలమైంది."
+
+#: ../vinagre/vinagre-bookmarks-migration.c:241
+msgid ""
+"Migrating the bookmarks file to the new format. This operation is only "
+"supposed to run once."
+msgstr ""
+"పుస్తకచిహ్నాల ఫైలు కొత్త రూపానికి వలసపంపుతున్నది. ఈ ఆపరేషన్ వొకసారి మాత్రమే "
+"నడుపవలెను."
+
+#: ../vinagre/vinagre-bookmarks-migration.c:249
+#, c-format
+msgid "Error opening old bookmarks file: %s"
+msgstr "పాత పుస్తకచిహ్నాల ఫైలు తెరువుటలో దోషము: %s"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:250
+#: ../vinagre/vinagre-bookmarks-migration.c:262
+msgid "Migration cancelled"
+msgstr "వలసపంపుట విఫలమైంది"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:259
+msgid "Could not remove the old bookmarks file"
+msgstr "పాత పుస్తకచిహ్నాల ఫైలును తొలగించలేక పోయింది"
+
+#: ../vinagre/vinagre-bookmarks-tree.c:120
+msgid "Root Folder"
+msgstr "రూట్ ఫొల్డర్"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:78
+msgid "Invalid name for this folder"
+msgstr "ఈ ఫోల్డర్ కొరకు చెల్లని నామము"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:88 ../vinagre/vinagre-bookmarks-ui.c:200
+#, c-format
+msgid ""
+"The name \"%s\" is already used in this folder. Please use a different name."
+msgstr ""
+"నామము \"%s\" యిప్పటికే ఈ ఫోల్డరునందు వుపయోగించబడింది. దయచేసి వేరొక నామాన్ని "
+"వుపయోగించండి."
+
+#: ../vinagre/vinagre-bookmarks-ui.c:89 ../vinagre/vinagre-bookmarks-ui.c:190
+#: ../vinagre/vinagre-bookmarks-ui.c:201
+msgid "Invalid name for this item"
+msgstr "ఈ అంశము కొరకు సరికాని నామము"
+
+#. Translators: %s is a protocol name, like VNC or SSH
+#: ../vinagre/vinagre-bookmarks-ui.c:168
+#, c-format
+msgid "(Protocol: %s)"
+msgstr "(నిభందన: %s)"
+
+#. Translators: %s is a bookmark entry name
+#: ../vinagre/vinagre-bookmarks-ui.c:306
+#, c-format
+msgid "Are you sure you want to remove %s from bookmarks?"
+msgstr "మీరు %sను పుస్తకగుర్తులనుండి తీసివేద్దామని ఖచ్చితంగా అనుకొనుచున్నారా?"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:312
+msgid "Remove Folder?"
+msgstr "ఫోల్డరును తీసివేయాలా?"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:313
+msgid "Note that all its subfolders and bookmarks will be removed as well."
+msgstr ""
+"వీటి అన్ని ఉపసంచయములు మరియు వాటి ఇష్టాంశములు తీసివేయబడతాయని గుర్తించండి."
+
+#: ../vinagre/vinagre-bookmarks-ui.c:318
+msgid "Remove Item?"
+msgstr "అంశమును తీసివేయాలా?"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:335
+msgid "Error removing bookmark: Entry not found"
+msgstr "పుస్తకచిహ్నామును తొలగించుటలో దోషము: ప్రవేశము కనబడలేదు"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:352
+msgid "New Folder"
+msgstr "కొత్త సంచి"
+
+#: ../vinagre/vinagre-cache-prefs.c:57
+#, c-format
+msgid "Error while saving preferences: %s"
+msgstr "అభీష్టాలను దాయుచున్నప్పుడు దోషము: %s"
+
+#: ../vinagre/vinagre-commands.c:115
+msgid "Choose the file"
+msgstr "ఫైలును యెంచుకొనుము"
+
+#: ../vinagre/vinagre-commands.c:139
+msgid "There are no supported files"
+msgstr "అక్కడ మద్దతిచ్చు దస్త్రములు లేవు"
+
+#: ../vinagre/vinagre-commands.c:140
+msgid ""
+"None of the active plugins support this action. Activate some plugins and "
+"try again."
+msgstr ""
+"ఈ  క్రియను ఎలాంటి  క్రియాశీల ప్లగిన్లు సహకరించడంలేదు . కొన్ని ప్లగిన్లను "
+"క్రియాశీలపర్చుము మరలా "
+"ప్రయత్నించుము."
+
+#: ../vinagre/vinagre-commands.c:174
+msgid "The following file could not be opened:"
+msgid_plural "The following files could not be opened:"
+msgstr[0] "ఈ క్రింది ఫైలు తెరువబడలేక పోయింది:"
+msgstr[1] "ఈ క్రింది ఫైళ్ళు తెరువబడలేక పోయినవి:"
+
+#: ../vinagre/vinagre-connect.c:91 ../vinagre/vinagre-connect.c:344
+#: ../vinagre/vinagre-connect.c:474
+msgid "Could not get the active protocol from the protocol list."
+msgstr "నిభందన జాబితానందు క్రియాశీల నిభందనను పొందలేక పోయింది."
+
+#: ../vinagre/vinagre-connect.c:318
+#, c-format
+msgid "Error while saving history file: %s"
+msgstr "చరిత్ర ఫైలును దాయుటలో దోషము: %s"
+
+#: ../vinagre/vinagre-connect.c:360
+msgid "Choose a Remote Desktop"
+msgstr "రిమోట్ డెస్కుటాప్‌ను యెంచుకొనుము"
+
+#: ../vinagre/vinagre-connection.c:614 ../vinagre/vinagre-tab.c:574
+#: ../vinagre/vinagre-tube-handler.c:257
+#, c-format
+msgid "The protocol %s is not supported."
+msgstr "ప్రోటోకాల్ %s మద్దతించబడదు"
+
+#: ../vinagre/vinagre-connection.c:722
+msgid "Could not open the file."
+msgstr "ఫైలును తెరువలేక పోయింది"
+
+#: ../vinagre/vinagre-connection.c:748
+msgid "The file was not recognized by any of the plugins."
+msgstr "ఆ ఫైలు ఏ ప్లగిన్ల చేత గుర్తించబడలేదు."
+
+#. Setup command line options
+#: ../vinagre/vinagre-main.c:91
+msgid "- Remote Desktop Viewer"
+msgstr "- రిమోట్ డెస్కుటాప్ దర్శని"
+
+#: ../vinagre/vinagre-mdns.c:172
+#, c-format
+msgid "Failed to resolve avahi hostname: %s\n"
+msgstr "అవాహి హోస్టునామమును పరిష్కరించుటలో విఫలమైంది: %s\n"
+
+#: ../vinagre/vinagre-mdns.c:226
+#, c-format
+msgid "The service %s was already registered by another plugin."
+msgstr "ఇంకొక ప్లగిన్ ఈ %s సర్వీసును ముందుగానే నమోదు చేసుకొనెను."
+
+#: ../vinagre/vinagre-mdns.c:234
+#, c-format
+msgid "Failed to add mDNS browser for service %s."
+msgstr "సేవ %s కొరకు mDNS బ్రౌజర్‌ను జతచేయుటకు విఫలమైంది."
+
+#. Translators: "Browse for hosts" means the ability to find/locate some remote hosts [with the VNC service enabled] in the local network
+#: ../vinagre/vinagre-mdns.c:251
+#, c-format
+msgid "Failed to browse for hosts: %s\n"
+msgstr "హోస్టుల కొరకు అన్వేషించుటలో విఫలమైంది: %s\n"
+
+#: ../vinagre/vinagre-mdns.c:320
+#, c-format
+msgid "Failed to initialize mDNS browser: %s\n"
+msgstr "mDNS బ్రౌజర్ సిద్దపరచుటలో విఫలమైంది: %s\n"
+
+#. Translators: %s is a host name or IP address.
+#: ../vinagre/vinagre-notebook.c:462
+#, c-format
+msgid "Connection to host %s was closed."
+msgstr "హోస్టు %sనకు అనుసంధానము మూయబడింది."
+
+#: ../vinagre/vinagre-notebook.c:464
+msgid "Connection closed"
+msgstr "అనుసంధానము మూయబడింది"
+
+#. Translators: %s is a host name or IP address.
+#: ../vinagre/vinagre-notebook.c:483
+#, c-format
+msgid "Authentication for host %s has failed"
+msgstr "హోస్టు %sనకు ధృవీకరణ విఫలమైంది"
+
+#: ../vinagre/vinagre-notebook.c:489
+msgid "Authentication failed"
+msgstr "ప్రామాణీకరణ విఫలమైంది"
+
+#: ../vinagre/vinagre-notebook.c:537
+msgid "Connecting…"
+msgstr "అనుసంధానించు..."
+
+#: ../vinagre/vinagre-notebook.c:559
+msgid "Close connection"
+msgstr "అనుసంధానము మూయుము"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:33
+msgid "Specify geometry of the main Vinagre window"
+msgstr "మూల వినాగ్రే విండోకు క్షేత్రగణితమును పేర్కొను"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:37
+msgid "Open Vinagre in fullscreen mode"
+msgstr "Vinagreను నిండుతెర రీతినందు తెరువుము"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:41
+msgid "Create a new toplevel window in an existing instance of Vinagre"
+msgstr "ప్రస్తుతం వున్న వినాగ్రే నందు పైస్థాయి విండోను సృష్టించుము"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:45
+msgid "Open a file recognized by Vinagre"
+msgstr "vinagre ద్వారా గుర్తించబడిన ఫైలును తెరువుము"
+
+#: ../vinagre/vinagre-options.c:45
+msgid "filename"
+msgstr "దస్త్రనామము"
+
+#: ../vinagre/vinagre-options.c:48
+msgid "Show help"
+msgstr "సహాయం చూపు"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:53
+msgid "[server:port]"
+msgstr "[server:port]"
+
+#: ../vinagre/vinagre-options.c:127
+#, c-format
+msgid "Invalid argument %s for --geometry"
+msgstr "--క్షేత్రగణితం కు  చెల్లని నామము %s"
+
+#: ../vinagre/vinagre-options.c:145
+msgid "The following error has occurred:"
+msgid_plural "The following errors have occurred:"
+msgstr[0] "ఈ క్రింది దోషము యెదురైంది:"
+msgstr[1] "ఈ క్రింది దోషములు యెదురైనవి:"
+
+#: ../vinagre/vinagre-prefs.c:83
+msgid "Cannot initialize preferences manager."
+msgstr "అభీష్టముల అభికర్తను సంసిద్ధపరుచుట సాధ్యంకాలేదు"
+
+#: ../vinagre/vinagre-reverse-vnc-listener-dialog.c:103
+msgid "IPv4:"
+msgstr "IPv4:"
+
+#: ../vinagre/vinagre-reverse-vnc-listener-dialog.c:115
+msgid ""
+"\n"
+"\n"
+"IPv6:"
+msgstr ""
+"\n"
+"\n"
+"IPv6:"
+
+#: ../vinagre/vinagre-reverse-vnc-listener-dialog.c:175
+#, c-format
+msgid "On the port %d"
+msgstr "%d పోర్ట్ పైన"
+
+#: ../vinagre/vinagre-reverse-vnc-listener.c:212
+msgid "Error activating reverse connections"
+msgstr "ప్రత్యస్థ అనుసంధానమును ప్రేరెపించుటలో దోషము."
+
+#: ../vinagre/vinagre-reverse-vnc-listener.c:213
+msgid ""
+"The program could not find any available TCP ports starting at 5500. Is "
+"there any other running program consuming all your TCP ports?"
+msgstr ""
+"5500 తో మొదలగునటి TCP పోర్ట్ లేవీ ప్రోగ్రామునకు లభించలేదు. ఇంకేదైన ప్రోగ్రాము "
+"మీ  TCP పోర్ట్ లను "
+"వినియోగిస్తుందా?"
+
+#: ../vinagre/vinagre-ssh.c:115
+msgid "Timed out when logging into SSH host"
+msgstr "SSH అతిధి లోనికి ప్రవేశించునపుడు సమయము ముగిసినది"
+
+#: ../vinagre/vinagre-ssh.c:191
+msgid "Unable to spawn ssh program"
+msgstr "ssh ప్రోగ్రామును స్పాన్ చేయుట కుదరుటలేదు"
+
+#: ../vinagre/vinagre-ssh.c:208
+#, c-format
+msgid "Unable to spawn ssh program: %s"
+msgstr "ssh ప్రోగ్రామును స్పాన్ చేయుట కుదురుటలేదు: %s"
+
+#: ../vinagre/vinagre-ssh.c:424
+msgid "Timed out when logging in"
+msgstr "ప్రవేశించు సమయము ముగిసినది"
+
+#: ../vinagre/vinagre-ssh.c:454 ../vinagre/vinagre-ssh.c:596
+#: ../vinagre/vinagre-ssh.c:692
+msgid "Permission denied"
+msgstr "అనుమతి తిరస్కరించబడినది"
+
+#: ../vinagre/vinagre-ssh.c:513
+msgid "Password dialog canceled"
+msgstr "రహస్యపదము డైలాగ్ రద్దుచేయబడినది"
+
+#: ../vinagre/vinagre-ssh.c:530
+msgid "Could not send password"
+msgstr "వినాగ్రేను నడుపలేక పోయింది:"
+
+#: ../vinagre/vinagre-ssh.c:538
+msgid "Log In Anyway"
+msgstr "ఎలాగైనా ప్రవేశించు"
+
+#: ../vinagre/vinagre-ssh.c:538
+msgid "Cancel Login"
+msgstr "ప్రవేశ ద్వారం రద్దు"
+
+#: ../vinagre/vinagre-ssh.c:547
+#, c-format
+msgid ""
+"The identity of the remote host (%s) is unknown.\n"
+"This happens when you log in to a host the first time.\n"
+"\n"
+"The identity sent by the remote host is %s. If you want to be absolutely "
+"sure it is safe to continue, contact the system administrator."
+msgstr ""
+"రిమోట్పు హోస్ట్(%s)గుర్తింపు తెలియడంలేదు.\n"
+"మీరు మొదటిసారి హోస్ట్ లోనికి  లాగిన్ అయినచో ఇది జరుగును.\n"
+"\n"
+"రిమోట్పు హోస్ట్ పంపించిన గుర్తింపు %s. కొనసాగుటలోక్షేమము కోసము నిర్ధారణకు, "
+"నిర్వాహకిని సంప్రదించగలరు"
+
+#: ../vinagre/vinagre-ssh.c:565
+msgid "Login dialog canceled"
+msgstr "లాగిన్ డైలాగ్ విఫలమైంది"
+
+#: ../vinagre/vinagre-ssh.c:586
+msgid "Can't send host identity confirmation"
+msgstr "ఆతిధ్య గుర్తింపు నిర్ధారణ పంపుట జరగలేదు"
+
+#. Login succeed, save password in keyring
+#: ../vinagre/vinagre-ssh.c:605
+#, c-format
+msgid "Secure shell password: %s"
+msgstr "రక్షిత అర సంకేతపదం: %s"
+
+#: ../vinagre/vinagre-ssh.c:618 ../vinagre/vinagre-tab.c:798
+msgid "Error saving the credentials on the keyring."
+msgstr "కీరింగునందలి ఆనవాళ్ళను దాయుటలో దోషము."
+
+#: ../vinagre/vinagre-ssh.c:700
+msgid "Hostname not known"
+msgstr "ఆతిథ్య నామం తెలియలేదు"
+
+#: ../vinagre/vinagre-ssh.c:708
+msgid "No route to host"
+msgstr "హోష్ట్ కి దారి లేదు"
+
+#: ../vinagre/vinagre-ssh.c:716
+msgid "Connection refused by server"
+msgstr "అనుసంధానము సర్వరుచే వ్యతిరేకించబడింది"
+
+#: ../vinagre/vinagre-ssh.c:724
+msgid "Host key verification failed"
+msgstr "హోష్ట్ మీట నిర్ధారణ విఫలమైంది"
+
+#: ../vinagre/vinagre-ssh.c:764
+msgid "Unable to find a valid SSH program"
+msgstr "వర్తించు SSH ప్రోగ్రామును కనుగొనుటలో విఫలం"
+
+#: ../vinagre/vinagre-tab.c:354
+msgid "Disconnect"
+msgstr "అనుసంధానము తెంచుము"
+
+#: ../vinagre/vinagre-tab.c:375
+msgid "Leave fullscreen"
+msgstr "నిండుతెరను వదిలివేయుము"
+
+#: ../vinagre/vinagre-tab.c:537
+msgid "Error saving recent connection."
+msgstr "ఇటీవలి అనుసంధానమును దాయుటలో దోషము."
+
+#: ../vinagre/vinagre-tab.c:781
+#, c-format
+#| msgid "Remote desktop password: %s"
+msgid "Remote desktop password for %s"
+msgstr "%s కొరకు రిమోట్ డెస్కుటాప్ సంకేతపదం"
+
+#: ../vinagre/vinagre-tab.c:897
+msgid "Could not get a screenshot of the connection."
+msgstr "అనుసంధానము యొక్క తెరపట్టును పొందలేక పోయింది."
+
+#: ../vinagre/vinagre-tab.c:902
+msgid "Save Screenshot"
+msgstr "తెర ఛాయచిత్రం దాచుము"
+
+#: ../vinagre/vinagre-tab.c:916
+#, c-format
+msgid "Screenshot of %s at %s"
+msgstr "%s వద్ద  %s యొక్క తెరపట్టు "
+
+#: ../vinagre/vinagre-tab.c:970
+msgid "Error saving screenshot"
+msgstr "స్క్రీన్‌షాట్ దాయుటలో దోషము"
+
+#: ../vinagre/vinagre-tube-handler.c:233
+#, c-format
+msgid "Impossible to get service property: %s"
+msgstr "సేవా లక్షణమును పొందుట అసాధ్యము: %s"
+
+#: ../vinagre/vinagre-tube-handler.c:300
+#, c-format
+msgid "Impossible to create the connection: %s"
+msgstr "అనుసంధానమును సృష్టించుట అసాధ్యము: %s"
+
+#: ../vinagre/vinagre-tube-handler.c:339
+#, c-format
+msgid "Impossible to accept the stream tube: %s"
+msgstr "స్ట్రీమ్ ట్యూబ్‌ను ఆమోదించుట అసాధ్యము: %s"
+
+#. Translators: this is an error message when we fail to get the name of an empathy/telepathy buddy. %s will be replaced by the actual error message.
+#: ../vinagre/vinagre-tube-handler.c:477
+#, c-format
+msgid "Impossible to get the contact name: %s"
+msgstr "సంప్రదింపు నామమును పొందుట అసాధ్యము: %s"
+
+#: ../vinagre/vinagre-tube-handler.c:514
+#, c-format
+msgid "Impossible to get the avatar: %s"
+msgstr "అవతార్‌ను పొందుట అసాధ్యము: %s"
+
+#: ../vinagre/vinagre-tube-handler.c:535
+#, c-format
+msgid "%s wants to share their desktop with you."
+msgstr "%s తమ డెస్కుటాప్‌ను మీతో పంచుకొనవలెనని అనుకొనుచున్నారు."
+
+#: ../vinagre/vinagre-tube-handler.c:540
+msgid "Desktop sharing invitation"
+msgstr "డెస్కుటాప్ భాగస్వామ్య ఆహ్వానము"
+
+#. Toplevel
+#: ../vinagre/vinagre-ui.h:33
+msgid "_Remote"
+msgstr "రిమోట్(_R)"
+
+#: ../vinagre/vinagre-ui.h:34
+msgid "_Edit"
+msgstr "సరిచేయు (_E)"
+
+#: ../vinagre/vinagre-ui.h:35
+msgid "_View"
+msgstr "దర్శనం (_V)"
+
+#: ../vinagre/vinagre-ui.h:36
+msgid "_Bookmarks"
+msgstr "పుస్తకచిహ్నాలు (_B)"
+
+#: ../vinagre/vinagre-ui.h:37
+msgid "_Help"
+msgstr "సహాయం(_H)"
+
+#: ../vinagre/vinagre-ui.h:41
+msgid "Connect to a remote desktop"
+msgstr "రిమోట్ డెస్క్‌టాప్‌నకు అనుంధామవ్వు"
+
+#: ../vinagre/vinagre-ui.h:43
+msgid "Open a .VNC file"
+msgstr ".VNC ఫైలు తెరువుము"
+
+#. Translators: "Reverse" here is an adjective, not a verb.
+#: ../vinagre/vinagre-ui.h:45
+msgid "_Reverse Connections…"
+msgstr "ప్రత్యస్థ అనుసంధానములు (_R)"
+
+#: ../vinagre/vinagre-ui.h:45
+msgid "Configure incoming VNC connections"
+msgstr "లొనికి  వస్తున్న VNC అనుసంధానములను అమర్చు"
+
+#: ../vinagre/vinagre-ui.h:48
+msgid "Quit the program"
+msgstr "ఈ కార్యక్రమమును త్యజించు"
+
+#. Help menu
+#: ../vinagre/vinagre-ui.h:51
+msgid "_Contents"
+msgstr "సారములు (_C)"
+
+#: ../vinagre/vinagre-ui.h:52
+msgid "Open the Vinagre manual"
+msgstr "వినాగ్రే మాన్యువల్‌ను తెరువుము"
+
+#: ../vinagre/vinagre-ui.h:54
+msgid "About this application"
+msgstr "ఈ కార్యక్షేత్రం గురించి"
+
+#: ../vinagre/vinagre-ui.h:59
+msgid "_Keyboard shortcuts"
+msgstr "కీబోర్డు లఘువులు (_K)"
+
+#: ../vinagre/vinagre-ui.h:60
+msgid "Enable keyboard shurtcuts"
+msgstr "కీబోర్డు లఘువులను క్రియాశీలీకరించు"
+
+#: ../vinagre/vinagre-ui.h:62
+msgid "_Toolbar"
+msgstr "పనిముట్ల పట్టా(_T)"
+
+#: ../vinagre/vinagre-ui.h:63
+msgid "Show or hide the toolbar"
+msgstr "పనిముట్ల పట్టాను చూపుము లేదా దాయుము"
+
+#: ../vinagre/vinagre-ui.h:66
+msgid "_Statusbar"
+msgstr "సుస్థితి పట్టీ (_S)"
+
+#: ../vinagre/vinagre-ui.h:67
+msgid "Show or hide the statusbar"
+msgstr "స్థితిపట్టీను చూపుము లేదా మరుగునవుంచుము"
+
+#: ../vinagre/vinagre-ui.h:75
+msgid "Disconnect the current connection"
+msgstr "ప్రస్తుత అనుసంధానమును తెంచుము"
+
+#: ../vinagre/vinagre-ui.h:76
+msgid "Disconnect All"
+msgstr "అన్నిఅనుసంధానములను తెంచుము"
+
+#: ../vinagre/vinagre-ui.h:77
+msgid "Disconnect all connections"
+msgstr "అన్ని అనుసంధానములను తెంచుము"
+
+#. Bookmarks menu
+#: ../vinagre/vinagre-ui.h:80
+msgid "_Add Bookmark"
+msgstr "పుస్తకచిహ్నమును జతచేయుము (_A)"
+
+#: ../vinagre/vinagre-ui.h:81
+msgid "Add the current connection to your bookmarks"
+msgstr "ప్రస్తుత అనుసంధానమును మీ పుస్తకచిహ్నాలకు జతచేయుము"
+
+#. Remote menu
+#: ../vinagre/vinagre-ui.h:88
+msgid "_Take Screenshot"
+msgstr "తెరపట్టును తీసుకొనుము(_T)"
+
+#: ../vinagre/vinagre-ui.h:89
+msgid "Take a screenshot of the current remote desktop"
+msgstr "ప్రస్తుత సదూర డెస్క్‌టాప్‌ యొక్క తెరపట్టును తీసుకొనుము"
+
+#: ../vinagre/vinagre-ui.h:93
+msgid "View the current remote desktop in fullscreen mode"
+msgstr "ప్రస్తుత సదూర డెస్క్‌టాప్‌ను పూర్తితెర నందు చూడుము"
+
+#: ../vinagre/vinagre-utils.vala:40
+msgid "An error occurred"
+msgstr "ఒక దోషము జరిగినది:"
+
+#: ../vinagre/vinagre-utils.vala:84
+msgid "Vinagre failed to open a UI file, with the error message:"
+msgstr "వినాగ్రే UI ఫైలును తెరువుటలో విఫలమైంది, ఈ దోష సందేశంతో:"
+
+#: ../vinagre/vinagre-utils.vala:85
+msgid "Please check your installation."
+msgstr "దయచేసి మీ ఇన్స్టాలేషన్ చూసుకొనుము"
+
+#: ../vinagre/vinagre-utils.vala:89
+msgid "Error loading UI file"
+msgstr " UI ఫైలును లోడుచేయుటలో దోషము: %s"
+
+#. Translators: %s is a protocol, like VNC or SSH
+#: ../vinagre/vinagre-utils.vala:112
+#, c-format
+msgid "%s authentication is required"
+msgstr "%s ధృవీకరణము అవసరమైంది"
+
+#: ../vinagre/vinagre-utils.vala:193
+msgid "Error showing help"
+msgstr "సహాయము చూపించుటలో దోషం"
+
+#: ../vinagre/vinagre-window.c:390
+#, c-format
+msgid "Could not merge UI XML file: %s"
+msgstr " UI XML ఫైలును విలీనంచేయలేక పోయింది: %s"
+
+#: ../vinagre/vinagre-window.c:421
+msgid "_Recent Connections"
+msgstr "ఇటీవలి అనుసంధానములు (_R)"
+
+#. Translators: This is server:port, a statusbar tooltip when mouse is over a bookmark item on menu
+#: ../vinagre/vinagre-window.c:579
+#, c-format
+msgid "Open %s:%d"
+msgstr "%s:%d తెరువుము"
+
+#: ../vinagre/vinagre-window.c:773
+msgid ""
+"Vinagre disables keyboard shortcuts by default, so that any keyboard "
+"shortcuts are sent to the remote desktop.\n"
+"\n"
+"This message will appear only once."
+msgstr ""
+"రిమోట్ డెస్క్‌టాప్‌నకు కీబోర్డు లఘువులనుపంపుటకు వీలుగా , అప్రమేయంగా కీబోర్డు "
+"లఘువులను వినాగ్రే "
+"నిరుపయొగించును\n"
+"ఈ సందేశము ఒక్కసారే కనిపించును"
+
+#: ../vinagre/vinagre-window.c:779
+msgid "Enable shortcuts"
+msgstr " లఘువులను  క్రియాశీలీకరించు"
+
+#: ../vinagre/vinagre-window.c:792 ../vinagre/vinagre-window.c:798
+#, c-format
+msgid "Error while creating the file %s: %s"
+msgstr "ఫైలు %s ను సృష్టించుటలో దోషము: %s"
+
+#~ msgid "Error while executing xfreerdp"
+#~ msgstr "ఆర్ రంగస్థలమును నిర్వర్తించుటలో దోషం "
+
+#~ msgid "Enter a valid hostname or IP address"
+#~ msgstr "వర్తించే ఆతిధ్యనామము లేదా IP చిరునామాను ప్రవేశపెట్టుము"
+
+#~ msgid "_About"
+#~ msgstr "గురించి(_A)"
+
+#~ msgid "All fields above are mandatory"
+#~ msgstr "పైని అన్ని క్షేత్రములు తప్పనిసరి"
+
+#~ msgid "Interface"
+#~ msgstr "ఇంటర్ఫేస్"
+
+#~ msgid "Preferences"
+#~ msgstr "అభీష్టాలు"
+
+#~ msgid "Which machine do you want to connect to?"
+#~ msgstr "మీరు ఏ మిషన్‌కు అనుసంధానము కావాలని కోరుకొనుచున్నారు?"
+
+#~ msgid "_Always show tabs"
+#~ msgstr "ఎల్లప్పుడ టాబ్లను చూపుము (_A)"
+
+#~ msgid "Active plugins"
+#~ msgstr "క్రియాశీల ప్లగిన్లు"
+
+#~ msgid ""
+#~ "List of active plugins. It contains the \"Location\" of the active "
+#~ "plugins. See the .vinagre-plugin file for obtaining the \"Location\" of a "
+#~ "given plugin."
+#~ msgstr ""
+#~ "క్రియాశీల ప్లగిన్ల జాబితా. ఇది క్రియాశీల ప్లగిన్ల \"స్థానమును\" కలిగివుంటుంది. ఇచ్చిన ప్లగిన్ యొక్క "
+#~ "\"స్థానమును\" పొందుటకు vinagre-plugin ఫైలు."
+
+#~ msgid "The handler for \"vnc://\" URLs"
+#~ msgstr "\"vnc://\" URLs కొరకు సంభాలికలు"
+
+#~ msgid "SSH support"
+#~ msgstr "SSH మద్దతు"
+
+#~ msgid "VNC support"
+#~ msgstr "VNC మద్దతు"
+
+#~ msgid "A menu to quickly access remote machines"
+#~ msgstr "దూరస్థ మిషన్లను త్వరితంగా యాక్సిస్ చేయుటకు మెను"
+
+#~ msgid "Vinagre Applet Factory"
+#~ msgstr "వినాగ్రే ఆప్లేట్ ఫాక్టరి"
+
+#~ msgid "Open Remote Desktop Viewer"
+#~ msgstr "దూరస్థ రంగస్థల దర్శనిని తెరువుము"
+
+#~ msgid "Access your bookmarks"
+#~ msgstr "మీ పుస్తకచిహ్నాలును యాక్సిస్ చేయుము"
+
+#~ msgid "Invalid operation"
+#~ msgstr "చెల్లని ఆపరేషన్"
+
+#~ msgid "Data received from drag&drop operation is invalid."
+#~ msgstr "లాగి&వదులు ఆపరేషన్ నుండి స్వీకరించబడిన డాటా చెల్లనిది."
+
+#~ msgid "Hosts nearby"
+#~ msgstr "దగ్గరలోని హోస్టులు"
+
+#~ msgid ""
+#~ "Run 'vinagre --help' to see a full list of available command line options"
+#~ msgstr "అందుబాటులోవున్న ఆదేశ వరుస ఐచ్చికముల కొరకు 'vinagre --help' నడుపుము"
+
+#~ msgid "Plugin %s has already registered a browser for service %s."
+#~ msgstr "ప్లగిన్ %s యిప్పటికే వొక బ్రౌజర్‌ను సేవ %s కొరకు నమోదుచేసి వున్నది."
+
+#~ msgid "Connecting..."
+#~ msgstr "అనుసంధానించబడుచున్నది..."
+
+#~ msgid "Plugin Manager"
+#~ msgstr "ప్లగిన్ నిర్వాహిక"
+
+#~ msgid "Plugin"
+#~ msgstr "ప్లగిన్"
+
+#~ msgid "C_onfigure"
+#~ msgstr "ఆకృతీకరించిన (_o)"
+
+#~ msgid "A_ctivate"
+#~ msgstr "క్రియాశీలపరచుము (_c)"
+
+#~ msgid "Ac_tivate All"
+#~ msgstr "అన్నిటిని క్రియాశీలపరచుము (_t)"
+
+#~ msgid "_Deactivate All"
+#~ msgstr "అన్నిటిని క్రియాహీనపరచుము (_D)"
+
+#~ msgid "_About Plugin"
+#~ msgstr "ప్లగిన్ గురించి (_A)"
+
+#~ msgid "C_onfigure Plugin"
+#~ msgstr "ప్లగిన్ ఆకృతీకరించుము (_o)"
+
+#~ msgid "_Machine"
+#~ msgstr "మిషన్ (_M)"
+
+#~ msgid "Edit the application preferences"
+#~ msgstr "అనువర్తనపు అభీష్టాలను సరికూర్చుము"
+
+#~ msgid "_Open bookmark"
+#~ msgstr "పుస్తకచిహ్నాన్ని తెరువుము (_O)"
+
+#~ msgid "Connect to this machine"
+#~ msgstr "ఈ మిషన్‌కు అనుసంధానమగుము"
+
+#~ msgid "_Edit bookmark"
+#~ msgstr "పుస్తకచిహ్నాన్ని సరికూర్చుము (_E)"
+
+#~ msgid "Edit the details of selected bookmark"
+#~ msgstr "ఎంచుకొనిన పుస్తకగుర్తుయొక్క వివరములను సరికూర్చుము"
+
+#~ msgid "_Remove from bookmarks"
+#~ msgstr "పుస్తకచిహ్నాలనుండి తీసివేయుము (_R)"
+
+#~ msgid "Remove current selected connection from bookmarks"
+#~ msgstr "పుస్తకచిహ్నాల నుండి ప్రస్తుత యెంపికచేసిన అనుసంధానమును తీసివేయుము"
+
+#~ msgid "_New Folder"
+#~ msgstr "కొత్త సంచయం(_N)"
+
+#~ msgid "Create a new folder"
+#~ msgstr "కొత్త ఫోల్డరును సృష్టించుము"
+
+#~ msgid "Side _Panel"
+#~ msgstr "ప్రక్క ప్యానల్ (_P)"
+
+#~ msgid "Show or hide the side panel"
+#~ msgstr "ప్రక్క ప్యానల్‌ను చూపుము లేదా మరుగునవుంచుము"
+
+#~ msgid "C_lose All"
+#~ msgstr "అన్నిటిని మూయుము (_l)"
+
+#~ msgid ""
+#~ "Vinagre is free software; you can redistribute it and/or modify it under "
+#~ "the terms of the GNU General Public License as published by the Free "
+#~ "Software Foundation; either version 2 of the License, or (at your option) "
+#~ "any later version."
+#~ msgstr ""
+#~ "వినాగ్రే ఉచిత సాఫ్ట్వేర్; నీవు దానిని మరలపంచవచ్చు స్వతంత్ర సాఫ్ట్వేర్ సంస్థ వెలువరిచిన GNU "
+#~ "సర్వసామన్యమైన ప్రజా లైసెన్సు వివరణం 2లైసెన్సు లేదా వేరే (మీ ఐచ్చికం వద్ద) వివరణల ప్రకారం మార్చవచ్చు."
+
+#~ msgid ""
+#~ "Vinagre is distributed in the hope that it will be useful, but WITHOUT "
+#~ "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+#~ "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+#~ "more details."
+#~ msgstr ""
+#~ "వినాగ్రే ఉపయోగపడుతుందనే నమ్మకంతో పంపిణీచేయబడుతోంది,అయితే ఏ హామీ లేకుండా; వ్యాపారసంబందంగా కాని లేదా "
+#~ "ఒకనిర్దిష్ట అవసరానికిచెందినదని కాని హామీ లేదు. ఎక్కువ సమాచారంకొరకు GNU జనరల్ పబ్లిక్ లైసెన్స్  ను "
+#~ "చూడండి."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program. If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "మీరు GNU జనరల్ పబ్లిక్ లైసెన్స్‍ యొక్క నకలును ఈ ప్రోగ్రామ్ తోటి పొందుతారు. పొందక పోతే, <http://"
+#~ "www.gnu.org/licenses/> చూడండి."
+
+#~ msgid "Vinagre Website"
+#~ msgstr "వినాగ్రే వెబ్‌సైట్"
+
+#~ msgid "Could not merge vinagre-ui.xml: %s"
+#~ msgstr "vinagre-ui.xml ను మిళితం చేయలేదు: %s"

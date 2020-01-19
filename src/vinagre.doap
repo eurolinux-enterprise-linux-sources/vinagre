@@ -1,0 +1,28 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Vinagre</name>
+  <shortdesc xml:lang="en">Remote desktop viewer</shortdesc>
+  <description>Vinagre is a remote desktop viewer for GNOME, that uses
+  Virtual Network Computing (VNC) to remotely control another desktop.
+  Additional protocols, such as RDP and SSH, are also supported.
+  </description>
+  <homepage rdf:resource="https://wiki.gnome.org/Apps/Vinagre" />
+  <download-page rdf:resource="http://download.gnome.org/sources/vinagre/" />
+  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=vinagre" />
+
+  <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <programming-language>C</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>David King</foaf:name>
+      <foaf:mbox rdf:resource="mailto:amigadave@amigadave.com" />
+      <foaf:seeAlso rdf:resource="http://amigadave.com/foaf.rdf#david" />
+      <gnome:userid>davidk</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>

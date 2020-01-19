@@ -1,0 +1,774 @@
+# Peteris Krisjanis <pecisk@gmail.com>, 2011.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-03-23 12:02+0000\n"
+"PO-Revision-Date: 2014-03-23 16:32+0200\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Pēteris Krišjānis <pecisk@gmail.com>\n"
+"Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
+
+#. (itstool) path: info/title
+#: C/connect.page:8
+msgctxt "sort"
+msgid "1"
+msgstr "1"
+
+#. (itstool) path: credit/name
+#: C/connect.page:14 C/connect-file.page:13 C/connect-reverse.page:15
+#: C/fullscreen.page:11 C/introduction.page:13 C/keyboard-shortcuts.page:13
+#: C/scaling.page:11 C/take-screenshot.page:13 C/view-only.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/connect.page:20
+msgid "Connect to another computer on your local network."
+msgstr "Savienoties ar citu datoru jūsu lokālajā tīklā."
+
+#. (itstool) path: page/title
+#: C/connect.page:23
+msgid "Establish a connection"
+msgstr "Izveidot savienojumu"
+
+#. (itstool) path: page/p
+#: C/connect.page:25
+#| msgid ""
+#| "You can connect to other computers on your local network using "
+#| "<app>Vinagre</app>."
+msgid ""
+"You can connect to other computers on your local network using <app>Remote "
+"Desktop Viewer</app>."
+msgstr ""
+"Jūs varat savienoties ar citiem datoriem jūsu lokālajā tīklā, izmantojot "
+"<app>Attālināto darbvirsmas pārlūku</app>."
+
+#. (itstool) path: item/p
+#: C/connect.page:30
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem"
+"\">Connect</gui></guiseq>."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Attālināts</gui><gui style=\"menuitem"
+"\">Savienoties</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/connect.page:34
+msgid ""
+"Choose the <gui>Protocol</gui> and the <gui>Host</gui> for the connection."
+msgstr ""
+"Izvēlieties <gui>Protokols</gui> and the <gui>Host</gui> for the connection."
+
+#. (itstool) path: note/p
+#: C/connect.page:37
+msgid ""
+"Some protocols allow you to see all available computers on your local "
+"network by clicking the <gui style=\"button\">Find</gui> button. This "
+"buttons will not be displayed if you do not have <app>Avahi</app> support."
+msgstr ""
+"Daži protokoli atļauj jums redzēt visus pieejamos datorus jūsu lokālajā "
+"tīklā spiežot <gui style=\"button\">Meklēt</gui> pogu. Šī poga nebūs "
+"redzama, ja nav <app>Avahi</app> atbalsta."
+
+#. (itstool) path: item/p
+#: C/connect.page:44
+msgid ""
+"Select the options which you want enabled when the connection is made. "
+"Options will vary depending on the protocol that you use."
+msgstr ""
+"Izvēlieties kuras opcijas aktivizēt savienojumam. Šīs opcijas mainīsies "
+"atkarībā no izmantotā protokola."
+
+#. (itstool) path: item/p
+#: C/connect.page:48
+msgid "Click the <gui style=\"button\">Connect</gui> button."
+msgstr "Spiediet <gui style=\"button\">Savienot</gui> pogu."
+
+#. (itstool) path: item/p
+#: C/connect.page:49
+msgid ""
+"At this point, the remote desktop may need to confirm the connection. If "
+"this is the case, the viewer may remain black until the connection is "
+"confirmed."
+msgstr ""
+"Pie šī soļa attālinātajā darbvirsmā varētu būt nepieciešams apstiprināt "
+"savienojumu. Tādā gadījumā skatītājs paliks melns līdz savienojums tiks "
+"apstiprināts."
+
+#. (itstool) path: note/p
+#: C/connect.page:53
+#| msgid ""
+#| "Some computers may require a secure connection: an authentication dialog "
+#| "will be displayed, asking for the credentials. The type of credentials "
+#| "depend on the remote host; it may be a password and a username. If you "
+#| "select <gui>Remember this credential</gui>, <app>Vinagre</app> will store "
+#| "the information using <app>GNOME Keyring</app>."
+msgid ""
+"Some computers may require a secure connection: an authentication dialog "
+"will be displayed, asking for the credentials. The type of credentials "
+"depend on the remote host; it may be a password and a username. If you "
+"select <gui>Remember this credential</gui>, <app>Remote Desktop Viewer</app> "
+"will store the information using <app>GNOME Keyring</app>."
+msgstr ""
+"Daži datori var pieprasīt drošu savienojumu: autentifikācijas dialoglodziņš "
+"tiks parādīts, prasot jūsu akreditācijas datus. Šo datu veids atkarīgs no "
+"attālinātās sistēmas — visticamāk, tas varētu būt parole, kā arī "
+"lietotājvārds. Ja jūs atzīmēsiet <gui>Atcerēties šo akreditāciju</gui>, "
+"<app>Attālinātais darbvirsmas pārlūks</app> saglabās šo informāciju, "
+"izmantojot <app>GNOME Keyring</"
+"app>."
+
+#. (itstool) path: page/p
+#: C/connect.page:63
+msgid ""
+"If the connection has been used previously, you can also access it through "
+"<guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem\">Recent "
+"Connections</gui></guiseq>."
+msgstr ""
+"Ja savienojums jau ir iepriekš izmantots, jūs varam tam piekļūt, izmantojot "
+"<guiseq><gui style=\"menu\">Attālināts</gui><gui style=\"menuitem\">Nesenie "
+"savienojumi</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/connect.page:67
+msgid ""
+"To close a connection, choose <guiseq><gui style=\"menu\">Remote</gui> <gui "
+"style=\"menuitem\">Close</gui></guiseq> or click the <gui style=\"button"
+"\">Close</gui> button."
+msgstr ""
+"Lai aizvērtu savienojumu, izvēlieties <guiseq><gui style=\"menu"
+"\">Attālināts</gui> <gui style=\"menuitem\">Aizvērt</gui></guiseq> vai arī "
+"spiediet <gui style=\"button\">Aizvērt</gui> pogu."
+
+#. (itstool) path: info/title
+#: C/connect-file.page:8
+msgctxt "sort"
+msgid "2"
+msgstr "2"
+
+#. (itstool) path: license/p
+#: C/connect-file.page:18 C/fullscreen.page:16 C/scaling.page:16
+#: C/view-only.page:16
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#. (itstool) path: info/desc
+#: C/connect-file.page:21
+msgid "Use a remote connection file to connect to a remote machine."
+msgstr ""
+"Attālinātā savienojuma datnes izmantošana, lai savienotos ar attālināto "
+"sistēmu."
+
+#. (itstool) path: page/title
+#: C/connect-file.page:24
+msgid "Connect using a <file>.vnc</file> file"
+msgstr "Savienoties, izmantojot <file>.vnc</file> datni"
+
+#. (itstool) path: page/p
+#: C/connect-file.page:26
+msgid ""
+"Some hosts distribute <em>remote connection files</em>, that generally end "
+"with the suffix <file>.vnc</file>, instead of using a host address and port."
+msgstr ""
+"Dažā sistēmā izplatīta <em>attālinātā savienojuma datnes</em>, kas parasti "
+"ir ar paplašinājumu <file>.vnc</file>, nevis sistēmas adresi un portu."
+
+#. (itstool) path: item/p
+#: C/connect-file.page:32
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem"
+"\">Open</gui></guiseq>."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Attālināts</gui> <gui style="
+"\"menuitem\">Atvērt</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/connect-file.page:36
+msgid "Select the file you want to open."
+msgstr "Izvēlieties datni, kuru vēlaties atvērt."
+
+#. (itstool) path: item/p
+#: C/connect-file.page:39
+msgid "Click the <gui style=\"button\">Open</gui> button."
+msgstr "Spiediet pogu <gui style=\"button\">Atvērt</gui>."
+
+#. (itstool) path: note/p
+#: C/connect-file.page:44
+msgid "You can also open a remote connection file from <app>Files</app>."
+msgstr ""
+"Jūs arī varat atvērt attālinātā savienojuma datni no lietotnes<app>Datnes</"
+"app>."
+
+#. (itstool) path: info/title
+#: C/connect-reverse.page:9
+msgctxt "sort"
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: info/desc
+#: C/connect-reverse.page:21
+msgid ""
+"Connect to computers not on your local network: bypassing firewall "
+"restrictions on remote host."
+msgstr ""
+"Savienoties ar datoriem kas neatrodas jūsu lokālajā tīklā un apiet ugunsmūra "
+"ierobežojumus uz attālinātā datora."
+
+#. (itstool) path: page/title
+#: C/connect-reverse.page:25
+msgid "<gui>Reverse Connections…</gui>"
+msgstr "<gui>Apgrieztie savienojumi…</gui>"
+
+#. (itstool) path: page/p
+#: C/connect-reverse.page:27
+msgid ""
+"A reverse connection is usually used to bypass firewall restrictions on open "
+"ports. A firewall usually blocks open ports, but does not block outgoing "
+"traffic. In a normal forward connection, a client connects to an open port "
+"on the server. However, in the case of a reverse connection, the client "
+"opens a port for the server to connect to."
+msgstr ""
+"Apgrieztais savienojums parasti tiek izmantots, lai apietu ugunsmūra "
+"ierobežojumus uz atvērtajiem portiem. Ugunsmūris parasti bloķē atvērtos "
+"portus, taču ne izejošo datu plūsmu. Normālā savienojumā klients savienojas "
+"ar atvērtu portu uz servera, bet apgrieztā savienojuma gadījumā klients "
+"atver portu, ar kuru savienojas serveris."
+
+#. (itstool) path: section/title
+#: C/connect-reverse.page:34
+msgid "Enabling reverse connections"
+msgstr "Apgriezto savienojumu aktivizēšana"
+
+#. (itstool) path: item/p
+#: C/connect-reverse.page:38
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem"
+"\">Reverse Connections…</gui></guiseq>."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Attālināts</gui> <gui style="
+"\"menuitem\">Apgrieztie savienojumi…</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/connect-reverse.page:42
+msgid "Check <gui>Enable Reverse Connections</gui>."
+msgstr "Atzīmējiet <gui>Aktivēt apgrieztos savienojumus</gui>."
+
+#. (itstool) path: section/title
+#: C/connect-reverse.page:49
+msgid "Access a computer behind a firewall"
+msgstr "Piekļūšana datoram aiz ugunsmūra"
+
+#. (itstool) path: section/p
+#: C/connect-reverse.page:51
+msgid ""
+"The remote machine needs to connect to your machine using your <em>IP "
+"address</em> and port number, which can be found in the <gui>Reverse "
+"Connections…</gui> dialog, under <gui>Connectivity</gui>."
+msgstr ""
+"Attālinātajam datoram nepieciešams savienoties ar jūsu datoru izmantojot "
+"jūsu <em>IP adresi</em> un porta numuru, kurus var atrast <gui>Apgrieztie "
+"savienojumi...</gui> dialoglodziņā, <gui>Connectivity</gui> daļā."
+
+#. (itstool) path: note/p
+#: C/connect-reverse.page:56
+msgid ""
+"Currently, <app>Vino</app>, the GNOME VNC server, does not support reverse "
+"connections which are also known as \"listen mode\". Some other "
+"applications, such as <app>UltraVNC</app>, <app>RealVNC</app> and "
+"<app>TightVNC</app>, do have support for reverse connections."
+msgstr ""
+"Šobrīd <app>Vino</app>, GNOME VNC serveris, neatbalsta apgrieztos "
+"savienojumus (zināmus arī kā \"klausīšanās režīms\"). Dažas citas lietotnes, "
+"tādas kā <app>UltraVNC</app>, <app>RealVNC</app> un <app>TightVNC</app>, "
+"atbalsta apgrieztos savienojumus."
+
+#. (itstool) path: section/p
+#: C/connect-reverse.page:62
+#| msgid ""
+#| "Once the remote computer connects to your machine, <app>Vinagre</app> "
+#| "will establish the reverse connection."
+msgid ""
+"Once the remote computer connects to your machine, <app>Remote Desktop "
+"Viewer</app> will establish the reverse connection."
+msgstr ""
+"Tiklīdz attālinātais dators savienosies ar jūsu sistēmu, <app>Attālinātais "
+"darbvirsmas pārlūks</app> "
+"izveidos apgrieztu savienojumu."
+
+#. (itstool) path: section/p
+#: C/connect-reverse.page:65
+msgid ""
+"When connecting to a machine which is not on your local network, you will "
+"need to provide your externally visible IP address and port number to the "
+"remote server."
+msgstr ""
+"Savienojoties ar datoru kas nav jūsu lokālajā tīklā, jums būs nepieciešams "
+"nodrošināt jūsu ārējo IP adresi un porta numuru attālinātajam serverim."
+
+#. (itstool) path: info/desc
+#: C/fullscreen.page:19
+msgid "View the remote desktop in fullscreen mode."
+msgstr "Attālinātās darbvirsmas skatīšana pilnekrāna režīmā."
+
+#. (itstool) path: page/title
+#: C/fullscreen.page:22
+msgid "Fullscreen mode"
+msgstr "Pilnekrāna režīms"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:24
+msgid ""
+"Fullscreen mode can be useful if viewing a desktop which is the same size or "
+"larger than yours."
+msgstr ""
+"Pilnekrāna režīms var būt noderīgs skatoties darbvirsmu, kas ir izmēros tāda "
+"pati vai lielāka kā jūsu."
+
+#. (itstool) path: item/p
+#: C/fullscreen.page:29
+msgid ""
+"Choose <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq>, or press the corresponding toolbar button, to "
+"view the display area in fullscreen mode."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Skats</gui><gui style=\"menuitem"
+"\">Pilnekrāns</gui></guiseq>, vai arī spiediet atbilstošo rīkjoslas pogu, "
+"lai attēlošanas laukumu izplestu pilnekrāna režīmā."
+
+#. (itstool) path: note/p
+#: C/fullscreen.page:37
+msgid ""
+"While in fullscreen mode, move the mouse to the top-center of the screen to "
+"display a hidden toolbar, which has <gui style=\"button\">Leave Fullscreen</"
+"gui>, <gui style=\"button\">Disconnect</gui> and other buttons."
+msgstr ""
+"Esot pilnekrāna režīmā pārvietojiet kursoru uz ekrāna augšējās malas centru, "
+"lai parādītu slēpto rīkjoslu, kurā ir pieejama poga <gui style=\"button"
+"\">Pamest pilnekrānu</gui>,  kā arī <gui style=\"button\">Atvienoties</gui> "
+"un citas pogas."
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Remote Desktop Viewer help"
+msgstr "Attālinātās darbvirsmas pārlūks palīdzība"
+
+#. (itstool) path: info/desc
+#: C/index.page:12
+msgid "Learn how to connect remotely to other desktops."
+msgstr "Uzziniet, kā attālināti savienoties ar citām darbvirsmām."
+
+#. (itstool) path: page/title
+#: C/index.page:15
+msgid "<_:media-1/> Remote Desktop Viewer"
+msgstr "<_:media-1/> Attālinātās darbvirsmas pārlūks"
+
+#. (itstool) path: section/title
+#: C/index.page:21
+msgid "Connecting to other computers using VNC"
+msgstr "Savienošanās ar citiem datoriem, izmantojot VNC"
+
+#. (itstool) path: section/title
+#: C/index.page:25
+msgid "Features and options"
+msgstr "Iespējas un opcijas"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:38
+msgctxt "_"
+msgid ""
+"external ref='figures/vinagre-connected.png' "
+"md5='abef2af863dbd4659703bcc09bb89d1a'"
+msgstr ""
+"external ref='figures/vinagre-connected.png' "
+"md5='abef2af863dbd4659703bcc09bb89d1a'"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:19
+#| msgid "Introduction to the <app>Vinagre</app> remote desktop viewer."
+msgid "Introduction to <app>Remote Desktop Viewer</app>."
+msgstr "Ievads <app>Attālinātās darbvirsmas pārlūkā</app>."
+
+#. (itstool) path: page/title
+#: C/introduction.page:22
+msgid "Introduction"
+msgstr "Ievads"
+
+#. (itstool) path: page/p
+#: C/introduction.page:24
+#| msgid ""
+#| "<app>Vinagre</app> is a remote desktop viewer application for GNOME for "
+#| "accessing other machines using Virtual Network Computing (VNC) and other "
+#| "protocols. It can be used to control and interact with another computer "
+#| "or to just view the desktop."
+msgid ""
+"<app>Remote Desktop Viewer</app> is a remote desktop viewer application for "
+"GNOME for accessing other machines using Virtual Network Computing (VNC) and "
+"other protocols. It can be used to control and interact with another "
+"computer or to just view the desktop."
+msgstr ""
+"<app>Attālināto darbvirsmas pārlūks</app> ir attālinātās darbvirsmas "
+"skatītāja lietotne GNOME "
+"darbvirsmai, lai piekļūtu citiem datoriem, izmantojot Virtual Network "
+"Computing (VNC) un citus protokolus. To var izmanto, lai attālināti "
+"kontrolētu un mijiedarbotos ar citiem datoriem, vai vienkārši skatīt "
+"darbvirsmu."
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+#| msgid "<app>Vinagre</app> provides the following features:"
+msgid "<app>Remote Desktop Viewer</app> provides the following features:"
+msgstr ""
+"<app>Attālinātās darbvirsmas pārlūks</app> nodrošina sekojošas iespējas:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:31
+msgid "connect to several machines at the same time"
+msgstr "savienoties ar vairākiem datoriem vienlaicīgi"
+
+#. (itstool) path: item/p
+#: C/introduction.page:32
+msgid "store recent connections and bookmark them"
+msgstr "glabā nesenos savienojumus un atzīmē kā grāmatzīmes"
+
+#. (itstool) path: item/p
+#: C/introduction.page:33
+msgid "browse the local network for other machines"
+msgstr "pārlūkot lokālo tīklu, meklējot citus datorus"
+
+#. (itstool) path: figure/title
+#: C/introduction.page:37
+#| msgid "Screenshot of Vinagre in action"
+msgid "Remote Desktop Viewer in action"
+msgstr "Attālinātās darbvirsmas pārlūks darbībā"
+
+#. (itstool) path: media/p
+#: C/introduction.page:39
+#| msgid "Vinagre running in GNOME 3, connected to a machine running GNOME 2"
+msgid ""
+"Remote Desktop Viewer running in GNOME 3, connected to a machine running "
+"GNOME 2"
+msgstr ""
+"Attālinātās darbvirsmas pārlūks darbojas GNOME 3 vidē, savienots ar datoru, "
+"kuram ir GNOME 2"
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+#| msgid "Creative Commons Share Alike 3.0"
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-Share Alike 3.0 neportētā licence"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Šis darbs ir licencēts zem <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/keyboard-shortcuts.page:19
+msgid "Disable the sending of keyboard shortcuts to the remote machine."
+msgstr "Izslēgt tastatūras saīsņu sūtīšanu uz attālināto datoru."
+
+#. (itstool) path: page/title
+#: C/keyboard-shortcuts.page:23
+msgid "Keyboard shortcuts"
+msgstr "Tastatūras saīsnes"
+
+#. (itstool) path: page/p
+#: C/keyboard-shortcuts.page:25
+msgid ""
+"You can enable or disable keyboard shortcuts by selecting <guiseq><gui style="
+"\"menu\">View</gui> <gui style=\"menuitem\">Keyboard shortcuts</gui></"
+"guiseq>."
+msgstr ""
+"Jūs varat aktivizēt vai deaktivizēt tastatūras saīsnes, izvēloties "
+"<guiseq><gui style=\"menu\">Skats</gui> <gui style=\"menuitem\">Tastatūras "
+"saīsnes</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/keyboard-shortcuts.page:29
+#| msgid ""
+#| "Enabling this option allows the use of keyboard shortcuts (like "
+#| "<keyseq><key>Ctrl</key><key>N</key></keyseq>), menu accelerators (such as "
+#| "<keyseq><key>Alt</key><key>M</key></keyseq>) and mnemonics, with "
+#| "<app>Vinagre</app>. This means that <app>Vinagre</app> will catch those "
+#| "key combinations instead of sending them to the remote machine. This "
+#| "option is disabled by default because most of the time, you will be "
+#| "interacting with the computer to which you are connected."
+msgid ""
+"Enabling this option allows the use of keyboard shortcuts (like "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq>), menu accelerators (such as "
+"<keyseq><key>Alt</key><key>M</key></keyseq>) and mnemonics, with <app>Remote "
+"Desktop Viewer</app>. This means that <app>Remote Desktop Viewer</app> will "
+"catch those key combinations instead of sending them to the remote machine. "
+"This option is disabled by default because most of the time, you will be "
+"interacting with the computer to which you are connected."
+msgstr ""
+"Aktivizējot šo opciju jūs ar <app>Attālinātās darbvirsmas pārlūku</app> "
+"varēsiet izmantot tastatūras "
+"saīsnes (tādas kā <keyseq><key>Ctrl</key><key>N</key></keyseq>), izvēļņu "
+"paātrinātājus, piemēram kā<keyseq><key>Alt</key><key>M</key></keyseq> un "
+"mnemoniku. Tas nozīmē, ka <app>Attālinātās darbvirsmas pārlūks</app> "
+"\"pārķers\" šīs taustiņu "
+"kombinācijas, kas citādāk tiktu nosūtītas uz attālināto datoru. Šī opcija ir "
+"deaktivēta pēc noklusējuma, jo parasti jūs vēlēsieties pilnvērtīgi darboties "
+"ar datoru, ar ko esat savienojies."
+
+#. (itstool) path: note/p
+#: C/keyboard-shortcuts.page:38
+msgid ""
+"When the <gui>Keyboard shortcuts</gui> option is disabled, "
+"<keyseq><key>Ctrl</key><key>Alt</key><key>Delete</key></keyseq> is the only "
+"key combination which will not be sent to the remote desktop. Choose "
+"<guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem\">Send Ctrl-"
+"Alt-Delete</gui></guiseq>, or use the corresponding toolbar button, to send "
+"this key combination."
+msgstr ""
+"Kad <gui>Tastatūras saīsnes</gui> opcija ir deaktivēta, <keyseq><key>Ctrl</"
+"key><key>Alt</key> <key>Delete</key></keyseq> ir vienīgā taustiņu "
+"kombinācija, kas netiks sūtīta uz attālināto darbvirsmu. Izvēlieties "
+"<guiseq><gui style=\"menu\">Attālināts</gui><gui style=\"menuitem\">Sūtīt "
+"Ctrl-Alt-Delete</gui></guiseq>, vai arī izmantojiet atbilstošo rīkjoslas "
+"pogu, lai nosūtītu šo taustiņu kombināciju."
+
+#. (itstool) path: info/desc
+#: C/scaling.page:19
+msgid "Scale the remote desktop to fit the display area."
+msgstr ""
+"Attālinātas darbvirsmas mērogošana, lai ietilpinātu attēlošanas laukumā."
+
+#. (itstool) path: page/title
+#: C/scaling.page:22
+msgid "Scale the remote desktop"
+msgstr "Attālinātās darbvirsmas mērogošana"
+
+#. (itstool) path: page/p
+#: C/scaling.page:24
+msgid ""
+"Some protocols have an option to scale the remote desktop to fit your "
+"display area."
+msgstr ""
+"Dažiem protokoliem ir opcija mērogot attālināto darbvirsmu, lai tā ietilptu "
+"jūsu ekrānā."
+
+#. (itstool) path: item/p
+#: C/scaling.page:29
+msgid ""
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Scaling</gui></guiseq>, or click the <gui>Scaling</gui> toolbar button."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Skats</gui><gui style=\"menuitem"
+"\">Mērogošana</gui></guiseq>, vai spiediet <gui>Mērogošana</gui> rīkjoslas "
+"pogu."
+
+#. (itstool) path: item/p
+#: C/scaling.page:34
+msgid ""
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem\">Keep "
+"Aspect Ratio</gui></guiseq> if you want to constrain the aspect ratio of the "
+"remote desktop inside the display area, or deselect the option to stretch "
+"the remote desktop to fill the available space."
+msgstr ""
+"Atzīmējiet <guiseq><gui style=\"menu\">Skats</gui><gui style=\"menuitem"
+"\">Paturēt malu attiecību</gui></guiseq> gadījumos, ja jūs vēlaties paturēt "
+"attālinātās darbvirsmas malu attiecību attēlošanas laukumā, vai arī noņemiet "
+"izvēli šai opcijai, lai izstieptu attālināto darbvirsmu pa visu pieejamo "
+"lauku."
+
+#. (itstool) path: note/p
+#: C/scaling.page:40
+msgid ""
+"This option can be toggled only if <gui>Scaling</gui> has already been "
+"enabled."
+msgstr ""
+"Šī opcija ir pieejama tikai tad ja <gui>Mērogošana</gui> jau ir aktivizēta."
+
+#. (itstool) path: info/desc
+#: C/take-screenshot.page:19
+msgid "Take a screenshot of a remote desktop."
+msgstr "Uzņemt attālinātās darbvirsmas ekrānuzņēmumu."
+
+#. (itstool) path: page/title
+#: C/take-screenshot.page:22
+msgid "Take a screenshot"
+msgstr "Uzņemt ekrānuzņēmumu"
+
+#. (itstool) path: page/p
+#: C/take-screenshot.page:24
+#| msgid ""
+#| "You can take screenshots of only the desktop that you are connected to by "
+#| "using the tool provided by <app>Vinagre</app>."
+msgid ""
+"You can take screenshots of only the desktop that you are connected to by "
+"using the tool provided by <app>Remote Desktop Viewer</app>."
+msgstr ""
+"Jūs varat uzņemt ekrānattēlus darbvirsmām, ar kurām esat savienojies, "
+"izmantojot <app>Attālinātās darbvirsmas pārlūka</app> rīku."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:29
+msgid ""
+"Select <guiseq><gui style=\"menu\">Remote</gui> <gui style=\"menuitem\">Take "
+"screenshot</gui></guiseq>, or click the <gui>Take Screenshot</gui> button in "
+"the toolbar."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Attālināts</gui><gui style=\"menuitem"
+"\">Uzņemt ekrānuzņēmumu</gui></guiseq>, vai arī spiest <gui>Uzņemt "
+"ekrānuzņēmumu</gui> pogu rīkjoslā."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:34
+msgid ""
+"In the <gui>Name</gui> field, enter the filename that you want the "
+"screenshot to be saved under."
+msgstr ""
+"<gui>Nosaukums</gui> laukā ievadiet datnes nosaukumu, ar kādu jūs vēlētos "
+"saglabāt ekrānuzņēmumu."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:38
+msgid ""
+"From the <gui>Save in folder</gui> drop down list, select the folder that "
+"you want the screenshot to be saved in. You can also click <gui>Browse for "
+"other folder</gui> to select one which is not in the drop down list."
+msgstr ""
+"No <gui>Saglabāt mapē</gui> izritināmā saraksta izvēlieties mapi, kurā jūs "
+"vēlētos, lai ekrānuzņēmums tiktu saglabāts. Jūs arī var spiest <gui>Browse "
+"for other folder</gui>, lai izvēlētos kādu citu mapi, kas nav izritināmajā "
+"sarakstā."
+
+#. (itstool) path: item/p
+#: C/take-screenshot.page:44
+msgid "Click <gui style=\"button\">Save</gui> to save the screenshot."
+msgstr ""
+"Spiediet <gui style=\"button\">Saglabāt</gui>, lai saglabātu ekrānuzņēmumu."
+
+#. (itstool) path: info/desc
+#: C/view-only.page:19
+msgid "Disable interaction with the remote desktop."
+msgstr "Deaktivizēt darbošanos ar attālināto darbvirsmu."
+
+#. (itstool) path: page/title
+#: C/view-only.page:22
+msgid "View-only mode"
+msgstr "Tikai skatīšanās režīms"
+
+#. (itstool) path: page/p
+#: C/view-only.page:24
+msgid ""
+"Some protocols allow you to enable a <gui>View Only</gui> mode. This mode "
+"allows you to disable all interaction with the remote."
+msgstr ""
+"Daži protokoli atļauj jums aktivizēt <gui>Tikai skatīšanās</gui> režīmu. Šis "
+"režīms atļauj jums deaktivēt jebkādu darbību ar attālināto darbvirsmu."
+
+#. (itstool) path: page/p
+#: C/view-only.page:26
+msgid ""
+"Choose <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem\">View "
+"Only</gui></guiseq> or click the corresponding toolbar button to enable this "
+"mode."
+msgstr ""
+"Izvēlieties <guiseq><gui style=\"menu\">Skats</gui><gui style=\"menuitem"
+"\">Tikai skatīšanās</gui></guiseq>, vai arī spiediet atbilstošo rīkjoslas "
+"pogu, lai aktivizētu šo režīmu."
+
+#~ msgid "Vinagre Help"
+#~ msgstr "Vinagre palīdzība"
+
+#~ msgid "Using Vinagre's options and features"
+#~ msgstr "Vinagre opciju un iespēju izmantošana"
+
+#~| msgid "<em>Vinagre in action</em>"
+#~ msgid "Vinagre in action"
+#~ msgstr "Vinagre darbībā"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/vinagre-connect-dialog.png' "
+#~ "md5='de8a00cf5315e5aa9678620054cf1e8b'"
+#~ msgstr ""
+#~ "external ref='figures/vinagre-connect-dialog.png' "
+#~ "md5='de8a00cf5315e5aa9678620054cf1e8b'"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/vinagre-auth-needed.png' "
+#~ "md5='498cf1ea1941e4821f9e5eafbe4b55ed'"
+#~ msgstr ""
+#~ "external ref='figures/vinagre-auth-needed.png' "
+#~ "md5='498cf1ea1941e4821f9e5eafbe4b55ed'"
+
+#~ msgid "Connect dialog"
+#~ msgstr "Savienojuma dialoglodziņš"
+
+#~ msgid "Authentication dialog"
+#~ msgstr "Autentifikācijas dialoglodziņš"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/vinagre-fullscreen.png' "
+#~ "md5='47259d69f3a106a69b4de230b04250e6'"
+#~ msgstr ""
+#~ "external ref='figures/vinagre-fullscreen.png' "
+#~ "md5='47259d69f3a106a69b4de230b04250e6'"
+
+#~ msgid "Fullscreen mode with overlay toolbar"
+#~ msgstr "Pilnekrāna režīms ar pārklājuma rīkjoslu."
+
+#~ msgid ""
+#~ "<app>Vinagre</app> can be used to control another computer and interact "
+#~ "with its desktop."
+#~ msgstr ""
+#~ "<app>Vinagre</app> var tikt izmantots, lai kontrolētu citu datoru un "
+#~ "darbotos ar tā darbvirsmu."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/vinagre-reverse-connections.png' "
+#~ "md5='6271ec7b3c197e9599bd0f453aad2d0b'"
+#~ msgstr ""
+#~ "external ref='figures/vinagre-reverse-connections.png' "
+#~ "md5='6271ec7b3c197e9599bd0f453aad2d0b'"
+
+#~ msgid "Reverse Connections dialog"
+#~ msgstr "Apgriezto savienojumu dialoglodziņš"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/vinagre-no-scaling.png' "
+#~ "md5='8ffbdb394e1437cd050ec28b3aa73380'"
+#~ msgstr ""
+#~ "external ref='figures/vinagre-no-scaling.png' "
+#~ "md5='8ffbdb394e1437cd050ec28b3aa73380'"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/vinagre-scaling.png' "
+#~ "md5='d307923fd473871d8d4c8fc81d716256'"
+#~ msgstr ""
+#~ "external ref='figures/vinagre-scaling.png' "
+#~ "md5='d307923fd473871d8d4c8fc81d716256'"
+
+#~ msgid "Unscaled desktop"
+#~ msgstr "Darbvirsma bez mērogošanas"
+
+#~ msgid "Scaled desktop"
+#~ msgstr "Mērogota darbvirsma"

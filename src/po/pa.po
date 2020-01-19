@@ -1,0 +1,1702 @@
+# translation of vinagre.HEAD.po to Punjabi
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
+# A S Alam <aalam@users.sf.net>, 2009, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: vinagre.HEAD\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vinagre&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-09-08 22:50+0000\n"
+"PO-Revision-Date: 2014-09-08 22:27-0500\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:1
+msgid "Whether we should leave other clients connected"
+msgstr "ਕੀ ਹੋਰ ਕਲਾਈਟਾਂ ਨੂੰ ਕੁਨੈਕਟ ਹੀ ਰਹਿਣ ਦੇਈਏ"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:2
+msgid ""
+"When connecting to a host, the client can say to the server to leave other "
+"clients connected or to drop the existent connections. Set the value to true "
+"to share the desktop with the other clients."
+msgstr ""
+"ਜਦੋਂ ਇੱਕ ਹੋਸਟ ਨਾਲ ਕੁਨੈਕਟ ਕਰਨਾ ਹੋਵੇ ਤਾਂ ਕਲਾਇਟ ਸਰਵਰ ਨੂੰ ਕਹਿ ਸਕਦਾ ਹੈ ਕਿ ਹੋਰ "
+"ਕਲਾਇਟ ਜੁੜੇ ਰਹਿਣ ਜਾਂ "
+"ਮੌਜੂਦਾ ਕੁਨੈਕਸ਼ਨ ਖਤਮ ਹੋ ਜਾਣ। ਇਹ ਮੁੱਲ ਨੂੰ ਸਹੀਂ ਕਰੋ, ਜੇ ਤੁਸੀਂ ਹੋਰ ਕਲਾਇਟਾਂ ਨਾਲ "
+"ਡੈਸਕਟਾਪ ਸਾਂਝਾ ਕਰਨਾ "
+"ਚਾਹੁੰਦੇ ਹੋ।"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:3
+msgid ""
+"Whether we should show tabs even when there is only one active connection"
+msgstr "ਕੀ ਅਸੀਂ ਟੈਬਾਂ ਵੇਖਾਈਏ ਭਾਵੇਂ ਜਦੋਂ ਕਿ ਕੇਵਲ ਇੱਕ ਹੀ ਕੁਨੈਕਸ਼ਨ ਐਕਟਿਵ ਹੋਵੇ"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:4
+msgid ""
+"Set to \"true\" to always show the tabs. Set to \"false\" to only show the "
+"tabs when there is more than one active connection."
+msgstr ""
+"ਹਮੇਸ਼ਾ ਟੈਬ ਵੇਖਣ ਲਈ \"true\" ਸੈੱਟ ਕਰੋ। ਜੇ ਟੈਬਾਂ ਕੇਵਲ ਤਾਂ ਹੀ ਵੇਖਣੀਆਂ ਹਨ, ਜੇ ਇੱਕ "
+"ਤੋਂ ਵੱਧ ਕੁਨੈਕਸ਼ਨ ਚਾਲੂ "
+"ਹੋਣ ਤਾਂ \"false\" ਸੈੱਟ ਕਰੋ।"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:5
+msgid "Whether we should show the menu accelerators (shortcut keys)"
+msgstr "ਕੀ ਅਸੀਂ ਮੇਨੂ ਐਕਸਰਲੇਟਰ ਵੇਖਾਈਏ (ਸ਼ਾਰਟਕੱਟ ਕੁੰਜੀਆਂ)"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:6
+msgid ""
+"Set to \"false\" to disable menu shortcuts. Set to \"true\" to enable them. "
+"Note that if they are enabled, those keys will be intercepted by the menu "
+"and will not be sent to the remote host."
+msgstr ""
+"ਮੇਨੂ ਸ਼ਾਰਟਕੱਟ ਆਯੋਗ ਕਰਨ ਵਾਸਤੇ \"false\" ਸੈੱਟ ਕਰੋ। ਉਨ੍ਹਾਂ ਨੂੰ ਚਾਲੂ ਕਰਨ ਵਾਸਤੇ "
+"\"true\" ਸੈੱਟ ਕਰੋ। "
+"ਯਾਦ ਰੱਖੋ ਕਿ ਜੇ ਉਹ ਚਾਲੂ ਹੋਏ ਤਾਂ ਉਹ ਸਵਿੱਚਾਂ ਨੂੰ ਮੇਨੂ ਲਈ ਵਰਤਿਆ ਜਾਵੇਗਾ ਅਤੇ ਰਿਮੋਟ "
+"ਹੋਸਟ ਲਈ ਨਹੀਂ "
+"ਭੇਜੀਆਂ ਜਾਣਗੀਆਂ।"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:7
+msgid "Maximum number of history items in connect dialog"
+msgstr "ਕੁਨੈਕਟ ਡਾਈਲਾਗ ਵਿੱਚ ਅਤੀਤ ਆਈਟਮਾਂ ਦੀ ਵੱਧੋ-ਵੱਧ ਗਿਣਤੀ"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:8
+msgid "Specifies the maximum number of items in the host dropdown entry."
+msgstr "ਹੋਸਟ ਲਕਟਵੀਂ ਐਂਟਰੀ ਵਿੱਚ ਵੱਧੋ-ਵੱਧ ਆਈਟਮਾਂ ਦੀ ਗਿਣਤੀ ਦਿਓ।"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:9
+msgid "Whether we should start the program listening for reverse connections"
+msgstr "ਕੀ ਅਸੀਂ ਪਰੋਗਰਾਮ ਸ਼ੁਰੂ ਕਰਨ ਸਮੇਂ ਉਲਟ ਕੁਨੈਕਸ਼ਨਾਂ ਵਾਸਤੇ ਸੁਣੀਏ।"
+
+#: ../data/org.gnome.Vinagre.gschema.xml.h:10
+msgid ""
+"Set to \"true\" to always start the program listening for reverse "
+"connections."
+msgstr ""
+"ਪਰੋਗਰਾਮ ਨੂੰ ਹਮੇਸ਼ਾ ਉਲਟ ਕੁਨੈਕਸ਼ਨ ਸੁਣਨ ਨਾਲ ਚਾਲੂ ਕਰਨ ਲਈ \"ਸਹੀਂ\" ਸੈੱਟ ਕਰੋ।"
+
+#: ../data/vinagre.appdata.xml.in.h:1
+msgid "Vinagre shows remote Windows, Mac OS X and Linux desktops."
+msgstr "ਵੀਨਾਗਰੇ ਰਿਮੋਟ ਵਿੰਡੋਜ਼, ਮੈਕ OS X ਅਤੇ ਲੀਨਕਸ ਡੈਸਕਟਾਪ ਵਿਖਾਉਂਦਾ ਹੈ।"
+
+#: ../data/vinagre.appdata.xml.in.h:2
+msgid ""
+"It uses the VNC, RDP and SPICE protocols, and can even be used to connect to "
+"SSH servers."
+msgstr ""
+"ਇਹ VNC, RDP, ਅਤੇ SPICE ਪ੍ਰੋਟੋਕਾਲ ਵਰਤਦਾ ਹੈ ਅਤੇ SSH ਸਰਵਰਾਂ ਨਾਲ ਵੀ ਕੁਨੈਕਟ ਹੋਣ ਲਈ "
+"ਵਰਤਿਆ ਜਾ "
+"ਸਕਦਾ ਹੈ।"
+
+#: ../data/vinagre.desktop.in.in.h:1 ../data/vinagre-file.desktop.in.in.h:1
+#: ../vinagre/vinagre-main.c:182
+msgid "Remote Desktop Viewer"
+msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦਰਸ਼ਕ"
+
+#: ../data/vinagre.desktop.in.in.h:2 ../data/vinagre-file.desktop.in.in.h:2
+msgid "Access remote desktops"
+msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਅਸੈੱਸ"
+
+#: ../data/vinagre.desktop.in.in.h:3
+msgid "VNC;RDP;SSH;"
+msgstr "VNC;RDP;SSH;"
+
+#: ../data/vinagre.ui.h:1
+msgid "Vinagre is a remote desktop viewer for the GNOME desktop"
+msgstr "ਵੀਨਾਗਰੇ ਗਨੋਮ ਡੈਸਕਟਾਪ ਲਈ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦਰਸ਼ਕ ਹੈ"
+
+#. Add your name here to appear as a translator in the about dialog
+#: ../data/vinagre.ui.h:3
+msgid "translator-credits"
+msgstr ""
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ <aalam@users.sf.net> ੨੦੦੬-੨੦੧੪\n"
+"P(unjabi) O(pen) S(ource) T(eam)"
+
+#. This is a button label, in the authentication dialog
+#: ../data/vinagre.ui.h:5
+msgid "_Authenticate"
+msgstr "ਪਰਮਾਣਕਿਤਾ(_A)"
+
+#: ../data/vinagre.ui.h:6
+msgid "Authentication is required"
+msgstr "ਪਰਮਾਣਕਿਤਾ ਦੀ ਲੋੜ ਹੈ"
+
+#: ../data/vinagre.ui.h:7 ../plugins/rdp/vinagre-rdp-tab.c:120
+#: ../plugins/ssh/vinagre-ssh-tab.c:49 ../plugins/vnc/vinagre-vnc-tab.c:149
+#: ../plugins/spice/vinagre-spice-tab.c:139
+msgid "Host:"
+msgstr "ਹੋਸਟ:"
+
+#: ../data/vinagre.ui.h:8 ../plugins/rdp/vinagre-rdp-plugin.c:111
+#: ../plugins/ssh/vinagre-ssh-plugin.c:112
+msgid "_Username:"
+msgstr "ਯੂਜ਼ਰ ਨਾਂ(_U):"
+
+#: ../data/vinagre.ui.h:9 ../plugins/spice/vinagre-spice-plugin.c:310
+msgid "_Password:"
+msgstr "ਪਾਸਵਰਡ(_P):."
+
+#: ../data/vinagre.ui.h:10
+msgid "_Domain:"
+msgstr "ਡੋਮੇਨ(_D):"
+
+#: ../data/vinagre.ui.h:11
+msgid "_Remember this credential"
+msgstr "ਇਹ ਸਨਦ ਯਾਦ ਰੱਖੋ(_R)"
+
+#: ../data/vinagre.ui.h:12
+msgid "Store the login credential in GNOME Keyring"
+msgstr "ਲਾਗਇਨ ਸਨਦ ਗਨੋਮ ਕੀਰਿੰਗ ਵਿੱਚ ਸੰਭਾਲੋ"
+
+#: ../data/vinagre.ui.h:13
+msgid "Bookmarks"
+msgstr "ਬੁੱਕਮਾਰਕ"
+
+#: ../data/vinagre.ui.h:14
+msgid "Connection"
+msgstr "ਕੁਨੈਕਸ਼ਨ"
+
+#. Translators: This is the name of a bookmark. It appears in the add/edit bookmark dialog.
+#: ../data/vinagre.ui.h:16
+msgid "_Name:"
+msgstr "ਨਾਂ(_N):"
+
+#: ../data/vinagre.ui.h:17
+msgid "_Host:"
+msgstr "ਹੋਸਟ(_H):"
+
+#: ../data/vinagre.ui.h:18
+msgid "Options"
+msgstr "ਚੋਣਾਂ"
+
+#: ../data/vinagre.ui.h:19
+msgid "_Full screen"
+msgstr "ਪੂਰੀ ਸਕਰੀਨ(_F)"
+
+#: ../data/vinagre.ui.h:20
+msgid "Folder"
+msgstr "ਫੋਲਡਰ"
+
+#: ../data/vinagre.ui.h:21
+msgid "Bookmark Folder"
+msgstr "ਫੋਲਡਰ ਬੁੱਕਮਾਰਕ ਕਰੋ"
+
+#: ../data/vinagre.ui.h:22
+msgid "Parent Folder"
+msgstr "ਮੁੱਢਲਾ ਫੋਲਡਰ"
+
+#: ../data/vinagre.ui.h:23
+msgid "Certificate Verification"
+msgstr "ਸਰਟੀਫਿਕੇਟ ਪੜਤਾਲ"
+
+#: ../data/vinagre.ui.h:24
+msgid ""
+"The remote host has changed its certificate.\n"
+"Do you trust the new certificate?"
+msgstr ""
+"ਰਿਮੋਟ ਹੋਸਟ ਨੇ ਇਹ ਸਰਟੀਫਿਕੇਟ ਬਦਲਿਆ ਹੈ।\n"
+"ਕੀ ਤੁਸੀਂ ਨਵੇਂ ਸਰਟੀਫਿਕੇਟ ਉੱਤੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ?"
+
+#. Subject of the certificate.
+#: ../data/vinagre.ui.h:27
+msgid "Subject:"
+msgstr "ਵਿਸ਼ਾ:"
+
+#. Issuer of the certificate.
+#: ../data/vinagre.ui.h:29
+msgid "Issuer:"
+msgstr "ਜਾਰੀ-ਕਰਤਾ:"
+
+#. Fingerprint of the new certificate.
+#: ../data/vinagre.ui.h:31
+msgid "New fingerprint:"
+msgstr "ਨਵਾਂ ਫਿੰਗਰ-ਪਰਿੰਟ:"
+
+#. Fingerprint of the old certificate.
+#: ../data/vinagre.ui.h:33
+msgid "Old fingerprint:"
+msgstr "ਪੁਰਾਣਾ ਫਿੰਗਰ-ਪਰਿੰਟ:"
+
+#: ../data/vinagre.ui.h:34
+msgid ""
+"The below certificate could not be verified.\n"
+"Do you trust the certificate?"
+msgstr ""
+"ਹੇਠ ਦਿੱਤੇ ਸਰਟੀਫਿਕੇਟ ਦੀ ਪੜਤਾਲ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।\n"
+"ਕੀ ਤੁਸੀਂ ਸਰਟੀਫਿਕੇਟ ਉੱਤੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ?"
+
+#. Fingerprint of the certificate.
+#: ../data/vinagre.ui.h:37
+msgid "Fingerprint:"
+msgstr "ਫਿੰਗਰ-ਪਰਿੰਟ:"
+
+#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
+#: ../plugins/rdp/vinagre-rdp-tab.c:792
+msgid "Connect"
+msgstr "ਕੁਨੈਕਟ ਕਰੋ"
+
+#: ../data/vinagre.ui.h:39
+msgid "Choose a remote desktop to connect to"
+msgstr "ਕੁਨੈਕਟ ਕਰਨ ਲਈ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਚੁਣੋ"
+
+#: ../data/vinagre.ui.h:40
+msgid "_Protocol:"
+msgstr "ਪਰੋਟੋਕਾਲ(_P):"
+
+#: ../data/vinagre.ui.h:41
+msgid "Select a remote desktop protocol for this connection"
+msgstr "ਇਹ ਕੁਨੈਕਸ਼ਨ ਲਈ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਪਰੋਟੋਕਾਲ ਚੁਣੋ"
+
+#: ../data/vinagre.ui.h:42
+msgid "Search for remote hosts on the network"
+msgstr "ਨੈੱਟਵਰਕ ਉੱਤੇ ਰਿਮੋਟ ਹੋਸਟ ਲਈ ਲੱਭੋ"
+
+#: ../data/vinagre.ui.h:43
+msgid "Connection options"
+msgstr "ਕੁਨੈਕਸ਼ਨ ਚੋਣਾਂ"
+
+#: ../data/vinagre.ui.h:44
+msgid "_Fullscreen"
+msgstr "ਪੂਰੀ ਸਕਰੀਨ(_F)"
+
+#: ../data/vinagre.ui.h:45
+msgid "Enable fullscreen mode for this connection"
+msgstr "ਇਹ ਕੁਨੈਕਸ਼ਨ ਲਈ ਪੂਰੀ ਸਕਰੀਨ ਮੋਡ ਚਾਲੂ"
+
+#: ../data/vinagre.ui.h:46
+msgid "Reverse Connections"
+msgstr "ਉਲਟ ਕੁਨੈਕਸ਼ਨ"
+
+#: ../data/vinagre.ui.h:47
+msgid ""
+"By activating reverse connections you can access remote desktops that are "
+"behind a firewall. The remote side is supposed to initiate the connection "
+"with you. For further information, read the help."
+msgstr ""
+"ਉਲਟ ਕੁਨੈਕਸ਼ਨ ਐਕਟੀਵੇਟ ਕਰਕੇ ਤੁਸੀਂ ਫਾਇਰਵਾਲ ਦੇ ਪਿੱਛੇ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਨੂੰ ਵਰਤ ਸਕਦੇ "
+"ਹੋ। ਰਿਮੋਟ ਸਾਈਟ ਵਲੋਂ "
+"ਤੁਹਾਡੇ ਨਾਲ ਕੁਨੈਕਸ਼ਨ ਦੀ ਸ਼ੁਰੂ ਕੀਤੀ ਮੰਨੀ ਜਾਵੇਗੀ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਮੱਦਦ ਵੇਖੋ।"
+
+#: ../data/vinagre.ui.h:48
+msgid "_Enable Reverse Connections"
+msgstr "ਉਲਟ ਕੁਨੈਕਸ਼ਨ ਚਾਲੂ(_E)"
+
+#. Translators: this is the reverse connection mode. "Always enabled" means it will be enabled by default in the program startup. You can see this string in the dialog Remote->Reverse connections.
+#: ../data/vinagre.ui.h:50
+msgid "_Always Enabled"
+msgstr "ਹਮੇਸ਼ਾ ਚਾਲੂ(_A)"
+
+#: ../data/vinagre.ui.h:51
+msgid "This desktop is reachable through the following IP address(es):"
+msgstr "ਇਹ ਡੈਸਕਟਾਪ ਅੱਗੇ ਦਿੱਤੇ IP ਐਡਰੈੱਸ ਰਾਹੀਂ ਵਰਤੋਂ ਯੋਗ ਹੈ:"
+
+#: ../data/vinagre.ui.h:52
+msgid "Connectivity"
+msgstr "ਕੁਨੈਕਟਵਿਟੀ"
+
+#: ../data/vinagre-mime.xml.in.h:1
+msgid "Remote Desktop (VNC) file"
+msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ (VNC) ਫਾਇਲ"
+
+#: ../data/vinagre-mime.xml.in.h:2
+msgid "Remote Desktop Connection"
+msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਕੁਨੈਕਸ਼ਨ"
+
+#: ../plugins/rdp/vinagre-rdp-plugin.c:61
+msgid "RDP"
+msgstr "RDP"
+
+#. Translators: This is a description of the RDP protocol. It appears in the Connect dialog.
+#: ../plugins/rdp/vinagre-rdp-plugin.c:63
+msgid "Access MS Windows remote desktops"
+msgstr "MS ਵਿੰਡੋਜ਼ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਅਸੈੱਸ"
+
+#: ../plugins/rdp/vinagre-rdp-plugin.c:104
+msgid "RDP Options"
+msgstr "RDP ਚੋਣਾਂ"
+
+#. Translators: This is the tooltip for the username field in a RDP connection
+#. Translators: This is the tooltip for the username field in a SSH connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:118
+#: ../plugins/ssh/vinagre-ssh-plugin.c:117
+msgid ""
+"Optional. If blank, your username will be used. Also, it can be supplied in "
+"the Host field above, in the form username@hostname."
+msgstr ""
+"ਚੋਣਵਾਂ। ਜੇ ਖਾਲੀ ਰੱਖਿਆ ਤਾਂ ਤੁਹਾਡਾ ਯੂਜ਼ਰ-ਨਾਂ ਵਰਤਿਆ ਜਾਵੇਗਾ। ਨਾਲੇ, ਇਸ ਨੂੰ ਉੱਤੇ "
+"ਹੋਸਟ ਖੇਤਰ ਵਿੱਚ ਵੀ "
+"ਦਿੱਤਾ ਜਾਵੇ, username@hostname ਵਾਂਗ।"
+
+#. Host width
+#: ../plugins/rdp/vinagre-rdp-plugin.c:131
+msgid "_Width:"
+msgstr "ਚੌੜਾਈ(_W):"
+
+#. Translators: This is the tooltip for the width field in a RDP connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:138
+msgid "Set width of the remote desktop"
+msgstr " ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੀ ਚੌੜਾਈ ਸੈੱਟ ਕਰੋ"
+
+#. Host height
+#: ../plugins/rdp/vinagre-rdp-plugin.c:147
+msgid "_Height:"
+msgstr "ਉਚਾਈ(_H):"
+
+#. Translators: This is the tooltip for the height field in a RDP connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:154
+msgid "Set height of the remote desktop"
+msgstr " ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੀ ਉਚਾਈ ਸੈੱਟ ਕਰੋ"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:121 ../plugins/ssh/vinagre-ssh-tab.c:50
+#: ../plugins/vnc/vinagre-vnc-tab.c:150
+#: ../plugins/spice/vinagre-spice-tab.c:140
+msgid "Port:"
+msgstr "ਪੋਰਟ:"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
+#| msgid "Cancel Login"
+msgid "_Cancel"
+msgstr "ਰੱਦ ਕਰੋ(_C)"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:982 ../plugins/vnc/vinagre-vnc-tab.c:317
+#: ../plugins/spice/vinagre-spice-tab.c:264
+msgid "Error connecting to host."
+msgstr "ਹੋਸਟ ਨਾਲ ਕੁਨੈਕਟ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।"
+
+#: ../plugins/ssh/vinagre-ssh-plugin.c:61
+msgid "SSH"
+msgstr "SSH"
+
+#. Translators: This is a description of the SSH protocol. It appears at Connect dialog.
+#: ../plugins/ssh/vinagre-ssh-plugin.c:63
+msgid "Access Unix/Linux terminals"
+msgstr "ਯੂਨੈਕਸ/ਲੀਨਕਸ ਟਰਮੀਨਲ ਵਰਤੋਂ"
+
+#: ../plugins/ssh/vinagre-ssh-plugin.c:103
+msgid "SSH Options"
+msgstr "SSH ਚੋਣਾਂ"
+
+#. Translators: 'shared' here is a VNC protocol specific flag. You can translate it, but I think it's better to let it untranslated
+#: ../plugins/vnc/vinagre-vnc-connection.c:317
+#: ../plugins/vnc/vinagre-vnc-plugin.c:201
+#, c-format
+msgid ""
+"Bad value for 'shared' flag: %d. It is supposed to be 0 or 1. Ignoring it."
+msgstr ""
+"'shared' ਨਿਸ਼ਾਨ ਲਈ ਗਲਤ ਮੁੱਲ: %d। ਇਸ ਲਈ 0 ਜਾਂ 1 ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਇਹ ਅਣਡਿੱਠਾ "
+"ਕੀਤਾ।"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../plugins/vnc/vinagre-vnc-plugin.c:52
+msgid "Enable scaled mode"
+msgstr "ਸਕੇਲ ਮੋਡ ਵਰਤੋਂ"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../plugins/vnc/vinagre-vnc-plugin.c:65
+msgid "VNC Options:"
+msgstr "VNC ਚੋਣਾਂ:"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../plugins/vnc/vinagre-vnc-plugin.c:67
+msgid "Show VNC Options"
+msgstr "VNC ਚੋਣਾਂ ਵੇਖੋ"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:89
+msgid "VNC"
+msgstr "VNC"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:90
+msgid "Access Unix/Linux, Windows and other remote desktops."
+msgstr "ਯੂਨੈਕਸ/ਲੀਨਕਸ, ਵਿੰਡੋਜ਼ ਅਤੇ ਹੋਰ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਵਰਤੋਂ।"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:147
+#: ../plugins/spice/vinagre-spice-plugin.c:101
+msgid "Could not parse the file."
+msgstr "ਫਾਇਲ ਪਾਰਸ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।"
+
+#. Translators: Do not translate "Connection". It's the name of a group in the .vnc (.ini like) file.
+#: ../plugins/vnc/vinagre-vnc-plugin.c:155
+msgid "The file is not a VNC one: Missing the group \"Connection\"."
+msgstr "ਫਾਇਲ VNC ਨਹੀਂ ਹੈ: ਗਰੁੱਪ \"ਕੁਨੈਕਸ਼ਨ (connection)\" ਮੌਜੂਦ ਨਹੀਂ।"
+
+#. Translators: Do not translate "Host". It's the name of a key in the .vnc (.ini like) file.
+#: ../plugins/vnc/vinagre-vnc-plugin.c:162
+msgid "The file is not a VNC one: Missing the key \"Host\"."
+msgstr "ਫਾਇਲ VNC ਨਹੀਂ ਹੈ: ਗਰੁੱਪ \"ਹੋਸਟ (host)\" ਮੌਜੂਦ ਨਹੀਂ।"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:268
+msgid "VNC Options"
+msgstr "VNC ਚੋਣਾਂ"
+
+#. View only check button
+#. View only check button - not fully ready on spice-gtk side
+#: ../plugins/vnc/vinagre-vnc-plugin.c:276
+#: ../plugins/vnc/vinagre-vnc-tab.c:630
+#: ../plugins/spice/vinagre-spice-plugin.c:237
+#: ../plugins/spice/vinagre-spice-tab.c:507
+msgid "_View only"
+msgstr "ਕੇਵਲ ਵੇਖੋ(_V)"
+
+#. Scaling check button
+#: ../plugins/vnc/vinagre-vnc-plugin.c:285
+#: ../plugins/spice/vinagre-spice-plugin.c:261
+msgid "_Scaling"
+msgstr "ਸਕੇਲਿੰਗ(_S)"
+
+#. Keep ratio check button
+#: ../plugins/vnc/vinagre-vnc-plugin.c:299
+msgid "_Keep aspect ratio"
+msgstr "ਆਕਾਰ ਅਨੁਪਾਤ ਰੱਖੋ(_K)"
+
+#. JPEG Compression check button
+#: ../plugins/vnc/vinagre-vnc-plugin.c:309
+msgid "_Use JPEG Compression"
+msgstr "JPEG ਕੰਪਰੈਸ਼ਨ ਵਰਤੋਂ(_U)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:310
+msgid "This might not work on all VNC servers"
+msgstr "ਇਹ ਸਭ VNC ਸਰਵਰਾਂ ਉੱਤੇ ਸ਼ਾਇਦ ਕੰਮ ਨਾ ਕਰੇ"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:320
+msgid "Color _Depth:"
+msgstr "ਰੰਗ ਡੂੰਘਾਈ(_D):"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:325
+msgid "Use Server Settings"
+msgstr "ਸਰਵਰ ਸੈਟਿੰਗ ਵਰਤੋਂ"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:326
+msgid "True Color (24 bits)"
+msgstr "ਅਸਲੀ ਰੰਗ (੨੪ ਬਿੱਟ)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:327
+msgid "High Color (16 bits)"
+msgstr "ਵੱਧ ਰੰਗ (੧੬ ਬਿੱਟ)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:328
+msgid "Low Color (8 bits)"
+msgstr "ਘੱਟ ਰੰਗ (੮ ਬਿੱਟ)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:329
+msgid "Ultra Low Color (3 bits)"
+msgstr "ਬਹੁਤ ਹੀ ਘੱਟ ਰੰਗ (੩ ਬਿੱਟ)"
+
+#. Translators: the whole sentence will be: Use Host <hostname> as a SSH tunnel
+#. Translators: the whole sentence will be: Use host <hostname> as a SSH tunnel
+#: ../plugins/vnc/vinagre-vnc-plugin.c:343
+#: ../plugins/spice/vinagre-spice-plugin.c:272
+msgid "Use h_ost"
+msgstr "ਹੋਸਟ ਵਰਤੋਂ(_o)"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:352
+#: ../plugins/spice/vinagre-spice-plugin.c:281
+msgid "hostname or user@hostname"
+msgstr "hostname ਜਾਂ user@hostname"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:353
+#: ../plugins/spice/vinagre-spice-plugin.c:282
+msgid "Supply an alternative port using colon"
+msgstr "ਕੌਮੇ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਬਦਲਵੀ ਪੋਰਟ ਦਿਓ"
+
+#: ../plugins/vnc/vinagre-vnc-plugin.c:354
+#: ../plugins/spice/vinagre-spice-plugin.c:283
+msgid "For instance: joe@example.com:5022"
+msgstr "ਤੁਰੰਤ: joe@example.com:5022"
+
+#. Translators: the whole sentence will be: Use host <hostname> as a SSH tunnel
+#: ../plugins/vnc/vinagre-vnc-plugin.c:360
+#: ../plugins/spice/vinagre-spice-plugin.c:289
+msgid "as a SSH tunnel"
+msgstr "SSH ਟਨਲ ਵਜੋਂ"
+
+#. Translators: this is a pattern to open *.vnc files in a open dialog.
+#: ../plugins/vnc/vinagre-vnc-plugin.c:395
+msgid "VNC Files"
+msgstr "VNC ਫਾਇਲਾਂ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:148
+msgid "Desktop Name:"
+msgstr "ਡੈਸਕਟਾਪ ਨਾਂ:"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:151
+msgid "Dimensions:"
+msgstr "ਮਾਪ:"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:306
+#: ../plugins/spice/vinagre-spice-tab.c:252
+msgid "Error creating the SSH tunnel"
+msgstr "SSH ਟਨਲ ਬਣਾਉਣ ਦੌਰਾਨ ਗਲਤੀ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:307 ../plugins/vnc/vinagre-vnc-tab.c:318
+#: ../plugins/spice/vinagre-spice-tab.c:253
+#: ../plugins/spice/vinagre-spice-tab.c:265
+msgid "Unknown reason"
+msgstr "ਅਣਜਾਣ ਕਾਰਨ"
+
+#. Translators: %s is a host name or IP address; %u is a code error (number).
+#: ../plugins/vnc/vinagre-vnc-tab.c:362
+#, c-format
+msgid "Authentication method for host %s is unsupported. (%u)"
+msgstr "ਹੋਸਟ %s ਲਈ ਪਰਮਾਣਕਿਤਾ ਢੰਗ ਗ਼ੈਰ-ਸਹਾਇਕ ਹੈ। (%u)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:366
+msgid "Authentication unsupported"
+msgstr "ਪਰਮਾਣਕਿਤਾ ਗ਼ੈਰ-ਸਹਾਇਕ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:529 ../plugins/vnc/vinagre-vnc-tab.c:546
+msgid "Authentication error"
+msgstr "ਪਰਮਾਣਕਿਤਾ ਗਲਤੀ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:530
+msgid "A username is required in order to access this remote desktop."
+msgstr "ਇਸ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੀ ਵਰਤੋਂ ਕਰਨ ਵਾਸਤੇ ਇੱਕ ਯੂਜ਼ਰ ਨਾਂ ਚਾਹੀਦਾ ਹੈ।"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:547
+msgid "A password is required in order to access this remote desktop."
+msgstr "ਇਸ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੀ ਵਰਤੋਂ ਕਰਨ ਵਾਸਤੇ ਇੱਕ ਪਾਸਵਰਡ ਚਾਹੀਦਾ ਹੈ।"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:601
+#: ../plugins/spice/vinagre-spice-tab.c:466
+msgid "S_caling"
+msgstr "ਸਕੇਲਿੰਗ(_c)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:602
+#: ../plugins/spice/vinagre-spice-tab.c:467
+#| msgid "Fits the remote screen into the current window size"
+msgid "Fit the remote screen into the current window size"
+msgstr "ਰਿਮੋਟ ਸਕਰੀਨ ਨੂੰ ਮੌਜੂਦਾ ਵਿੰਡੋ ਦੇ ਆਕਾਰ ਵਿੱਚ ਫਿੱਟ ਕਰੋ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:615
+msgid "_Keep Aspect Ratio"
+msgstr "ਆਕਾਰ ਅਨੁਪਾਤ ਰੱਖੋ(_K)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:616
+#| msgid "Keeps the screen aspect ratio when using scaling"
+msgid "Keep the screen aspect ratio when using scaling"
+msgstr "ਜਦੋਂ ਸਕੇਲ ਕਰਨਾ ਹੋਵੇ ਤਾਂ ਸਕਰੀਨ ਆਕਾਰ ਅਨੁਪਾਤ ਰੱਖੋ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:631
+#: ../plugins/spice/vinagre-spice-tab.c:508
+#| msgid "Does not send mouse and keyboard events"
+msgid "Do not send mouse and keyboard events"
+msgstr "ਮਾਊਂਸ ਅਤੇ ਕੀਬੋਰਡ ਈਵੈਂਟ ਨਾ ਭੇਜੋ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:644
+msgid "_Original size"
+msgstr "ਅਸਲੀ ਆਕਾਰ(_O)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:645
+#| msgid "Adjusts the window to the remote desktop's size"
+msgid "Adjust the window to the size of the remote desktop"
+msgstr "ਵਿੰਡੋ ਨੂੰ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦੇ ਸਾਈਜ਼ ਮੁਤਾਬਕ ਅਡਜੱਸਟ ਕਰੋ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:658
+msgid "_Refresh Screen"
+msgstr "ਸਕਰੀਨ ਤਾਜ਼ਾ(_R)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:659
+msgid "Requests an update of the screen"
+msgstr "ਸਕਰੀਨ ਅੱਪਡੇਟ ਕਰਨ ਦੀ ਮੰਗ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:681
+#: ../plugins/spice/vinagre-spice-tab.c:531
+msgid "_Send Ctrl-Alt-Del"
+msgstr "Ctrl-Alt-Del ਭੇਜੋ(_S)"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:682 ../plugins/vnc/vinagre-vnc-tab.c:756
+#: ../plugins/spice/vinagre-spice-tab.c:532
+#: ../plugins/spice/vinagre-spice-tab.c:605
+#| msgid "Sends Ctrl+Alt+Del to the remote desktop"
+msgid "Send Ctrl+Alt+Del to the remote desktop"
+msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਨੂੰ Ctrl+Alt+Del ਭੇਜੋ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:735 ../plugins/vnc/vinagre-vnc-tab.c:736
+#: ../plugins/spice/vinagre-spice-tab.c:584
+#: ../plugins/spice/vinagre-spice-tab.c:585
+msgid "Scaling"
+msgstr "ਸਕੇਲਿੰਗ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:745 ../plugins/vnc/vinagre-vnc-tab.c:746
+#: ../plugins/spice/vinagre-spice-tab.c:594
+#: ../plugins/spice/vinagre-spice-tab.c:595
+msgid "Read only"
+msgstr "ਕੇਵਲ ਪੜ੍ਹਨ ਲਈ"
+
+#. Send Ctrl-alt-del
+#: ../plugins/vnc/vinagre-vnc-tab.c:754
+#: ../plugins/spice/vinagre-spice-tab.c:603
+msgid "Send Ctrl-Alt-Del"
+msgstr "Ctrl-Alt-Del ਭੇਜੋ"
+
+#: ../plugins/vnc/vinagre-vnc-tab.c:919
+msgid ""
+"Scaling is not supported on this installation.\n"
+"\n"
+"Read the README file (shipped with Vinagre) in order to know how to enable "
+"this feature."
+msgstr ""
+"ਇਸ ਇੰਸਟਾਲੇਸ਼ਨ ਵਿੱਚ ਸਕੇਲਿੰਗ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।\n"
+"\n"
+"ਇਹ ਫੀਚਰ ਚਾਲੂ ਕਰਨ ਵਾਸਤੇ README ਫਾਇਲ (ਵੀਨਾਗਰੇ ਨਾਲ ਮਿਲਦੀ ਹੈ) ਨੂੰ ਪੜ੍ਹੋ।"
+
+#: ../plugins/vnc/vinagre-vnc-tunnel.c:97
+#: ../plugins/spice/vinagre-spice-tunnel.c:103
+#, c-format
+msgid "Unable to find a free TCP port"
+msgstr "ਖਾਲੀ TCP ਪੋਰਟ ਲੱਭਣ ਲਈ ਅਸਮਰੱਥ"
+
+#. Translators: Do not translate "connection". It's the name of a group in the .spice (.ini like) file.
+#: ../plugins/spice/vinagre-spice-plugin.c:108
+msgid "The file is not a Spice one: Missing the group \"connection\"."
+msgstr "ਫਾਇਲ Spice ਨਹੀਂ ਹੈ: ਗਰੁੱਪ \"ਕੁਨੈਕਸ਼ਨ (connection)\" ਮੌਜੂਦ ਨਹੀਂ।"
+
+#. Translators: Do not translate "host". It's the name of a key in the .spice (.ini like) file.
+#: ../plugins/spice/vinagre-spice-plugin.c:115
+msgid "The file is not a Spice one: Missing the key \"host\"."
+msgstr "ਫਾਇਲ Spice ਨਹੀਂ ਹੈ: ਗਰੁੱਪ \"ਹੋਸਟ (host)\" ਮੌਜੂਦ ਨਹੀਂ।"
+
+#: ../plugins/spice/vinagre-spice-plugin.c:174
+msgid "SPICE"
+msgstr "SPICE"
+
+#. Translators: This is a description of the SPICE protocol. It appears at Connect dialog.
+#: ../plugins/spice/vinagre-spice-plugin.c:176
+msgid "Access Spice desktop server"
+msgstr "Spice ਡੈਸਕਟਾਪ ਸਰਵਰ ਵਰਤੋਂ"
+
+#: ../plugins/spice/vinagre-spice-plugin.c:224
+msgid "SPICE Options"
+msgstr "SPICE ਚੋਣਾਂ"
+
+#. Resize guest check button
+#: ../plugins/spice/vinagre-spice-plugin.c:245
+#: ../plugins/spice/vinagre-spice-tab.c:480
+msgid "_Resize guest"
+msgstr "ਗੈਸਟ ਮੁੜ-ਆਕਾਰ(_R)"
+
+#. Clipboard sharing check button
+#: ../plugins/spice/vinagre-spice-plugin.c:253
+#: ../plugins/spice/vinagre-spice-tab.c:493
+msgid "_Share clipboard"
+msgstr "ਕਲਿੱਪਬੋਰਡ ਸਾਂਝਾ(_S)"
+
+#. Translators: This is the tooltip for the password field in a SPICE connection
+#: ../plugins/spice/vinagre-spice-plugin.c:315
+msgid "Optional"
+msgstr "ਚੋਣਵਾਂ"
+
+#. Translators: this is a pattern to open *.spice files in a open dialog.
+#: ../plugins/spice/vinagre-spice-plugin.c:336
+msgid "Spice Files"
+msgstr "Spice ਫਾਇਲਾਂ"
+
+#: ../plugins/spice/vinagre-spice-tab.c:481
+msgid "Resize the screen guest to best fit"
+msgstr "ਗੈਸਟ ਦੀ ਸਕਰੀਨ ਨੂੰ ਵਧੀਆ ਫਿੱਟ ਕਰਨ ਲਈ ਮੁੜ-ਆਕਾਰ ਕਰੋ"
+
+#: ../plugins/spice/vinagre-spice-tab.c:494
+msgid "Automatically share clipboard between client and guest"
+msgstr "ਕਲਿੱਪਬੋਰਡ ਆਟੋਮੈਟਿਕ ਹੀ ਕਲਾਇਟ ਅਤੇ ਸਰਵਰ ਵਿੱਚ ਸਾਂਝਾ ਕਰੋ"
+
+#: ../vinagre/vinagre-bookmarks.c:366
+#, c-format
+msgid "Error while initializing bookmarks: %s"
+msgstr "ਬੁੱਕਮਾਰਕ ਸ਼ੁਰੂ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../vinagre/vinagre-bookmarks.c:366 ../vinagre/vinagre-bookmarks.c:492
+#: ../vinagre/vinagre-bookmarks-migration.c:135
+#: ../vinagre/vinagre-cache-prefs.c:57 ../vinagre/vinagre-commands.c:163
+#: ../vinagre/vinagre-connect.c:510 ../vinagre/vinagre-options.c:85
+#: ../vinagre/vinagre-options.c:103 ../vinagre/vinagre-window.c:260
+#: ../vinagre/vinagre-window.c:798
+msgid "Unknown error"
+msgstr "ਅਣਜਾਣ ਗਲਤੀ"
+
+#: ../vinagre/vinagre-bookmarks.c:373
+msgid "Error while initializing bookmarks: The file seems to be empty"
+msgstr "ਬੁੱਕਮਾਰਕ ਸ਼ੁਰੂ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ: ਫਾਇਲ ਖਾਲੀ ਜਾਪਦੀ ਹੈ।"
+
+#: ../vinagre/vinagre-bookmarks.c:380
+msgid ""
+"Error while initializing bookmarks: The file is not a vinagre bookmarks file"
+msgstr "ਬੁੱਕਮਾਰਕ ਸ਼ੁਰੂ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ: ਫਾਇਲ ਇੱਕ ਵੀਨਾਗਰੇ ਬੁੱਕਮਾਰਕ ਫਾਇਲ ਨਹੀਂ ਹੈ"
+
+#: ../vinagre/vinagre-bookmarks.c:453 ../vinagre/vinagre-bookmarks.c:460
+msgid "Error while saving bookmarks: Failed to create the XML structure"
+msgstr "ਬੁੱਕਮਾਰਕ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: XML ਢਾਂਚਾ ਫਾਇਲ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ"
+
+#: ../vinagre/vinagre-bookmarks.c:467 ../vinagre/vinagre-bookmarks.c:474
+msgid "Error while saving bookmarks: Failed to initialize the XML structure"
+msgstr "ਬੁੱਕਮਾਰਕ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: XML ਢਾਂਚਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
+
+#: ../vinagre/vinagre-bookmarks.c:483
+msgid "Error while saving bookmarks: Failed to finalize the XML structure"
+msgstr "ਬੁੱਕਮਾਰਕ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: XML ਢਾਂਚਾ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
+
+#: ../vinagre/vinagre-bookmarks.c:492
+#, c-format
+msgid "Error while saving bookmarks: %s"
+msgstr "ਬੁੱਕਮਾਰਕ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:95
+#: ../vinagre/vinagre-bookmarks-migration.c:102
+msgid "Error while migrating bookmarks: Failed to create the XML structure"
+msgstr "ਬੁੱਕਮਾਰਕ ਪਰਵਾਸ ਲਈ ਦੌਰਾਨ ਗਲਤੀ: XML ਢਾਂਚਾ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:109
+#: ../vinagre/vinagre-bookmarks-migration.c:116
+msgid "Error while migrating bookmarks: Failed to initialize the XML structure"
+msgstr "ਬੁੱਕਮਾਰਕ ਪਰਵਾਸ ਦੌਰਾਨ ਗਲਤੀ: XML ਢਾਂਚਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:125
+msgid "Error while migrating bookmarks: Failed to finalize the XML structure"
+msgstr "ਬੁੱਕਮਾਰਕ ਪਰਵਾਸ ਦੌਰਾਨ ਗਲਤੀ: XML ਢਾਂਚਾ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:135
+#: ../vinagre/vinagre-bookmarks-migration.c:216
+#, c-format
+msgid "Error while migrating bookmarks: %s"
+msgstr "ਬੁੱਕਮਾਰਕ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:164
+msgid "Error while migrating bookmarks: VNC plugin is not activated"
+msgstr "ਬੁੱਕਮਾਰਕ ਮਾਈਗਰੇਟ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ। VNC ਪਲੱਗਇਨ ਐਕਟੀਵੇਟ ਨਹੀਂ ਹੈ"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:216
+msgid "Failed to create the directory"
+msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:241
+msgid ""
+"Migrating the bookmarks file to the new format. This operation is only "
+"supposed to run once."
+msgstr ""
+"ਬੁੱਕਮਾਰਕ ਫਾਇਲ ਨਵੇਂ ਫਾਰਮੈਟ ਵਿੱਚ ਪਰਵਾਸ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ। ਇਹ ਓਪਰੇਸ਼ਨ ਕੇਵਲ ਇੱਕ ਵਾਰ "
+"ਹੀ ਸਹਾਇਕ ਹੈ।"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:249
+#, c-format
+msgid "Error opening old bookmarks file: %s"
+msgstr "ਬੁੱਕਮਾਰਕ ਫਾਇਲ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:250
+#: ../vinagre/vinagre-bookmarks-migration.c:262
+msgid "Migration cancelled"
+msgstr "ਪਰਵਾਸ ਰੱਦ ਕੀਤਾ"
+
+#: ../vinagre/vinagre-bookmarks-migration.c:259
+msgid "Could not remove the old bookmarks file"
+msgstr "ਪੁਰਾਣੀ ਬੁੱਕਮਾਰਕ ਫਾਇਲ ਹਟਾਈ ਨਹੀਂ ਜਾ ਸਕਦੀ"
+
+#: ../vinagre/vinagre-bookmarks-tree.c:120
+msgid "Root Folder"
+msgstr "ਰੂਟ ਫੋਲਡਰ"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:78
+msgid "Invalid name for this folder"
+msgstr "ਇਹ ਫੋਲਡਰ ਲਈ ਗਲਤ ਨਾਂ"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:88 ../vinagre/vinagre-bookmarks-ui.c:200
+#, c-format
+msgid ""
+"The name \"%s\" is already used in this folder. Please use a different name."
+msgstr "ਇਸ ਫੋਲਡਰ ਵਿੱਚ \"%s\" ਨਾਂ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ। ਵੱਖਰਾ ਨਾਂ ਚੁਣੋ ਜੀ।"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:89 ../vinagre/vinagre-bookmarks-ui.c:190
+#: ../vinagre/vinagre-bookmarks-ui.c:201
+msgid "Invalid name for this item"
+msgstr "ਇਸ ਆਈਟਮ ਲਈ ਅਢੁੱਕਵਾਂ ਨਾਂ"
+
+#. Translators: %s is a protocol name, like VNC or SSH
+#: ../vinagre/vinagre-bookmarks-ui.c:168
+#, c-format
+msgid "(Protocol: %s)"
+msgstr "(ਪਰੋਟੋਕਾਲ: %s)"
+
+#. Translators: %s is a bookmark entry name
+#: ../vinagre/vinagre-bookmarks-ui.c:306
+#, c-format
+msgid "Are you sure you want to remove %s from bookmarks?"
+msgstr "ਕੀ ਤੁਸੀਂ %s ਨੂੰ ਬੁੱਕਮਾਰਕਾਂ ਵਿੱਚੋਂ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:312
+msgid "Remove Folder?"
+msgstr "ਫੋਲਡਰ ਹਟਾਉਣਾ ਹੈ?"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:313
+msgid "Note that all its subfolders and bookmarks will be removed as well."
+msgstr ""
+"ਯਾਦ ਰੱਖੋ ਕਿ ਇਸ ਦੇ ਸਭ ਅੰਦਰੂਨੀ ਫੋਲਡਰ ਅਤੇ ਬੁੱਕਮਾਰਕਾਂ ਨੂੰ ਵੀ ਹਟਾ ਦਿੱਤਾ ਜਾਵੇ।"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:318
+msgid "Remove Item?"
+msgstr "ਆਈਟਮ ਹਟਾਉਣੀ ਹੈ?"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:335
+msgid "Error removing bookmark: Entry not found"
+msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਉਣ ਦੌਰਾਨ ਗਲਤੀ: ਐਂਟਰੀ ਨਹੀਂ ਲੱਭੀ"
+
+#: ../vinagre/vinagre-bookmarks-ui.c:352
+msgid "New Folder"
+msgstr "ਨਵਾਂ ਫੋਲਡਰ"
+
+#: ../vinagre/vinagre-cache-prefs.c:57
+#, c-format
+msgid "Error while saving preferences: %s"
+msgstr "ਪਸੰਦ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../vinagre/vinagre-commands.c:115
+msgid "Choose the file"
+msgstr "ਫਾਇਲ ਚੁਣੋ"
+
+#: ../vinagre/vinagre-commands.c:139
+msgid "There are no supported files"
+msgstr "ਕੋਈ ਸਹਾਇਕ ਫਾਇਲ ਨਹੀਂ"
+
+#: ../vinagre/vinagre-commands.c:140
+msgid ""
+"None of the active plugins support this action. Activate some plugins and "
+"try again."
+msgstr ""
+"ਕੋਈ ਐਕਟਿਵ ਪਲੱਗਇਨ ਇਹ ਕਾਰਵਾਈ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ। ਕੁਝ ਹੋਰ ਪਲੱਗਇਨ ਐਕਟਿਵ ਕਰਕੇ "
+"ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+
+#: ../vinagre/vinagre-commands.c:174
+msgid "The following file could not be opened:"
+msgid_plural "The following files could not be opened:"
+msgstr[0] "ਅੱਗੇ ਦਿੱਤੀ ਫਾਇਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ:"
+msgstr[1] "ਅੱਗੇ ਦਿੱਤੀਆਂ ਫਾਇਲਾਂ ਖੋਲ੍ਹੀਆਂ ਨਹੀਂ ਜਾ ਸਕੀਆਂ:"
+
+#: ../vinagre/vinagre-connect.c:91 ../vinagre/vinagre-connect.c:344
+#: ../vinagre/vinagre-connect.c:474
+msgid "Could not get the active protocol from the protocol list."
+msgstr "ਪਰੋਟੋਕਾਲ ਲਿਸਟ ਤੋਂ ਐਕਟਿਵ ਪਰੋਟੋਕਾਲ ਲਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।"
+
+#: ../vinagre/vinagre-connect.c:318
+#, c-format
+msgid "Error while saving history file: %s"
+msgstr "ਅਤੀਤ ਫਾਇਲ ਖੋਲ੍ਹਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#: ../vinagre/vinagre-connect.c:360
+msgid "Choose a Remote Desktop"
+msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਚੁਣੋ"
+
+#: ../vinagre/vinagre-connection.c:614 ../vinagre/vinagre-tab.c:574
+#: ../vinagre/vinagre-tube-handler.c:257
+#, c-format
+msgid "The protocol %s is not supported."
+msgstr "ਪਰੋਟੋਕਾਲ %s ਸਹਿਯੋਗੀ ਨਹੀਂ ਹੈ।"
+
+#: ../vinagre/vinagre-connection.c:722
+msgid "Could not open the file."
+msgstr "ਫਾਇਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ।"
+
+#: ../vinagre/vinagre-connection.c:748
+msgid "The file was not recognized by any of the plugins."
+msgstr "ਫਾਇਲ ਕਿਸੇ ਵੀ ਪਲੱਗਇਨ ਵਲੋਂ ਪਛਾਣੀ ਨਹੀਂ ਗਈ।"
+
+#. Setup command line options
+#: ../vinagre/vinagre-main.c:91
+msgid "- Remote Desktop Viewer"
+msgstr "- ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦਰਸ਼ਕ"
+
+#: ../vinagre/vinagre-mdns.c:172
+#, c-format
+msgid "Failed to resolve avahi hostname: %s\n"
+msgstr "ਅਵੀ ਹੋਸਟ-ਨਾਂ ਹੱਲ਼ ਕਰਨ ਲਈ ਫੇਲ੍ਹ: %s\n"
+
+#: ../vinagre/vinagre-mdns.c:226
+#, c-format
+msgid "The service %s was already registered by another plugin."
+msgstr "ਸਰਵਿਸ %s ਪਹਿਲਾਂ ਹੀ ਹੋਰ ਪਲੱਗਇਨ ਨਾਲ ਰਜਿਸਟਰ ਹੈ।"
+
+#: ../vinagre/vinagre-mdns.c:234
+#, c-format
+msgid "Failed to add mDNS browser for service %s."
+msgstr "ਸਰਵਿਸ %s ਲਈ mDNS ਬਰਾਊਜ਼ਰ ਨਾਲ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
+
+#. Translators: "Browse for hosts" means the ability to find/locate some remote hosts [with the VNC service enabled] in the local network
+#: ../vinagre/vinagre-mdns.c:251
+#, c-format
+msgid "Failed to browse for hosts: %s\n"
+msgstr "ਹੋਸਟ ਲਈ ਝਲਕ ਵੇਖਣ ਲਈ ਫੇਲ੍ਹ: %s\n"
+
+#: ../vinagre/vinagre-mdns.c:320
+#, c-format
+msgid "Failed to initialize mDNS browser: %s\n"
+msgstr "mDNS ਬਰਾਊਜ਼ਰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਫੇਲ੍ਹ: %s\n"
+
+#. Translators: %s is a host name or IP address.
+#: ../vinagre/vinagre-notebook.c:462
+#, c-format
+msgid "Connection to host %s was closed."
+msgstr "ਹੋਸਟ %s ਨਾਲ ਕੁਨੈਕਸ਼ਨ ਬੰਦ ਕੀਤਾ ਗਿਆ।"
+
+#: ../vinagre/vinagre-notebook.c:464
+msgid "Connection closed"
+msgstr "ਕੁਨੈਕਸ਼ਨ ਬੰਦ ਕੀਤਾ"
+
+#. Translators: %s is a host name or IP address.
+#: ../vinagre/vinagre-notebook.c:483
+#, c-format
+msgid "Authentication for host %s has failed"
+msgstr "ਹੋਸਟ %s ਲਈ ਪਰਮਾਣਿਕਤਾ ਲਈ ਫੇਲ੍ਹ ਹੈ"
+
+#: ../vinagre/vinagre-notebook.c:489
+msgid "Authentication failed"
+msgstr "ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ ਹੋਈ"
+
+#: ../vinagre/vinagre-notebook.c:537
+msgid "Connecting…"
+msgstr "…ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: ../vinagre/vinagre-notebook.c:559
+msgid "Close connection"
+msgstr "ਕੁਨੈਕਸ਼ਨ ਬੰਦ"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:33
+msgid "Specify geometry of the main Vinagre window"
+msgstr "ਮੁੱਖ ਵੀਨਾਗਰੇ ਵਿੰਡੋ ਦੀ ਜੁਮੈਟਰੀ ਦਿਉ"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:37
+msgid "Open Vinagre in fullscreen mode"
+msgstr "ਵੀਨਾਗਰੇ ਨੂੰ ਪੂਰੀ ਸਕਰੀਨ ਮੋਡ ਵਿੱਚ ਖੋਲ੍ਹੋ"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:41
+msgid "Create a new toplevel window in an existing instance of Vinagre"
+msgstr "ਵੀਨਾਗਰੇ ਦੇ ਇੱਕ ਮੌਜੂਦ ਮੌਕੇ ਵਿੱਚ ਇੱਕ ਨਵੀਂ ਉੱਚ-ਪੱਧਰੀ ਵਿੰਡੋ ਬਣਾਓ"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:45
+msgid "Open a file recognized by Vinagre"
+msgstr "ਵੀਨਾਗਰੇ ਵਲੋਂ ਪਛਾਣੀ ਫਾਇਲ ਖੋਲ੍ਹੋ"
+
+#: ../vinagre/vinagre-options.c:45
+msgid "filename"
+msgstr "ਫਾਇਲ-ਨਾਂ"
+
+#: ../vinagre/vinagre-options.c:48
+msgid "Show help"
+msgstr "ਮੱਦਦ ਵੇਖੋ"
+
+#. Translators: this is a command line option (run vinagre --help)
+#: ../vinagre/vinagre-options.c:53
+msgid "[server:port]"
+msgstr "[server:port]"
+
+#: ../vinagre/vinagre-options.c:127
+#, c-format
+msgid "Invalid argument %s for --geometry"
+msgstr "--geometry ਲਈ ਗਲਤ ਆਰਗੂਮੈਂਟ %s"
+
+#: ../vinagre/vinagre-options.c:145
+msgid "The following error has occurred:"
+msgid_plural "The following errors have occurred:"
+msgstr[0] "ਅੱਗੇ ਦਿੱਤੀ ਗਲਤੀ ਹੈ:"
+msgstr[1] "ਅੱਗੇ ਦਿੱਤੀਆਂ ਗਲਤੀਆਂ ਆਈਆਂ ਹਨ:"
+
+#: ../vinagre/vinagre-prefs.c:83
+msgid "Cannot initialize preferences manager."
+msgstr "ਪਸੰਦ ਮੈਨੇਜਰ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"
+
+#: ../vinagre/vinagre-reverse-vnc-listener-dialog.c:103
+msgid "IPv4:"
+msgstr "IPv4:"
+
+#: ../vinagre/vinagre-reverse-vnc-listener-dialog.c:115
+msgid ""
+"\n"
+"\n"
+"IPv6:"
+msgstr ""
+"\n"
+"\n"
+"IPv6:"
+
+#: ../vinagre/vinagre-reverse-vnc-listener-dialog.c:175
+#, c-format
+msgid "On the port %d"
+msgstr "ਪੋਰਟ %d ਉੱਤੇ"
+
+#: ../vinagre/vinagre-reverse-vnc-listener.c:212
+msgid "Error activating reverse connections"
+msgstr "ਉਲਟ ਕੁਨੈਕਸ਼ਨ ਐਕਟੀਵੇਟ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ"
+
+#: ../vinagre/vinagre-reverse-vnc-listener.c:213
+msgid ""
+"The program could not find any available TCP ports starting at 5500. Is "
+"there any other running program consuming all your TCP ports?"
+msgstr ""
+"ਪਰੋਗਰਾਮ 5500 ਨਾਲ ਸ਼ੁਰੂ ਹੋਣ ਵਾਲੀ ਉਪਲੱਬਧ ਕੋਈ ਵੀ TCP ਪੋਰਟ ਲੱਭ ਨਹੀਂ ਸਕਿਆ ਹੈ। ਕੀ "
+"ਕੋਈ ਹੋਰ ਚੱਲਦਾ "
+"ਪਰੋਗਰਾਮ ਤੁਹਾਡੀਆਂ ਸਭ TCP ਪਰੋਟਾਂ ਨੂੰ ਵਰਤ ਰਿਹਾ ਹੈ?"
+
+#: ../vinagre/vinagre-ssh.c:115
+msgid "Timed out when logging into SSH host"
+msgstr "SSH ਹੋਸਟ ਨਾਲ ਲਾਗ ਕਰਨ ਦੌਰਾਨ ਸਮਾਂ ਸਮਾਪਤ"
+
+#: ../vinagre/vinagre-ssh.c:191
+msgid "Unable to spawn ssh program"
+msgstr "ssh ਪਰੋਗਰਾਮ ਸਵੈਪ ਕਰਨ ਲਈ ਅਸਮਰੱਥ"
+
+#: ../vinagre/vinagre-ssh.c:208
+#, c-format
+msgid "Unable to spawn ssh program: %s"
+msgstr "ssh ਪਰੋਗਰਾਮ ਸਵੈਪ ਕਰਨ ਲਈ ਅਸਮਰੱਥ: %s"
+
+#: ../vinagre/vinagre-ssh.c:424
+msgid "Timed out when logging in"
+msgstr "ਲਾਗ ਇਨ ਕਰਨ ਦੌਰਾਨ ਸਮਾਂ ਸਮਾਪਤ"
+
+#: ../vinagre/vinagre-ssh.c:454 ../vinagre/vinagre-ssh.c:596
+#: ../vinagre/vinagre-ssh.c:692
+msgid "Permission denied"
+msgstr "ਅਧਿਕਾਰ ਪਾਬੰਦੀ"
+
+#: ../vinagre/vinagre-ssh.c:513
+msgid "Password dialog canceled"
+msgstr "ਪਾਸਵਰਡ ਡਾਈਲਾਗ ਰੱਦ ਕੀਤਾ ਗਿਆ"
+
+#: ../vinagre/vinagre-ssh.c:530
+msgid "Could not send password"
+msgstr "ਪਾਸਵਰਡ ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
+
+#: ../vinagre/vinagre-ssh.c:538
+msgid "Log In Anyway"
+msgstr "ਕਿਵੇਂ ਵੀ ਲਾਗਇਨ"
+
+#: ../vinagre/vinagre-ssh.c:538
+msgid "Cancel Login"
+msgstr "ਲਾਗਇਨ ਰੱਦ ਕਰੋ"
+
+#: ../vinagre/vinagre-ssh.c:547
+#, c-format
+msgid ""
+"The identity of the remote host (%s) is unknown.\n"
+"This happens when you log in to a host the first time.\n"
+"\n"
+"The identity sent by the remote host is %s. If you want to be absolutely "
+"sure it is safe to continue, contact the system administrator."
+msgstr ""
+"ਰਿਮੋਟ ਹੋਸਟ (%s) ਦੀ ਪਛਾਣ ਅਣਜਾਣ ਹੈ।\n"
+"ਇਹ ਤਦ ਹੁੰਦਾ ਹੈ, ਜਦੋਂ ਤੁਸੀਂ ਹੋਸਟ ਉੱਤੇ ਪਹਿਲੀ ਵਾਰ ਲਾਗਇਨ ਕਰਦੇ ਹੋ।\n"
+"\n"
+"ਰਿਮੋਟ ਹੋਸਟ ਵਲੋਂ ਭੇਜੀ ਪਛਾਣ %s ਹੈ। ਜੇ ਤੁਸੀਂ ਇਹ ਪੂਰੀ ਤਰ੍ਹਾਂ ਯਕੀਨੀ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ "
+"ਹੋ ਕਿ ਜਾਰੀ "
+"ਰੱਖਣਾ ਸੁਰੱਖਿਅਤ ਹੈ ਤਾਂ ਸਿਸਟਮ ਪਰਸ਼ਾਸ਼ਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
+
+#: ../vinagre/vinagre-ssh.c:565
+msgid "Login dialog canceled"
+msgstr "ਲਾਗਇਣ ਡਾਈਲਾਗ ਰੱਦ ਕੀਤਾ ਗਿਆ"
+
+#: ../vinagre/vinagre-ssh.c:586
+msgid "Can't send host identity confirmation"
+msgstr "ਹੋਸਟ ਪਛਾਣ ਪੁਸ਼ਟੀ ਭੇਜੀ ਨਹੀਂ ਜਾ ਸਕਦੀ"
+
+#. Login succeed, save password in keyring
+#: ../vinagre/vinagre-ssh.c:605
+#, c-format
+msgid "Secure shell password: %s"
+msgstr "ਸੁਰੱਖਿਅਤ ਸ਼ੈੱਲ ਪਾਸਵਰਡ: %s"
+
+#: ../vinagre/vinagre-ssh.c:618 ../vinagre/vinagre-tab.c:798
+msgid "Error saving the credentials on the keyring."
+msgstr "ਕੀਰਿੰਗ ਵਿੱਚ ਸਨਦ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।"
+
+#: ../vinagre/vinagre-ssh.c:700
+msgid "Hostname not known"
+msgstr "ਹੋਸਟ ਨਾਂ ਪਤਾ ਨਹੀਂ"
+
+#: ../vinagre/vinagre-ssh.c:708
+msgid "No route to host"
+msgstr "ਹੋਸਟ ਲਈ ਕੋਈ ਰਾਹ ਨਹੀਂ"
+
+#: ../vinagre/vinagre-ssh.c:716
+msgid "Connection refused by server"
+msgstr "ਸਰਵਰ ਵਲੋਂ ਕੁਨੈਕਸ਼ਨ ਤੋਂ ਇਨਕਾਰ"
+
+#: ../vinagre/vinagre-ssh.c:724
+msgid "Host key verification failed"
+msgstr "ਹੋਸਟ ਕੁੰਜੀ ਜਾਂਚ ਫੇਲ੍ਹ ਹੋਈ"
+
+#: ../vinagre/vinagre-ssh.c:764
+msgid "Unable to find a valid SSH program"
+msgstr "ਢੁੱਕਵਾਂ SSH ਪਰੋਗਰਾਮ ਲੱਭਣ ਲਈ ਅਸਮਰੱਥ"
+
+#: ../vinagre/vinagre-tab.c:354
+msgid "Disconnect"
+msgstr "ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
+
+#: ../vinagre/vinagre-tab.c:375
+msgid "Leave fullscreen"
+msgstr "ਪੂਰੀ ਸਕਰੀਨ ਛੱਡੋ"
+
+#: ../vinagre/vinagre-tab.c:537
+msgid "Error saving recent connection."
+msgstr "ਤਾਜ਼ਾ ਕੁਨੈਕਸ਼ਨ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ"
+
+#: ../vinagre/vinagre-tab.c:781
+#, c-format
+msgid "Remote desktop password for %s"
+msgstr "%s ਲਈ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਪਾਸਵਰਡ"
+
+#: ../vinagre/vinagre-tab.c:897
+msgid "Could not get a screenshot of the connection."
+msgstr "ਕੁਨੈਕਸ਼ਨ ਲਈ ਸਕਰੀਨ-ਸ਼ਾਟ ਲਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।"
+
+#: ../vinagre/vinagre-tab.c:902
+msgid "Save Screenshot"
+msgstr "ਸਕਰੀਨ-ਸ਼ਾਟ ਸੰਭਾਲੋ"
+
+#: ../vinagre/vinagre-tab.c:916
+#, c-format
+msgid "Screenshot of %s at %s"
+msgstr "%s ਦਾ %s ਉੱਤੇ ਸਕਰੀਨਸ਼ਾਟ"
+
+#: ../vinagre/vinagre-tab.c:970
+msgid "Error saving screenshot"
+msgstr "ਸਕਰੀਨਸ਼ਾਟ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ"
+
+#: ../vinagre/vinagre-tube-handler.c:233
+#, c-format
+msgid "Impossible to get service property: %s"
+msgstr "ਸਰਵਿਸ ਵਿਸ਼ੇਸ਼ਤਾ ਲੈਣੀ ਅਸੰਭਵ: %s"
+
+#: ../vinagre/vinagre-tube-handler.c:300
+#, c-format
+msgid "Impossible to create the connection: %s"
+msgstr "%s: ਕੁਨੈਕਸ਼ਨ ਬਣਾਉਣ ਅਸੰਭਵ"
+
+#: ../vinagre/vinagre-tube-handler.c:339
+#, c-format
+msgid "Impossible to accept the stream tube: %s"
+msgstr "%s: ਸਟਰੀਮ ਟਿਊਬ ਮਨਜ਼ੂਰ ਕਰਨੀ ਅਸੰਭਵ"
+
+#. Translators: this is an error message when we fail to get the name of an empathy/telepathy buddy. %s will be replaced by the actual error message.
+#: ../vinagre/vinagre-tube-handler.c:477
+#, c-format
+msgid "Impossible to get the contact name: %s"
+msgstr "%s: ਸੰਪਰਕ ਨਾਂ ਲੈਣਾ ਅਸੰਭਵ"
+
+#: ../vinagre/vinagre-tube-handler.c:514
+#, c-format
+msgid "Impossible to get the avatar: %s"
+msgstr "%s: ਅਵਤਾਰ ਲੈਣਾ ਅਸੰਭਵ"
+
+#: ../vinagre/vinagre-tube-handler.c:535
+#, c-format
+msgid "%s wants to share their desktop with you."
+msgstr "%s ਤੁਹਾਡੇ ਨਾਲ ਆਪਣਾ ਡੈਸਕਟਾਪ ਸਾਂਝਾ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹੈ।"
+
+#: ../vinagre/vinagre-tube-handler.c:540
+msgid "Desktop sharing invitation"
+msgstr "ਡੈਸਕਟਾਪ ਸਾਂਝ ਸੱਦਾ"
+
+#. Toplevel
+#: ../vinagre/vinagre-ui.h:33
+msgid "_Remote"
+msgstr "ਰਿਮੋਟ(_R)"
+
+#: ../vinagre/vinagre-ui.h:34
+msgid "_Edit"
+msgstr "ਸੋਧ(_E)"
+
+#: ../vinagre/vinagre-ui.h:35
+msgid "_View"
+msgstr "ਵੇਖੋ(_V)"
+
+#: ../vinagre/vinagre-ui.h:36
+msgid "_Bookmarks"
+msgstr "ਬੁੱਕਮਾਰਕ(_B)"
+
+#: ../vinagre/vinagre-ui.h:37
+msgid "_Help"
+msgstr "ਮੱਦਦ(_H)"
+
+#: ../vinagre/vinagre-ui.h:41
+msgid "Connect to a remote desktop"
+msgstr " ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਨਾਲ ਕੁਨੈਕਟ ਕਰੋ"
+
+#: ../vinagre/vinagre-ui.h:43
+msgid "Open a .VNC file"
+msgstr ".VNC ਫਾਇਲ ਖੋਲ੍ਹੋ"
+
+#. Translators: "Reverse" here is an adjective, not a verb.
+#: ../vinagre/vinagre-ui.h:45
+msgid "_Reverse Connections…"
+msgstr "ਉਲਟ ਕੁਨੈਕਸ਼ਨ(_R)…"
+
+#: ../vinagre/vinagre-ui.h:45
+msgid "Configure incoming VNC connections"
+msgstr "ਆ ਰਹੇ VNC ਕੁਨੈਕਸ਼ਨ ਸੰਰਚਨਾ"
+
+#: ../vinagre/vinagre-ui.h:48
+msgid "Quit the program"
+msgstr "ਪਰੋਗਰਾਮ ਬੰਦ ਕਰੋ"
+
+#. Help menu
+#: ../vinagre/vinagre-ui.h:51
+msgid "_Contents"
+msgstr "ਸਮੱਗਰੀ(_C)"
+
+#: ../vinagre/vinagre-ui.h:52
+msgid "Open the Vinagre manual"
+msgstr "ਵੀਨਾਗਰੇ ਮੇਨੂਅਲ ਖੋਲ੍ਹੋ"
+
+#: ../vinagre/vinagre-ui.h:54
+msgid "About this application"
+msgstr "ਇਸ ਐਪਲੀਕੇਸ਼ਨ ਬਾਰੇ"
+
+#: ../vinagre/vinagre-ui.h:59
+msgid "_Keyboard shortcuts"
+msgstr "ਕੀ-ਬੋਰਡ ਸ਼ਾਰਟਕੱਟ(_K)"
+
+#: ../vinagre/vinagre-ui.h:60
+msgid "Enable keyboard shurtcuts"
+msgstr "ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਚਾਲੂ"
+
+#: ../vinagre/vinagre-ui.h:62
+msgid "_Toolbar"
+msgstr "ਟੂਲਬਾਰ(_T)"
+
+#: ../vinagre/vinagre-ui.h:63
+msgid "Show or hide the toolbar"
+msgstr "ਟੂਲਬਾਰ ਵੇਖੋ ਜਾਂ ਓਹਲੇ ਕਰੋ"
+
+#: ../vinagre/vinagre-ui.h:66
+msgid "_Statusbar"
+msgstr "ਹਾਲਤ-ਬਾਰ(_S)"
+
+#: ../vinagre/vinagre-ui.h:67
+msgid "Show or hide the statusbar"
+msgstr "ਹਾਲਤ-ਬਾਰ ਵੇਖੋ ਜਾਂ ਓਹਲੇ"
+
+#: ../vinagre/vinagre-ui.h:75
+msgid "Disconnect the current connection"
+msgstr "ਮੌਜੂਦਾ ਕੁਨੈਕਸ਼ਨ ਨੂੰ ਬੰਦ ਕਰੋ"
+
+#: ../vinagre/vinagre-ui.h:76
+msgid "Disconnect All"
+msgstr "ਸਭ ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
+
+#: ../vinagre/vinagre-ui.h:77
+msgid "Disconnect all connections"
+msgstr "ਸਭ ਐਕਟਿਵ ਕੁਨੈਕਸ਼ਨ ਬੰਦ ਕਰੋ"
+
+#. Bookmarks menu
+#: ../vinagre/vinagre-ui.h:80
+msgid "_Add Bookmark"
+msgstr "ਬੁੱਕਮਾਰਕ ਸ਼ਾਮਲ(_A)"
+
+#: ../vinagre/vinagre-ui.h:81
+msgid "Add the current connection to your bookmarks"
+msgstr "ਮੌਜੂਦਾ ਕੁਨੈਕਸ਼ਨ ਨੂੰ ਆਪਣੇ ਬੁੱਕਮਾਰਕ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ"
+
+#. Remote menu
+#: ../vinagre/vinagre-ui.h:88
+msgid "_Take Screenshot"
+msgstr "ਸਕਰੀਨਸ਼ਾਟ ਲਵੋ(_T)"
+
+#: ../vinagre/vinagre-ui.h:89
+msgid "Take a screenshot of the current remote desktop"
+msgstr "ਮੌਜੂਦਾ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦਾ ਸਕੀਰਨਸ਼ਾਟ ਲਵੋ"
+
+#: ../vinagre/vinagre-ui.h:93
+msgid "View the current remote desktop in fullscreen mode"
+msgstr "ਮੌਜੂਦਾ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਨੂੰ ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਵੇਖੋ"
+
+#: ../vinagre/vinagre-utils.vala:40
+msgid "An error occurred"
+msgstr "ਇੱਕ ਗਲਤੀ ਆਈ ਹੈ"
+
+#: ../vinagre/vinagre-utils.vala:84
+msgid "Vinagre failed to open a UI file, with the error message:"
+msgstr "ਵੀਨਾਗਰੇ UI ਫਾਇਲ ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ ਹੈ, ਗਲਤੀ ਸੁਨੇਹਾ ਸੀ:"
+
+#: ../vinagre/vinagre-utils.vala:85
+msgid "Please check your installation."
+msgstr "ਆਪਣੀ ਇੰਸਟਾਲੇਸ਼ਨ ਜਾਂਚੋ।"
+
+#: ../vinagre/vinagre-utils.vala:89
+msgid "Error loading UI file"
+msgstr "UI ਫਾਇਲ ਲੋਡ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ"
+
+#. Translators: %s is a protocol, like VNC or SSH
+#: ../vinagre/vinagre-utils.vala:112
+#, c-format
+msgid "%s authentication is required"
+msgstr "%s ਪਰਮਾਣਕਿਤਾ ਦੀ ਲੋੜ ਹੈ"
+
+#: ../vinagre/vinagre-utils.vala:193
+msgid "Error showing help"
+msgstr "ਮੱਦਦ ਵੇਖਾਉਣ ਦੌਰਾਨ ਗਲਤੀ"
+
+#: ../vinagre/vinagre-window.c:390
+#, c-format
+msgid "Could not merge UI XML file: %s"
+msgstr "UI XML ਫਾਇਲ ਮਰਜ਼ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ: %s"
+
+#: ../vinagre/vinagre-window.c:421
+msgid "_Recent Connections"
+msgstr "ਤਾਜ਼ਾ ਕੁਨੈਕਸ਼ਨ(_R)"
+
+#. Translators: This is server:port, a statusbar tooltip when mouse is over a bookmark item on menu
+#: ../vinagre/vinagre-window.c:579
+#, c-format
+msgid "Open %s:%d"
+msgstr "%s ਖੁੱਲ੍ਹੇ:%d"
+
+#: ../vinagre/vinagre-window.c:773
+msgid ""
+"Vinagre disables keyboard shortcuts by default, so that any keyboard "
+"shortcuts are sent to the remote desktop.\n"
+"\n"
+"This message will appear only once."
+msgstr ""
+"ਵੀਨਾਗਰੇ ਡਿਫਾਲਟ ਰੂਪ ਵਿੱਚ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਨੂੰ ਬੰਦ ਕਰਕੇ ਰੱਖਦਾ ਹੈ ਤਾਂ ਕਿ ਕੋਈ ਵੀ "
+"ਸ਼ਾਰਟਕੱਟ ਰਿਮੋਟ "
+"ਡੈਸਕਟਾਪ ਨੂੰ ਭੇਜਿਆ ਜਾ ਸਕੇ।\n"
+"\n"
+"ਇਹ ਸੁਨੇਹਾ ਕੇਵਲ ਇੱਕ ਵਾਰ ਵੇਖਾਈ ਦੇਵੇਗਾ।"
+
+#: ../vinagre/vinagre-window.c:779
+msgid "Enable shortcuts"
+msgstr "ਸ਼ਾਰਟਕੱਟ ਚਾਲੂ ਕਰੋ"
+
+#: ../vinagre/vinagre-window.c:792 ../vinagre/vinagre-window.c:798
+#, c-format
+msgid "Error while creating the file %s: %s"
+msgstr "ਫਾਇਲ %s ਬਣਾਉਣ ਦੌਰਾਨ ਗਲਤੀ: %s"
+
+#~ msgid "Error while executing xfreerdp"
+#~ msgstr "xfreerdp ਚਲਾਉਣ ਦੌਰਾਨ ਗਲਤੀ"
+
+#~ msgid "Enter a valid hostname or IP address"
+#~ msgstr "ਠੀਕ ਹੋਸਟ ਨਾਂ ਜਾਂ IP ਐਡਰੈਸ ਦਿਉ"
+
+#~| msgid "Adjusts the window to the remote desktop's size"
+#~ msgid "Always show tabs in the remote desktop display area"
+#~ msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਡਿਸਪਲੇਅ ਖੇਤਰ ਵਿੱਚ ਟੈਬਾਂ ਹਮੇਸ਼ਾਂ ਵੇਖਾਓ"
+
+#~| msgid ""
+#~| "This option enables menu accelerators and keyboard shortcuts. For more "
+#~| "info on why you may want to disable them, check the documentation."
+#~ msgid ""
+#~ "Enables menu accelerators and keyboard shortcuts. For more info on why "
+#~ "you may want to disable them, check the documentation"
+#~ msgstr ""
+#~ "ਮੇਨੂ ਐਕਸਲੇਟਰ ਅਤੇ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਚਾਲੂ ਕਰਦੀ ਹੈ। ਤੁਸੀਂ ਇਹਨਾਂ ਨੂੰ ਬੰਦ ਕਿਉਂ ਕਰਨਾ ਚਾਹੋਗੇ, ਇਸ ਬਾਰੇ "
+#~ "ਜਾਣਕਾਰੀ ਲਈ ਡੌਕੂਮੈਂਟ ਵੇਖੋ।"
+
+#~ msgid "Interface"
+#~ msgstr "ਇੰਟਰਫੇਸ"
+
+#~ msgid "Preferences"
+#~ msgstr "ਪਸੰਦ"
+
+#~ msgid ""
+#~ "This option enables menu accelerators and keyboard shortcuts. For more "
+#~ "info on why you may want to disable them, check the documentation."
+#~ msgstr ""
+#~ "ਇਹ ਚੋਣ ਮੇਨੂ ਐਕਸਲੇਟਰ ਅਤੇ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਚਾਲੂ ਕਰਦੀ ਹੈ। ਤੁਸੀਂ ਇਹਨਾਂ ਨੂੰ ਬੰਦ ਕਿਉਂ ਕਰਨਾ ਚਾਹੋਗੇ, "
+#~ "ਇਸ ਬਾਰੇ ਜਾਣਕਾਰੀ ਲਈ ਡੌਕੂਮੈਂਟ ਵੇਖੋ।"
+
+#~ msgid "_Always show tabs"
+#~ msgstr "ਹਮੇਸ਼ਾ ਟੈਬਾਂ ਵੇਖੋ(_A)"
+
+#~ msgid "Connecting..."
+#~ msgstr "ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+
+#~ msgid "Edit the application preferences"
+#~ msgstr "ਐਪਲੀਕੇਸ਼ਨ ਪਸੰਦ ਸੋਧੋ"
+
+#~ msgid "About menu accelerators and keyboard shortcuts"
+#~ msgstr "ਮੇਨੂ ਐਕਸਲੇਟਰ ਅਤੇ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਬਾਰੇ"
+
+#~| msgid ""
+#~| "Vinagre comes with menu accelerators and keyboard shortcuts disabled by "
+#~| "default. The reason is to avoid the keys to be intercepted by the "
+#~| "program, and allow them to be sent to the remote machine.\n"
+#~| "\n"
+#~| "You can change this behavior through the preferences dialog. For more "
+#~| "information, check the documentation.\n"
+#~| "\n"
+#~| "This message will appear only once."
+#~ msgid ""
+#~ "Vinagre comes with menu accelerators and keyboard shortcuts disabled by "
+#~ "default. The reason is to avoid the keys from being intercepted by the "
+#~ "program, and allow them to be sent to the remote desktop.\n"
+#~ "\n"
+#~ "You can change this behavior through the preferences dialog. For more "
+#~ "information, check the documentation.\n"
+#~ "\n"
+#~ "This message will appear only once."
+#~ msgstr ""
+#~ "ਵੀਨਾਗਰੇ ਵਿੱਚ ਡਿਫਾਲਟ ਰੂਪ ਵਿੱਚ ਮੇਨੂ ਐਕਸਲੇਟਰ ਅਤੇ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਬੰਦ ਹੁੰਦੇ ਹਨ। ਬੰਦ ਕਰਨ ਦਾ "
+#~ "ਕਾਰਨ ਹੈ ਕਿ ਸਵਿੱਚਾਂ ਦੀ ਵਰਤੋਂ ਪਰੋਗਰਾਮ ਨਾ ਕਰੇ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਉੱਤੇ ਭੇਜ ਸਕੇ।\n"
+#~ "\n"
+#~ "ਤੁਸੀਂ ਇਹ ਰਵੱਈਆ ਪਸੰਦ ਡਾਈਲਾਗ ਵਿੱਚ ਜਾ ਕੇ ਬਦਲ ਸਕਦੇ ਹੋ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਡੌਕੂਮੈਂਟੇਸ਼ਨ ਨੂੰ ਚੈੱਕ ਕਰੋ।\n"
+#~ "\n"
+#~ "ਇਹ ਸੁਨੇਹਾ ਕੇਵਲ ਇੱਕ ਵਾਰ ਹੀ ਵੇਖਾਇਆ ਜਾਵੇਗਾ।"
+
+#~ msgid "_About"
+#~ msgstr "ਇਸ ਬਾਰੇ(_A)"
+
+#~ msgid "Which machine do you want to connect to?"
+#~ msgstr "ਕਿਸ ਮਸ਼ੀਨ ਨਾਲ ਤੁਸੀਂ ਕੁਨੈਕਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#~ msgid "RDP support"
+#~ msgstr "RDP ਸਹਿਯੋਗ"
+
+#~ msgid "Access MS Windows machines"
+#~ msgstr "MS ਵਿੰਡੋਜ਼ ਮਸ਼ੀਨਾਂ ਵਰਤੋਂ"
+
+#~ msgid "SSH support"
+#~ msgstr "SSH ਸਹਿਯੋਗ"
+
+#~ msgid "_Depth Color:"
+#~ msgstr "ਰੰਗ ਡੂੰਘਾਈ(_D):"
+
+#~ msgid "VNC support"
+#~ msgstr "VNC ਸਹਿਯੋਗ"
+
+#~ msgid "Allows reverse VNC connections"
+#~ msgstr "ਉਲਟ VNC ਕੁਨੈਕਸ਼ਨ ਮਨਜ਼ੂਰ"
+
+#~ msgid "Reverse VNC"
+#~ msgstr "ਉਲਟ VNC"
+
+#~ msgid "_Reverse Connections..."
+#~ msgstr "ਉਲਟ ਕੁਨੈਕਸ਼ਨ(_R)..."
+
+#~ msgid "Spice"
+#~ msgstr "Spice"
+
+#~| msgid "SSH support"
+#~ msgid "Spice support"
+#~ msgstr "ਸਪਾਈਸ ਸਹਿਯੋਗ"
+
+#~ msgid ""
+#~ "Changes Instant Messenger status to busy when window toggles to "
+#~ "fullscreen (works with Empathy)"
+#~ msgstr ""
+#~ "ਤੁਰੰਤ ਮੈਸੈਂਜ਼ਰ ਹਾਲਤ ਨੂੰ ਰੁੱਝਿਆ ਬਣਾਉ, ਜਦੋਂ ਵਿੰਡੋ ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਜਾਵੇ (ਇੰਪੈਥੀ ਨਾਲ ਕੰਮ ਕਰਦਾ ਹੈ)"
+
+#~ msgid "IM Status"
+#~ msgstr "IM ਹਾਲਤ"
+
+#~ msgid "Could not communicate to Telepathy. IM Status plugin will not work."
+#~ msgstr "ਟੈਲੀਪੈਥੀ ਨਾਲ ਕਮਿਊਨੀਕੇਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। IM ਹਾਲਤ ਪਲੱਗਇਨ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ।"
+
+#~ msgid "A menu to quickly access remote machines"
+#~ msgstr "ਰਿਮੋਟ ਮਸ਼ੀਨ ਨਾਲ ਛੇਤੀ ਨਾਲ ਕੁਨੈਕਟ ਵਾਸਤੇ ਮੇਨੂ"
+
+#~ msgid "Vinagre Applet Factory"
+#~ msgstr "ਵੀਨਾਗਰੇ ਐਪਲਿਟ ਫੈਕਟਰੀ"
+
+#~ msgid "Could not run vinagre:"
+#~ msgstr "ਵੀਨਾਗਰੇ ਚਲਾਇਆ ਨਹੀਂ ਜਾ ਸਕਿਆ:"
+
+#~ msgid "Open Remote Desktop Viewer"
+#~ msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਦਰਸ਼ਕ ਖੋਲ੍ਹੋ"
+
+#~ msgid "Access your bookmarks"
+#~ msgstr "ਆਪਣੇ ਬੁੱਕਮਾਰਕ ਵਰਤੋਂ"
+
+#~ msgid "_New Folder"
+#~ msgstr "ਨਵਾਂ ਫੋਲਡਰ(_N)"
+
+#~ msgid "Create a new folder"
+#~ msgstr "ਇੱਕ ਨਵਾਂ ਫੋਲਡਰ ਬਣਾਓ"
+
+#~ msgid "_Open bookmark"
+#~ msgstr "ਬੁੱਕਮਾਰਕ ਖੋਲ੍ਹੋ(_O)"
+
+#~ msgid "Connect to this machine"
+#~ msgstr "ਇਸ ਮਸ਼ੀਨ ਨਾਲ ਕੁਨੈਕਟ ਕਰੋ"
+
+#~ msgid "_Edit bookmark"
+#~ msgstr "ਬੁੱਕਮਾਰਕ ਸੋਧ(_E)"
+
+#~ msgid "Edit the details of selected bookmark"
+#~ msgstr "ਚੁਣੇ ਬੁੱਕਮਾਰਕ ਲਈ ਵੇਰਵੇ ਲਈ ਸੋਧੋ"
+
+#~ msgid "_Remove from bookmarks"
+#~ msgstr "ਬੁੱਕਮਾਰਕ ਤੋਂ ਹਟਾਓ(_R)"
+
+#~ msgid "Remove current selected connection from bookmarks"
+#~ msgstr "ਮੌਜੂਦਾ ਚੁਣਿਆ ਕੁਨੈਕਸ਼ਨ ਬੁੱਕਮਾਰਕ ਵਿੱਚੋਂ ਹਟਾਓ"
+
+#~ msgid "Invalid operation"
+#~ msgstr "ਅਢੁੱਕਵਾਂ ਓਪਰੇਸ਼ਨ"
+
+#~ msgid "Data received from drag&drop operation is invalid."
+#~ msgstr "ਚੁੱਕਣ ਅਤੇ ਸੁੱਟਣ ਓਪਰੇਸ਼ਨ ਤੋਂ ਮਿਲਿਆ ਡਾਟਾ ਅਢੁੱਕਵਾਂ ਹੈ।"
+
+#~ msgid "Hide panel"
+#~ msgstr "ਬਾਹੀ ਓਹਲੇ"
+
+#~ msgid "Hosts nearby"
+#~ msgstr "ਨੇੜਲੇ ਹੋਸਟ"
+
+#~ msgid "Plugin Manager"
+#~ msgstr "ਪਲੱਗਇਨ ਮੈਨੇਜਰ"
+
+#~ msgid "_Machine"
+#~ msgstr "ਮਸ਼ੀਨ(_M)"
+
+#~ msgid "_Plugins"
+#~ msgstr "ਪਲੱਗਇਨ(_P)"
+
+#~ msgid "Select plugins"
+#~ msgstr "ਪਲੱਗਇਨ ਚੁਣੋ"
+
+#~ msgid "Side _Panel"
+#~ msgstr "ਬਾਹੀ(_P)"
+
+#~ msgid "Show or hide the side panel"
+#~ msgstr "ਬਾਹੀ ਵੇਖੋ ਜਾਂ ਓਹਲੇ ਕਰੋ"
+
+#~ msgid "C_lose All"
+#~ msgstr "ਸਭ ਬੰਦ ਕਰੋ(_l)"
+
+#~ msgid ""
+#~ "A plugin tried to open an UI file but did not succeed, with the error "
+#~ "message:"
+#~ msgstr "ਪਲੱਗਇਨ ਨੇ UI ਫਾਇਲ ਖੋਲ੍ਹਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ, ਪਰ ਸਫ਼ਲ ਨਹੀਂ ਹੋਈ, ਗਲਤੀ ਸੁਨੇਹਾ ਸੀ:"
+
+#~ msgid ""
+#~ "The program tried to open an UI file but did not succeed, with the error "
+#~ "message:"
+#~ msgstr "ਪਰੋਗਰਾਮ ਨੇ UI ਫਾਇਲ ਖੋਲ੍ਹਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ, ਪਰ ਸਫ਼ਲ ਨਹੀਂ ਹੋਇਆ, ਗਲਤੀ ਸੁਨੇਹਾ ਸੀ:"
+
+#~ msgid ""
+#~ "Vinagre is free software; you can redistribute it and/or modify it under "
+#~ "the terms of the GNU General Public License as published by the Free "
+#~ "Software Foundation; either version 2 of the License, or (at your option) "
+#~ "any later version."
+#~ msgstr ""
+#~ "ਵੀਨਾਗਰੇ ਇੱਕ ਮੁਫਤ ਸਾਫਟਵੇਅਰ ਹੈ, ਜਿਸ ਨੂੰ ਤੁਸੀਂ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ ਜਿਸ ਨੂੰ ਫਰੀ ਸਾਫਟਵੇਅਰ "
+#~ "ਫਾਊਨਡੇਸ਼ਨ ਨੇ ਤਿਆਰ ਕੀਤਾ ਹੈ, ਦੇ ਵਰਜਨ ੨ ਜਾਂ ਨਵੇਂ ਦੀਆਂ ਸ਼ਰਤਾਂ (ਉਹ ਤੁਹਾਡੀ ਆਪਣੀ ਮਰਜ਼ੀ ਹੈ) "
+#~ "ਅਧੀਨ ਵੰਡ ਅਤੇ/ਜਾਂ ਸੋਧ ਸਕਦੇ ਹੋ"
+
+#~ msgid ""
+#~ "Vinagre is distributed in the hope that it will be useful, but WITHOUT "
+#~ "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+#~ "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+#~ "more details."
+#~ msgstr ""
+#~ "ਵੀਨਾਗਰੇ ਨੂੰ ਇਹ ਮੰਨ ਕੇ ਵੰਡਿਆ ਜਾ ਰਿਹਾ ਹੈ ਕਿ ਇਹ ਫਾਇਦੇਮੰਦ ਰਹੇਗਾ, ਪਰ ਇਸ ਦੀ ਕੋਈ ਵਾਰੰਟੀ ਨਹੀਂ "
+#~ "ਲਈ ਜਾ ਰਹੀ ਹੈ, ਕਿਸੇ ਖਾਸ ਕੰਮ ਲਈ ਅਨੁਕੂਲ ਹੋਣ ਜਾਂ ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਦੀ ਵੀ ਕੋਈ ਗਾਰੰਟੀ ਨਹੀਂ "
+#~ "ਹੈ।  ਹੋਰ ਵੇਰਵੇ ਲਈ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਇਸੈਂਸ ਨੂੰ ਪੜ੍ਹੋ।"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program. If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "ਤੁਸੀਂ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ ਦੀ ਕਾਪੀ ਇਸ ਪਰੋਗਰਾਮ ਨਾਲ ਲੈ ਸਕਦੇ ਹੋ। ਜੇ ਨਹੀਂ ਤਾਂ <http://"
+#~ "www.gnu.org/licenses/> ਵੇਖੋ।"
+
+#~ msgid "Vinagre Website"
+#~ msgstr "ਵੀਨਾਗਰੇ ਵੈੱਬਸਾਈਟ"
+
+#~ msgid "Active plugins"
+#~ msgstr "ਐਕਟਿਵ ਪਲੱਗਇਨ"
+
+#~ msgid ""
+#~ "List of active plugins. It contains the \"Location\" of the active "
+#~ "plugins. See the .vinagre-plugin file for obtaining the \"Location\" of a "
+#~ "given plugin."
+#~ msgstr ""
+#~ "ਐਕਟਿਵ ਪਲੱਗਇਨ ਦੀ ਲਿਸਟ ਹੈ। ਇਹ ਐਕਟਿਵ ਪਲੱਗਇਨ ਦਾ \"ਟਿਕਾਣਾ\" ਰੱਖਦੀ ਹੈ। ਦਿੱਤੀ ਪਲੱਗਇਨ ਦਾ "
+#~ "ਟਿਕਾਣਾ ਲੈਣ ਲਈ .vinagre-plugin ਫਾਇਲ ਵੇਖੋ।"
+
+#~ msgid "The handler for \"vnc://\" URLs"
+#~ msgstr "\"vnc://\" URL ਲਈ ਹੈਂਡਲਰ"
+
+#~ msgid "Incoming VNC connection arrived but there is no active window"
+#~ msgstr "ਆਉਣ ਵਾਲਾ VNC ਕੁਨੈਕਸ਼ਨ ਆ ਗਿਆ ਪਰ ਕੋਈ ਵੀ ਐਕਟਿਵ ਵਿੰਡੋ ਨਹੀਂ ਹੈ"
+
+#~ msgid ""
+#~ "Run 'vinagre --help' to see a full list of available command line options"
+#~ msgstr "ਪੂਰੀਆਂ ਉਪਲੱਬਧ ਕਮਾਂਡ ਲਾਈਨ ਚੋਣਾਂ ਵੇਖਣ ਲਈ 'vinagre --help' ਵੇਖੋ"
+
+#~ msgid "Plugin %s has already registered a browser for service %s."
+#~ msgstr "ਪਲੱਗਇਨ %s ਪਹਿਲਾਂ ਹੀ ਸਰਵਿਸ %s ਲਈ ਬਰਾਊਜ਼ਰ ਨਾਲ ਰਜਿਸਟਰ ਹੈ।"
+
+#~ msgid "Plugin"
+#~ msgstr "ਪਲੱਗਇਨ"
+
+#~ msgid "Enabled"
+#~ msgstr "ਚਾਲੂ"
+
+#~ msgid "C_onfigure"
+#~ msgstr "ਸੰਰਚਨਾ(_o)"
+
+#~ msgid "A_ctivate"
+#~ msgstr "ਐਕਟੀਵੇਟ(_c)"
+
+#~ msgid "Ac_tivate All"
+#~ msgstr "ਸਭ ਐਕਟੀਵੇਟ(_t)"
+
+#~ msgid "_Deactivate All"
+#~ msgstr "ਸਭ ਡੀ-ਐਕਟੀਵੇਟ(_D)"
+
+#~ msgid "_About Plugin"
+#~ msgstr "ਪਲੱਗਇਨ ਬਾਰੇ(_A)"
+
+#~ msgid "C_onfigure Plugin"
+#~ msgstr "ਪਲੱਗਇਨ ਸੰਰਚਨਾ(_o)"
+
+#~| msgid "<i><small>All fields above are mandatory</small></i>"
+#~ msgid "All fields above are mandatory"
+#~ msgstr "ਸਭ ਉੱਤੇ ਦਿੱਤੇ ਖੇਤਰ ਲਾਜ਼ਮੀ ਹਨ"
+
+#~ msgid "Could not merge vinagre-ui.xml: %s"
+#~ msgstr "vinagre-ui.xml ਪਰਵਾਸ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ: %s"
+
+#~ msgid "<b>Connection</b>"
+#~ msgstr "<b>ਕੁਨੈਕਸ਼ਨ</b>"
+
+#~ msgid "<b>Folder</b>"
+#~ msgstr "<b>ਫੋਲਡਰ</b>"
+
+#~ msgid "host or host:display or host::port"
+#~ msgstr "host ਜਾਂ host:display ਜਾਂ host::port"
+
+#~ msgid "Supported formats"
+#~ msgstr "ਸਹਾਇਕ ਫਾਰਮੈਟ"
+
+#~ msgid "Choose a VNC Server"
+#~ msgstr "ਇੱਕ VNC ਸਰਵਰ ਚੁਣੋ"
+
+#~ msgid "Could not find the host address in the file."
+#~ msgstr "ਫਾਇਲ ਵਿੱਚ ਹੋਸਟ ਐਡਰੈੱਸ ਨਹੀਂ ਲੱਭਿਆ ਜਾ ਸਕਿਆ।"
+
+#~ msgid "Opens a .vnc file"
+#~ msgstr ".vnc ਫਾਇਲ ਖੋਲ੍ਹੋ"
+
+#~ msgid "- VNC Client for GNOME"
+#~ msgstr "- ਗਨੋਮ ਲਈ VNC ਕਲਾਇਟ"
+
+#~ msgid "Minimize window"
+#~ msgstr "ਵਿੰਡੋ ਘੱਟੋ-ਘੱਟ"
+
+#~ msgid "_Read only"
+#~ msgstr "ਕੇਵਲ ਪੜ੍ਹਨ ਲਈ(_R)"
+
+#~ msgid "Press Ctrl+Alt to release the cursor"
+#~ msgstr "ਕਰਸਰ ਛੱਡਣ ਵਾਸਤੇ Ctrl+Alt ਦੱਬੋ"
