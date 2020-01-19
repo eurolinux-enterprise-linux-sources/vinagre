@@ -1,0 +1,123 @@
+--- vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
++++ vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
+@@ -72,6 +72,9 @@ struct _VinagreRdpTabPrivate
+   double           offset_x, offset_y;
+ 
+   guint            authentication_attempts;
++#ifndef HAVE_FREERDP_1_2
++  gboolean         authentication_cancelled;
++#endif
+ };
+ 
+ G_DEFINE_TYPE (VinagreRdpTab, vinagre_rdp_tab, VINAGRE_TYPE_TAB)
+@@ -927,6 +930,9 @@ frdp_authenticate (freerdp  *instance,
+   else
+     {
+       vinagre_tab_remove_from_notebook (tab);
++#ifndef HAVE_FREERDP_1_2
++      priv->authentication_cancelled = TRUE;
++#endif
+ 
+       return FALSE;
+     }
+@@ -1071,6 +1077,12 @@ init_freerdp (VinagreRdpTab *rdp_tab)
+ 
+   /* Security settings */
+ #if HAVE_FREERDP_1_1
++#include <freerdp/version.h>
++#if (FREERDP_VERSION_MAJOR == 1 && FREERDP_VERSION_MINOR >= 2 && FREERDP_VERSION_REVISION >= 1) || (FREERDP_VERSION_MAJOR == 2)
++  settings->UseRdpSecurityLayer = FALSE;
++#else
++  settings->DisableEncryption = FALSE;
++#endif
+   settings->RdpSecurity = TRUE;
+   settings->TlsSecurity = TRUE;
+   settings->NlaSecurity = TRUE;
+@@ -1084,12 +1096,6 @@ init_freerdp (VinagreRdpTab *rdp_tab)
+   settings->encryption_method = ENCRYPTION_METHOD_40BIT | ENCRYPTION_METHOD_128BIT | ENCRYPTION_METHOD_FIPS;
+   settings->encryption_level = ENCRYPTION_LEVEL_CLIENT_COMPATIBLE;
+ #endif
+-#include <freerdp/version.h>
+-#if (FREERDP_VERSION_MAJOR == 1 && FREERDP_VERSION_MINOR >= 2 && FREERDP_VERSION_REVISION >= 1) || (FREERDP_VERSION_MAJOR == 2)
+-  settings->UseRdpSecurityLayer = FALSE;
+-#else
+-  settings->DisableEncryption = FALSE;
+-#endif
+ 
+   /* Set display size */
+ #if HAVE_FREERDP_1_1
+@@ -1119,7 +1125,9 @@ init_freerdp (VinagreRdpTab *rdp_tab)
+ #endif
+ 
+   /* Allow font smoothing by default */
++#ifdef HAVE_FREERDP_1_1
+   settings->AllowFontSmoothing = TRUE;
++#endif
+ }
+ 
+ static void
+@@ -1195,35 +1203,64 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+   VinagreTab           *tab = VINAGRE_TAB (rdp_tab);
+   GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
+   gboolean              success = TRUE;
++#ifdef HAVE_FREERDP_1_2
+   gboolean              cancelled = FALSE;
+   guint                 authentication_errors = 0;
++#else
++  gboolean              connection_failed;
++  guint                 authentication_attempts;
++#endif
+ 
+   priv->events = g_queue_new ();
+ 
+   init_freerdp (rdp_tab);
+   init_display (rdp_tab);
++#ifndef HAVE_FREERDP_1_2
++  priv->authentication_cancelled = FALSE;
++#endif
+ 
+   do
+     {
++#ifndef HAVE_FREERDP_1_2
++      connection_failed = FALSE;
++      authentication_attempts = priv->authentication_attempts;
++#endif
++
+       /* Run FreeRDP session */
+       success = freerdp_connect (priv->freerdp_session);
+       if (!success)
+         {
++#ifdef HAVE_FREERDP_1_2
+           authentication_errors += freerdp_get_last_error (priv->freerdp_session->context) == 0x20009 ||
+                                    freerdp_get_last_error (priv->freerdp_session->context) == 0x2000c;
+ 
+           cancelled = freerdp_get_last_error (priv->freerdp_session->context) == 0x2000b;
++#else
++          if (authentication_attempts == priv->authentication_attempts)
++              connection_failed = TRUE;
++#endif
+ 
+           freerdp_free (priv->freerdp_session);
+           init_freerdp (rdp_tab);
+         }
+     }
++#ifdef HAVE_FREERDP_1_2
+   while (!success && authentication_errors < 3);
++#else
++  while (!success &&
++         priv->authentication_attempts < 3 &&
++         !priv->authentication_cancelled &&
++         !connection_failed);
++#endif
+ 
+   if (!success)
+     {
+       gtk_window_unfullscreen (window);
++#ifdef HAVE_FREERDP_1_2
+       if (!cancelled)
++#else
++      if (!priv->authentication_cancelled)
++#endif
+         vinagre_utils_show_error_dialog (_("Error connecting to host."),
+                                          NULL,
+                                          window);

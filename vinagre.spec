@@ -3,50 +3,41 @@
 %endif
 
 Name:           vinagre
-Version:        3.14.3
-Release:        11%{?dist}
+Version:        3.22.0
+Release:        12%{?dist}
 Summary:        VNC client for GNOME
 
 Group:          Applications/System
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Vinagre
 #VCS: git:git://git.gnome.org/vinagre
-Source0:        https://download.gnome.org/sources/%{name}/3.14/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.22/%{name}-%{version}.tar.xz
 
-# https://bugzilla.redhat.com/show_bug.cgi?id=1174568
-Patch0:         vinagre-3.14.3-translations.patch
-Patch1:         vinagre-3.14.3-translations-2.patch
-# https://bugzilla.redhat.com/show_bug.cgi?id=1291297
-Patch2:         vinagre-3.14.3-increase-spice-passwords-limit.patch
-# https://bugzilla.redhat.com/show_bug.cgi?id=1291287
-Patch3:         vinagre-3.14.3-wrong-selection-when-moving-outta-window.patch
-# https://bugzilla.redhat.com/show_bug.cgi?id=1291281
-Patch4:         vinagre-3.14.3-use-cached-session-size-for-RDP.patch
-# https://bugzilla.redhat.com/show_bug.cgi?id=1304230
-Patch5:         vinagre-3.14.3-ja-translations.patch
-# https://bugzilla.redhat.com/show_bug.cgi?id=1291275
-Patch6:         vinagre-3.14.3-minimize-to-fullscreen-toolbar.patch
-Patch7:         vinagre-3.14.3-fix-rdp-initialization.patch
-Patch8:         vinagre-3.14.3-handle-domain-when-looking-for-credentials.patch
-Patch9:         vinagre-3.14.3-store-credentials-for-rdp.patch
-Patch10:        vinagre-3.14.3-rdp-scaling.patch
-Patch11:        vinagre-3.14.3-correct-authentication-attempts.patch
-Patch12:        vinagre-3.14.3-translations-3.patch
-# https://bugzilla.gnome.org/show_bug.cgi?id=746730
-Patch13:        vinagre-3.14.3-allow-different-logins-same-host.patch
-Patch14:        vinagre-3.14.3-focus-new-rdp-tab.patch
-Patch15:        vinagre-3.14.3-dont-capture-keyevents.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1376044
-Patch16:        vinagre-3.14.3-RDP-update.patch
-# https://bugzilla.redhat.com/show_bug.cgi?id=1375720
-Patch17:        vinagre-3.14.3-connection-failure.patch
+Patch0:         vinagre-3.14.3-RDP-update.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1384965
+Patch1:         vinagre-3.22.0-freerdp-versions.patch
+Patch2:         vinagre-3.22.0-rdp-connection-cancel.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1435715
+Patch3:         vinagre-3.22.0-fullscreen-toolbar.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1459111
+Patch4:         vinagre-3.22.0-share-clipboard.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1680229
+Patch5:         vinagre-3.22.0-freerdp2.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1569552
+Patch6:         vinagre-3.22.0-rdp-password-length.patch
 
 %if 0%{?with_spice}
 BuildRequires:  pkgconfig(spice-client-gtk-3.0)
 %endif
 BuildRequires:  pkgconfig(avahi-gobject)
 BuildRequires:  pkgconfig(avahi-ui-gtk3)
-BuildRequires:  pkgconfig(freerdp)
+BuildRequires:  pkgconfig(freerdp2)
 BuildRequires:  pkgconfig(gio-unix-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtk-vnc-2.0)
@@ -56,22 +47,18 @@ BuildRequires:  pkgconfig(telepathy-glib)
 BuildRequires:  pkgconfig(vte-2.91)
 BuildRequires:  gnome-common
 BuildRequires:  desktop-file-utils
+BuildRequires:  /usr/bin/appstream-util
 BuildRequires:  intltool
 BuildRequires:  itstool
 BuildRequires:  vala-devel
 BuildRequires:  libappstream-glib-devel
 BuildRequires:  yelp-tools
+BuildRequires:  autoconf
+BuildRequires:  automake
 
 # for /usr/share/dbus-1/services
 Requires: dbus
 Requires: telepathy-filesystem
-
-# -devel package removed in 3.1.2-1
-# http://git.gnome.org/browse/vinagre/commit/?id=6bb9d9fda0434e26ec7a7a8a114a96b930348a7c
-# http://git.gnome.org/browse/vinagre/commit/?id=937b8070de0c165b2a17bae72ddd665360482db4
-Obsoletes:     vinagre-devel < 3.1.2-1
-Provides:      vinagre-devel = 3.1.2-1
-
 
 %description
 Vinagre is a VNC client for the GNOME desktop.
@@ -85,24 +72,13 @@ Apart from the VNC protocol, vinagre supports Spice and RDP.
 
 %prep
 %setup -q
-%patch0 -p1 -b .translations
-%patch1 -p1 -b .translations-2
-%patch2 -p1 -b .increase-spice-passwords-limit
-%patch3 -p1 -b .wrong-selection-when-moving-outta-window
-%patch4 -p1 -b .use-cached-session-size-for-RDP
-%patch5 -p1 -b .ja-translations
-%patch6 -p1 -b .minimize-to-fullscreen-toolbar
-%patch7 -p1 -b .fix-rdp-initialization
-%patch8 -p1 -b .handle-domain-when-looking-for-credentials
-%patch9 -p1 -b .store-credentials-for-rdp
-%patch10 -p1 -b .rdp-scaling
-%patch11 -p1 -b .correct-authentication-attempts
-%patch12 -p1 -b .translations-3
-%patch13 -p1 -b .allow-different-logins-same-host
-%patch14 -p1 -b .focus-new-rdp-tab
-%patch15 -p1 -b .dont-capture-keyevents
-%patch16 -p1 -b .RDP-update
-%patch17 -p1 -b .connection-failure
+%patch0 -p1 -b .RDP-update
+%patch1 -p1 -b .freerdp-versions
+%patch2 -p1 -b .rdp-connection-cancel
+%patch3 -p1 -b .fullscreen-toolbar
+%patch4 -p1 -b .share-clipboard
+%patch5 -p1 -b .freerdp2
+%patch6 -p1 -b .rdp-password-length
 
 %build
 autoreconf -ivf
@@ -150,9 +126,10 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %files -f vinagre.lang
-%doc AUTHORS COPYING NEWS README
+%doc AUTHORS NEWS README
+%license COPYING
 %{_bindir}/vinagre
-%{_datadir}/appdata/*.appdata.xml
+%{_datadir}/metainfo/*.appdata.xml
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/mime/packages/vinagre-mime.xml
@@ -167,6 +144,56 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %changelog
+* Fri Mar 15 2019 Marek Kasik <mkasik@redhat.com> - 3.22.0-12
+- Apply the patch
+- Resolves: #1569552
+
+* Fri Mar 15 2019 Marek Kasik <mkasik@redhat.com> - 3.22.0-11
+- Set maximum length of RDP password to 255 characters
+- Resolves: #1569552
+
+* Mon Feb 25 2019 Marek Kasik <mkasik@redhat.com> - 3.22.0-10
+- Make vinagre build with FreeRDP 2 library
+- Resolves: #1680229
+
+* Mon Sep 25 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-9
+- Fix "Share clipboard" functionality in Spice plugin
+- Resolves: #1459111
+
+* Mon Mar 27 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-8
+- Rebuild with new spice-gtk3
+- Related: #1435715
+
+* Fri Mar 24 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-7
+- Fix showing of fullscreen toolbar
+- Resolves: #1435715
+
+* Wed Mar 15 2017 Kalev Lember <klember@redhat.com> - 3.22.0-6
+- Rebuilt for spice-gtk3 soname bump
+- Related: #1402474
+
+* Thu Mar  2 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-5
+- ifdef some variables based on FreeRDP version (Coverity)
+- Related: #1384965
+
+* Thu Mar  2 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-4
+- Rebuild with newer shared-mime-info
+- Related: #1384965
+
+* Tue Feb 28 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-3
+- Don't rely on file triggers (they need newer rpm)
+- Related: #1384965
+
+* Thu Feb 16 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-2
+- Add patches
+- Related: #1384965
+
+* Wed Feb 15 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-1
+- Update to 3.22.0
+- Remove/modify current patches when needed
+- Rely on file triggers
+- Resolves: #1384965
+
 * Mon Sep 19 2016 Marek Kasik <mkasik@redhat.com> - 3.14.3-11
 - Handle connection failures of RDP plugin
 - Resolves: #1375720

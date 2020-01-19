@@ -1,6 +1,750 @@
+2016-09-20  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.22.0 release
+
+2016-09-13  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.21.92 release
+
+2016-09-10  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2016-09-04  David King  <amigadave@amigadave.com>
+
+	Update British English translation
+
+2016-08-26  Ask Hjorth Larsen  <asklarsen@gmail.com>
+
+	Updated Danish translation
+
+2016-08-22  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2016-08-09  Yosef Or Boczko  <yoseforb@src.gnome.org>
+
+	Updated Hebrew translation
+
+2016-08-03  વિશાલ ભલાણી  <vishalbhalani89@gmail.com>
+
+	Updated Gujarati translation
+
+2016-08-02  Daniel Mustieles  <daniel.mustieles@gmail.com>
+
+	Updated Spanish translation
+
+2016-07-28  Michał Kępień  <michal.kepien@nask.pl>
+
+	Correctly handle extended scancodes for RDP
+
+	Vinagre incorrectly handles extended RDP scancodes, which makes it
+	impossible to use some keys (e.g. both Super keys, right Alt, right
+	Control) in RDP sessions. When compiled against FreeRDP 1.0, the value
+	stored in frdp_event->extended is ignored, while an extended event's
+	flags should have the KDB_FLAGS_EXTENDED bit set. When compiled against
+	FreeRDP 1.1, the value returned by
+	freerdp_keyboard_get_rdp_scancode_from_x11_keycode() is incorrectly
+	stored verbatim into frdp_event->code as it contains both an extended
+	scancode indicator and the actual scancode.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=769025
+
+2016-07-27  Michał Kępień  <michal.kepien@nask.pl>
+
+	Improve FreeRDP authentication failure handling
+
+	The issue is caused by changes introduced by 60dea27. When the RDP
+	server refuses TCP connections on the specified port, freerdp_connect()
+	causes freerdp_get_last_error() to return 0x2000c.  Due to the way the
+	do-while loop is constructed in open_freerdp(), this effectively causes
+	freerdp_connect() to be called in an infinite loop, which quickly
+	results in a SIGSEGV as FreeRDP does not seem to handle eventfd
+	creation failures nicely (these are caused by exceeding the per-process
+	limit of open file descriptors).
+
+	As the error string for error 0x2000c is "protocol security negotiation
+	or connection failure", to at least allow refused connections to be
+	handled gracefully, some limit should be enforced on the number of loop
+	iterations inside open_freerdp().
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=769217
+
+2016-07-25  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Add Language headers to po files
+
+	Future versions of gettext will fail if this header is missing.
+
+2016-07-14  Christian Kirbach  <christian.kirbach@gmail.com>
+
+	Update German screenshots
+
+2016-07-04  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2016-06-29  Andika Triwidada  <atriwidada@gnome.org>
+
+	Updated Indonesian translation (cherry picked from commit ae0530393bf0f39b3bdc37c48bb79a72727c5f7b)
+
+2016-06-21  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.21.3 release
+
+2016-06-20  Andika Triwidada  <atriwidada@gnome.org>
+
+	Updated Indonesian translation (cherry picked from commit a2beefb38823b922d1d2f6283b554888148902d9)
+
+2016-05-30  Cédric Valmary  <cvalmary@yahoo.fr>
+
+	Updated Occitan translation
+
+2016-05-10  Cédric Valmary  <cvalmary@yahoo.fr>
+
+	Updated Occitan translation
+
+2016-04-28  GNOME Translation Robot  <gnome-sysadmin@gnome.org>
+
+	Updated Portuguese translation
+
+2016-04-15  Fabio Tomat  <f.t.public@gmail.com>
+
+	Updated Friulian translation (cherry picked from commit 58cc6d5d12ae2742bf9e48f84c76a1c896c8602e)
+
+2016-04-09  Fabio Tomat  <f.t.public@gmail.com>
+
+	Updated Friulian translation
+
+2016-04-09  Fabio Tomat  <f.t.public@gmail.com>
+
+	Updated Friulian translation
+
+2016-04-09  Fabio Tomat  <f.t.public@gmail.com>
+
+	Updated Friulian translation
+
+2016-04-09  Fabio Tomat  <f.t.public@gmail.com>
+
+	Updated Friulian translation
+
+2016-04-09  Fabio Tomat  <f.t.public@gmail.com>
+
+	Updated Friulian translation
+
+2016-04-09  Fabio Tomat  <f.t.public@gmail.com>
+
+	Added Friulian translation
+
+2016-04-09  Alexander Shopov  <ash@kambanaria.org>
+
+	Added Bulgarian translation
+
+2016-04-09  Arash Mousavi  <mousavi.arash@gmail.com>
+
+	Update Persian translations
+
+2016-04-07  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2016-04-05  Sebastian Rasmussen  <sebras@gmail.com>
+
+	Add Swedish help translation
+
+2016-03-30  Trần Ngọc Quân  <vnwildman@gmail.com>
+
+	Updated Vietnamese translation
+
+	Signed-off-by: Trần Ngọc Quân <vnwildman@gmail.com>
+
+2016-03-26  Jeff Bai  <jeffbai@aosc.xyz>
+
+	update zh_CN translation
+
+2016-03-23  Inaki Larranaga Murgoitio  <dooteo@zundan.com>
+
+	Updated Basque language
+
+2016-03-22  Daniel Korostil  <ted.korostiled@gmail.com>
+
+	Updated Ukrainian translation
+
+2016-03-22  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.20.0 release
+
+2016-03-21  David King  <amigadave@amigadave.com>
+
+	Fix the translation element in the AppData file
+
+2016-03-21  Nathan Follens  <nthn@unseen.is>
+
+	Updated Dutch translation Master 3.20
+
+2016-03-20  Ask Hjorth Larsen  <asklarsen@gmail.com>
+
+	Updated Danish translation
+
+2016-03-14  Gianvito Cavasoli  <gianvito@gmx.it>
+
+	Updated Italian translation
+
+2016-03-14  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2016-03-13  Muhammet Kara  <muhammetk@gmail.com>
+
+	Updated Turkish translation
+
+2016-03-13  Rūdolfs Mazurs  <rudolfsm@src.gnome.org>
+
+	Update Latvian translation
+
+2016-03-12  Changwoo Ryu  <cwryu@debian.org>
+
+	Updated Korean translation
+
+2016-03-08  Stas Solovey  <whats_up@tut.by>
+
+	Updated Russian translation
+
+2016-03-05  Baurzhan Muftakhidinov  <baurthefirst@gmail.com>
+
+	Updated Kazakh translation
+
+2016-03-01  Efstathios Iosifidis  <eiosifidis@gnome.org>
+
+	Updated Greek translation
+
+2016-02-25  Cédric Valmary  <cvalmary@yahoo.fr>
+
+	Updated Occitan translation
+
+2016-02-25  Cédric Valmary  <cvalmary@yahoo.fr>
+
+	Updated Occitan translation
+
+2016-02-23  Fran Dieguez  <fran.dieguez@mabishu.com>
+
+	Updated Galician translations
+
+2016-02-23  Marek Kasik  <mkasik@redhat.com>
+
+	Show correct tooltip for RDP tab
+
+	RDP tab didn't emit tab-initialized signal before which caused
+	that e.g. tab tooltip was not set.
+	Bump requirement of GLib to 2.32 because of G_SOURCE_REMOVE.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=762531
+
+2016-02-23  Marek Kasik  <mkasik@redhat.com>
+
+	Allow different logins to the same host
+
+	Allow to open connection with different usernames to the same host.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=746730
+
+2016-02-23  Marek Kasik  <mkasik@redhat.com>
+
+	Give focus to new RDP tab
+
+	Previously RDP tab didn't get focus once it was created
+	and hence typing did not work initially.
+	RDP tab is a focusable widget now and grabs focus once
+	it is realized.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=752957
+
+2016-02-22  Marek Kasik  <mkasik@redhat.com>
+
+	Don't capture key events of other tabs
+
+	Once an RDP tab is opened it captures all key events
+	on the Vinagre's window.
+	This commit fixes this so the RDP tab captures the events
+	just from its own tab.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=752957
+
+2016-02-17  Мирослав Николић  <miroslavnikolic@rocketmail.com>
+
+	Updated Serbian translation
+
+2016-02-16  David King  <amigadave@amigadave.com>
+
+	Fix a string format-nonliteral warning
+
+2016-02-13  Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>
+
+	Updated Chinese (Taiwan) translation
+
+2016-02-08  Alexandre Franke  <alexandre.franke@gmail.com>
+
+	Updated French translation
+
+2016-02-07  Sebastian Rasmussen  <sebras@gmail.com>
+
+	Updated Swedish translation
+
+2016-02-06  Rūdolfs Mazurs  <rudolfsm@src.gnome.org>
+
+	Update Latvian translation
+
+2016-02-06  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2016-01-25  Richard Hughes  <richard@hughsie.com>
+
+	Update the AppData to spec version 0.7+
+
+2016-01-25  Balázs Meskó  <meskobalazs@gmail.com>
+
+	Updated Hungarian translation
+
+2016-01-16  Jiro Matsuzawa  <jmatsuzawa@gnome.org>
+
+	Updated Japanese translation
+
+2016-01-10  Kjartan Maraas  <kmaraas@gnome.org>
+
+	Updated Norwegian bokmål translation.
+
+2016-01-10  Aurimas Černius  <aurisc4@gmail.com>
+
+	Updated Lithuanian translation
+
+2016-01-06  Jiri Grönroos  <jiri.gronroos@iki.fi>
+
+	Updated Finnish translation
+
+2015-12-31  Enrico Nicoletto  <liverig@gmail.com>
+
+	Updated Brazilian Portuguese translation
+
+2015-12-29  Mario Blättermann  <mario.blaettermann@gmail.com>
+
+	Updated German translation
+
+2015-12-24  Marek Černocký  <marek@manet.cz>
+
+	Updated Czech translation
+
+2015-12-19  Aurimas Černius  <aurisc4@gmail.com>
+
+	Updated Lithuanian translation
+
+2015-12-13  Matej Urbančič  <mateju@svn.gnome.org>
+
+	Updated Slovenian translation
+
+2015-12-11  Sebastian Rasmussen  <sebras@gmail.com>
+
+	Updated Swedish translation
+
+2015-12-06  Dušan Kazik  <prescott66@gmail.com>
+
+	Updated Slovak translation
+
+2015-12-03  Sveinn í Felli  <sv1@fellsnet.is>
+
+	Updated Icelandic translation (cherry picked from commit bef6434df9d4db2d7692850ee8c245000960505c)
+
+2015-11-28  Pedro Albuquerque  <palbuquerque73@gmail.com>
+
+	Updated Portuguese translation
+
+2015-11-24  Daniel Mustieles  <daniel.mustieles@gmail.com>
+
+	Updated Spanish translation
+
+2015-11-24  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.19.2 release
+
+2015-11-23  Marek Kasik  <mkasik@redhat.com>
+
+	Store credentials for RDP
+
+	Store credentials using secrets service if requested.
+	Handle unsuccessful authentications by asking user for credentials.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=753355
+
+2015-11-23  Marek Kasik  <mkasik@redhat.com>
+
+	Handle domain when looking for credentials
+
+	Add domain property to VinagreConnection and use it when looking for
+	credentials if needed.
+	Show default values for 'username' and 'domain' in authentication dialog
+	if given.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=753355
+
+2015-11-20  Jiri Grönroos  <jiri.gronroos@iki.fi>
+
+	Updated Finnish translation
+
+2015-11-20  Efstathios Iosifidis  <eiosifidis@gnome.org>
+
+	Updated Greek translation
+
+2015-11-18  Marek Kasik  <mkasik@redhat.com>
+
+	Add minimize button to the fullscreen toolbar
+
+	Add button which when pressed iconifies Vinagre window.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=753626
+
+2015-11-16  David King  <amigadave@amigadave.com>
+
+	Fix build against recent versions of FreeRDP
+
+2015-11-04  YunQiang Su  <yqsu@src.gnome.org>
+
+	update zh_CN translation
+
+2015-11-02  Sveinn í Felli  <sv1@fellsnet.is>
+
+	Added Icelandic translation (cherry picked from commit 1c99e0aeaa54ae675de36765162c455f0a9d6b34)
+
+2015-10-19  David King  <amigadave@amigadave.com>
+
+	Revert "Accept IPv6 addresses"
+
+	This reverts commit 1b2df81a539dbdb629466cd1f670545d1b4768d6.
+
+2015-10-06  Emīls Piņķis  <pinkisemils@gmail.com>
+
+	Enabled font smoothing by default in RDP plugin
+
+2015-10-02  Trần Ngọc Quân  <vnwildman@gmail.com>
+
+	Updated Vietnamese translation
+
+	Signed-off-by: Trần Ngọc Quân <vnwildman@gmail.com>
+
+2015-09-25  Manuel Bachmann  <manuel.bachmann@iot.bzh>
+
+	Accept IPv6 addresses
+
+	We now accept entering IPv6 address in the "host" field directly; using
+	a hostname or alias for IPv6-only servers is no longer required.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=710173
+
+	Signed-off-by: Manuel Bachmann <manuel.bachmann@iot.bzh>
+
+2015-09-21  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.18.0 release
+
+2015-09-12  Arash Mousavi  <mousavi.arash@gmail.com>
+
+	Updated Persian translation
+
+2015-09-04  Marek Kasik  <mkasik@redhat.com>
+
+	Allow scaling of RDP sessions
+
+	Add ability to scale RDP sessions using scaling functionality of cairo library.
+	Session is placed in the center of the window as in other plugins.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=753766
+
+2015-09-01  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.17.91 release
+
+2015-08-26  Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>
+
+	Updated Chinese (Taiwan) translation
+
+2015-08-25  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2015-08-21  Marek Kasik  <mkasik@redhat.com>
+
+	Fix selection rectangle when user leaves window
+
+	Use zero instead of negative values for coordinates of mouse events.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=753765
+
+2015-08-21  Marek Kasik  <mkasik@redhat.com>
+
+	Use cached session size for RDP
+
+	Get width and height from cache when creating freerdp session.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=753724
+
+2015-08-02  Akom Chotiphantawanon  <knight2000@gmail.com>
+
+	Updated Thai translation
+
+2015-06-29  Pedro Albuquerque  <palbuquerque73@gmail.com>
+
+	Updated Portuguese translation
+
+2015-06-25  Cédric Valmary  <cvalmary@yahoo.fr>
+
+	Updated Occitan translation
+
+2015-05-25  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.17.2 release
+
+2015-05-20  David King  <amigadave@amigadave.com>
+
+	Trivial const-correctness fix
+
+	Found with the Clang static analyzer.
+
+2015-05-16  Nick Andrade  <SDNick484@gmail.com>
+
+	Fix building against newer FreeRDP versions
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=749124
+
+2015-05-09  Hajime Taira  <htaira@redhat.com>
+
+	l10n: Update Japanese translation
+
+2015-05-08  Khaled Hosny  <khaledhosny@eglug.org>
+
+	Update Arabic translation
+
+2015-05-03  Antoine Jacoutot  <ajacoutot@gnome.org>
+
+	BSD: fix a couple of implicit declarations
+
+	vinagre/pty_open.c:337: warning: implicit declaration of function 'putenv'
+	vinagre/pty_open.c:354: warning: implicit declaration of function 'login_tty'
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=748799
+
+2015-04-18  Mike DePaulo  <mikedep333@gmail.com>
+
+	Change SPICE passwords limited to 60 characters
+
+	The limit for SPICE passowrds is much more than 8 characters.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=747296
+
+2015-03-23  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.16.0
+
+2015-03-22  Muhammet Kara  <muhammetk@gmail.com>
+
+	Updated Turkish translation
+
+2015-03-17  Claudio Arseni  <claudio.arseni@gmail.com>
+
+	Updated Italian translation
+
+2015-03-16  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.15.92 release
+
+2015-03-16  Daniel Mustieles  <daniel.mustieles@gmail.com>
+
+	Updated Spanish translation
+
+2015-03-15  Ask Hjorth Larsen  <asklarsen@gmail.com>
+
+	Updated Danish translation
+
+2015-03-14  Balázs Úr  <urbalazs@gmail.com>
+
+	Updated Hungarian translation
+
+2015-03-13  Samir Ribic  <samir.ribic@etf.unsa.ba>
+
+	Added Bosnian translation
+
+2015-03-12  Rūdolfs Mazurs  <rudolfsm@src.gnome.org>
+
+	Updated Latvian translation
+
+2015-03-11  Jiri Grönroos  <jiri.gronroos+l10n@iki.fi>
+
+	Finnish translation update
+
+2015-03-09  Wolfgang Stöggl  <c72578@yahoo.de>
+
+	Updated German translation
+
+2015-03-08  Aurimas Černius  <aurisc4@gmail.com>
+
+	Updated Lithuanian translation
+
+2015-03-08  Josef Andersson  <josef.andersson@gmail.com>
+
+	Updated Swedish translation
+
+2015-03-08  Changwoo Ryu  <cwryu@debian.org>
+
+	Updated Korean translation
+
+2015-03-06  Γιάννης Κουτσούκος  <giankoyt@gmail.com>
+
+	Updated Greek translation
+
+2015-03-04  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Updated Polish translation
+
+2015-03-04  Мирослав Николић  <miroslavnikolic@rocketmail.com>
+
+	Updated Serbian translation
+
+2015-03-02  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.15.91 release
+
+2015-03-02  David King  <amigadave@amigadave.com>
+
+	Fix distcheck with Automake 1.15
+
+2015-03-02  Marek Černocký  <marek@manet.cz>
+
+	Updated Czech translation
+
+2015-03-02  Ekaterina Gerasimova  <kittykat3756@gmail.com>
+
+	Update screenshot in help for 3.16
+
+2015-03-02  Efstathios Iosifidis  <iefstathios@gmail.com>
+
+	Updated Greek translation
+
+2015-02-27  Daniel Korostil  <ted.korostiled@gmail.com>
+
+	Updated Ukrainian translation
+
+2015-02-24  Alexandre Franke  <alexandre.franke@gmail.com>
+
+	Updated French translation
+
+2015-02-21  Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>
+
+	Updated Chinese (Taiwan) translation
+
+2015-02-20  Efstathios Iosifidis  <iefstathios@gmail.com>
+
+	Updated Greek translation
+
+2015-02-19  David King  <amigadave@amigadave.com>
+
+	Remove some translated figures
+
+	The C locale has removed the figures, so the translated versions are no
+	longer required
+
+	As requested by Alexandre Franke.
+
+2015-02-19  Alexandre Franke  <alexandre.franke@gmail.com>
+
+	Updated French translation
+
+2015-02-19  Fran Dieguez  <fran.dieguez@mabishu.com>
+
+	Updated Galician translations
+
+2015-02-18  Dušan Kazik  <prescott66@gmail.com>
+
+	Updated Slovak translation
+
+2015-02-17  Matej Urbančič  <mateju@svn.gnome.org>
+
+	Updated Slovenian translation
+
+2015-02-17  Matej Urbančič  <mateju@svn.gnome.org>
+
+	Updated Slovenian translation
+
+2015-02-16  Kjartan Maraas  <kmaraas@gnome.org>
+
+	Updated Norwegian bokmål translation from Åka Sikrom.
+
+2015-02-15  Balázs Úr  <urbalazs@gmail.com>
+
+	Updated Hungarian translation
+
+2015-02-15  Anders Jonsson  <anders.jonsson@norsjovallen.se>
+
+	Updated Swedish translation
+
+2015-02-15  Baurzhan Muftakhidinov  <baurthefirst@gmail.com>
+
+	Updated Kazakh translation
+
+2015-02-11  Andika Triwidada  <andika@gmail.com>
+
+	Updated Indonesian translation
+
+2015-02-09  Kjartan Maraas  <kmaraas@gnome.org>
+
+	Updated Norwegian bokmål translation.
+
+2015-02-04  Daniel Mustieles  <daniel.mustieles@gmail.com>
+
+	Updated Spanish translation
+
+2015-02-04  Marek Černocký  <marek@manet.cz>
+
+	Updated Czech translation
+
+2015-01-27  Petr Kovar  <pkovar@redhat.com>
+
+	Fix #700353
+
+2015-01-09  Rafael Ferreira  <rafael.f.f1@gmail.com>
+
+	Updated Brazilian Portuguese translation
+
+2015-01-07  Inaki Larranaga Murgoitio  <dooteo@zundan.com>
+
+	Updated Basque language
+
+2015-01-04  Marek Černocký  <marek@manet.cz>
+
+	Updated Czech translation
+
+2014-12-31  Stas Solovey  <whats_up@tut.by>
+
+	Updated Russian translation
+
+2014-12-26  Marek Černocký  <marek@manet.cz>
+
+	Fixed Czech translation
+
+2014-12-22  Daniel Mustieles  <daniel.mustieles@gmail.com>
+
+	Updated Spanish translation
+
+2014-12-21  Balázs Úr  <urbalazs@gmail.com>
+
+	Updated Hungarian translation
+
+2014-12-20  Anders Jonsson  <anders.jonsson@norsjovallen.se>
+
+	Fix a typo
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=741803
+
 2014-12-15  David King  <amigadave@amigadave.com>
 
-	Update NEWS for 3.14.3 release
+	Update NEWS for 3.15.3 release
 
 2014-12-15  David King  <amigadave@amigadave.com>
 
@@ -8,19 +752,33 @@
 
 	https://retrace.fedoraproject.org/faf2/problems/459789/
 
-2014-11-15  Lasse Liehu  <lasse.liehu@gmail.com>
+2014-12-14  Muhammet Kara  <muhammetk@gmail.com>
 
-	Finnish translation update
+	Updated Turkish translation
 
-2014-11-10  David King  <amigadave@amigadave.com>
+2014-11-30  Daniel Șerbănescu  <daniel@serbanescu.dk>
 
-	Update NEWS for 3.14.2 release
+	Updated Romanian Translation
+
+2014-11-28  Jean-Philippe Menil  <jpmenil@gmail.com>
+
+	Fix RDP initialization with recent FreeRDP
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=740868
+
+2014-11-24  David King  <amigadave@amigadave.com>
+
+	Update NEWS for 3.15.2 release
 
 2014-11-10  David King  <amigadave@amigadave.com>
 
 	Add name and summary elements to AppData
 
 	Pacify appstream-util validate.
+
+2014-11-03  Timo Jyrinki  <timo@debian.org>
+
+	Change Finnish translation team web page to l10n.gnome.org
 
 2014-10-25  Alexander Tsoy  <alexander@tsoy.me>
 
@@ -36,10 +794,6 @@
 	that we can detect available RDP hosts over Avahi.
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=738523
-
-2014-10-13  David King  <amigadave@amigadave.com>
-
-	Update NEWS for 3.14.1 release
 
 2014-09-28  Rūdolfs Mazurs  <rudolfsm@src.gnome.org>
 

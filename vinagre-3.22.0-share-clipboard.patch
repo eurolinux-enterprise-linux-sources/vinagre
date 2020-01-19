@@ -1,0 +1,78 @@
+From e3b5eef0476a5c5a7e11f4d433ffd586497b73cb Mon Sep 17 00:00:00 2001
+From: Marek Kasik <mkasik@redhat.com>
+Date: Wed, 7 Jun 2017 17:21:36 +0200
+Subject: [PATCH] Fix "Share clipboard" functionality in Spice plugin
+
+Set "auto-clipboard" property on correct class. The correct one is SpiceDisplay
+for spice-gtk <= 0.31 and SpiceGtkSession for spice-gtk > 0.31.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=783517
+---
+ configure.ac                      |  4 +++-
+ plugins/spice/vinagre-spice-tab.c | 17 ++++++++++++++++-
+ 2 files changed, 19 insertions(+), 2 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 0dfc0db..5b51a82 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -91,7 +91,9 @@ AC_ARG_ENABLE([spice],
+ AS_IF([test "x$enable_spice" != "xno"],
+   [PKG_CHECK_MODULES([SPICE],
+     [$SPICE_DEPS],
+-    [have_spice=yes],
++    [have_spice=yes
++     PKG_CHECK_EXISTS(spice-client-gtk-3.0 >= 0.32,
++       [AC_DEFINE([HAVE_SPICE_CLIENT_GTK_0_32], [1], [Spice Client Gtk 3.0 library is of version 0.32 or newer])], [])],
+     [have_spice=no])],
+   [have_spice=no])
+ 
+diff --git a/plugins/spice/vinagre-spice-tab.c b/plugins/spice/vinagre-spice-tab.c
+index 3365ee1..657a66f 100644
+--- a/plugins/spice/vinagre-spice-tab.c
++++ b/plugins/spice/vinagre-spice-tab.c
+@@ -379,9 +379,16 @@ create_spice_display (VinagreSpiceTab *spice_tab, int id)
+ 		"grab-keyboard", TRUE,
+ 		"grab-mouse", TRUE,
+ 		"resize-guest", resize_guest,
+-		"auto-clipboard", auto_clipboard,
+ 		"scaling", scaling,
+ 		NULL);
++
++#ifdef HAVE_SPICE_CLIENT_GTK_0_32
++  g_object_set (spice_gtk_session_get (spice_tab->priv->spice),
++#else
++  g_object_set (d->display,
++#endif
++		"auto-clipboard", auto_clipboard,
++		NULL);
+   /* TODO: add view-only here when spice-gtk ready */
+ 
+   g_object_get (spice_tab->priv->spice, "uri", &name, NULL); /* TODO: a better friendly name? */
+@@ -735,7 +742,11 @@ vinagre_spice_tab_set_auto_clipboard (VinagreSpiceTab *tab, gboolean active)
+ {
+   g_return_if_fail (VINAGRE_IS_SPICE_TAB (tab));
+ 
++#ifdef HAVE_SPICE_CLIENT_GTK_0_32
++  g_object_set (spice_gtk_session_get (tab->priv->spice), "auto-clipboard", active, NULL);
++#else
+   g_object_set (tab->priv->display, "auto-clipboard", active, NULL);
++#endif
+ }
+ 
+ gboolean
+@@ -745,7 +756,11 @@ vinagre_spice_tab_get_auto_clipboard (VinagreSpiceTab *tab)
+ 
+   g_return_val_if_fail (VINAGRE_IS_SPICE_TAB (tab), FALSE);
+ 
++#ifdef HAVE_SPICE_CLIENT_GTK_0_32
++  g_object_get (spice_gtk_session_get (tab->priv->spice), "auto-clipboard", &active, NULL);
++#else
+   g_object_get (tab->priv->display, "auto-clipboard", &active, NULL);
++#endif
+ 
+   return active;
+ }
+-- 
+2.13.5
+

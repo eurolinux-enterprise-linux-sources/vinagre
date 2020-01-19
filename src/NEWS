@@ -1,13 +1,423 @@
-Vinagre 3.14.3
+Vinagre 3.22.0
 ==============
+
+David King (1):
+      Update NEwS for 3.22.0 release
+
+Vinagre 3.21.92
+===============
+
+Andika Triwidada (1):
+      Updated Indonesian translation     (cherry picked from commit ae0530393bf0f39b3bdc37c48bb79a72727c5f7b)
+
+Ask Hjorth Larsen (1):
+      Updated Danish translation
+
+Christian Kirbach (1):
+      Update German screenshots
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (1):
+      Update British English translation
+
+Michał Kępień (2):
+      Improve FreeRDP authentication failure handling
+      Correctly handle extended scancodes for RDP
+
+Piotr Drąg (4):
+      Updated Polish translation
+      Add Language headers to po files
+      Updated Polish translation
+      Updated Polish translation
+
+Yosef Or Boczko (1):
+      Updated Hebrew translation
+
+વિશાલ ભલાણી (1):
+      Updated Gujarati translation
+
+Vinagre 3.21.3
+==============
+
+Alexander Shopov (1):
+      Added Bulgarian translation
+
+Andika Triwidada (1):
+      Updated Indonesian translation (cherry picked from commit a2beefb38823b922d1d2f6283b554888148902d9)
+
+Arash Mousavi (1):
+      Update Persian translations
+
+Cédric Valmary (2):
+      Updated Occitan translation
+      Updated Occitan translation
+
+Daniel Korostil (1):
+      Updated Ukrainian translation
+
+Fabio Tomat (7):
+      Added Friulian translation
+      Updated Friulian translation
+      Updated Friulian translation
+      Updated Friulian translation
+      Updated Friulian translation
+      Updated Friulian translation
+      Updated Friulian translation (cherry picked from commit 58cc6d5d12ae2742bf9e48f84c76a1c896c8602e)
+
+GNOME Translation Robot (1):
+      Updated Portuguese translation
+
+Inaki Larranaga Murgoitio (1):
+      Updated Basque language
+
+Jeff Bai (1):
+      update zh_CN translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Sebastian Rasmussen (1):
+      Add Swedish help translation
+
+Trần Ngọc Quân (1):
+      Updated Vietnamese translation
+
+Vinagre 3.20.0
+==============
+
+Alexandre Franke (1):
+      Updated French translation
+
+Ask Hjorth Larsen (1):
+      Updated Danish translation
+
+Aurimas Černius (2):
+      Updated Lithuanian translation
+      Updated Lithuanian translation
+
+Balázs Meskó (1):
+      Updated Hungarian translation
+
+Baurzhan Muftakhidinov (1):
+      Updated Kazakh translation
+
+Changwoo Ryu (1):
+      Updated Korean translation
+
+Chao-Hsiung Liao (1):
+      Updated Chinese (Taiwan) translation
+
+Cédric Valmary (2):
+      Updated Occitan translation
+      Updated Occitan translation
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (2):
+      Fix a string format-nonliteral warning
+      Fix the translation element in the AppData file
+
+Dušan Kazik (1):
+      Updated Slovak translation
+
+Efstathios Iosifidis (1):
+      Updated Greek translation
+
+Enrico Nicoletto (1):
+      Updated Brazilian Portuguese translation
+
+Fran Dieguez (1):
+      Updated Galician translations
+
+Gianvito Cavasoli (1):
+      Updated Italian translation
+
+Jiri Grönroos (1):
+      Updated Finnish translation
+
+Jiro Matsuzawa (1):
+      Updated Japanese translation
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation.
+
+Marek Kasik (4):
+      Don't capture key events of other tabs
+      Give focus to new RDP tab
+      Allow different logins to the same host
+      Show correct tooltip for RDP tab
+
+Marek Černocký (1):
+      Updated Czech translation
+
+Mario Blättermann (1):
+      Updated German translation
+
+Matej Urbančič (1):
+      Updated Slovenian translation
+
+Muhammet Kara (1):
+      Updated Turkish translation
+
+Nathan Follens (1):
+      Updated Dutch translation Master 3.20
+
+Pedro Albuquerque (1):
+      Updated Portuguese translation
+
+Piotr Drąg (2):
+      Updated Polish translation
+      Updated Polish translation
+
+Richard Hughes (1):
+      Update the AppData to spec version 0.7+
+
+Rūdolfs Mazurs (2):
+      Update Latvian translation
+      Update Latvian translation
+
+Sebastian Rasmussen (2):
+      Updated Swedish translation
+      Updated Swedish translation
+
+Stas Solovey (1):
+      Updated Russian translation
+
+Sveinn í Felli (1):
+      Updated Icelandic translation
+
+Мирослав Николић (1):
+      Updated Serbian translation
+
+Vinagre 3.19.2
+==============
+
+David King (2):
+      Revert "Accept IPv6 addresses"
+      Fix build against recent versions of FreeRDP
+
+Efstathios Iosifidis (1):
+      Updated Greek translation
+
+Emīls Piņķis (1):
+      Enabled font smoothing by default in RDP plugin
+
+Jiri Grönroos (1):
+      Updated Finnish translation
+
+Manuel Bachmann (1):
+      Accept IPv6 addresses
+
+Marek Kasik (3):
+      Add minimize button to the fullscreen toolbar
+      Handle domain when looking for credentials
+      Store credentials for RDP
+
+Sveinn í Felli (1):
+      Added Icelandic translation
+
+Trần Ngọc Quân (1):
+      Updated Vietnamese translation
+
+YunQiang Su (1):
+      update zh_CN translation
+
+Vinagre 3.18.0
+==============
+
+Arash Mousavi (1):
+      Updated Persian translation
+
+Marek Kasik (1):
+      Allow scaling of RDP sessions
+
+Vinagre 3.17.91
+===============
+
+Akom Chotiphantawanon (1):
+      Updated Thai translation
+
+Chao-Hsiung Liao (1):
+      Updated Chinese (Taiwan) translation
+
+Cédric Valmary (1):
+      Updated Occitan translation
+
+Marek Kasik (2):
+      Use cached session size for RDP
+      Fix selection rectangle when user leaves window
+
+Pedro Albuquerque (1):
+      Updated Portuguese translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Vinagre 3.17.2
+==============
+
+Antoine Jacoutot (1):
+      BSD: fix a couple of implicit declarations
+
+David King (1):
+      Trivial const-correctness fix
+
+Hajime Taira (1):
+      l10n: Update Japanese translation
+
+Khaled Hosny (1):
+      Update Arabic translation
+
+Mike DePaulo (1):
+      Change SPICE passwords limited to 60 characters
+
+Nick Andrade (1):
+      Fix building against newer FreeRDP versions
+
+Vinagre 3.16.0
+==============
+
+Claudio Arseni (1):
+      Updated Italian translation
+
+Muhammet Kara (1):
+      Updated Turkish translation
+
+Vinagre 3.15.92
+===============
+
+Ask Hjorth Larsen (1):
+      Updated Danish translation
+
+Aurimas Černius (1):
+      Updated Lithuanian translation
+
+Balázs Úr (1):
+      Updated Hungarian translation
+
+Changwoo Ryu (1):
+      Updated Korean translation
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+Jiri Grönroos (1):
+      Finnish translation update
+
+Josef Andersson (1):
+      Updated Swedish translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Rūdolfs Mazurs (1):
+      Updated Latvian translation
+
+Samir Ribic (1):
+      Added Bosnian translation
+
+Wolfgang Stöggl (1):
+      Updated German translation
+
+Γιάννης Κουτσούκος (1):
+      Updated Greek translation
+
+Мирослав Николић (1):
+      Updated Serbian translation
+
+Vinagre 3.15.91
+===============
+
+Alexandre Franke (2):
+      Updated French translation
+      Updated French translation
+
+Anders Jonsson (2):
+      Fix a typo
+      Updated Swedish translation
+
+Andika Triwidada (1):
+      Updated Indonesian translation
+
+Balázs Úr (2):
+      Updated Hungarian translation
+      Updated Hungarian translation
+
+Baurzhan Muftakhidinov (1):
+      Updated Kazakh translation
+
+Chao-Hsiung Liao (1):
+      Updated Chinese (Taiwan) translation
+
+Daniel Korostil (1):
+      Updated Ukrainian translation
+
+Daniel Mustieles (2):
+      Updated Spanish translation
+      Updated Spanish translation
+
+David King (2):
+      Remove some translated figures
+      Fix distcheck with Automake 1.15
+
+Dušan Kazik (1):
+      Updated Slovak translation
+
+Efstathios Iosifidis (2):
+      Updated Greek translation
+      Updated Greek translation
+
+Ekaterina Gerasimova (1):
+      Update screenshot in help for 3.16
+
+Fran Dieguez (1):
+      Updated Galician translations
+
+Inaki Larranaga Murgoitio (1):
+      Updated Basque language
+
+Kjartan Maraas (2):
+      Updated Norwegian bokmål translation.
+      Updated Norwegian bokmål translation from Åka Sikrom.
+
+Marek Černocký (4):
+      Fixed Czech translation
+      Updated Czech translation
+      Updated Czech translation
+      Updated Czech translation
+
+Matej Urbančič (2):
+      Updated Slovenian translation
+      Updated Slovenian translation
+
+Petr Kovar (1):
+      Fix #700353
+
+Rafael Ferreira (1):
+      Updated Brazilian Portuguese translation
+
+Stas Solovey (1):
+      Updated Russian translation
+
+Vinagre 3.15.3
+==============
+
+Daniel Șerbănescu (1):
+      Updated Romanian Translation
 
 David King (1):
       Fix freeing of RDP events during dispose
 
-Lasse Liehu (1):
-      Finnish translation update
+Jean-Philippe Menil (1):
+      Fix RDP initialization with recent FreeRDP
 
-Vinagre 3.14.2
+Muhammet Kara (1):
+      Updated Turkish translation
+
+Vinagre 3.15.2
 ==============
 
 Alexander Tsoy (1):
@@ -16,14 +426,11 @@ Alexander Tsoy (1):
 David King (1):
       Add name and summary elements to AppData
 
-Marek Kasik (1):
-      Detect RDP hosts via Avahi
-
-Vinagre 3.14.1
-==============
-
 Krishnababu Krothapalli (1):
       Updated Telugu translation
+
+Marek Kasik (1):
+      Detect RDP hosts via Avahi
 
 Rajesh Ranjan (1):
       Updated Hindi translation
@@ -33,6 +440,9 @@ Rūdolfs Mazurs (1):
 
 Saibal Ray (1):
       Updated Bengali (India) translation
+
+Timo Jyrinki (1):
+      Change Finnish translation team web page to l10n.gnome.org
 
 Tong Hui (1):
       update zh_CN translation

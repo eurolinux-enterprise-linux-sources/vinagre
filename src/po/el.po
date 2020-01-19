@@ -9,21 +9,23 @@
 # Marios Zindilis <m.zindilis@dmajor.org>, 2011.
 # George Stefanakis <george.stefanakis@gmail.com>, 2011.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2012, 2013.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2015, 2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: vinagre.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vinagre&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-27 10:49+0000\n"
-"PO-Revision-Date: 2014-08-27 17:13+0200\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
-"Language-Team: team@gnome.gr\n"
+"POT-Creation-Date: 2016-03-01 03:09+0000\n"
+"PO-Revision-Date: 2016-03-01 15:50+0200\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/org.gnome.Vinagre.gschema.xml.h:1
@@ -96,28 +98,30 @@ msgstr ""
 "Ορίστε την τιμή ως \"αληθής\" για να εκκινείτε πάντα το πρόγραμμα ακρόασης "
 "για τις αντίστροφες συνδέσεις."
 
-#: ../data/vinagre.appdata.xml.in.h:1
+#. Both taken from the desktop file.
+#: ../data/vinagre.appdata.xml.in.h:2 ../data/vinagre.desktop.in.in.h:1
+#: ../data/vinagre-file.desktop.in.in.h:1 ../vinagre/vinagre-main.c:182
+msgid "Remote Desktop Viewer"
+msgstr "Εφαρμογή προβολής απομακρυσμένης επιφάνειας εργασίας"
+
+#: ../data/vinagre.appdata.xml.in.h:3 ../data/vinagre.desktop.in.in.h:2
+#: ../data/vinagre-file.desktop.in.in.h:2
+msgid "Access remote desktops"
+msgstr "Συνδεθείτε σε απομακρυσμένες επιφάνειες εργασίας"
+
+#: ../data/vinagre.appdata.xml.in.h:4
 msgid "Vinagre shows remote Windows, Mac OS X and Linux desktops."
 msgstr ""
 "Το Vinagre δείχνει απομακρυσμένες επιφάνειες εργασίας Windows, Mac OS X και "
 "GNU/Linux."
 
-#: ../data/vinagre.appdata.xml.in.h:2
+#: ../data/vinagre.appdata.xml.in.h:5
 msgid ""
 "It uses the VNC, RDP and SPICE protocols, and can even be used to connect to "
 "SSH servers."
 msgstr ""
 "Χρησιμοποιεί τα πρωτόκολλα VNC, RDP και SPICE, και μπορεί ακόμη και να "
 "χρησιμοποιηθεί για σύνδεση με διακομιστές SSH."
-
-#: ../data/vinagre.desktop.in.in.h:1 ../data/vinagre-file.desktop.in.in.h:1
-#: ../vinagre/vinagre-main.c:182
-msgid "Remote Desktop Viewer"
-msgstr "Εφαρμογή προβολής απομακρυσμένης επιφάνειας εργασίας"
-
-#: ../data/vinagre.desktop.in.in.h:2 ../data/vinagre-file.desktop.in.in.h:2
-msgid "Access remote desktops"
-msgstr "Συνδεθείτε σε απομακρυσμένες επιφάνειες εργασίας"
 
 #: ../data/vinagre.desktop.in.in.h:3
 msgid "VNC;RDP;SSH;"
@@ -156,13 +160,13 @@ msgstr "_Πιστοποίηση"
 msgid "Authentication is required"
 msgstr "Απαιτείται πιστοποίηση"
 
-#: ../data/vinagre.ui.h:7 ../plugins/rdp/vinagre-rdp-tab.c:120
+#: ../data/vinagre.ui.h:7 ../plugins/rdp/vinagre-rdp-tab.c:134
 #: ../plugins/ssh/vinagre-ssh-tab.c:49 ../plugins/vnc/vinagre-vnc-tab.c:149
-#: ../plugins/spice/vinagre-spice-tab.c:139
+#: ../plugins/spice/vinagre-spice-tab.c:142
 msgid "Host:"
 msgstr "Κεντρικός υπολογιστής:"
 
-#: ../data/vinagre.ui.h:8 ../plugins/rdp/vinagre-rdp-plugin.c:111
+#: ../data/vinagre.ui.h:8 ../plugins/rdp/vinagre-rdp-plugin.c:130
 #: ../plugins/ssh/vinagre-ssh-plugin.c:112
 msgid "_Username:"
 msgstr "Ό_νομα χρήστη:"
@@ -171,7 +175,7 @@ msgstr "Ό_νομα χρήστη:"
 msgid "_Password:"
 msgstr "_Κωδικός πρόσβασης:"
 
-#: ../data/vinagre.ui.h:10
+#: ../data/vinagre.ui.h:10 ../plugins/rdp/vinagre-rdp-plugin.c:149
 msgid "_Domain:"
 msgstr "_Τομέας:"
 
@@ -265,8 +269,8 @@ msgstr ""
 msgid "Fingerprint:"
 msgstr "Αποτύπωμα:"
 
-#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:751
-#: ../plugins/rdp/vinagre-rdp-tab.c:792
+#: ../data/vinagre.ui.h:38 ../plugins/rdp/vinagre-rdp-tab.c:946
+#: ../plugins/rdp/vinagre-rdp-tab.c:987
 msgid "Connect"
 msgstr "Σύνδεση"
 
@@ -351,13 +355,20 @@ msgstr "RDP"
 msgid "Access MS Windows remote desktops"
 msgstr "Πρόσβαση σε απομακρυσμένες επιφ. εργασίας MS Windows"
 
-#: ../plugins/rdp/vinagre-rdp-plugin.c:104
+#: ../plugins/rdp/vinagre-rdp-plugin.c:111
 msgid "RDP Options"
 msgstr "Επιλογές RDP"
 
+#. Scaling check button
+#: ../plugins/rdp/vinagre-rdp-plugin.c:120
+#: ../plugins/vnc/vinagre-vnc-plugin.c:285
+#: ../plugins/spice/vinagre-spice-plugin.c:261
+msgid "_Scaling"
+msgstr "_Κλιμάκωση"
+
 #. Translators: This is the tooltip for the username field in a RDP connection
 #. Translators: This is the tooltip for the username field in a SSH connection
-#: ../plugins/rdp/vinagre-rdp-plugin.c:118
+#: ../plugins/rdp/vinagre-rdp-plugin.c:137
 #: ../plugins/ssh/vinagre-ssh-plugin.c:117
 msgid ""
 "Optional. If blank, your username will be used. Also, it can be supplied in "
@@ -367,39 +378,62 @@ msgstr ""
 "μπορείτε να το εισάγετε στο πεδίο σύστημα πιο πάνω, στην μορφή όνομα "
 "χρήστη@όνομα κεντρικού υπολογιστή."
 
+#. Translators: This is the tooltip for the domain field in a RDP connection
+#: ../plugins/rdp/vinagre-rdp-plugin.c:156
+#| msgid "Optional"
+msgid "Optional."
+msgstr "Προαιρετικό."
+
 #. Host width
-#: ../plugins/rdp/vinagre-rdp-plugin.c:131
+#: ../plugins/rdp/vinagre-rdp-plugin.c:169
 msgid "_Width:"
 msgstr "_Πλάτος:"
 
 #. Translators: This is the tooltip for the width field in a RDP connection
-#: ../plugins/rdp/vinagre-rdp-plugin.c:138
+#: ../plugins/rdp/vinagre-rdp-plugin.c:176
 msgid "Set width of the remote desktop"
 msgstr "Ορισμός πλάτους στην απομακρυσμένη επιφάνεια εργασίας"
 
 #. Host height
-#: ../plugins/rdp/vinagre-rdp-plugin.c:147
+#: ../plugins/rdp/vinagre-rdp-plugin.c:189
 msgid "_Height:"
 msgstr "Ύ_ψος:"
 
 #. Translators: This is the tooltip for the height field in a RDP connection
-#: ../plugins/rdp/vinagre-rdp-plugin.c:154
+#: ../plugins/rdp/vinagre-rdp-plugin.c:196
 msgid "Set height of the remote desktop"
 msgstr "Ορισμός ύψους στην απομακρυσμένη επιφάνεια εργασίας"
 
-#: ../plugins/rdp/vinagre-rdp-tab.c:121 ../plugins/ssh/vinagre-ssh-tab.c:50
+#: ../plugins/rdp/vinagre-rdp-tab.c:135 ../plugins/ssh/vinagre-ssh-tab.c:50
 #: ../plugins/vnc/vinagre-vnc-tab.c:150
-#: ../plugins/spice/vinagre-spice-tab.c:140
+#: ../plugins/spice/vinagre-spice-tab.c:143
 msgid "Port:"
 msgstr "Θύρα:"
 
-#: ../plugins/rdp/vinagre-rdp-tab.c:750 ../plugins/rdp/vinagre-rdp-tab.c:791
-#| msgid "Cancel Login"
+#: ../plugins/rdp/vinagre-rdp-tab.c:292 ../plugins/vnc/vinagre-vnc-tab.c:601
+#: ../plugins/spice/vinagre-spice-tab.c:473
+msgid "S_caling"
+msgstr "_Κλιμάκωση"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:293 ../plugins/vnc/vinagre-vnc-tab.c:602
+#: ../plugins/spice/vinagre-spice-tab.c:474
+msgid "Fit the remote screen into the current window size"
+msgstr ""
+"Προσαρμόζει την απομακρυσμένη οθόνη στο μέγεθος του τρέχοντος παραθύρου"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:366 ../plugins/rdp/vinagre-rdp-tab.c:367
+#: ../plugins/vnc/vinagre-vnc-tab.c:735 ../plugins/vnc/vinagre-vnc-tab.c:736
+#: ../plugins/spice/vinagre-spice-tab.c:591
+#: ../plugins/spice/vinagre-spice-tab.c:592
+msgid "Scaling"
+msgstr "Κλιμάκωση"
+
+#: ../plugins/rdp/vinagre-rdp-tab.c:945 ../plugins/rdp/vinagre-rdp-tab.c:986
 msgid "_Cancel"
 msgstr "Ακύ_ρωση"
 
-#: ../plugins/rdp/vinagre-rdp-tab.c:982 ../plugins/vnc/vinagre-vnc-tab.c:317
-#: ../plugins/spice/vinagre-spice-tab.c:264
+#: ../plugins/rdp/vinagre-rdp-tab.c:1221 ../plugins/vnc/vinagre-vnc-tab.c:317
+#: ../plugins/spice/vinagre-spice-tab.c:267
 msgid "Error connecting to host."
 msgstr "Σφάλμα κατά τη σύνδεση στον κεντρικό υπολογιστή."
 
@@ -470,18 +504,11 @@ msgstr "Επιλογές VNC"
 
 #. View only check button
 #. View only check button - not fully ready on spice-gtk side
-#: ../plugins/vnc/vinagre-vnc-plugin.c:276
-#: ../plugins/vnc/vinagre-vnc-tab.c:630
+#: ../plugins/vnc/vinagre-vnc-plugin.c:276 ../plugins/vnc/vinagre-vnc-tab.c:630
 #: ../plugins/spice/vinagre-spice-plugin.c:237
-#: ../plugins/spice/vinagre-spice-tab.c:507
+#: ../plugins/spice/vinagre-spice-tab.c:514
 msgid "_View only"
 msgstr "_Προβολή μόνο"
-
-#. Scaling check button
-#: ../plugins/vnc/vinagre-vnc-plugin.c:285
-#: ../plugins/spice/vinagre-spice-plugin.c:261
-msgid "_Scaling"
-msgstr "_Κλιμάκωση"
 
 #. Keep ratio check button
 #: ../plugins/vnc/vinagre-vnc-plugin.c:299
@@ -563,13 +590,13 @@ msgid "Dimensions:"
 msgstr "Διαστάσεις:"
 
 #: ../plugins/vnc/vinagre-vnc-tab.c:306
-#: ../plugins/spice/vinagre-spice-tab.c:252
+#: ../plugins/spice/vinagre-spice-tab.c:255
 msgid "Error creating the SSH tunnel"
 msgstr "Σφάλμα στην δημιουργία διοχέτευσης SSH"
 
 #: ../plugins/vnc/vinagre-vnc-tab.c:307 ../plugins/vnc/vinagre-vnc-tab.c:318
-#: ../plugins/spice/vinagre-spice-tab.c:253
-#: ../plugins/spice/vinagre-spice-tab.c:265
+#: ../plugins/spice/vinagre-spice-tab.c:256
+#: ../plugins/spice/vinagre-spice-tab.c:268
 msgid "Unknown reason"
 msgstr "Άγνωστη αιτία"
 
@@ -598,17 +625,6 @@ msgstr ""
 msgid "A password is required in order to access this remote desktop."
 msgstr "Απαιτείται κωδικός για πρόσβαση στην απομακρυσμένη επιφάνεια εργασίας."
 
-#: ../plugins/vnc/vinagre-vnc-tab.c:601
-#: ../plugins/spice/vinagre-spice-tab.c:466
-msgid "S_caling"
-msgstr "_Κλιμάκωση"
-
-#: ../plugins/vnc/vinagre-vnc-tab.c:602
-#: ../plugins/spice/vinagre-spice-tab.c:467
-msgid "Fit the remote screen into the current window size"
-msgstr ""
-"Προσαρμόζει την απομακρυσμένη οθόνη στο μέγεθος του τρέχοντος παραθύρου"
-
 #: ../plugins/vnc/vinagre-vnc-tab.c:615
 msgid "_Keep Aspect Ratio"
 msgstr "Κ_λείδωμα αναλογιών"
@@ -619,7 +635,7 @@ msgstr ""
 "Διατηρεί την αναλογία της οθόνης όταν γίνεται χρήση της αλλαγής κλίμακας"
 
 #: ../plugins/vnc/vinagre-vnc-tab.c:631
-#: ../plugins/spice/vinagre-spice-tab.c:508
+#: ../plugins/spice/vinagre-spice-tab.c:515
 msgid "Do not send mouse and keyboard events"
 msgstr "Δεν αποστέλλονται συμβάντα του ποντικιού ή του πληκτρολογίου"
 
@@ -641,31 +657,25 @@ msgid "Requests an update of the screen"
 msgstr "Ζητάει μια ενημέρωση της οθόνης"
 
 #: ../plugins/vnc/vinagre-vnc-tab.c:681
-#: ../plugins/spice/vinagre-spice-tab.c:531
+#: ../plugins/spice/vinagre-spice-tab.c:538
 msgid "_Send Ctrl-Alt-Del"
 msgstr "Απο_στολή Ctrl-Alt-Del"
 
 #: ../plugins/vnc/vinagre-vnc-tab.c:682 ../plugins/vnc/vinagre-vnc-tab.c:756
-#: ../plugins/spice/vinagre-spice-tab.c:532
-#: ../plugins/spice/vinagre-spice-tab.c:605
+#: ../plugins/spice/vinagre-spice-tab.c:539
+#: ../plugins/spice/vinagre-spice-tab.c:612
 msgid "Send Ctrl+Alt+Del to the remote desktop"
 msgstr "Αποστέλνει Ctrl+Alt+Del στην απομακρυσμένη επιφ. εργασίας"
 
-#: ../plugins/vnc/vinagre-vnc-tab.c:735 ../plugins/vnc/vinagre-vnc-tab.c:736
-#: ../plugins/spice/vinagre-spice-tab.c:584
-#: ../plugins/spice/vinagre-spice-tab.c:585
-msgid "Scaling"
-msgstr "Κλιμάκωση"
-
 #: ../plugins/vnc/vinagre-vnc-tab.c:745 ../plugins/vnc/vinagre-vnc-tab.c:746
-#: ../plugins/spice/vinagre-spice-tab.c:594
-#: ../plugins/spice/vinagre-spice-tab.c:595
+#: ../plugins/spice/vinagre-spice-tab.c:601
+#: ../plugins/spice/vinagre-spice-tab.c:602
 msgid "Read only"
 msgstr "Μόνο για ανάγνωση"
 
 #. Send Ctrl-alt-del
 #: ../plugins/vnc/vinagre-vnc-tab.c:754
-#: ../plugins/spice/vinagre-spice-tab.c:603
+#: ../plugins/spice/vinagre-spice-tab.c:610
 msgid "Send Ctrl-Alt-Del"
 msgstr "Αποστολή Ctrl-Alt-Del"
 
@@ -712,13 +722,13 @@ msgstr "Επιλογές Spice"
 
 #. Resize guest check button
 #: ../plugins/spice/vinagre-spice-plugin.c:245
-#: ../plugins/spice/vinagre-spice-tab.c:480
+#: ../plugins/spice/vinagre-spice-tab.c:487
 msgid "_Resize guest"
 msgstr "Α_λλαγή μεγέθους επισκέπτη"
 
 #. Clipboard sharing check button
 #: ../plugins/spice/vinagre-spice-plugin.c:253
-#: ../plugins/spice/vinagre-spice-tab.c:493
+#: ../plugins/spice/vinagre-spice-tab.c:500
 msgid "_Share clipboard"
 msgstr "Δ_ιαμοιρασμός του προχείρου"
 
@@ -732,11 +742,11 @@ msgstr "Προαιρετικό"
 msgid "Spice Files"
 msgstr "Αρχεία Spice"
 
-#: ../plugins/spice/vinagre-spice-tab.c:481
+#: ../plugins/spice/vinagre-spice-tab.c:488
 msgid "Resize the screen guest to best fit"
 msgstr "Αλλαγή μεγέθους της οθόνης επισκέπτη για να ταιριάζει καλύτερα"
 
-#: ../plugins/spice/vinagre-spice-tab.c:494
+#: ../plugins/spice/vinagre-spice-tab.c:501
 msgid "Automatically share clipboard between client and guest"
 msgstr "Αυτόματη κοινή χρήση προχείρου μεταξύ πελάτη και επισκέπτη"
 
@@ -892,11 +902,11 @@ msgstr "Σημειώστε ότι όλοι οι υποφάκελοι και οι
 msgid "Remove Item?"
 msgstr "Αφαίρεση αντικειμένου;"
 
-#: ../vinagre/vinagre-bookmarks-ui.c:335
+#: ../vinagre/vinagre-bookmarks-ui.c:334
 msgid "Error removing bookmark: Entry not found"
 msgstr "Σφάλμα κατά την αφαίρεση του σελιδοδείκτη: Δε βρέθηκε η καταχώριση"
 
-#: ../vinagre/vinagre-bookmarks-ui.c:352
+#: ../vinagre/vinagre-bookmarks-ui.c:351
 msgid "New Folder"
 msgstr "Νέος φάκελος"
 
@@ -941,17 +951,17 @@ msgstr "Σφάλμα κατά την αποθήκευση του αρχείου 
 msgid "Choose a Remote Desktop"
 msgstr "Επιλέξτε μια απομακρυσμένη επιφάνεια εργασίας"
 
-#: ../vinagre/vinagre-connection.c:614 ../vinagre/vinagre-tab.c:574
+#: ../vinagre/vinagre-connection.c:658 ../vinagre/vinagre-tab.c:590
 #: ../vinagre/vinagre-tube-handler.c:257
 #, c-format
 msgid "The protocol %s is not supported."
 msgstr "Το πρωτόκολλο %s δεν υποστηρίζεται."
 
-#: ../vinagre/vinagre-connection.c:722
+#: ../vinagre/vinagre-connection.c:766
 msgid "Could not open the file."
 msgstr "Αδυναμία ανοίγματος αρχείου."
 
-#: ../vinagre/vinagre-connection.c:748
+#: ../vinagre/vinagre-connection.c:792
 msgid "The file was not recognized by any of the plugins."
 msgstr "Το αρχείο δεν αναγνωρίστηκε από κάποιο πρόσθετο."
 
@@ -1161,7 +1171,7 @@ msgstr "Αδυναμία αποστολής επιβεβαίωσης ταυτό�
 msgid "Secure shell password: %s"
 msgstr "Κωδικός πρόσβασης ασφαλούς κελύφους: %s"
 
-#: ../vinagre/vinagre-ssh.c:618 ../vinagre/vinagre-tab.c:798
+#: ../vinagre/vinagre-ssh.c:618 ../vinagre/vinagre-tab.c:860
 msgid "Error saving the credentials on the keyring."
 msgstr "Σφάλμα κατά την αποθήκευση των διαπιστευτηρίων στην κλειδοθήκη."
 
@@ -1185,37 +1195,42 @@ msgstr "Απέτυχε η επαλήθευση κλειδιού του κεντ�
 msgid "Unable to find a valid SSH program"
 msgstr "Αδυναμία εντοπισμού έγκυρου προγράμματος SSH"
 
-#: ../vinagre/vinagre-tab.c:354
+#: ../vinagre/vinagre-tab.c:361
 msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
-#: ../vinagre/vinagre-tab.c:375
+#. Translators: Pressing this button will minimize Vinagre
+#: ../vinagre/vinagre-tab.c:370
+msgid "Minimize window"
+msgstr "Ελαχιστοποίηση παραθύρου"
+
+#: ../vinagre/vinagre-tab.c:391
 msgid "Leave fullscreen"
 msgstr "Έξοδος από την πλήρη οθόνη"
 
-#: ../vinagre/vinagre-tab.c:537
+#: ../vinagre/vinagre-tab.c:553
 msgid "Error saving recent connection."
 msgstr "Σφάλμα κατά την αποθήκευση της πρόσφατης σύνδεσης."
 
-#: ../vinagre/vinagre-tab.c:781
+#: ../vinagre/vinagre-tab.c:844
 #, c-format
 msgid "Remote desktop password for %s"
 msgstr "Κωδικός πρόσβασης απομακρυσμένης επιφάνειας εργασίας %s"
 
-#: ../vinagre/vinagre-tab.c:897
+#: ../vinagre/vinagre-tab.c:961
 msgid "Could not get a screenshot of the connection."
 msgstr "Αδυναμία λήψης στιγμιότυπου της σύνδεσης."
 
-#: ../vinagre/vinagre-tab.c:902
+#: ../vinagre/vinagre-tab.c:966
 msgid "Save Screenshot"
 msgstr "Αποθήκευση στιγμιότυπου"
 
-#: ../vinagre/vinagre-tab.c:916
+#: ../vinagre/vinagre-tab.c:980
 #, c-format
 msgid "Screenshot of %s at %s"
 msgstr "Στιγμιότυπο του %s στο %s"
 
-#: ../vinagre/vinagre-tab.c:970
+#: ../vinagre/vinagre-tab.c:1034
 msgid "Error saving screenshot"
 msgstr "Σφάλμα κατά την αποθήκευση του στιγμιότυπου"
 
@@ -1314,7 +1329,7 @@ msgid "_Keyboard shortcuts"
 msgstr "Συντομεύσεις _πληκτρολογίου"
 
 #: ../vinagre/vinagre-ui.h:60
-msgid "Enable keyboard shurtcuts"
+msgid "Enable keyboard shortcuts"
 msgstr "Ενεργοποίηση συντομεύσεων πληκτρολογίου"
 
 #: ../vinagre/vinagre-ui.h:62
@@ -1385,12 +1400,12 @@ msgid "Error loading UI file"
 msgstr "Σφάλμα κατά την φόρτωση του αρχείου UI"
 
 #. Translators: %s is a protocol, like VNC or SSH
-#: ../vinagre/vinagre-utils.vala:112
+#: ../vinagre/vinagre-utils.vala:116
 #, c-format
 msgid "%s authentication is required"
 msgstr "Το %s απαιτεί πιστοποίηση"
 
-#: ../vinagre/vinagre-utils.vala:193
+#: ../vinagre/vinagre-utils.vala:227
 msgid "Error showing help"
 msgstr "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας"
 

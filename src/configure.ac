@@ -1,5 +1,5 @@
 AC_PREREQ([2.64])
-AC_INIT([Vinagre], [3.14.3], [https://bugzilla.gnome.org/enter_bug.cgi?product=vinagre], [vinagre], [https://wiki.gnome.org/Apps/Vinagre])
+AC_INIT([Vinagre], [3.22.0], [https://bugzilla.gnome.org/enter_bug.cgi?product=vinagre], [vinagre], [https://wiki.gnome.org/Apps/Vinagre])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_SRCDIR([vinagre/vinagre-main.c])
 AC_CONFIG_HEADERS([config.h])
@@ -29,7 +29,7 @@ PKG_PROG_PKG_CONFIG([0.24])
 
 AC_PROG_SED
 
-GLIB_DEPS="glib-2.0 >= 2.28.0 $gio_os >= 2.28.0"
+GLIB_DEPS="glib-2.0 >= 2.32.0 $gio_os >= 2.32.0"
 GTHREAD_DEPS="gthread-2.0 >= 2.0.0"
 GTK_DEPS="gtk+-3.0 >= 3.9.6"
 GTK_VNC_DEPS="gtk-vnc-2.0 >= 0.4.3"
@@ -102,7 +102,7 @@ AS_IF([test "x$have_spice" = "xyes"],
 AM_CONDITIONAL([VINAGRE_ENABLE_SPICE], [test "x$have_spice" = "xyes"])
 
 # Checks for header files. See vinagre/pyt_open.c for usage.
-AC_CHECK_HEADERS([ifaddrs.h sys/un.h stropts.h termios.h utmp.h])
+AC_CHECK_HEADERS([ifaddrs.h sys/un.h stropts.h termios.h util.h utmp.h])
 
 # Internationalization.
 AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])

@@ -331,6 +331,13 @@ close_button_clicked (GtkToolButton *button,
 }
 
 static void
+minimize_button_clicked (GtkToolButton *button,
+                         VinagreTab    *tab)
+{
+  vinagre_window_minimize (tab->priv->window);
+}
+
+static void
 fullscreen_button_clicked (GtkToolButton *button,
 			   VinagreTab    *tab)
 {
@@ -355,6 +362,15 @@ setup_layout (VinagreTab *tab)
   gtk_widget_show (GTK_WIDGET (button));
   gtk_toolbar_insert (GTK_TOOLBAR (tab->priv->toolbar), GTK_TOOL_ITEM (button), 0);
   g_signal_connect (button, "clicked", G_CALLBACK (close_button_clicked), tab);
+
+  /* Minimize window */
+  button = GTK_WIDGET (gtk_tool_button_new (NULL, NULL));
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (button), "window-minimize-symbolic");
+  /* Translators: Pressing this button will minimize Vinagre */
+  gtk_tool_item_set_tooltip_text (GTK_TOOL_ITEM (button), _("Minimize window"));
+  gtk_widget_show (button);
+  gtk_toolbar_insert (GTK_TOOLBAR (tab->priv->toolbar), GTK_TOOL_ITEM (button), 0);
+  g_signal_connect (button, "clicked", G_CALLBACK (minimize_button_clicked), tab);
 
   /* Connection name/menu */
   str = vinagre_connection_get_best_name (tab->priv->conn);
@@ -742,24 +758,71 @@ vinagre_tab_get_from_connection (VinagreConnection *conn)
   return (res != NULL) ? VINAGRE_TAB (res) : NULL;
 }
 
+static GHashTable *
+secret_attributes_create (VinagreConnection *connection)
+{
+  const gchar *conn_user = vinagre_connection_get_username (connection);
+  const gchar *conn_domain = vinagre_connection_get_domain (connection);
+  GHashTable  *attributes;
+
+  attributes = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+
+  g_hash_table_insert (attributes,
+                       g_strdup ("server"),
+                       g_strdup (vinagre_connection_get_host (connection)));
+
+  g_hash_table_insert (attributes,
+                       g_strdup ("protocol"),
+                       g_strdup (vinagre_connection_get_protocol (connection)));
+
+  g_hash_table_insert (attributes,
+                       g_strdup ("port"),
+                       g_strdup_printf ("%d", vinagre_connection_get_port (connection)));
+
+  if (conn_user != NULL)
+    {
+      g_hash_table_insert (attributes,
+                           g_strdup ("user"),
+                           g_strdup (conn_user));
+    }
+
+  if (conn_domain != NULL)
+    {
+      g_hash_table_insert (attributes,
+                           g_strdup ("domain"),
+                           g_strdup (conn_domain));
+    }
+
+  return attributes;
+}
+
 gboolean
-vinagre_tab_find_credentials_in_keyring (VinagreTab *tab, gchar **username, gchar **password)
+vinagre_tab_find_credentials_in_keyring (VinagreTab *tab, gchar **domain, gchar **username, gchar **password)
 {
   const gchar *conn_user = vinagre_connection_get_username (tab->priv->conn);
+  const gchar *conn_domain = vinagre_connection_get_domain (tab->priv->conn);
+  GHashTable  *attributes;
+
   *username = NULL;
 
-  /* "user" goes last, to terminate the attribute list if conn_user is NULL. */
-  *password = secret_password_lookup_sync (SECRET_SCHEMA_COMPAT_NETWORK, NULL, NULL,
-                                           "server", vinagre_connection_get_host (tab->priv->conn),
-                                           "protocol", vinagre_connection_get_protocol (tab->priv->conn),
-                                           "port", vinagre_connection_get_port (tab->priv->conn),
-                                           conn_user ? "user" : NULL, conn_user,
-                                           NULL);
+  if (domain != NULL)
+    *domain = NULL;
+
+  attributes = secret_attributes_create (tab->priv->conn);
+
+  *password = secret_password_lookupv_sync (SECRET_SCHEMA_COMPAT_NETWORK,
+                                            attributes, NULL, NULL);
+
+  g_hash_table_destroy (attributes);
 
   if (*password == NULL)
     return FALSE;
 
   *username = g_strdup (conn_user);
+
+  if (domain != NULL)
+    *domain = g_strdup (conn_domain);
+
   return TRUE;
 }
 
@@ -771,25 +834,24 @@ void vinagre_tab_set_save_credentials (VinagreTab *tab, gboolean value)
 void
 vinagre_tab_save_credentials_in_keyring (VinagreTab *tab)
 {
+  GHashTable *attributes;
   GError *error = NULL;
   gchar *label;
-  const gchar *conn_user = vinagre_connection_get_username (tab->priv->conn);
 
   if (!tab->priv->save_credentials)
     return;
 
   label = g_strdup_printf (_("Remote desktop password for %s"),
                            vinagre_connection_get_host (tab->priv->conn));
-  /* "user" goes last, to terminate the attribute list if conn_user is NULL. */
-  secret_password_store_sync (SECRET_SCHEMA_COMPAT_NETWORK, NULL,
-                              label, vinagre_connection_get_password (tab->priv->conn),
-                              NULL, &error,
-                              "server", vinagre_connection_get_host (tab->priv->conn),
-                              "protocol", vinagre_connection_get_protocol (tab->priv->conn),
-                              "port", vinagre_connection_get_port (tab->priv->conn),
-                              conn_user ? "user" : NULL, conn_user,
-                              NULL);
+
+  attributes = secret_attributes_create (tab->priv->conn);
+
+  secret_password_storev_sync (SECRET_SCHEMA_COMPAT_NETWORK, attributes, NULL,
+                               label, vinagre_connection_get_password (tab->priv->conn),
+                               NULL, &error);
+
   g_free (label);
+  g_hash_table_destroy (attributes);
 
   if (error == NULL) {
     tab->priv->saved_credentials = TRUE;
@@ -808,17 +870,19 @@ void vinagre_tab_remove_credentials_from_keyring (VinagreTab *tab)
 {
   if (tab->priv->saved_credentials)
     {
-      /* Put "user" last, to terminate the attributes if conn_user is NULL. */
-      const gchar *conn_user = vinagre_connection_get_username (tab->priv->conn);
-      secret_password_clear_sync (SECRET_SCHEMA_COMPAT_NETWORK, NULL, NULL,
-                                  "server", vinagre_connection_get_host (tab->priv->conn),
-                                  "protocol", vinagre_connection_get_protocol (tab->priv->conn),
-                                  "port", vinagre_connection_get_port (tab->priv->conn),
-                                  conn_user ? "user" : NULL, conn_user,
-                                  NULL);
+      GHashTable *attributes;
+
+      attributes = secret_attributes_create (tab->priv->conn);
+
+      secret_password_clearv_sync (SECRET_SCHEMA_COMPAT_NETWORK,
+                                   attributes, NULL, NULL);
+
       tab->priv->saved_credentials = FALSE;
+
+      g_hash_table_destroy (attributes);
     }
 
+  vinagre_connection_set_domain (tab->priv->conn, NULL);
   vinagre_connection_set_username (tab->priv->conn, NULL);
   vinagre_connection_set_password (tab->priv->conn, NULL);
 }

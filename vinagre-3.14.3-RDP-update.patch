@@ -1,11 +1,11 @@
---- vinagre-3.14.3/plugins/rdp/vinagre-rdp-tab.c
-+++ vinagre-3.14.3/plugins/rdp/vinagre-rdp-tab.c
-@@ -1204,7 +1211,7 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+--- vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
++++ vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
+@@ -1232,7 +1232,7 @@ open_freerdp (VinagreRdpTab *rdp_tab)
    else
      {
        priv->authentication_attempts = 0;
 -      priv->update_id = g_idle_add ((GSourceFunc) update, rdp_tab);
 +      priv->update_id = g_timeout_add (5, (GSourceFunc) update, rdp_tab);
      }
+ }
  
-   priv->authentication_attempts = 0;

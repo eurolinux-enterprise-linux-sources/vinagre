@@ -24,10 +24,10 @@
 #include <errno.h>
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
+#include <math.h>
 #include <freerdp/api.h>
 #include <freerdp/types.h>
 #include <freerdp/freerdp.h>
-#include <freerdp/utils/event.h>
 #include <freerdp/gdi/gdi.h>
 #if HAVE_FREERDP_1_1
 #include <freerdp/locale/keyboard.h>
@@ -63,11 +63,25 @@ struct _VinagreRdpTabPrivate
   guint            key_press_handler_id;
   guint            key_release_handler_id;
   guint            motion_notify_handler_id;
+
+  GSList          *connected_actions;
+  GtkWidget       *scaling_button;
+  GtkAction       *scaling_action;
+  gboolean         scaling;
+  double           scale;
+  double           offset_x, offset_y;
+
+  guint            authentication_attempts;
 };
 
 G_DEFINE_TYPE (VinagreRdpTab, vinagre_rdp_tab, VINAGRE_TYPE_TAB)
 
 static void open_freerdp (VinagreRdpTab *rdp_tab);
+static void setup_toolbar (VinagreRdpTab *rdp_tab);
+static void vinagre_rdp_tab_set_scaling (VinagreRdpTab *tab,
+                                         gboolean       scaling);
+static void scaling_button_clicked (GtkToggleToolButton *button,
+                                    VinagreRdpTab       *rdp_tab);
 
 struct frdp_context
 {
@@ -129,11 +143,40 @@ free_frdpEvent (gpointer event,
 }
 
 static void
+view_scaling_cb (GtkAction     *action,
+                 VinagreRdpTab *rdp_tab)
+{
+  VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  gboolean              scaling;
+
+  scaling = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+
+  vinagre_rdp_tab_set_scaling (rdp_tab, scaling);
+
+  g_signal_handlers_block_by_func (priv->scaling_button, scaling_button_clicked, rdp_tab);
+  gtk_toggle_tool_button_set_active (GTK_TOGGLE_TOOL_BUTTON (priv->scaling_button), scaling);
+  g_signal_handlers_unblock_by_func (priv->scaling_button, scaling_button_clicked, rdp_tab);
+}
+
+const static GSList *
+rdp_get_connected_actions (VinagreTab *tab)
+{
+  VinagreRdpTab *rdp_tab = VINAGRE_RDP_TAB (tab);
+
+  return rdp_tab->priv->connected_actions;
+}
+
+static void
 vinagre_rdp_tab_dispose (GObject *object)
 {
   VinagreRdpTab        *rdp_tab = VINAGRE_RDP_TAB (object);
   VinagreRdpTabPrivate *priv = rdp_tab->priv;
-  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (VINAGRE_TAB (rdp_tab)));
+
+  if (priv->connected_actions)
+    {
+      vinagre_tab_free_actions (priv->connected_actions);
+      priv->connected_actions = NULL;
+    }
 
   if (priv->freerdp_session)
     {
@@ -175,17 +218,25 @@ vinagre_rdp_tab_dispose (GObject *object)
 
   if (priv->key_press_handler_id > 0)
     {
-      g_signal_handler_disconnect (window, priv->key_press_handler_id);
+      g_signal_handler_disconnect (GTK_WIDGET (object), priv->key_press_handler_id);
       priv->key_press_handler_id = 0;
     }
 
   if (priv->key_release_handler_id > 0)
     {
-      g_signal_handler_disconnect (window, priv->key_release_handler_id);
+      g_signal_handler_disconnect (GTK_WIDGET (object), priv->key_release_handler_id);
       priv->key_release_handler_id = 0;
     }
 
   G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->dispose (object);
+}
+
+static gboolean
+emit_delayed_signal (GObject *object)
+{
+  g_signal_emit_by_name (object, "tab-initialized");
+
+  return G_SOURCE_REMOVE;
 }
 
 static void
@@ -196,7 +247,10 @@ vinagre_rdp_tab_constructed (GObject *object)
   if (G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->constructed)
     G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->constructed (object);
 
+  setup_toolbar (rdp_tab);
   open_freerdp (rdp_tab);
+
+  g_idle_add ((GSourceFunc) emit_delayed_signal, object);
 }
 
 static void
@@ -209,6 +263,7 @@ vinagre_rdp_tab_class_init (VinagreRdpTabClass *klass)
   object_class->dispose = vinagre_rdp_tab_dispose;
 
   tab_class->impl_get_tooltip = rdp_tab_get_tooltip;
+  tab_class->impl_get_connected_actions = rdp_get_connected_actions;
 
   g_type_class_add_private (object_class, sizeof (VinagreRdpTabPrivate));
 }
@@ -221,12 +276,110 @@ idle_close (VinagreTab *tab)
   return FALSE;
 }
 
+static GSList *
+create_connected_actions (VinagreRdpTab *tab)
+{
+  GSList *list = NULL;
+  VinagreTabUiAction *action;
+
+  /* View->Scaling */
+  action = g_slice_new (VinagreTabUiAction);
+  action->paths = g_new (gchar *, 3);
+  action->paths[0] = g_strdup ("/MenuBar/ViewMenu");
+  action->paths[1] = g_strdup ("/ToolBar");
+  action->paths[2] = NULL;
+  action->action = GTK_ACTION (gtk_toggle_action_new ("RDPViewScaling",
+                                                 _("S_caling"),
+                                                 _("Fit the remote screen into the current window size"),
+                                                 "zoom-fit-best"));
+  gtk_action_set_icon_name (action->action, "zoom-fit-best");
+  g_signal_connect (action->action, "activate", G_CALLBACK (view_scaling_cb), tab);
+  list = g_slist_append (list, action);
+  tab->priv->scaling_action = action->action;
+
+  return list;
+}
+
+static void
+scaling_button_clicked (GtkToggleToolButton *button,
+                        VinagreRdpTab       *rdp_tab)
+{
+  vinagre_rdp_tab_set_scaling (rdp_tab,
+                               gtk_toggle_tool_button_get_active (button));
+}
+
+static void
+vinagre_rdp_tab_set_scaling (VinagreRdpTab *tab,
+                             gboolean       scaling)
+{
+  VinagreRdpTabPrivate *priv = tab->priv;
+  VinagreConnection    *conn = vinagre_tab_get_conn (VINAGRE_TAB (tab));
+  GtkWidget            *scrolled;
+  gint                  window_width, window_height;
+
+  priv->scaling = scaling;
+
+  gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (priv->scaling_action),
+                                priv->scaling);
+
+  if (scaling)
+    {
+      scrolled = gtk_widget_get_ancestor (priv->display, GTK_TYPE_SCROLLED_WINDOW);
+      window_width = gtk_widget_get_allocated_width (scrolled);
+      window_height = gtk_widget_get_allocated_height (scrolled);
+
+      gtk_widget_set_size_request (priv->display,
+                                   window_width,
+                                   window_height);
+
+      gtk_widget_set_halign (priv->display, GTK_ALIGN_FILL);
+      gtk_widget_set_valign (priv->display, GTK_ALIGN_FILL);
+    }
+  else
+    {
+      gtk_widget_set_size_request (priv->display,
+                                   vinagre_connection_get_width (VINAGRE_CONNECTION (conn)),
+                                   vinagre_connection_get_height (VINAGRE_CONNECTION (conn)));
+      gtk_widget_set_halign (priv->display, GTK_ALIGN_CENTER);
+      gtk_widget_set_valign (priv->display, GTK_ALIGN_CENTER);
+    }
+
+  gtk_widget_queue_draw_area (priv->display, 0, 0,
+                              gtk_widget_get_allocated_width (priv->display),
+                              gtk_widget_get_allocated_height (priv->display));
+}
+
+static void
+setup_toolbar (VinagreRdpTab *rdp_tab)
+{
+  GtkWidget *toolbar = vinagre_tab_get_toolbar (VINAGRE_TAB (rdp_tab));
+  GtkWidget *button;
+
+  /* Space */
+  button = GTK_WIDGET (gtk_separator_tool_item_new ());
+  gtk_tool_item_set_expand (GTK_TOOL_ITEM (button), TRUE);
+  gtk_widget_show (GTK_WIDGET (button));
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (button), -1);
+
+  /* Scaling */
+  button = GTK_WIDGET (gtk_toggle_tool_button_new ());
+  gtk_tool_button_set_label (GTK_TOOL_BUTTON (button), _("Scaling"));
+  gtk_tool_item_set_tooltip_text (GTK_TOOL_ITEM (button), _("Scaling"));
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (button), "zoom-fit-best");
+  gtk_widget_show (GTK_WIDGET (button));
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (button), -1);
+  g_signal_connect (button, "toggled", G_CALLBACK (scaling_button_clicked), rdp_tab);
+  rdp_tab->priv->scaling_button = button;
+}
 
 static void
 frdp_process_events (freerdp *instance,
                      GQueue  *events)
 {
-  frdpEvent *event;
+  VinagreRdpTab        *rdp_tab = ((frdpContext *) instance->context)->rdp_tab;
+  VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  frdpEvent            *event;
+  gint                  x, y;
 
   while (!g_queue_is_empty (events))
     {
@@ -241,10 +394,27 @@ frdp_process_events (freerdp *instance,
                                                 ((frdpEventKey *) event)->code);
                 break;
               case FRDP_EVENT_TYPE_BUTTON:
+                if (priv->scaling)
+                  {
+                    x = (((frdpEventButton *) event)->x - priv->offset_x) / priv->scale;
+                    y = (((frdpEventButton *) event)->y - priv->offset_y) / priv->scale;
+                  }
+                else
+                  {
+                    x = ((frdpEventButton *) event)->x;
+                    y = ((frdpEventButton *) event)->y;
+                  }
+
+                if (x < 0)
+                  x = 0;
+
+                if (y < 0)
+                  y = 0;
+
                 instance->input->MouseEvent (instance->input,
                                              ((frdpEventButton *) event)->flags,
-                                             ((frdpEventButton *) event)->x,
-                                             ((frdpEventButton *) event)->y);
+                                             x,
+                                             y);
                 break;
               default:
                 break;
@@ -262,9 +432,43 @@ frdp_drawing_area_draw (GtkWidget *area,
 {
   VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
   VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  VinagreRdpConnection *conn = VINAGRE_RDP_CONNECTION (vinagre_tab_get_conn (VINAGRE_TAB (rdp_tab)));
+  GtkWidget            *scrolled;
+  double                scale_x, scale_y;
+  gint                  window_width, window_height;
 
   if (priv->surface == NULL)
     return FALSE;
+
+  if (priv->scaling)
+    {
+      scrolled = gtk_widget_get_ancestor (area, GTK_TYPE_SCROLLED_WINDOW);
+      window_width = gtk_widget_get_allocated_width (scrolled);
+      window_height = gtk_widget_get_allocated_height (scrolled);
+
+      scale_x = (double) window_width / vinagre_connection_get_width (VINAGRE_CONNECTION (conn));
+      scale_y = (double) window_height / vinagre_connection_get_height (VINAGRE_CONNECTION (conn));
+
+      priv->scale = scale_x < scale_y ? scale_x : scale_y;
+
+      priv->offset_x = (window_width - vinagre_connection_get_width (VINAGRE_CONNECTION (conn)) * priv->scale) / 2.0;
+      priv->offset_y = (window_height - vinagre_connection_get_height (VINAGRE_CONNECTION (conn)) * priv->scale) / 2.0;
+
+      if (priv->offset_x < 0)
+        priv->offset_x = 0;
+
+      if (priv->offset_y < 0)
+        priv->offset_y = 0;
+
+      cairo_translate (cr, priv->offset_x, priv->offset_y);
+      cairo_scale (cr, priv->scale, priv->scale);
+
+      if (window_width != gtk_widget_get_allocated_width (area) ||
+          window_height != gtk_widget_get_allocated_height (area))
+        gtk_widget_set_size_request (area,
+                                     window_width,
+                                     window_height);
+    }
 
   cairo_set_source_surface (cr, priv->surface, 0, 0);
   cairo_paint (cr);
@@ -287,6 +491,7 @@ frdp_end_paint (rdpContext *context)
   VinagreRdpTab        *rdp_tab = ((frdpContext *) context)->rdp_tab;
   VinagreRdpTabPrivate *priv = rdp_tab->priv;
   rdpGdi               *gdi = context->gdi;
+  double                pos_x, pos_y;
   gint                  x, y, w, h;
 
   if (gdi->primary->hdc->hwnd->invalid->null)
@@ -297,7 +502,21 @@ frdp_end_paint (rdpContext *context)
   w = gdi->primary->hdc->hwnd->invalid->w;
   h = gdi->primary->hdc->hwnd->invalid->h;
 
-  gtk_widget_queue_draw_area (priv->display, x, y, w, h);
+  if (priv->scaling)
+    {
+      pos_x = priv->offset_x + x * priv->scale;
+      pos_y = priv->offset_y + y * priv->scale;
+
+      gtk_widget_queue_draw_area (priv->display,
+                                  floor (pos_x),
+                                  floor (pos_y),
+                                  ceil (pos_x + w * priv->scale) - floor (pos_x),
+                                  ceil (pos_y + h * priv->scale) - floor (pos_y));
+    }
+  else
+    {
+      gtk_widget_queue_draw_area (priv->display, x, y, w, h);
+    }
 }
 
 static BOOL
@@ -368,7 +587,15 @@ frdp_post_connect (freerdp *instance)
   rdpGdi               *gdi;
   int                   stride;
 
-  gdi_init (instance, CLRBUF_24BPP, NULL);
+  gdi_init (instance,
+#if defined(FREERDP_VERSION_MAJOR) && defined(FREERDP_VERSION_MINOR) && \
+    !(FREERDP_VERSION_MAJOR > 1 || (FREERDP_VERSION_MAJOR == 1 && \
+    FREERDP_VERSION_MINOR >= 2))
+                    CLRBUF_24BPP,
+#else
+                    CLRBUF_32BPP,
+#endif
+                    NULL);
   gdi = instance->context->gdi;
 
   instance->update->BeginPaint = frdp_begin_paint;
@@ -384,6 +611,7 @@ frdp_post_connect (freerdp *instance)
                               0, 0,
                               gdi->width, gdi->height);
 
+  vinagre_tab_save_credentials_in_keyring (VINAGRE_TAB (rdp_tab));
   vinagre_tab_add_recent_used (VINAGRE_TAB (rdp_tab));
   vinagre_tab_set_state (VINAGRE_TAB (rdp_tab), VINAGRE_TAB_STATE_CONNECTED);
 
@@ -477,16 +705,24 @@ frdp_key_pressed (GtkWidget   *widget,
   VinagreRdpTab        *rdp_tab = (VinagreRdpTab *) user_data;
   VinagreRdpTabPrivate *priv = rdp_tab->priv;
   frdpEventKey         *frdp_event;
+#if HAVE_FREERDP_1_1
+  UINT16                scancode;
+#endif
 
   frdp_event = g_new0 (frdpEventKey, 1);
   frdp_event->type = FRDP_EVENT_TYPE_KEY;
   frdp_event->flags = event->type == GDK_KEY_PRESS ? KBD_FLAGS_DOWN : KBD_FLAGS_RELEASE;
 
 #if HAVE_FREERDP_1_1
-  frdp_event->code = freerdp_keyboard_get_rdp_scancode_from_x11_keycode (event->hardware_keycode);
+  scancode = freerdp_keyboard_get_rdp_scancode_from_x11_keycode (event->hardware_keycode);
+  frdp_event->code = RDP_SCANCODE_CODE(scancode);
+  frdp_event->extended = RDP_SCANCODE_EXTENDED(scancode);
 #else
   frdp_event->code = freerdp_kbd_get_scancode_by_keycode (event->hardware_keycode, &frdp_event->extended);
 #endif
+
+  if (frdp_event->extended)
+    frdp_event->flags |= KBD_FLAGS_EXTENDED;
 
   g_queue_push_tail (priv->events, frdp_event);
 
@@ -525,8 +761,8 @@ frdp_button_pressed (GtkWidget      *widget,
     {
       frdp_event->flags |= event->type == GDK_BUTTON_PRESS ? PTR_FLAGS_DOWN : 0;
 
-      frdp_event->x = event->x;
-      frdp_event->y = event->y;
+      frdp_event->x = event->x < 0.0 ? 0.0 : event->x;
+      frdp_event->y = event->y < 0.0 ? 0.0 : event->y;
 
       g_queue_push_tail (priv->events, frdp_event);
     }
@@ -592,8 +828,8 @@ frdp_scroll (GtkWidget      *widget,
 
   if (frdp_event->flags != 0)
     {
-      frdp_event->x = event->x;
-      frdp_event->y = event->y;
+      frdp_event->x = event->x < 0.0 ? 0.0 : event->x;
+      frdp_event->y = event->y < 0.0 ? 0.0 : event->y;
 
       g_queue_push_tail (priv->events, frdp_event);
     }
@@ -618,33 +854,12 @@ frdp_mouse_moved (GtkWidget      *widget,
 
   frdp_event->type = FRDP_EVENT_TYPE_BUTTON;
   frdp_event->flags = PTR_FLAGS_MOVE;
-  frdp_event->x = event->x;
-  frdp_event->y = event->y;
+  frdp_event->x = event->x < 0.0 ? 0.0 : event->x;
+  frdp_event->y = event->y < 0.0 ? 0.0 : event->y;
 
   g_queue_push_tail (priv->events, frdp_event);
 
   return TRUE;
-}
-
-static void
-entry_text_changed_cb (GtkEntry   *entry,
-                       GtkBuilder *builder)
-{
-  const gchar *text;
-  GtkWidget   *widget;
-  gsize        username_length;
-  gsize        password_length;
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "username_entry"));
-  text = gtk_entry_get_text (GTK_ENTRY (widget));
-  username_length = strlen (text);
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "password_entry"));
-  text = gtk_entry_get_text (GTK_ENTRY (widget));
-  password_length = strlen (text);
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "ok_button"));
-  gtk_widget_set_sensitive (widget, password_length > 0 && username_length > 0);
 }
 
 static gboolean
@@ -653,87 +868,70 @@ frdp_authenticate (freerdp  *instance,
                    char    **password,
                    char    **domain)
 {
-  VinagreTab        *tab = VINAGRE_TAB (((frdpContext *) instance->context)->rdp_tab);
-  VinagreConnection *conn = vinagre_tab_get_conn (tab);
-  const gchar       *user_name;
-  const gchar       *domain_name;
-  GtkBuilder        *builder;
-  GtkWidget         *dialog;
-  GtkWidget         *widget;
-  GtkWidget         *username_entry;
-  GtkWidget         *password_entry;
-  GtkWidget         *domain_entry;
-  gboolean           save_credential_check_visible;
-  gboolean           domain_label_visible;
-  gboolean           domain_entry_visible;
-  gint               response;
+  VinagreTab           *tab = VINAGRE_TAB (((frdpContext *) instance->context)->rdp_tab);
+  VinagreRdpTab        *rdp_tab = VINAGRE_RDP_TAB (tab);
+  VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  VinagreConnection    *conn = vinagre_tab_get_conn (tab);
+  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
+  gboolean              save_in_keyring = FALSE;
+  gchar                *keyring_domain = NULL;
+  gchar                *keyring_username = NULL;
+  gchar                *keyring_password = NULL;
 
-  builder = vinagre_utils_get_builder ();
+  priv->authentication_attempts++;
 
-  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "auth_required_dialog"));
-  gtk_window_set_modal ((GtkWindow *) dialog, TRUE);
-  gtk_window_set_transient_for ((GtkWindow *) dialog, GTK_WINDOW (vinagre_tab_get_window (tab)));
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "host_label"));
-  gtk_label_set_text (GTK_LABEL (widget), vinagre_connection_get_host (conn));
-
-  username_entry = GTK_WIDGET (gtk_builder_get_object (builder, "username_entry"));
-  password_entry = GTK_WIDGET (gtk_builder_get_object (builder, "password_entry"));
-  domain_entry = GTK_WIDGET (gtk_builder_get_object (builder, "domain_entry"));
-
-  if (*username != NULL && *username[0] != '\0')
+  if (priv->authentication_attempts == 1)
     {
-      gtk_entry_set_text (GTK_ENTRY (username_entry), *username);
-      gtk_widget_grab_focus (password_entry);
+      vinagre_tab_find_credentials_in_keyring (tab, &keyring_domain, &keyring_username, &keyring_password);
+      if (keyring_password != NULL && keyring_username != NULL)
+        {
+          *domain = keyring_domain;
+          *username = keyring_username;
+          *password = keyring_password;
+
+          return TRUE;
+        }
+      else
+        {
+          g_free (keyring_domain);
+          g_free (keyring_username);
+          g_free (keyring_password);
+        }
     }
 
-  g_signal_connect (username_entry, "changed", G_CALLBACK (entry_text_changed_cb), builder);
-  g_signal_connect (password_entry, "changed", G_CALLBACK (entry_text_changed_cb), builder);
-
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "save_credential_check"));
-  save_credential_check_visible = gtk_widget_get_visible (widget);
-  gtk_widget_set_visible (widget, FALSE);
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "domain_label"));
-  domain_label_visible = gtk_widget_get_visible (widget);
-  gtk_widget_set_visible (widget, TRUE);
-
-  domain_entry_visible = gtk_widget_get_visible (domain_entry);
-  gtk_widget_set_visible (domain_entry, TRUE);
-
-
-  response = gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_hide (dialog);
-
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "save_credential_check"));
-  gtk_widget_set_visible (widget, save_credential_check_visible);
-
-  widget = GTK_WIDGET (gtk_builder_get_object (builder, "domain_label"));
-  gtk_widget_set_visible (widget, domain_label_visible);
-
-  gtk_widget_set_visible (domain_entry, domain_entry_visible);
-
-
-  if (response == GTK_RESPONSE_OK)
+  if (vinagre_utils_request_credential (window,
+                                        "RDP",
+                                        vinagre_connection_get_host (conn),
+                                        vinagre_connection_get_domain (conn),
+                                        vinagre_connection_get_username (conn),
+                                        TRUE,
+                                        TRUE,
+                                        TRUE,
+                                        20,
+                                        domain,
+                                        username,
+                                        password,
+                                        &save_in_keyring))
     {
-      domain_name = gtk_entry_get_text (GTK_ENTRY (domain_entry));
-      if (g_strcmp0 (*domain, domain_name) != 0)
-        *domain = g_strdup (domain_name);
+      if (*domain && **domain != '\0')
+        vinagre_connection_set_domain (conn, *domain);
 
-      user_name = gtk_entry_get_text (GTK_ENTRY (username_entry));
-      if (g_strcmp0 (*username, user_name) != 0)
-        *username = g_strdup (user_name);
+      if (*username && **username != '\0')
+        vinagre_connection_set_username (conn, *username);
 
-      *password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
+      if (*password && **password != '\0')
+        vinagre_connection_set_password (conn, *password);
 
-      return TRUE;
+      vinagre_tab_set_save_credentials (tab, save_in_keyring);
     }
   else
     {
+      vinagre_tab_remove_from_notebook (tab);
+
       return FALSE;
     }
+
+  return TRUE;
 }
 
 static BOOL
@@ -830,28 +1028,24 @@ frdp_changed_certificate_verify (freerdp *instance,
 #endif
 
 static void
-open_freerdp (VinagreRdpTab *rdp_tab)
+init_freerdp (VinagreRdpTab *rdp_tab)
 {
   VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  rdpSettings          *settings;
   VinagreTab           *tab = VINAGRE_TAB (rdp_tab);
   VinagreConnection    *conn = vinagre_tab_get_conn (tab);
-  rdpSettings          *settings;
-  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
-  gboolean              success = TRUE;
-  gboolean              fullscreen;
-  gchar                *hostname, *username;
-  gint                  port, width, height;
+  gboolean              scaling;
+  gchar                *hostname;
+  gint                  width, height;
+  gint                  port;
 
   g_object_get (conn,
                 "port", &port,
                 "host", &hostname,
                 "width", &width,
                 "height", &height,
-                "fullscreen", &fullscreen,
-                "username", &username,
+                "scaling", &scaling,
                 NULL);
-
-  priv->events = g_queue_new ();
 
   /* Setup FreeRDP session */
   priv->freerdp_session = freerdp_new ();
@@ -880,7 +1074,6 @@ open_freerdp (VinagreRdpTab *rdp_tab)
   settings->RdpSecurity = TRUE;
   settings->TlsSecurity = TRUE;
   settings->NlaSecurity = TRUE;
-  settings->DisableEncryption = FALSE;
   settings->EncryptionMethods = ENCRYPTION_METHOD_40BIT | ENCRYPTION_METHOD_128BIT | ENCRYPTION_METHOD_FIPS;
   settings->EncryptionLevel = ENCRYPTION_LEVEL_CLIENT_COMPATIBLE;
 #else
@@ -890,6 +1083,12 @@ open_freerdp (VinagreRdpTab *rdp_tab)
   settings->encryption = true;
   settings->encryption_method = ENCRYPTION_METHOD_40BIT | ENCRYPTION_METHOD_128BIT | ENCRYPTION_METHOD_FIPS;
   settings->encryption_level = ENCRYPTION_LEVEL_CLIENT_COMPATIBLE;
+#endif
+#include <freerdp/version.h>
+#if (FREERDP_VERSION_MAJOR == 1 && FREERDP_VERSION_MINOR >= 2 && FREERDP_VERSION_REVISION >= 1) || (FREERDP_VERSION_MAJOR == 2)
+  settings->UseRdpSecurityLayer = FALSE;
+#else
+  settings->DisableEncryption = FALSE;
 #endif
 
   /* Set display size */
@@ -912,17 +1111,6 @@ open_freerdp (VinagreRdpTab *rdp_tab)
   settings->port = port;
 #endif
 
-  /* Set username */
-  username = g_strstrip (username);
-  if (username != NULL && username[0] != '\0')
-    {
-#if HAVE_FREERDP_1_1
-      settings->Username = g_strdup (username);
-#else
-      settings->username = g_strdup (username);
-#endif
-    }
-
   /* Set keyboard layout */
 #if HAVE_FREERDP_1_1
   freerdp_keyboard_init (KBD_US);
@@ -930,12 +1118,31 @@ open_freerdp (VinagreRdpTab *rdp_tab)
   freerdp_kbd_init (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), KBD_US);
 #endif
 
+  /* Allow font smoothing by default */
+  settings->AllowFontSmoothing = TRUE;
+}
+
+static void
+init_display (VinagreRdpTab *rdp_tab)
+{
+  VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  VinagreTab           *tab = VINAGRE_TAB (rdp_tab);
+  VinagreConnection    *conn = vinagre_tab_get_conn (tab);
+  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
+  gboolean              fullscreen, scaling;
+  gint                  width, height;
+
+  g_object_get (conn,
+                "width", &width,
+                "height", &height,
+                "fullscreen", &fullscreen,
+                "scaling", &scaling,
+                NULL);
+
   /* Setup display for FreeRDP session */
   priv->display = gtk_drawing_area_new ();
   if (priv->display)
     {
-      gtk_widget_set_size_request (priv->display, width, height);
-
       g_signal_connect (priv->display, "draw",
                         G_CALLBACK (frdp_drawing_area_draw), rdp_tab);
 
@@ -968,37 +1175,83 @@ open_freerdp (VinagreRdpTab *rdp_tab)
 
       if (fullscreen)
         gtk_window_fullscreen (window);
+
+      vinagre_rdp_tab_set_scaling (rdp_tab, scaling);
     }
 
-  priv->key_press_handler_id = g_signal_connect (window, "key-press-event",
+  priv->key_press_handler_id = g_signal_connect (GTK_WIDGET (tab), "key-press-event",
                                                  G_CALLBACK (frdp_key_pressed),
                                                  rdp_tab);
 
-  priv->key_release_handler_id = g_signal_connect (window, "key-release-event",
+  priv->key_release_handler_id = g_signal_connect (GTK_WIDGET (tab), "key-release-event",
                                                    G_CALLBACK (frdp_key_pressed),
                                                    rdp_tab);
+}
 
-  /* Run FreeRDP session */
-  success = freerdp_connect (priv->freerdp_session);
+static void
+open_freerdp (VinagreRdpTab *rdp_tab)
+{
+  VinagreRdpTabPrivate *priv = rdp_tab->priv;
+  VinagreTab           *tab = VINAGRE_TAB (rdp_tab);
+  GtkWindow            *window = GTK_WINDOW (vinagre_tab_get_window (tab));
+  gboolean              success = TRUE;
+  gboolean              cancelled = FALSE;
+  guint                 authentication_errors = 0;
+
+  priv->events = g_queue_new ();
+
+  init_freerdp (rdp_tab);
+  init_display (rdp_tab);
+
+  do
+    {
+      /* Run FreeRDP session */
+      success = freerdp_connect (priv->freerdp_session);
+      if (!success)
+        {
+          authentication_errors += freerdp_get_last_error (priv->freerdp_session->context) == 0x20009 ||
+                                   freerdp_get_last_error (priv->freerdp_session->context) == 0x2000c;
+
+          cancelled = freerdp_get_last_error (priv->freerdp_session->context) == 0x2000b;
+
+          freerdp_free (priv->freerdp_session);
+          init_freerdp (rdp_tab);
+        }
+    }
+  while (!success && authentication_errors < 3);
 
   if (!success)
     {
       gtk_window_unfullscreen (window);
-      vinagre_utils_show_error_dialog (_("Error connecting to host."),
-                                       NULL,
-                                       window);
+      if (!cancelled)
+        vinagre_utils_show_error_dialog (_("Error connecting to host."),
+                                         NULL,
+                                         window);
       g_idle_add ((GSourceFunc) idle_close, rdp_tab);
     }
   else
     {
+      priv->authentication_attempts = 0;
       priv->update_id = g_idle_add ((GSourceFunc) update, rdp_tab);
     }
+}
+
+static void
+tab_realized (GtkWidget     *widget,
+              gpointer       user_data)
+{
+  gtk_widget_grab_focus (widget);
+  g_signal_handlers_disconnect_by_func (widget, tab_realized, user_data);
 }
 
 static void
 vinagre_rdp_tab_init (VinagreRdpTab *rdp_tab)
 {
   rdp_tab->priv = VINAGRE_RDP_TAB_GET_PRIVATE (rdp_tab);
+
+  rdp_tab->priv->connected_actions = create_connected_actions (rdp_tab);
+
+  g_signal_connect (rdp_tab, "realize", G_CALLBACK (tab_realized), NULL);
 }
 
 GtkWidget *
@@ -1008,6 +1261,7 @@ vinagre_rdp_tab_new (VinagreConnection *conn,
   return GTK_WIDGET (g_object_new (VINAGRE_TYPE_RDP_TAB,
 				   "conn", conn,
 				   "window", window,
+				   "can-focus", TRUE,
 				   NULL));
 }
 

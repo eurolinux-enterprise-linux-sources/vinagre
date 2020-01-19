@@ -6,6 +6,7 @@
 
     <revision pkgversion="3.8" date="2013-03-23" status="final"/>
     <revision pkgversion="3.12" date="2014-03-05" status="final"/>
+    <revision pkgversion="3.16" date="2015-03-02" status="final"/>
 
     <credit type="author">
       <name>Ekaterina Gerasimova</name>
@@ -42,7 +43,7 @@
 
   <figure>
     <title>Képernyőkép a Távoli asztalok megjelenítése alkalmazásról használat közben</title>
-    <media type="image" mime="image/png" src="figures/vinagre-connected.png" width="825">
+    <media type="image" mime="image/png" src="figures/vinagre-connected-3-16.png">
       <p>A GNOME 3 alatt futó Távoli asztalok megjelenítése alkalmazás egy GNOME 2-t futtató géphez kapcsolódva</p>
     </media>
   </figure>

@@ -6,6 +6,7 @@
 
     <revision pkgversion="3.8" date="2013-03-23" status="final"/>
     <revision pkgversion="3.12" date="2014-03-05" status="final"/>
+    <revision pkgversion="3.16" date="2015-03-02" status="final"/>
 
     <credit type="author">
       <name>Ekaterina Gerasimova</name>
@@ -19,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2011-2014</mal:years>
+      <mal:years>2011-2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -42,7 +43,7 @@
 
   <figure>
     <title>El visor de escritorios remotos en acción</title>
-    <media type="image" mime="image/png" src="figures/vinagre-connected.png" width="825">
+    <media type="image" mime="image/png" src="figures/vinagre-connected-3-16.png">
       <p>El visor de escritorios remotos ejecutándose en GNOME 3, conectado a una máquina ejecutando GNOME 2.</p>
     </media>
   </figure>

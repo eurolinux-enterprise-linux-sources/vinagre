@@ -1,0 +1,68 @@
+--- vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
++++ vinagre-3.22.0/plugins/rdp/vinagre-rdp-tab.c
+@@ -79,7 +79,7 @@ struct _VinagreRdpTabPrivate
+ 
+ G_DEFINE_TYPE (VinagreRdpTab, vinagre_rdp_tab, VINAGRE_TYPE_TAB)
+ 
+-static void open_freerdp (VinagreRdpTab *rdp_tab);
++static gboolean open_freerdp (VinagreRdpTab *rdp_tab);
+ static void setup_toolbar (VinagreRdpTab *rdp_tab);
+ static void vinagre_rdp_tab_set_scaling (VinagreRdpTab *tab,
+                                          gboolean       scaling);
+@@ -251,9 +251,8 @@ vinagre_rdp_tab_constructed (GObject *ob
+     G_OBJECT_CLASS (vinagre_rdp_tab_parent_class)->constructed (object);
+ 
+   setup_toolbar (rdp_tab);
+-  open_freerdp (rdp_tab);
+-
+-  g_idle_add ((GSourceFunc) emit_delayed_signal, object);
++  if (open_freerdp (rdp_tab))
++    g_idle_add ((GSourceFunc) emit_delayed_signal, object);
+ }
+ 
+ static void
+@@ -929,7 +928,6 @@ frdp_authenticate (freerdp  *instance,
+     }
+   else
+     {
+-      vinagre_tab_remove_from_notebook (tab);
+ #ifndef HAVE_FREERDP_1_2
+       priv->authentication_cancelled = TRUE;
+ #endif
+@@ -1196,7 +1194,7 @@ init_display (VinagreRdpTab *rdp_tab)
+                                                    rdp_tab);
+ }
+ 
+-static void
++static gboolean
+ open_freerdp (VinagreRdpTab *rdp_tab)
+ {
+   VinagreRdpTabPrivate *priv = rdp_tab->priv;
+@@ -1209,6 +1207,7 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+   gboolean              connection_failed;
+   guint                 authentication_attempts;
+ #endif
++  gboolean              result = FALSE;
+ 
+   priv->events = g_queue_new ();
+ 
+@@ -1244,7 +1243,7 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+         }
+     }
+ #ifdef HAVE_FREERDP_1_2
+-  while (!success && authentication_errors < 3);
++  while (!success && authentication_errors < 3 && !cancelled);
+ #else
+   while (!success &&
+          priv->authentication_attempts < 3 &&
+@@ -1269,7 +1268,10 @@ open_freerdp (VinagreRdpTab *rdp_tab)
+     {
+       priv->authentication_attempts = 0;
+       priv->update_id = g_timeout_add (5, (GSourceFunc) update, rdp_tab);
++      result = TRUE;
+     }
++
++  return result;
+ }
+ 
+ static void
