@@ -4,7 +4,7 @@
 
 Name:           vinagre
 Version:        3.22.0
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        VNC client for GNOME
 
 Group:          Applications/System
@@ -22,6 +22,9 @@ Patch2:         vinagre-3.22.0-rdp-connection-cancel.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=1435715
 Patch3:         vinagre-3.22.0-fullscreen-toolbar.patch
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1459111
+Patch4:         vinagre-3.22.0-share-clipboard.patch
 
 %if 0%{?with_spice}
 BuildRequires:  pkgconfig(spice-client-gtk-3.0)
@@ -67,6 +70,7 @@ Apart from the VNC protocol, vinagre supports Spice and RDP.
 %patch1 -p1 -b .freerdp-versions
 %patch2 -p1 -b .rdp-connection-cancel
 %patch3 -p1 -b .fullscreen-toolbar
+%patch4 -p1 -b .share-clipboard
 
 %build
 autoreconf -ivf
@@ -132,6 +136,10 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %changelog
+* Mon Sep 25 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-9
+- Fix "Share clipboard" functionality in Spice plugin
+- Resolves: #1459111
+
 * Mon Mar 27 2017 Marek Kasik <mkasik@redhat.com> - 3.22.0-8
 - Rebuild with new spice-gtk3
 - Related: #1435715
